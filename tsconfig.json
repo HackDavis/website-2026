@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl": "./",
+    "paths": {
+      "@public/*": ["./public/*"],
+      "@app/*": ["app/*"],
+      "@scripts/*":["./scripts/*"],
+      "@pages/*": ["app/(pages)/*"],
+      "@components/*": ["app/(pages)/_components/*"],
+      "@contexts/*": ["app/(pages)/_contexts/*"],
+      "@data/*": ["app/(pages)/_data/*"],
+      "@globals/*": ["app/(pages)/_globals/*"],
+      "@hooks/*": ["app/(pages)/_hooks/*"],
+      "@api/*": ["app/(api)/*"],
+      "@actions/*": ["app/(api)/_actions/*"],
+      "@utils/*": ["app/(api)/_utils/*"],
+      "@apidata/*": ["app/(api)/_data/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}

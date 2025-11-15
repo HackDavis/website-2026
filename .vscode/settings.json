@@ -1,0 +1,26 @@
+{
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "always"
+    },
+    "eslint.validate": [
+        "javascript",
+        "typescript",
+    ],
+    "[javascriptreact]": {
+        "editor.indentSize": 2
+    },
+    "[javascript]": {
+        "editor.indentSize": 2
+    },
+    "[typescriptreact]": {
+        "editor.indentSize": 2
+    },
+    "[typescript]": {
+        "editor.indentSize": 2
+    },
+    "[jsonc]": {
+        "editor.indentSize": 2
+    },
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "typescript.updateImportsOnFileMove.enabled": "never",
+}
