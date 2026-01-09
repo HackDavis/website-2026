@@ -1,7 +1,10 @@
+import Directors from "./_components/Directors/directors";
+
 export default function AboutUs() {
   return (
     <div>
       <p>About Us</p>
+      <Directors />
     </div>
   );
 }
