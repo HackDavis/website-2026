@@ -3,8 +3,33 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* About Us Colors */
+  --background-medium-purple: #3E3A95;
+  --background-dark-purple: #11043F;
+  --background-white: #F9FBFC;
+  --background-light-grey: #DCE3EA;
+
+  /* About Us Text Colors */
+  --text-dark: #123041;
+  --text-extra-dark: #0E2535;
+  --text-black: #000000
+  --text-white: #FFFFFF;
+
+  /* About Us Cards */
+  --card-light-blue: #9EE7E5;
+  --card-light-green: #AFD157;
+  --card-light-yellow: #FFC53D;
+  --card-light-purple: #BBABDD;
+
+  /* Spaces - but please use percentages instead */
+  --about-us-horizontal-space: 100px;
+  --about-us-vertical-space: 33px;
+  --about-us-vertical-margin: 85px;
+  --about-us-horizontal-margin: 60px;
+
+  --about-us-smaller-spacer: 30px;
+  --about-us-small-spacer: 40px;
+  --about-us-medium-spacer: 50px;
 }
 
 * {
@@ -14,23 +39,23 @@
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 3rem; //48px in wireframe
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2.5rem; //40px
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 2rem; //32px
 }
 
 h4 {
-  font-size: 1.5rem;
+  font-size: 1.5rem; //24px
 }
 
 p {
-  font-size: 1rem;
+  font-size: 1.125rem; //18px
 }
 
 a {
