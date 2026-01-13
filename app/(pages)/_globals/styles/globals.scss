@@ -141,7 +141,6 @@ button {
   will-change: transform;
 }
 
-/* Standalone glass pill container */
 .glass-pill {
   display: inline-flex;
   align-items: center;
@@ -162,4 +161,30 @@ button {
     inset 2px -6.5px 1px -4px color-mix(in srgb, var(--glass-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
     0px 1px 5px 0px color-mix(in srgb, var(--glass-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
     0px 6px 16px 0px color-mix(in srgb, var(--glass-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
+}
+
+.glass-bubble {
+  display: inline-flex;
+  align-items: center;
+  gap: 2%;
+  height: 10%;
+  padding: 2% 3% 2.5%;
+  border-radius: 99em;
+
+  //gradient parameters
+  --bubble-x: 50%;
+  --bubble-y: 50%;
+  --bubble-c1: rgba(255, 255, 255, 0.35); //center color
+  --bubble-c2: rgba(255, 255, 255, 0.12); //edge color
+
+  //radial gradient fill
+  background: radial-gradient(
+    circle at var(--bubble-x) var(--bubble-y),
+    var(--bubble-c1) 0%,
+    var(--bubble-c2) 70%
+  );
+
+  //frosted look
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
