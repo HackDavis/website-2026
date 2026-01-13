@@ -2,7 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/fonts/Metropolis/TrueType/Metropolis-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/fonts/Metropolis/TrueType/Metropolis-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/fonts/Metropolis/TrueType/Metropolis-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/fonts/Metropolis/TrueType/Metropolis-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/fonts/Metropolis/TrueType/Metropolis-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/fonts/Metropolis/TrueType/Metropolis-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
 :root {
+  --font-metropolis: 'Metropolis', sans-serif;
   /* About Us Colors */
   --background-medium-purple: #3E3A95;
   --background-dark-purple: #11043F;
@@ -14,6 +52,7 @@
   --text-extra-dark: #0E2535;
   --text-black: #000000
   --text-white: #FFFFFF;
+  --text-purple: #BE5BA8;
 
   /* About Us Cards */
   --card-light-blue: #9EE7E5;
@@ -30,6 +69,14 @@
   --about-us-smaller-spacer: 30px;
   --about-us-small-spacer: 40px;
   --about-us-medium-spacer: 50px;
+
+  /* Glass UI defaults */
+  --glass-bg: #bbbbbc;
+  --glass-light: #fff;
+  --glass-dark: #000;
+  --glass-saturation: 100%;
+  --glass-reflex-dark: 1;
+  --glass-reflex-light: 1;
 }
 
 * {
@@ -48,6 +95,12 @@ h2 {
 
 h3 {
   font-size: 2rem; //32px
+}
+
+.hero-tight h1,
+.hero-tight h3 {
+  line-height: 1.2;
+  margin: 0vh;
 }
 
 h4 {
@@ -69,4 +122,44 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@keyframes float-bob {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.bob-slow {
+  animation: float-bob 3s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Standalone glass pill container */
+.glass-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 2%;
+  height: 10%;
+  padding: 2% 3% 2.5%;
+  border-radius: 99em;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px) ;
+  -webkit-backdrop-filter: blur(10px) ;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--glass-light) calc(var(--glass-reflex-light) * 10%), transparent),
+    inset 1.7px 2.8px 0px -2.1px color-mix(in srgb, var(--glass-light) calc(var(--glass-reflex-light) * 90%), transparent),
+    inset -1.7px -1.7px 0px -2.1px color-mix(in srgb, var(--glass-light) calc(var(--glass-reflex-light) * 80%), transparent),
+    inset -2.6px -7px 1px -6.2px color-mix(in srgb, var(--glass-light) calc(var(--glass-reflex-light) * 60%), transparent),
+    inset -0.3px -1px 4px 0px color-mix(in srgb, var(--glass-dark) calc(var(--glass-reflex-dark) * 12%), transparent),
+    inset -1.5px 2.5px 0px -2px color-mix(in srgb, var(--glass-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+    inset 0px 3px 4px -2px color-mix(in srgb, var(--glass-dark) calc(var(--glass-reflex-dark) * 20%), transparent),
+    inset 2px -6.5px 1px -4px color-mix(in srgb, var(--glass-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+    0px 1px 5px 0px color-mix(in srgb, var(--glass-dark) calc(var(--glass-reflex-dark) * 10%), transparent),
+    0px 6px 16px 0px color-mix(in srgb, var(--glass-dark) calc(var(--glass-reflex-dark) * 8%), transparent);
 }
