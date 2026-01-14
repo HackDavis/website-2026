@@ -1,6 +1,6 @@
 // import styles from './ProfileCard.module.scss';
 import Image from 'next/image';
-// import { FaLinkedin } from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa';
 import { useState } from 'react';
 interface ProfileCardProps {
   name: string;
@@ -30,13 +30,12 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
             layout="fill"
             placeholder="blur"
             blurDataURL={imageUrl}
-            style={{ objectFit: 'cover', borderRadius: 11 }}
           />
           <div>
-            {/* <FaLinkedin
+            <FaLinkedin
               size={60}
               color="white"
-            /> */}
+            />
           </div>
         </div>
       </a>

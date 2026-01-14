@@ -19,7 +19,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div>
+    <div className="px-[10%] border-2 border-blue-500">
       <a href={linkedinURL} target="_blank" rel="noopener noreferrer">
         <div
           onMouseEnter={() => setIsHovered(true)}
