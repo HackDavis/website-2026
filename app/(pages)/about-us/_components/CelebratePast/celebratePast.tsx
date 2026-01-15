@@ -7,6 +7,23 @@ function Pictures() {
 }
 
 export default function CelebratePast() {
+    const [images, setImages] = useState([
+        { path: "/placeholder.jpg", alt: "among us", order: 1 },
+        { path: "/anotherplaceholder.png", alt: "among us!!!", order: 2 },
+    ]);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setImages(prevImages => {
+                return prevImages.map(img => ({
+                    ...img,
+                    order: (img.order + 1) % prevImages.length,
+                }));
+            });
+        }, 2000); //10sec
+
+        return () => clearInterval(interval);
+    }, []);
     return (
         <div className="bg-red-100">
             <div className="justify-center"> 
