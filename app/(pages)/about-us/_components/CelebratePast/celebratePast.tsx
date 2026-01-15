@@ -35,8 +35,21 @@ export default function CelebratePast() {
                 </div>
             </div>
             {/** uhhh the pictures F1F3F8*/}
-            <Pictures/>
-            <button >View 2026 Winners</button>
+            <div className="relative w-[300px] h-[300px]"> {/* Container must be relative */}
+                {images
+                    .sort((a, b) => a.order - b.order)
+                    .map((image) => (
+                        <Pictures
+                            key={image.path}
+                            path={image.path}
+                            alt={image.alt}
+                            order={image.order}
+                        />
+                ))}
+            </div>
+            <button className="pl-[17px] pr-[17px] pt-[5px] pb-[5px] m-4 mb-[50px] rounded-full bg-[#123041] text-[#F9FBFC]">
+                VIEW 2025 WINNERS
+            </button>
         </div>
     );
 }
