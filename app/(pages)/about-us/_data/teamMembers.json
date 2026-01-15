@@ -14,7 +14,7 @@
       "$oid": "65b6e0a06a7eaf354ea8e4b3"
     },
     "name": "Anna Pandey",
-    "position": "Finance Director",
+    "position": "Vice President",
     "profile_image_url": "/images/team_members/finance/Anna_Pandey.jpg",
     "team_category": "Finance",
     "year": 2024,
@@ -24,7 +24,7 @@
     "_id": {
       "$oid": "65b6e0a06a7eaf354ea8e4b3"
     },
-    "name": "Krishna Thaker",
+    "name": "Joseph Lay",
     "position": "Finance Lead",
     "profile_image_url": "/images/team_members/finance/Krishna_Thaker.jpg",
     "team_category": "Finance",
@@ -35,8 +35,19 @@
     "_id": {
       "$oid": "65b6e0a06a7eaf354ea8e4b3"
     },
+    "name": "Jiayang Liu",
+    "position": "Finance Lead",
+    "profile_image_url": "/images/team_members/finance/Jiayang_Liu.jpg",
+    "team_category": "Finance",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/jiayang-liu-789012345"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4b3"
+    },
     "name": "Morgan Brady",
-    "position": "Sponsorship Director",
+    "position": "Sponsorship Lead",
     "profile_image_url": "/images/team_members/sponsorship/Morgan_Brady.jpg",
     "team_category": "Sponsorship",
     "year": 2024,
@@ -46,31 +57,42 @@
     "_id": {
       "$oid": "65b6e0a06a7eaf354ea8e4b3"
     },
-    "name": "Kaushal Ramalingam",
+    "name": "Eunice Huang",
     "position": "Sponsorship Director",
-    "profile_image_url": "/images/team_members/sponsorship/Kaushal_Ramalingam.jpg",
+    "profile_image_url": "/images/team_members/sponsorship/Eunice_Huang.jpg",
     "team_category": "Sponsorship",
     "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/kaushal-ramalingam/"
+    "linkedinURL": "https://www.linkedin.com/in/eunice-huang-543210987/"
   },
   {
     "_id": {
       "$oid": "65b6e0a06a7eaf354ea8e4b3"
     },
-    "name": "Satya Sanegepalli",
+    "name": "Jayden Kwong",
     "position": "Sponsorship Director",
-    "profile_image_url": "/images/team_members/sponsorship/Satya_Sanegepalli.jpg",
+    "profile_image_url": "/images/team_members/sponsorship/Jayden_Kwong.jpg",
     "team_category": "Sponsorship",
     "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/satyasree-sanegepalli-a15135252/"
+    "linkedinURL": "https://www.linkedin.com/in/jayden-kwong-543210987/"
   },
   {
     "_id": {
       "$oid": "65b6e0a06a7eaf354ea8e4b3"
     },
-    "name": "Carolyn Vo",
+    "name": "Maanit Shah",
     "position": "Sponsorship Director",
-    "profile_image_url": "/images/team_members/sponsorship/Carolyn_Vo.jpg",
+    "profile_image_url": "/images/team_members/sponsorship/Maanit_Shah.jpg",
+    "team_category": "Sponsorship",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/carvo/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4b3"
+    },
+    "name": "Leland Chung",
+    "position": "Sponsorship Director",
+    "profile_image_url": "/images/team_members/sponsorship/Leland_Chung.jpg",
     "team_category": "Sponsorship",
     "year": 2024,
     "linkedinURL": "https://www.linkedin.com/in/carvo/"
