@@ -11,16 +11,6 @@ export default function Directors() {
         <h1 className="text-[var(--text-dark)] font-bold"> Get to know our team</h1>
         <p>HackDavis is built by students, for students.</p>
       </div>
-      
-      <div className="py-[1%] border-2 border-green-500 flex flex-row gap-4 overflow-x-auto">
-        <div className={filterStyle}>Technical</div>
-        <div className={filterStyle}>External</div>
-        <div className={filterStyle}>Operations</div>
-        <div className={filterStyle}>Sponsorship</div>
-        <div className={filterStyle}>Finance</div>
-        <div className={filterStyle}>Marketing</div>
-        <div className={filterStyle} >Design</div>
-      </div>
     </div>
   );
 }

@@ -1,65 +1,73 @@
 'use client';
 
-import Image from 'next/image';
-import React, { useState } from 'react';
+import { useMemo, useState } from 'react';
+import teamMembersRaw from '../../_data/teamMembers.json';
+import ProfileCard from './_components/ProfileCard';
 
-interface ProfileCardProps {
+type TeamMember = {
   name: string;
-  title: string;
-  imageUrl: string;
+  position: string;
+  profile_image_url?: string;
+  team_category: string;
+  year: number;
   linkedinURL: string;
-}
-
-const ProfileCard: React.FC<ProfileCardProps> = ({
-  name,
-  title,
-  imageUrl,
-  linkedinURL,
-}) => {
-  const [isHovered, setIsHovered] = useState(false);
-
-  return (
-    <div className="px-[10%] border-2 border-blue-500">
-      <a href={linkedinURL} target="_blank" rel="noopener noreferrer">
-        <div
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          style={{
-            position: 'relative',
-            width: 240,
-            height: 240,
-            borderRadius: 11,
-            overflow: 'hidden',
-          }}
-        >
-          <Image
-            src={imageUrl}
-            alt={name}
-            fill
-            style={{ objectFit: 'cover' }}
-          />
-
-          <div
-            style={{
-              position: 'absolute',
-              inset: 0,
-              opacity: isHovered ? 1 : 0,
-              transition: 'opacity 150ms ease',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              background: 'rgba(0,0,0,0.35)',
-            }}
-          >
-            {/* put linkedin thing */}
-          </div>
-        </div>
-      </a>
-
-      <h3>{name}</h3>
-      <p>{title}</p>
-    </div>
-  );
+  _id?: { $oid?: string };
 };
 
-export default ProfileCard;
+const filterBase =
+  'px-5 py-2 rounded-full uppercase cursor-pointer whitespace-nowrap transition';
+
+export default function OurTeam() {
+  const teamMembers = teamMembersRaw as TeamMember[];
+
+  const categories = useMemo(() => {
+    const set = new Set(teamMembers.map((m) => m.team_category));
+    return Array.from(set);
+  }, [teamMembers]);
+
+  const [activeCategory, setActiveCategory] = useState<string>(categories[0] ?? 'All');
+
+  const filteredMembers = useMemo(() => {
+    if (!activeCategory) return teamMembers;
+    return teamMembers.filter((m) => m.team_category === activeCategory);
+  }, [teamMembers, activeCategory]);
+
+  const tabClass = (active: boolean) =>
+    [
+      filterBase,
+      active
+        ? 'bg-[var(--card-light-blue)] text-[var(--text-dark)]'
+        : 'bg-[var(--text-dark)] text-white border border-[var(--text-dark)] hover:bg-[var(--card-light-blue)]',
+    ].join(' ');
+
+  return (
+    <section className="px-[10%] py-[1%]">
+      {/* Tabs */}
+      <div className="mb-10 flex gap-4 overflow-x-auto pb-2">
+        {categories.map((cat) => (
+          <button
+            key={cat}
+            type="button"
+            className={tabClass(cat === activeCategory)}
+            onClick={() => setActiveCategory(cat)}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
+
+      {/* Cards */}
+      <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5">
+        {filteredMembers.map((m) => (
+          <ProfileCard
+            key={`${m.name}-${m.year}`}
+            name={m.name}
+            title={m.position}
+            imageUrl={m.profile_image_url}
+            linkedinURL={m.linkedinURL}
+          />
+        ))}
+      </div>
+    </section>
+  );
+}
