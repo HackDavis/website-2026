@@ -286,6 +286,17 @@
   },
   {
     "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4c3"
+    },
+    "name": "Joyce Kim",
+    "position": "Operations Director",
+    "profile_image_url": "/Images/team_members/Operations/Joyce_Kim.jpg",
+    "team_category": "Operations",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/joyce-kim-profile/"
+  },
+  {
+    "_id": {
       "$oid": "65b6e0a06a7eaf354ea8e4b0"
     },
     "name": "Daisy Williams",
