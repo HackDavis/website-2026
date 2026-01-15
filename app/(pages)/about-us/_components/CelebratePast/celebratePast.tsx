@@ -25,10 +25,14 @@ export default function CelebratePast() {
         return () => clearInterval(interval);
     }, []);
     return (
-        <div className="bg-red-100">
-            <div className="justify-center"> 
-                <div>TITLE</div>
-                <div>WORDS</div>
+        <div className="m-10 flex flex-col items-center bg-[#E5EEF1] place-content-center rounded-[20px] shadow-[8px_8px_0_0_#A6BFC7]">
+            <div className="m-10 flex flex-col items-center">
+                <div className="bg-red-150 m-2">
+                    <p className="text-[70px] text-[#123041]">Come Celebrate our past with us!</p>
+                </div>
+                <div className="bg-red-150">
+                    <p className="text-[23px] text-[#123041]">We truly could not have done any of this without you. Your support means the world!</p>
+                </div>
             </div>
             {/** uhhh the pictures F1F3F8*/}
             <Pictures/>
