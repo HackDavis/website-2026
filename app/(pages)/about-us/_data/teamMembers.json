@@ -143,14 +143,25 @@
   },
   {
     "_id": {
-      "$oid": "65b6e0a06a7eaf354ea8e4c0"
+      "$oid": "65b6e0a06a7eaf354ea8e4b6"
     },
-    "name": "Suranjana Sooraj",
-    "position": "Sponsorship Lead",
-    "profile_image_url": "/Images/team_members/sponsorship/Suranjana_Sooraj.jpg",
-    "team_category": "Sponsorship",
+    "name": "Jason Xie",
+    "position": "Design Co-Lead",
+    "profile_image_url": "/Images/team_members/design/Jason_Xie.jpg",
+    "team_category": "Design",
     "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/suranjana-sooraj-54331825b/"
+    "linkedinURL": "https://www.linkedin.com/in/jason-xie-0b45b7270/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4ac"
+    },
+    "name": "Sidney Heng",
+    "position": "Design Co-Lead",
+    "profile_image_url": "/Images/team_members/design/Sidney_Heng.jpg",
+    "team_category": "Design",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/sidney-heng-603662263/"
   },
   {
     "_id": {
@@ -167,23 +178,12 @@
     "_id": {
       "$oid": "65b6e0a06a7eaf354ea8e4ae"
     },
-    "name": "Shampave Kandlah",
+    "name": "Shampave Kandiah",
     "position": "Brand Design Director",
-    "profile_image_url": "/Images/team_members/design/Shampave_Kandlah.jpg",
+    "profile_image_url": "/Images/team_members/design/Shampave_Kandiah.jpg",
     "team_category": "Design",
     "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/shampave-kandlah/"
-  },
-  {
-    "_id": {
-      "$oid": "65b6e0a06a7eaf354ea8e4ac"
-    },
-    "name": "Sidney Heng",
-    "position": "Design Co-Lead",
-    "profile_image_url": "/Images/team_members/design/Sidney_Heng.jpg",
-    "team_category": "Design",
-    "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/sidney-heng-603662263/"
+    "linkedinURL": "https://www.linkedin.com/in/shampave-kandiah/"
   },
   {
     "_id": {
@@ -363,17 +363,6 @@
   },
   {
     "_id": {
-      "$oid": "65b6e0a06a7eaf354ea8e4b6"
-    },
-    "name": "Jason Xie",
-    "position": "Design Co-Lead",
-    "profile_image_url": "/Images/team_members/design/Jason_Xie.jpg",
-    "team_category": "Design",
-    "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/jason-xie-0b45b7270/"
-  },
-  {
-    "_id": {
       "$oid": "65b6e0a06a7eaf354ea8e4ce"
     },
     "name": "Abirami Kathiresan",
@@ -453,9 +442,9 @@
     "_id": {
       "$oid": "65b6e0a06a7eaf354ea8e4b2"
     },
-    "name": "Gaby Gutierrez",
+    "name": "Gabrielle Gutierrez",
     "position": "UI/UX Design Director",
-    "profile_image_url": "/Images/team_members/design/Gaby_Gutierrez.jpg",
+    "profile_image_url": "/Images/team_members/design/Gabrielle_Gutierrez.jpg",
     "team_category": "Design",
     "year": 2024,
     "linkedinURL": "https://www.linkedin.com/in/gaby-gutierrez-2639281a3/"

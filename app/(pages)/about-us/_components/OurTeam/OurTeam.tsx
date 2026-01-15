@@ -22,11 +22,11 @@ export default function OurTeam() {
 
   const categories = [
     'Technical',
-    'External',
     'Operations',
     'Sponsorship',
     'Marketing',
     'Finance',
+    'External',
     'Design',
   ];
 
