@@ -7,7 +7,7 @@ const filterStyle = "px-5 py-2 rounded-full bg-[var(--text-dark)] text-white upp
 export default function Directors() {
   return (
     <div className="px-[10%]">
-      <div className="border-2 border-red-500">
+      <div className="">
         <h1 className="text-[var(--text-dark)] font-bold"> Get to know our team</h1>
         <p>HackDavis is built by students, for students.</p>
       </div>

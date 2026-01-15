@@ -10,16 +10,6 @@ interface ProfileCardProps {
   linkedinURL: string;
 }
 
-function hashString(str: string) {
-  let hash = 0;
-  for (let i = 0; i < str.length; i += 1) {
-    hash = (hash * 31 + str.charCodeAt(i)) | 0;
-  }
-  return Math.abs(hash);
-}
-
-const TILTS = [-6, -4, -2, 2, 4, 6]; // degrees
-
 const ProfileCard: React.FC<ProfileCardProps> = ({
   name,
   title,
@@ -29,22 +19,19 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
   const src =
     imageUrl && imageUrl.trim().length > 0 ? imageUrl : '/Images/placeholder.jpg';
 
-  const tilt = TILTS[hashString(name) % TILTS.length];
+  // ✅ truly random tilt
+  const tilt = Math.random() * 12 - 6;
 
   return (
-    <div className="w-fit">
-      <a
-        href={linkedinURL}
-        target="_blank"
-      >
+    <div className="w-fit bg-white">
+      <a href={linkedinURL} target="_blank">
         <div
-          // the slight random tilt per card
           style={{ transform: `rotate(${tilt}deg)` }}
           className="
             relative
             rounded-md
             border-[3px] border-[#A6BFC7]
-            bg-white
+            bg-[var(--polaroid-fill)]
             p-3 pb-6
             transition-transform transition-shadow
             duration-200
