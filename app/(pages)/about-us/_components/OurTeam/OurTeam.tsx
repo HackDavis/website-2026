@@ -20,10 +20,15 @@ const filterBase =
 export default function OurTeam() {
   const teamMembers = teamMembersRaw as TeamMember[];
 
-  const categories = useMemo(() => {
-    const set = new Set(teamMembers.map((m) => m.team_category));
-    return Array.from(set);
-  }, [teamMembers]);
+  const categories = [
+    'Technical',
+    'External',
+    'Operations',
+    'Sponsorship',
+    'Marketing',
+    'Finance',
+    'Design',
+  ];
 
   const [activeCategory, setActiveCategory] = useState<string>(categories[0] ?? 'All');
 

@@ -41,7 +41,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
           "
         >
           {/* photo */}
-          <div className="relative h-60 w-60 overflow-hidden rounded-sm bg-gray-100">
+          <div className="relative w-[170px] h-[200px] object-cover overflow-hidden rounded-sm bg-white">
             <Image src={src} alt={name} fill className="object-cover" />
 
             {/* hover overlay */}
