@@ -1,7 +1,9 @@
+import CelebratePast from "./_components/CelebratePast/celebratePast";
+
 export default function AboutUs() {
   return (
     <div>
-      <p>About Us</p>
+      <CelebratePast/>
     </div>
   );
 }
