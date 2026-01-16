@@ -1,0 +1,96 @@
+import CarouselContextProvider from '@pages/about-us/_contexts/CarouselContext';
+import CarouselArrows from './CarouselArrows';
+import CarouselWindow from './CarouselWindow';
+import Archive from './Archive';
+
+import circle2017 from '@public/aboutUs/archives/2017-circle.svg';
+import circle2018 from '@public/aboutUs/archives/2018-circle.svg';
+import circle2019 from '@public/aboutUs/archives/2019-circle.svg';
+import circle2020 from '@public/aboutUs/archives/2020-circle.svg';
+import circle2021 from '@public/aboutUs/archives/2021-circle.svg';
+import circle2022 from '@public/aboutUs/archives/2022-circle.svg';
+import circle2023 from '@public/aboutUs/archives/2023-circle.svg';
+import circle2024 from '@public/aboutUs/archives/2024-circle.svg';
+import circle2025 from '@public/aboutUs/archives/2025-circle.svg';
+
+const archives = [
+  {
+    year: 2017,
+    imageSrc: circle2017,
+    alt: 'Circle representing 2017 HackDavis hackathon',
+    link: 'https://2017.hackdavis.io/',
+  },
+  {
+    year: 2018,
+    imageSrc: circle2018,
+    alt: 'Circle representing 2018 HackDavis hackathon',
+    link: 'https://2018.hackdavis.io/',
+  },
+  {
+    year: 2019,
+    imageSrc: circle2019,
+    alt: 'Circle representing 2019 HackDavis hackathon',
+    link: 'https://2019.hackdavis.io/',
+  },
+  {
+    year: 2020,
+    imageSrc: circle2020,
+    alt: 'Circle representing 2020 HackDavis hackathon',
+    link: 'https://2020.hackdavis.io/',
+  },
+  {
+    year: 2021,
+    imageSrc: circle2021,
+    alt: 'Circle representing 2021 HackDavis hackathon',
+    link: 'https://2021.hackdavis.io/',
+  },
+  {
+    year: 2022,
+    imageSrc: circle2022,
+    alt: 'Circle representing 2022 HackDavis hackathon',
+    link: 'https://2022.hackdavis.io/',
+  },
+  {
+    year: 2023,
+    imageSrc: circle2023,
+    alt: 'Circle representing 2023 HackDavis hackathon',
+    link: 'https://2023.hackdavis.io/',
+  },
+  {
+    year: 2024,
+    imageSrc: circle2024,
+    alt: 'Circle representing 2024 HackDavis hackathon',
+    link: 'https://2024.hackdavis.io/',
+  },
+  {
+    year: 2025,
+    imageSrc: circle2025,
+    alt: 'Circle representing 2025 HackDavis hackathon',
+    link: 'https://2025.hackdavis.io/',
+  },
+];
+
+export default function Archives() {
+  return (
+    <CarouselContextProvider>
+      <div className="flex w-full flex-col gap-[45px] pb-[50px] sm:gap-[50px]">
+        <div className="flex flex-row items-center justify-between px-[13%] md:px-8">
+          <h2 className="font-metropolis text-xl font-bold text-[#123041] sm:text-[2.25rem]">
+            From the archive
+          </h2>
+          <div className="hidden sm:flex">
+            <CarouselArrows />
+          </div>
+        </div>
+        <CarouselWindow>
+          {archives.toReversed().map(({ year, imageSrc, alt, link }) => (
+            <Archive key={year} imageSrc={imageSrc} alt={alt} link={link} />
+          ))}
+        </CarouselWindow>
+        <div className="relative -top-[75px] px-[13%] sm:hidden">
+          <CarouselArrows />
+        </div>
+      </div>
+    </CarouselContextProvider>
+  );
+}
