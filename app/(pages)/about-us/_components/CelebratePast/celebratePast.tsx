@@ -3,12 +3,12 @@
 import styles from './celebratePast.module.scss';
 import font_string from '@app/(pages)/_globals/fonts';
 import { useState, useEffect } from 'react';
-
+import Image from 'next/image';
 
 function Pictures({ path, alt, order }: { path: string, alt: string, order: number }) {
     return (
         <div className={`z-[${order}] top-0 left-1/2 p-3 pb-[60px] ${order === 1 ? "bg-[#DCE3EA]" : "bg-[#BDC7D0]"}`}>
-            <img src={path} alt={alt} />
+            <Image src={path} alt={alt} width={200} height={200} />
         </div>
     );
 }
@@ -29,7 +29,7 @@ export default function CelebratePast() {
             });
         }, 2000); //10sec
 
-        return () => clearInterval(interval);
+        return () => clearInterval(interval); //E5EEF1 var(--text-extra-dark)
     }, []);
     return (
         <div className="m-10 flex flex-col items-center bg-[#E5EEF1] place-content-center rounded-[20px] shadow-[8px_8px_0_0_#A6BFC7]">
