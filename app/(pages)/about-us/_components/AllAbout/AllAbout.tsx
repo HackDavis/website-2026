@@ -1,13 +1,13 @@
 import Image from "next/image";
 
-export default function About() {
+export default function AllAbout() {
   return (
     <div className="flex flex-col gap-8 text-center bg-background border-black pb-40">
       <div className="text-left">
-        <h1 className="px-60 font-bold leading-none">What we're all about</h1>
+        <h1 className="px-[7%] font-bold leading-none">What we're all about</h1>
       </div>
 
-      <div className="box flex flex-row justify-between px-64">
+      <div className="box flex flex-row justify-between px-[8%]">
         <div className="box relative flex flex-col w-96 h-60 border-2 border-shadow rounded-xl shadow-card p-8 bg-secondary gap-3 group">
           <h2 className="relative text-2xl text-left font-bold z-10">
             Hands-on learning
