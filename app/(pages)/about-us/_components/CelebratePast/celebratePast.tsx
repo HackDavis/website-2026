@@ -5,18 +5,92 @@ import font_string from '@app/(pages)/_globals/fonts';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
+enum Type {
+    Square,
+    Long,
+    Wide
+}
+
 function Pictures({ path, alt, order }: { path: string, alt: string, order: number }) {
-    return (
-        <div className={`z-[${order}] top-0 left-1/2 p-3 pb-[60px] ${order === 1 ? "bg-[#DCE3EA]" : "bg-[#BDC7D0]"}`}>
-            <Image src={path} alt={alt} width={200} height={200} />
-        </div>
-    );
+    const newOrder = 4 - order; //100 is length of the images
+
+    let picture;
+
+
+    if (newOrder === 1) {
+        picture =  (
+            <div className="rotate-[0deg] absolute inset-0 flex justify-center items-center p-2 pb-[60px] bg-[#DCE3EA]">
+                <div className="w-[200px] h-[200px]">
+                    <Image src={path} alt={alt} width={200} height={200} className="object-fill"/>
+                </div>
+                {newOrder} {order}
+            </div>
+        );
+    } else if (newOrder === 2) {
+        picture =  (
+            <div className="rotate-[116.01deg] absolute inset-0 flex justify-center items-center p-2 pb-[60px] bg-[#BDC7D0]">
+                <div className="w-[200px] h-[200px]">
+                    <Image src={path} alt={alt} width={200} height={200} className="object-cover"/>
+                </div>
+                
+                {newOrder} {order}
+            </div>
+        );
+    } else if (newOrder === 3) {
+        picture =  (
+            <div className="rotate-[92.8deg] absolute inset-0 flex justify-center items-center p-2 pb-[60px] bg-[#BDC7D0]">
+                <div className="w-[200px] h-[200px]">
+                    <Image src={path} alt={alt} width={200} height={200} className="object-cover"/>
+                </div>
+                
+                {newOrder} {order}
+            </div>
+        );
+    } else if (newOrder === 4) {
+        picture =  (
+            <div className="rotate-[76.15deg] absolute inset-0 flex justify-center items-center p-2 pb-[60px] bg-[#BDC7D0]">
+                <div className="w-[200px] h-[200px]">
+                    <Image src={path} alt={alt} width={200} height={200} className="object-cover"/>
+                </div>
+                {newOrder} {order}
+            </div>
+        );
+    } else {
+        picture =  (
+            <div className="rotate-[0deg] absolute inset-0 flex justify-center items-center p-2 pb-[60px] bg-[#BDC7D0]">
+                <div className="w-[200px] h-[200px]">
+                    <Image src={path} alt={alt} width={200} height={200} className="object-cover"/>
+                </div>
+                {newOrder} {order}
+            </div>
+        );
+    }
+
+
+
+    // 0 116.01 92.8 76.15
+    let specificStyle = {
+        zIndex: newOrder,
+        transform: `rotate(0deg)`
+    };
+    if (newOrder === 0) {
+        //animation = 0;
+    } else if (newOrder === 1) {
+        //animation = 10;
+    } else if (newOrder === 2) {
+        //animation = 20;
+    } else if (newOrder === 3) {
+        //animation = 30;
+    }
+    return picture;
 }
 
 export default function CelebratePast() {
     const [images, setImages] = useState([
-        { path: "/placeholder.jpg", alt: "among us", order: 1 },
-        { path: "/anotherplaceholder.png", alt: "among us!!!", order: 2 },
+        { path: "/placeholder.jpg", alt: "among us", type: Type.Square, order: 1 },
+        { path: "/anotherplaceholder.png", alt: "among us!!!", type: Type.Square, order: 2 },
+        { path: "/clouds.jpg", alt: "among us!!!", type: Type.Square, order: 3 },
+        { path: "/readclouds.jpg", alt: "among us!!!", type: Type.Square, order: 4 },
     ]);
 
     useEffect(() => {
@@ -31,6 +105,9 @@ export default function CelebratePast() {
 
         return () => clearInterval(interval); //E5EEF1 var(--text-extra-dark)
     }, []);
+
+    const sortedImages = images;
+    sortedImages.sort((a, b) => a.order - b.order);
     return (
         <div className="m-10 flex flex-col items-center bg-[#E5EEF1] place-content-center rounded-[20px] shadow-[8px_8px_0_0_#A6BFC7]">
             <div className="m-10 flex flex-col items-center">
@@ -43,9 +120,7 @@ export default function CelebratePast() {
             </div>
             {/** uhhh the pictures F1F3F8*/}
             <div className="relative w-[300px] h-[300px]"> {/* Container must be relative */}
-                {images
-                    .sort((a, b) => a.order - b.order)
-                    .map((image) => (
+                {sortedImages.map((image) => (
                         <Pictures
                             key={image.path}
                             path={image.path}
