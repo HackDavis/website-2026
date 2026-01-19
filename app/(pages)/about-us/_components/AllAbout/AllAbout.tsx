@@ -2,18 +2,18 @@ import Image from 'next/image';
 
 export default function AllAbout() {
   return (
-    <div className="flex flex-col gap-8 text-center bg-background border-black pb-40">
+    <div className="flex flex-col gap-6 md:gap-52 pb-40">
       <div className="text-left">
-        <h1 className="px-[7%] font-bold leading-none">What we're all about</h1>
+        <h1 className="px-[7%] text-3xl md:text-5xl font-bold leading-none">What we're all about</h1>
       </div>
 
-      <div className="box flex flex-row justify-between px-[8%]">
-        <div className="box relative flex flex-col w-96 h-60 border-2 border-shadow rounded-xl shadow-card p-8 bg-secondary gap-3 group">
-          <h2 className="relative text-2xl text-left font-bold z-10">
-            Hands-on learning
+      <div className="flex flex-col gap-8 md:flex-row justify-between px-[8%]">
+        <div className="relative flex flex-col justify-center align-middle w-56 h-48 md:w-96 md:h-60 border-2 border-shadow rounded-xl shadow-card py-5 px-6 md:p-8 bg-secondary gap-2 md:gap-3 group">
+          <h2 className="relative text-lg md:text-2xl text-center md:text-left font-bold z-10">
+            Hands-on Learning
           </h2>
 
-          <p className="relative text-lg text-left z-10">
+          <p className="relative flex text-sm md:text-lg md:text-left z-10 border-black border-2">
             No matter which prompt you choose, each project provides hands-on
             experience and an opportunity to explore a new discipline.
           </p>
@@ -27,7 +27,7 @@ export default function AllAbout() {
           />
         </div>
 
-        <div className="box relative flex flex-col w-96 h-60 border-2 border-shadow rounded-xl shadow-card p-8 bg-secondary gap-3 group">
+        <div className="relative flex flex-col w-60 h-48 md:w-96 md:h-60 border-2 border-shadow rounded-xl shadow-card p-5 md:p-8 bg-secondary gap-3 group">
           <h2 className="text-2xl text-left font-bold">Inclusivity</h2>
 
           <p className="text-lg text-left">
@@ -44,7 +44,7 @@ export default function AllAbout() {
           />
         </div>
 
-        <div className="box relative flex flex-col w-96 h-60 border-2 border-shadow rounded-xl shadow-card p-8 bg-secondary gap-3 group">
+        <div className="relative flex flex-col w-60 h-48 md:w-96 md:h-60 border-2 border-shadow rounded-xl shadow-card p-5 md:p-8 bg-secondary gap-3 group">
           <h2 className="text-2xl text-left font-bold">Impactful projects</h2>
 
           <p className="text-lg text-left">
