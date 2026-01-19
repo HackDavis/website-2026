@@ -1,4 +1,4 @@
-import AllAbout from "./_components/AllAbout/AllAbout";
+import AllAbout from './_components/AllAbout/AllAbout';
 
 export default function AboutUs() {
   return (
