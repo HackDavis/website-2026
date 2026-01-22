@@ -14,6 +14,7 @@ enum Type {
 
 function Pictures({ path, alt, type, order }: { path: string, alt: string, type: Type, order: number }) {
     //let shape;
+    if (order > 5) return null;
     let frame;
     let picture;
 
