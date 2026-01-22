@@ -21,12 +21,11 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
       ? imageUrl
       : '/Images/placeholder.jpg';
 
-  // ✅ truly random tilt
   const tilt = Math.random() * 12 - 6;
 
   return (
     <div className="w-fit bg-white">
-      <a href={linkedinURL} target="_blank">
+      <a href={linkedinURL} target="_blank" className="group">
         <div
           style={{ transform: `rotate(${tilt}deg)` }}
           className="
@@ -37,8 +36,6 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
             p-3 pb-6
             transition-transform transition-shadow
             duration-200
-            group-hover:-translate-y-1
-            group-hover:shadow-xl
             shadow-[6px_6px_0px_var(--polaroid-shadow)]
           "
         >
@@ -48,10 +45,9 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
 
             {/* hover overlay */}
             <div className="absolute inset-0 flex items-center justify-center bg-black/35 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-              <div className="rounded-full bg-black/45 p-3">
-                <FaLinkedin className="text-white text-5xl" />
-              </div>
+              <FaLinkedin className="text-white text-5xl" />
             </div>
+
           </div>
 
           {/* caption */}
