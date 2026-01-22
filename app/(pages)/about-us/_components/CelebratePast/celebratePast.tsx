@@ -106,8 +106,10 @@ function Pictures({ path, alt, type, order }: { path: string, alt: string, type:
                 {frame}
             </div>
         );
-    }
-    return shape;
+    }*/
+
+    
+    return frame;
 }
 
 export default function CelebratePast() {
