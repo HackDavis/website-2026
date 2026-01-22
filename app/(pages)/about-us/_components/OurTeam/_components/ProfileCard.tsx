@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { FaLinkedin } from 'react-icons/fa';
+import { useMemo } from 'react';
 
 interface ProfileCardProps {
   name: string;
@@ -21,45 +22,55 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
       ? imageUrl
       : '/Images/placeholder.jpg';
 
-  const tilt = Math.random() * 12 - 6;
+  // stable random tilt (does not reroll on re-render)
+  const tilt = useMemo(() => Math.random() * 10 - 5, []);
 
   return (
-    <div className="w-fit bg-white">
-      <a href={linkedinURL} target="_blank" className="group">
-        <div
-          style={{ transform: `rotate(${tilt}deg)` }}
-          className="
-            relative
-            rounded-md
-            border-[3px] border-[#A6BFC7]
-            bg-[var(--polaroid-fill)]
-            p-3 pb-6
-            transition-transform transition-shadow
-            duration-200
-            shadow-[6px_6px_0px_var(--polaroid-shadow)]
-          "
-        >
-          {/* photo */}
-          <div className="relative w-[170px] h-[200px] object-cover overflow-hidden rounded-sm bg-white">
-            <Image src={src} alt={name} fill className="object-cover" />
+    <a
+      href={linkedinURL}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`Open ${name}'s LinkedIn`}
+      className="group block w-full max-w-[240px] sm:max-w-[260px]"
+    >
+      <div
+        style={{ ['--tilt' as any]: `${tilt}deg` }}
+        className="
+          rounded-2xl
+          border-[3px] border-[#A6BFC7]
+          bg-[#E5EEF1]
+          p-2 sm:p-3
+          shadow-[6px_6px_0px_#A6BFC7]
+          transition-transform transition-shadow
+          duration-200
+          lg:[transform:rotate(var(--tilt))]
+        "
+      >
+        {/* photo */}
+        <div className="relative overflow-hidden rounded-xl bg-white aspect-[4/5] w-full">
+          <Image
+            src={src}
+            alt={name}
+            fill
+            className="object-cover"
+            sizes="(max-width: 640px) 70vw, (max-width: 1024px) 35vw, 260px"
+          />
 
-            {/* hover overlay */}
-            <div className="absolute inset-0 flex items-center justify-center bg-black/35 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-              <FaLinkedin className="text-white text-5xl" />
-            </div>
-
-          </div>
-
-          {/* caption */}
-          <div className="mt-4">
-            <h3 className="text-xl font-bold leading-tight text-black">
-              {name}
-            </h3>
-            <p className="mt-1 text-sm text-black">{title}</p>
+          {/* LinkedIn hover */}
+          <div className="absolute inset-0 flex items-center justify-center bg-black/35 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+            <FaLinkedin className="text-white text-4xl" />
           </div>
         </div>
-      </a>
-    </div>
+
+        {/* text */}
+        <div className="mt-2 sm:mt-3">
+          <h3 className="text-sm sm:text-base font-extrabold leading-tight text-black">
+            {name}
+          </h3>
+          <p className="mt-0.5 text-xs sm:text-sm text-black/80">{title}</p>
+        </div>
+      </div>
+    </a>
   );
 };
 
