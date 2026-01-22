@@ -157,7 +157,7 @@ export default function CelebratePast() {
             <div className="relative w-[300px] h-[600px] flex items-center justify-center">
                 {images.map((image, index) => (
                     <Pictures
-                        key={image.path}
+                        key={`${image.path}-${index}`}
                         path={image.path}
                         alt={image.alt}
                         type={image.type}
