@@ -13,7 +13,7 @@ enum Type {
 }
 
 function Pictures({ path, alt, type, order }: { path: string, alt: string, type: Type, order: number }) {
-    let shape;
+    //let shape;
     let frame;
     let picture;
 
@@ -37,11 +37,13 @@ function Pictures({ path, alt, type, order }: { path: string, alt: string, type:
         );
     } else {
         picture = (
-            <p>ERROR: Unknown type of Image</p>
+            <div className="relative w-[250px] h-[250px] bg-red-500 overflow-hidden">
+                <Image src={path} alt={alt} fill className="object-cover" />
+            </div>
         );
     }
 
-    if (order === 1) {
+    /*if (order === 1) {
         frame = (
             <div className="absolute inset-0 flex justify-center items-center p-2 pb-[40px] bg-[#DCE3EA]">
                 {picture}
@@ -65,15 +67,21 @@ function Pictures({ path, alt, type, order }: { path: string, alt: string, type:
                 {picture}
             </div>
         );
-    } else {
+    } else if (order === 5) {
         frame = (
             <div className="absolute inset-0 flex justify-center items-center p-2 pb-[40px] bg-[#BDC7D0]">
                 {picture}
             </div>
         );
-    }
+    }*/
 
-    if (type === Type.Square) {
+    frame = (
+        <div className={`absolute flex justify-center items-center p-2 pb-[40px] ${order === 1 ? "animate-picture1 bg-[#DCE3EA]" : order === 2 ? "animate-picture2 bg-[#BDC7D0]" : order === 3 ? "animate-picture3 bg-[#BDC7D0]" : order === 4 ? "animate-picture4 bg-[#BDC7D0]" : order === 5 ? "animate-picture5 bg-[#BDC7D0]" : ""}`}>
+            {picture}
+        </div>
+    );
+
+    /*if (type === Type.Square) {
         shape = (
             <div className={`absolute w-[265px] h-[300px] ${order === 1 ? "animate-picture1" : order === 2 ? "animate-picture2" : order === 3 ? "animate-picture3" : order === 4 ? "animate-picture4" : order === 5 ? "animate-picture5" : ""}`}>
                 {frame}
