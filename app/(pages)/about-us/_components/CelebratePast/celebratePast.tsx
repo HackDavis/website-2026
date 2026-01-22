@@ -122,14 +122,26 @@ export default function CelebratePast() {
     ]);
 
     useEffect(() => {
-        const interval = setInterval(() => {
+        let intervalId: NodeJS.Timeout | null = null;
+
+        const firstTimeout = setTimeout(() => {
             setImages(prev => {
                 const [first, ...rest] = prev;
                 return [...rest, first];
             });
-        }, 15000); //15 sec
 
-        return () => clearInterval(interval);
+            intervalId = setInterval(() => {
+                setImages(prev => {
+                    const [first, ...rest] = prev;
+                    return [...rest, first];
+                });
+            }, 10000); //10 sec
+        }, 9500); // shorter first interval
+
+        return () => {
+            clearTimeout(firstTimeout);
+            if (intervalId) clearInterval(intervalId);
+        };
     }, []);
     return (
         <div className="m-10 flex flex-col items-center bg-[#E5EEF1] place-content-center rounded-[20px] shadow-[8px_8px_0_0_#A6BFC7]">
