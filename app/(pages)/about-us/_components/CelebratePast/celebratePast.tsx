@@ -166,7 +166,7 @@ export default function CelebratePast() {
                 ))}
             </div>
             <button className="pl-[22px] pr-[22px] pt-[8px] pb-[8px] m-4 mb-[50px] rounded-full bg-[#123041] text-[#F9FBFC]">
-                <p className="text-[20px] italic font-jakarta">VIEW 2025 WINNERS</p>
+                <p className="text-[20px] font-jakarta">VIEW 2025 WINNERS</p>
             </button>
         </div>
     );
