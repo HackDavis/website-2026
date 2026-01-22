@@ -17,7 +17,9 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
   linkedinURL,
 }) => {
   const src =
-    imageUrl && imageUrl.trim().length > 0 ? imageUrl : '/Images/placeholder.jpg';
+    imageUrl && imageUrl.trim().length > 0
+      ? imageUrl
+      : '/Images/placeholder.jpg';
 
   // ✅ truly random tilt
   const tilt = Math.random() * 12 - 6;

@@ -30,7 +30,9 @@ export default function OurTeam() {
     'Design',
   ];
 
-  const [activeCategory, setActiveCategory] = useState<string>(categories[0] ?? 'All');
+  const [activeCategory, setActiveCategory] = useState<string>(
+    categories[0] ?? 'All'
+  );
 
   const filteredMembers = useMemo(() => {
     if (!activeCategory) return teamMembers;
