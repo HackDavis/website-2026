@@ -124,14 +124,14 @@ export default function CelebratePast() {
         <div className="m-10 flex flex-col items-center bg-[#E5EEF1] place-content-center rounded-[20px] shadow-[8px_8px_0_0_#A6BFC7]">
             <div className="m-10 flex flex-col items-center">
                 <div className="bg-red-150 m-2">
-                    <p className="text-[70px] text-[#123041] font-[var(--font-inter)]">Come Celebrate our past with us!</p>
+                    <p className="text-[70px] text-[#123041] font-bold font-montserrat">Come celebrate our past with us!</p>
                 </div>
                 <div className="bg-red-150">
-                    <p className="text-[23px] text-[#123041] font-[var(--font-montserrat)]">We truly could not have done any of this without you. Your support means the world!</p>
+                    <p className="text-[23px] text-[#123041] italic font-jakarta">We truly could not have done any of this without you. Your support means the world!</p>
                 </div>
             </div>
             {/** uhhh the pictures F1F3F8*/}
-            <div className="relative w-[300px] h-[300px] flex items-center justify-center">
+            <div className="relative w-[300px] h-[600px] flex items-center justify-center">
                 {images.map((image, index) => (
                     <Pictures
                         key={image.path}
@@ -142,8 +142,8 @@ export default function CelebratePast() {
                     />
                 ))}
             </div>
-            <button className="pl-[17px] pr-[17px] pt-[5px] pb-[5px] m-4 mb-[50px] rounded-full bg-[#123041] text-[#F9FBFC]">
-                VIEW 2025 WINNERS
+            <button className="pl-[22px] pr-[22px] pt-[8px] pb-[8px] m-4 mb-[50px] rounded-full bg-[#123041] text-[#F9FBFC]">
+                <p className="text-[20px] italic font-jakarta">VIEW 2025 WINNERS</p>
             </button>
         </div>
     );

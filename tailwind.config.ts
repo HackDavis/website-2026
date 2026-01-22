@@ -12,9 +12,14 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        inter: 'var(--font-inter)',
+        montserrat: 'var(--font-montserrat)',
+        jakarta: 'var(--font-jakarta)',
+      },
       keyframes: {
         picture1: {
-          '0%': { transform: 'translateY(0px)', zIndex: '5' },
+          '0%': { transform: 'translateY(25px)', zIndex: '5' },
           /*'1%': { transform: 'translateY(2px)', zIndex: '5' },
           '2%': { transform: 'translateY(7px)', zIndex: '5' },
           '3%': { transform: 'translateY(15px)', zIndex: '5' },
@@ -24,11 +29,11 @@ export default {
           '7%': { transform: 'translateY(88px)', zIndex: '5' },
           '8%': { transform: 'translateY(95px)', zIndex: '5' },
           '9%': { transform: 'translateY(98px)', zIndex: '5' },*/
-          '50%': { transform: 'translateY(0px)', zIndex: '5' },
-          '55%': { transform: 'translateY(100px)', zIndex: '5' },
-          '85%': { transform: 'translateY(100px)', zIndex: '5' },//here
-          '90%': { transform: 'translateY(400px)', zIndex: '0' },
-          '95%': { transform: 'translateY(-50px)', zIndex: '0' },
+          '50%': { transform: 'translateY(25px)', zIndex: '5' },
+          '55%': { transform: 'translateY(125px)', zIndex: '5' },
+          '85%': { transform: 'translateY(125px)', zIndex: '5' },//here
+          '90%': { transform: 'translateY(425px)', zIndex: '0' },
+          '95%': { transform: 'translateY(-25px)', zIndex: '0' },
           /*'91%': { transform: 'translateY(120px)', zIndex: '0' },
           '92%': { transform: 'translateY(105px)', zIndex: '0' },
           '93%': { transform: 'translateY(50px)', zIndex: '0' },
@@ -38,14 +43,14 @@ export default {
           '97%': { transform: 'translateY(-84px)', zIndex: '0' },
           '98%': { transform: 'translateY(-92px)', zIndex: '0' },
           '99%': { transform: 'translateY(-97px)', zIndex: '0' },*/
-          '100%': { transform: 'translateY(0px)', zIndex: '0' },
+          '100%': { transform: 'translateY(25px)', zIndex: '0' },
         },
         picture2: { // -15, -100, -40
-          '0%': { transform: 'translateX(-100px) translateY(-40px) rotate(-15deg)', zIndex: '4', backgroundColor: '#BDC7D0' },
-          '50%': { transform: 'translateX(-100px) translateY(-40px) rotate(-15deg)', zIndex: '4', backgroundColor: '#BDC7D0' },
-          '55%': { transform: 'translateX(-160px) translateY(-100px) rotate(-5deg)', zIndex: '4', backgroundColor: '#BDC7D0' },
-          '95%': { transform: 'translateX(-160px) translateY(-100px) rotate(-5deg)', zIndex: '4', backgroundColor: '#BDC7D0' },
-          '100%': { transform: 'translateX(0px) translateY(0px) rotate(0deg)', zIndex: '4', backgroundColor: '#DCE3EA' },
+          '0%': { transform: 'translateX(-100px) translateY(-15px) rotate(-15deg)', zIndex: '4', backgroundColor: '#BDC7D0' },
+          '50%': { transform: 'translateX(-100px) translateY(-15px) rotate(-15deg)', zIndex: '4', backgroundColor: '#BDC7D0' },
+          '55%': { transform: 'translateX(-160px) translateY(-75px) rotate(-5deg)', zIndex: '4', backgroundColor: '#BDC7D0' },
+          '95%': { transform: 'translateX(-160px) translateY(-75px) rotate(-5deg)', zIndex: '4', backgroundColor: '#BDC7D0' },
+          '100%': { transform: 'translateX(0px) translateY(25px) rotate(0deg)', zIndex: '4', backgroundColor: '#DCE3EA' },
         },
         /*picture2: {
           '0%': { transform: 'translateY(0px) translateX(0px)', zIndex: '4' }, //rotate-[345deg] translate-x-[-100px] translate-y-[-40px]
@@ -56,23 +61,23 @@ export default {
           '100%': { transform: 'rotate(15deg) translateX(100px) translateY(40px)', zIndex: '5' },
         },*/
         picture3: { // 5, 0, -100
-          '0%': { transform: 'translateX(20px) translateY(-100px) rotate(10deg)', zIndex: '3' },
-          '50%': { transform: 'translateX(20px) translateY(-100px) rotate(10deg)', zIndex: '3' },
-          '55%': { transform: 'translateX(20px) translateY(-190px) rotate(3deg)', zIndex: '3' },
-          '95%': { transform: 'translateX(20px) translateY(-190px) rotate(3deg)', zIndex: '3' },
-          '100%': { transform: 'translateX(-100px) translateY(-40px) rotate(-15deg)', zIndex: '3' },
+          '0%': { transform: 'translateX(20px) translateY(-75px) rotate(10deg)', zIndex: '3' },
+          '50%': { transform: 'translateX(20px) translateY(-75px) rotate(10deg)', zIndex: '3' },
+          '55%': { transform: 'translateX(20px) translateY(-165px) rotate(3deg)', zIndex: '3' },
+          '95%': { transform: 'translateX(20px) translateY(-165px) rotate(3deg)', zIndex: '3' },
+          '100%': { transform: 'translateX(-100px) translateY(-15px) rotate(-15deg)', zIndex: '3' },
         },
         picture4: { // -20, 100, -30
-          '0%': { transform: 'translateX(100px) translateY(-30px) rotate(20deg)', zIndex: '2' },
-          '50%': { transform: 'translateX(100px) translateY(-30px) rotate(20deg)', zIndex: '2' },
-          '55%': { transform: 'translateX(150px) translateY(-80px) rotate(10deg)', zIndex: '2' },
-          '95%': { transform: 'translateX(150px) translateY(-80px) rotate(10deg)', zIndex: '2' },
-          '100%': { transform: 'translateX(20px) translateY(-100px) rotate(10deg)', zIndex: '2' },
+          '0%': { transform: 'translateX(100px) translateY(-5px) rotate(20deg)', zIndex: '2' },
+          '50%': { transform: 'translateX(100px) translateY(-5px) rotate(20deg)', zIndex: '2' },
+          '55%': { transform: 'translateX(150px) translateY(-55px) rotate(10deg)', zIndex: '2' },
+          '95%': { transform: 'translateX(150px) translateY(-55px) rotate(10deg)', zIndex: '2' },
+          '100%': { transform: 'translateX(20px) translateY(-75px) rotate(10deg)', zIndex: '2' },
         },
         picture5: { // 0, 0, -50 applies from left to right
-          '0%': { transform: 'translateX(0px) translateY(0px) rotate(0deg)', zIndex: '1' },
-          '95%': { transform: 'translateX(0px) translateY(0px) rotate(0deg)', zIndex: '1' },
-          '100%': { transform: 'translateX(100px) translateY(-30px) rotate(20deg)', zIndex: '1' },
+          '0%': { transform: 'translateX(0px) translateY(25px) rotate(0deg)', zIndex: '1' },
+          '95%': { transform: 'translateX(0px) translateY(25px) rotate(0deg)', zIndex: '1' },
+          '100%': { transform: 'translateX(100px) translateY(-5px) rotate(20deg)', zIndex: '1' },
         },
       },
       animation: {
