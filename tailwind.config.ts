@@ -1,16 +1,16 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
 
 export default {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
       },
       fontFamily: {
         inter: 'var(--font-inter)',
@@ -18,31 +18,13 @@ export default {
         jakarta: 'var(--font-jakarta)',
       },
       keyframes: {
-        picture1: {
+        /*picture1: { //ORIGINALLL
           '0%': { transform: 'translateY(25px)', zIndex: '5' },
-          /*'1%': { transform: 'translateY(2px)', zIndex: '5' },
-          '2%': { transform: 'translateY(7px)', zIndex: '5' },
-          '3%': { transform: 'translateY(15px)', zIndex: '5' },
-          '4%': { transform: 'translateY(30px)', zIndex: '5' },
-          '5%': { transform: 'translateY(60px)', zIndex: '5' },
-          '6%': { transform: 'translateY(75px)', zIndex: '5' },
-          '7%': { transform: 'translateY(88px)', zIndex: '5' },
-          '8%': { transform: 'translateY(95px)', zIndex: '5' },
-          '9%': { transform: 'translateY(98px)', zIndex: '5' },*/
           '50%': { transform: 'translateY(25px)', zIndex: '5' },
           '55%': { transform: 'translateY(125px)', zIndex: '5' },
           '85%': { transform: 'translateY(125px)', zIndex: '5' },//here
           '90%': { transform: 'translateY(425px)', zIndex: '0' },
           '95%': { transform: 'translateY(-25px)', zIndex: '0' },
-          /*'91%': { transform: 'translateY(120px)', zIndex: '0' },
-          '92%': { transform: 'translateY(105px)', zIndex: '0' },
-          '93%': { transform: 'translateY(50px)', zIndex: '0' },
-          '94%': { transform: 'translateY(-5px)', zIndex: '0' }
-          '95%': { transform: 'translateY(-20px)', zIndex: '0' }, LMAOOO I DIDNT NEED THIS
-          '96%': { transform: 'translateY(-69px)', zIndex: '0' }, //heh
-          '97%': { transform: 'translateY(-84px)', zIndex: '0' },
-          '98%': { transform: 'translateY(-92px)', zIndex: '0' },
-          '99%': { transform: 'translateY(-97px)', zIndex: '0' },*/
           '100%': { transform: 'translateY(25px)', zIndex: '0' },
         },
         picture2: { // -15, -100, -40
@@ -52,14 +34,6 @@ export default {
           '95%': { transform: 'translateX(-160px) translateY(-75px) rotate(-5deg)', zIndex: '4', backgroundColor: '#BDC7D0' },
           '100%': { transform: 'translateX(0px) translateY(25px) rotate(0deg)', zIndex: '4', backgroundColor: '#DCE3EA' },
         },
-        /*picture2: {
-          '0%': { transform: 'translateY(0px) translateX(0px)', zIndex: '4' }, //rotate-[345deg] translate-x-[-100px] translate-y-[-40px]
-          '50%': { transform: 'translateY(0px) translateX(0px)', zIndex: '4' }, // CHNAGE BACKGROUND IMG
-          '60%': { transform: 'rotate(-10deg) translateX(-50px) translateY(-70px)', zIndex: '4' },
-          '90%': { transform: 'rotate(-10deg) translateX(-50px) translateY(-70px)', zIndex: '4' },
-          '95%': { transform: 'rotate(-5deg) translateX(-150px) translateY(-140px)', zIndex: '5' },
-          '100%': { transform: 'rotate(15deg) translateX(100px) translateY(40px)', zIndex: '5' },
-        },*/
         picture3: { // 5, 0, -100
           '0%': { transform: 'translateX(20px) translateY(-75px) rotate(10deg)', zIndex: '3' },
           '50%': { transform: 'translateX(20px) translateY(-75px) rotate(10deg)', zIndex: '3' },
@@ -78,14 +52,175 @@ export default {
           '0%': { transform: 'translateX(0px) translateY(25px) rotate(0deg)', zIndex: '1' },
           '95%': { transform: 'translateX(0px) translateY(25px) rotate(0deg)', zIndex: '1' },
           '100%': { transform: 'translateX(100px) translateY(-5px) rotate(20deg)', zIndex: '1' },
+        },*/
+        picture1: {
+          // picture 1 position
+          '0%': {
+            transform: 'translateY(25px)',
+            zIndex: '5',
+          },
+          // picture 1 position
+          '50%': {
+            transform: 'translateY(25px)',
+            zIndex: '5',
+          },
+          // spread position
+          '55%': {
+            transform: 'translateY(125px)',
+            zIndex: '5',
+          },
+          // spread position
+          '82%': {
+            transform: 'translateY(125px)',
+            zIndex: '5',
+          },
+          // anticipation position
+          '85.9%': {
+            transform: 'translateY(425px)',
+            zIndex: '5',
+          },
+          // anticipation position
+          '86%': {
+            transform: 'translateY(425px)',
+            zIndex: '0',
+          },
+          // picture 5 poistion
+          '91%': {
+            transform: 'translateY(25px)',
+            zIndex: '0',
+          },
+          // picture 5 poistion
+          '100%': {
+            transform: 'translateY(25px)',
+            zIndex: '0',
+          },
+        },
+        picture2: {
+          // picture 2 position
+          '0%': {
+            transform: 'translateX(-100px) translateY(-15px) rotate(-15deg)',
+            zIndex: '4',
+            backgroundColor: '#BDC7D0',
+          },
+          // picture 2 position
+          '50%': {
+            transform: 'translateX(-100px) translateY(-15px) rotate(-15deg)',
+            zIndex: '4',
+            backgroundColor: '#BDC7D0',
+          },
+          // spread position
+          '55%': {
+            transform: 'translateX(-170px) translateY(-75px) rotate(-5deg)',
+            zIndex: '4',
+            backgroundColor: '#BDC7D0',
+          },
+          // spread position
+          '90%': {
+            transform: 'translateX(-170px) translateY(-75px) rotate(-5deg)',
+            zIndex: '4',
+            backgroundColor: '#BDC7D0',
+          },
+          // picture 1 position
+          '95%': {
+            transform: 'translateX(0px) translateY(25px) rotate(0deg)',
+            zIndex: '4',
+            backgroundColor: '#DCE3EA',
+          },
+          // picture 1 position
+          '100%': {
+            transform: 'translateX(0px) translateY(25px) rotate(0deg)',
+            zIndex: '4',
+            backgroundColor: '#DCE3EA',
+          },
+        },
+        picture3: {
+          // picture 3 position
+          '0%': {
+            transform: 'translateX(20px) translateY(-75px) rotate(10deg)',
+            zIndex: '3',
+          },
+          // picture 3 position
+          '50%': {
+            transform: 'translateX(20px) translateY(-75px) rotate(10deg)',
+            zIndex: '3',
+          },
+          // spread position
+          '55%': {
+            transform: 'translateX(20px) translateY(-165px) rotate(3deg)',
+            zIndex: '3',
+          },
+          // spread position
+          '92%': {
+            transform: 'translateX(20px) translateY(-165px) rotate(3deg)',
+            zIndex: '3',
+          },
+          // picture 2 position
+          '97%': {
+            transform: 'translateX(-100px) translateY(-15px) rotate(-15deg)',
+            zIndex: '3',
+          },
+          // picture 2 position
+          '100%': {
+            transform: 'translateX(-100px) translateY(-15px) rotate(-15deg)',
+            zIndex: '3',
+          },
+        },
+        picture4: {
+          // picture 4 position
+          '0%': {
+            transform: 'translateX(100px) translateY(-5px) rotate(20deg)',
+            zIndex: '2',
+          },
+          // picture 4 position
+          '50%': {
+            transform: 'translateX(100px) translateY(-5px) rotate(20deg)',
+            zIndex: '2',
+          },
+          // spread position
+          '55%': {
+            transform: 'translateX(160px) translateY(-55px) rotate(10deg)',
+            zIndex: '2',
+          },
+          // spread position
+          '93%': {
+            transform: 'translateX(160px) translateY(-55px) rotate(10deg)',
+            zIndex: '2',
+          },
+          // picture 3 position
+          '98%': {
+            transform: 'translateX(20px) translateY(-75px) rotate(10deg)',
+            zIndex: '2',
+          },
+          // picture 3 position
+          '100%': {
+            transform: 'translateX(20px) translateY(-75px) rotate(10deg)',
+            zIndex: '2',
+          },
+        },
+        picture5: {
+          // picture 5 position
+          '0%': {
+            transform: 'translateX(0px) translateY(25px) rotate(0deg)',
+            zIndex: '1',
+          },
+          // picture 5 position
+          '95%': {
+            transform: 'translateX(0px) translateY(25px) rotate(0deg)',
+            zIndex: '1',
+          },
+          // picture 4 position
+          '100%': {
+            transform: 'translateX(100px) translateY(-5px) rotate(20deg)',
+            zIndex: '1',
+          },
         },
       },
       animation: {
-        picture1: 'picture1 15000ms infinite',
-        picture2: 'picture2 15000ms infinite',
-        picture3: 'picture3 15000ms infinite',
-        picture4: 'picture4 15000ms infinite',
-        picture5: 'picture5 15000ms infinite',
+        picture1: 'picture1 10000ms infinite',
+        picture2: 'picture2 10000ms infinite',
+        picture3: 'picture3 10000ms infinite',
+        picture4: 'picture4 10000ms infinite',
+        picture5: 'picture5 10000ms infinite',
       },
     },
   },
