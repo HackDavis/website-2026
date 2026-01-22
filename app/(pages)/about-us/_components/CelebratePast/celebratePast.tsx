@@ -13,8 +13,6 @@ enum Type {
 }
 
 function Pictures({ path, alt, type, order }: { path: string, alt: string, type: Type, order: number }) {
-    const newOrder = 4 - order; //100 is length of the images
-
     let shape;
     let frame;
     let picture;
@@ -43,33 +41,33 @@ function Pictures({ path, alt, type, order }: { path: string, alt: string, type:
         );
     }
 
-    if (newOrder === 1) {
+    if (order === 1) {
         frame = (
-            <div className="rotate-[0deg] absolute inset-0 flex justify-center items-center p-2 pb-[40px] bg-[#DCE3EA]">
+            <div className="absolute inset-0 flex justify-center items-center p-2 pb-[40px] bg-[#DCE3EA]">
                 {picture}
             </div>
         );
-    } else if (newOrder === 2) {
+    } else if (order === 2) {
         frame = (
-            <div className="rotate-[345deg] translate-x-[-100px] translate-y-[-40px] absolute inset-0 flex justify-center items-center p-2 pb-[40px] bg-[#BDC7D0]">
+            <div className="absolute inset-0 flex justify-center items-center p-2 pb-[40px]">
                 {picture}
             </div>
         );
-    } else if (newOrder === 3) {
+    } else if (order === 3) {
         frame = (
-            <div className="rotate-[-5deg] translate-y-[-100px] absolute inset-0 flex justify-center items-center p-2 pb-[40px] bg-[#BDC7D0]">
+            <div className="absolute inset-0 flex justify-center items-center p-2 pb-[40px] bg-[#BDC7D0]">
                 {picture}
             </div>
         );
-    } else if (newOrder === 4) {
+    } else if (order === 4) {
         frame = (
-            <div className="rotate-[20deg] translate-x-[100px] translate-y-[-30px] absolute inset-0 flex justify-center items-center p-2 pb-[40px] bg-[#BDC7D0]">
+            <div className="absolute inset-0 flex justify-center items-center p-2 pb-[40px] bg-[#BDC7D0]">
                 {picture}
             </div>
         );
     } else {
         frame = (
-            <div className="rotate-[0deg] absolute inset-0 flex justify-center items-center p-2 pb-[40px] bg-[#BDC7D0]">
+            <div className="absolute inset-0 flex justify-center items-center p-2 pb-[40px] bg-[#BDC7D0]">
                 {picture}
             </div>
         );
@@ -77,25 +75,25 @@ function Pictures({ path, alt, type, order }: { path: string, alt: string, type:
 
     if (type === Type.Square) {
         shape = (
-            <div className="absolute w-[265px] h-[300px] animate-enter1">
+            <div className={`absolute w-[265px] h-[300px] ${order === 1 ? "animate-picture1" : order === 2 ? "animate-picture2" : order === 3 ? "animate-picture3" : order === 4 ? "animate-picture4" : order === 5 ? "animate-picture5" : ""}`}>
                 {frame}
             </div>
         );
     } else if (type === Type.Long) {
         shape = (
-            <div className="absolute w-[215px] h-[350px] animate-enter1">
+            <div className={`absolute w-[215px] h-[350px] ${order === 1 ? "animate-picture1" : order === 2 ? "animate-picture2" : order === 3 ? "animate-picture3" : order === 4 ? "animate-picture4" : order === 5 ? "animate-picture5" : ""}`}>
                 {frame}
             </div>
         );
     } else if (type === Type.Wide) {
         shape = (
-            <div className="absolute w-[315px] h-[250px] animate-enter1">
+            <div className={`absolute w-[315px] h-[250px] ${order === 1 ? "animate-picture1" : order === 2 ? "animate-picture2" : order === 3 ? "animate-picture3" : order === 4 ? "animate-picture4" : order === 5 ? "animate-picture5" : ""}`}>
                 {frame}
             </div>
         );
     } else {
         shape = (
-            <div className="absolute w-[315px] h-[350px] animate-enter1">
+            <div className={`absolute w-[315px] h-[350px] ${order === 1 ? "animate-picture1" : order === 2 ? "animate-picture2" : order === 3 ? "animate-picture3" : order === 4 ? "animate-picture4" : order === 5 ? "animate-picture5" : ""}`}>
                 {frame}
             </div>
         );
@@ -104,47 +102,43 @@ function Pictures({ path, alt, type, order }: { path: string, alt: string, type:
 }
 
 export default function CelebratePast() {
-    const [images, setImages] = useState([
-        { path: "/placeholder.jpg", alt: "among us", type: Type.Square, order: 1 },
-        { path: "/anotherplaceholder.png", alt: "among us!!!", type: Type.Long, order: 2 },
-        { path: "/clouds.jpg", alt: "among us!!!", type: Type.Wide, order: 3 },
-        { path: "/realclouds.jpg", alt: "among us!!!", type: Type.Wide, order: 4 },
+    const [images, setImages] = useState([ //NO DUPLICATE PATHS PLEASEEEEEEEEEEEEEE
+        { path: "/placeholder.jpg", alt: "among us", type: Type.Square },
+        { path: "/anotherplaceholder.png", alt: "among us!!!", type: Type.Square },
+        { path: "/clouds.jpg", alt: "among us!!!", type: Type.Square },
+        { path: "/realclouds.jpg", alt: "among us!!!", type: Type.Square },
+        { path: "/frog.png", alt: "among us!!!", type: Type.Square },
     ]);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setImages(prevImages => {
-                return prevImages.map(img => ({
-                    ...img,
-                    order: (img.order + 1) % prevImages.length,
-                }));
+            setImages(prev => {
+                const [first, ...rest] = prev;
+                return [...rest, first];
             });
-        }, 10000); //10sec
+        }, 15000); //15 sec
 
-        return () => clearInterval(interval); //E5EEF1 var(--text-extra-dark)
+        return () => clearInterval(interval);
     }, []);
-
-    const sortedImages = images;
-    sortedImages.sort((a, b) => a.order - b.order);
     return (
         <div className="m-10 flex flex-col items-center bg-[#E5EEF1] place-content-center rounded-[20px] shadow-[8px_8px_0_0_#A6BFC7]">
             <div className="m-10 flex flex-col items-center">
                 <div className="bg-red-150 m-2">
-                    <p className="text-[70px] text-[#123041]">Come Celebrate our past with us!</p>
+                    <p className="text-[70px] text-[#123041] font-[var(--font-inter)]">Come Celebrate our past with us!</p>
                 </div>
                 <div className="bg-red-150">
-                    <p className="text-[23px] text-[#123041]">We truly could not have done any of this without you. Your support means the world!</p>
+                    <p className="text-[23px] text-[#123041] font-[var(--font-montserrat)]">We truly could not have done any of this without you. Your support means the world!</p>
                 </div>
             </div>
             {/** uhhh the pictures F1F3F8*/}
-            <div className="relative w-[300px] h-[300px] flex items-center justify-center"> 
-                {sortedImages.map((image) => (
+            <div className="relative w-[300px] h-[300px] flex items-center justify-center">
+                {images.map((image, index) => (
                     <Pictures
                         key={image.path}
                         path={image.path}
                         alt={image.alt}
                         type={image.type}
-                        order={image.order}
+                        order={index + 1}
                     />
                 ))}
             </div>
