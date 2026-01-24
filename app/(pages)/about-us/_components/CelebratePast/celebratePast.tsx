@@ -144,7 +144,7 @@ export default function CelebratePast() {
         };
     }, []);
     return (
-        <div className="m-10 flex flex-col items-center bg-[#E5EEF1] place-content-center rounded-[20px] shadow-[8px_8px_0_0_#A6BFC7]">
+        <div className="m-10 flex flex-col items-center bg-[#E5EEF1] place-content-center rounded-[50px] shadow-[8px_8px_0_0_#A6BFC7]">
             <div className="m-10 flex flex-col items-center">
                 <div className="bg-red-150 m-2">
                     <p className="text-[70px] text-[#123041] font-bold font-montserrat">Come celebrate our past with us!</p>
