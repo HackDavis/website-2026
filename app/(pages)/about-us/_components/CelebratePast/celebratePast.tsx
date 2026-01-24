@@ -18,63 +18,12 @@ function Pictures({ path, alt, type, order }: { path: string, alt: string, type:
     let frame;
     let picture;
 
-    if (type === Type.Square) {
-        picture = (
-            <div className="relative w-[250px] h-[250px] bg-red-500 overflow-hidden">
-                <Image src={path} alt={alt} fill className="object-cover" />
-            </div>
-        );
-    } else if (type === Type.Long) {
-        picture = (
-            <div className="relative w-[200px] h-[300px] bg-red-500 overflow-hidden">
-                <Image src={path} alt={alt} fill className="object-cover" />
-            </div>
-        );
-    } else if (type === Type.Wide) {
-        picture = (
-            <div className="relative w-[300px] h-[200px] bg-red-500 overflow-hidden">
-                <Image src={path} alt={alt} fill className="object-cover" />
-            </div>
-        );
-    } else {
-        picture = (
-            <div className="relative w-[250px] h-[250px] bg-red-500 overflow-hidden">
-                <Image src={path} alt={alt} fill className="object-cover" />
-            </div>
-        );
-    }
+    picture = (
+        <div className="relative w-[250px] h-[250px] bg-red-500 overflow-hidden">
+            <Image src={path} alt={alt} fill className="object-cover" />
+        </div>
+    );
 
-    /*if (order === 1) {
-        frame = (
-            <div className="absolute inset-0 flex justify-center items-center p-2 pb-[40px] bg-[#DCE3EA]">
-                {picture}
-            </div>
-        );
-    } else if (order === 2) {
-        frame = (
-            <div className="absolute inset-0 flex justify-center items-center p-2 pb-[40px]">
-                {picture}
-            </div>
-        );
-    } else if (order === 3) {
-        frame = (
-            <div className="absolute inset-0 flex justify-center items-center p-2 pb-[40px] bg-[#BDC7D0]">
-                {picture}
-            </div>
-        );
-    } else if (order === 4) {
-        frame = (
-            <div className="absolute inset-0 flex justify-center items-center p-2 pb-[40px] bg-[#BDC7D0]">
-                {picture}
-            </div>
-        );
-    } else if (order === 5) {
-        frame = (
-            <div className="absolute inset-0 flex justify-center items-center p-2 pb-[40px] bg-[#BDC7D0]">
-                {picture}
-            </div>
-        );
-    }*/
 
     frame = (
         <div className={`absolute flex justify-center items-center p-2 pb-[40px] ${order === 1 ? "animate-picture1 bg-[#DCE3EA]" : order === 2 ? "animate-picture2 bg-[#BDC7D0]" : order === 3 ? "animate-picture3 bg-[#BDC7D0]" : order === 4 ? "animate-picture4 bg-[#BDC7D0]" : order === 5 ? "animate-picture5 bg-[#BDC7D0]" : ""}`}>
@@ -82,33 +31,7 @@ function Pictures({ path, alt, type, order }: { path: string, alt: string, type:
         </div>
     );
 
-    /*if (type === Type.Square) {
-        shape = (
-            <div className={`absolute w-[265px] h-[300px] ${order === 1 ? "animate-picture1" : order === 2 ? "animate-picture2" : order === 3 ? "animate-picture3" : order === 4 ? "animate-picture4" : order === 5 ? "animate-picture5" : ""}`}>
-                {frame}
-            </div>
-        );
-    } else if (type === Type.Long) {
-        shape = (
-            <div className={`absolute w-[215px] h-[350px] ${order === 1 ? "animate-picture1" : order === 2 ? "animate-picture2" : order === 3 ? "animate-picture3" : order === 4 ? "animate-picture4" : order === 5 ? "animate-picture5" : ""}`}>
-                {frame}
-            </div>
-        );
-    } else if (type === Type.Wide) {
-        shape = (
-            <div className={`absolute w-[315px] h-[250px] ${order === 1 ? "animate-picture1" : order === 2 ? "animate-picture2" : order === 3 ? "animate-picture3" : order === 4 ? "animate-picture4" : order === 5 ? "animate-picture5" : ""}`}>
-                {frame}
-            </div>
-        );
-    } else {
-        shape = (
-            <div className={`absolute w-[315px] h-[350px] ${order === 1 ? "animate-picture1" : order === 2 ? "animate-picture2" : order === 3 ? "animate-picture3" : order === 4 ? "animate-picture4" : order === 5 ? "animate-picture5" : ""}`}>
-                {frame}
-            </div>
-        );
-    }*/
 
-    
     return frame;
 }
 
@@ -121,16 +44,22 @@ export default function CelebratePast() {
         { path: "/frog.png", alt: "among us!!!", type: Type.Square },
     ]);
 
+
     useEffect(() => {
-        const intervalId = setInterval(() => {
-            setImages(prev => {
-                const [first, ...rest] = prev;
-                return [...rest, first];
-            });
-        }, 10000); //10 sec
+        const handleAnimationEnd = (e: AnimationEvent) => {
+            // Only trigger on first picture's animation completion
+            if (e.animationName === 'picture1') {
+                setImages(prev => {
+                    const [first, ...rest] = prev;
+                    return [...rest, first];
+                });
+            }
+        };
+
+        document.addEventListener('animationend', handleAnimationEnd);
 
         return () => {
-            clearInterval(intervalId);
+            document.removeEventListener('animationend', handleAnimationEnd);
         };
     }, []);
     return (
