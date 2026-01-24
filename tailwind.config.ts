@@ -70,22 +70,22 @@ export default {
             zIndex: '5',
           },
           // spread position
-          '82%': {
+          '80%': {
             transform: 'translateY(125px)',
             zIndex: '5',
           },
           // anticipation position
-          '85.9%': {
+          '83.9%': {
             transform: 'translateY(425px)',
             zIndex: '5',
           },
           // anticipation position
-          '86%': {
+          '84%': {
             transform: 'translateY(425px)',
             zIndex: '0',
           },
           // picture 5 poistion
-          '91%': {
+          '89%': {
             transform: 'translateY(25px)',
             zIndex: '0',
           },
