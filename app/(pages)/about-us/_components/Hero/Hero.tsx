@@ -26,7 +26,7 @@ export default function Hero() {
           alt="HD Cow"
           width={1000}
           height={1000}
-          className="absolute top-[53vw] left-[1%] z-30 w-[55vw] h-auto bob-slow md:top-[18vw] md:left-[6%] md:w-[42vw] lg:top-[14vw] lg:left-[8%] lg:w-[40vw]"
+          className="absolute top-[53vw] left-[1%] z-30 w-[55vw] h-auto animate-float-bob will-change-transform md:top-[18vw] md:left-[6%] md:w-[42vw] lg:top-[14vw] lg:left-[8%] lg:w-[40vw]"
         />
       </div>
       <div className=" z-40 hero-tight absolute top-[75vw] left-[50vw] text-white p-0 m-0 flex flex-col gap-0 md:top-[28vw] md:left-[50vw] lg:top-[21vw] lg:left-[52vw]">
@@ -58,7 +58,7 @@ export default function Hero() {
       </div>
       {/* <div>
         <div
-          className="bob-slow glass-bubble absolute z-30 top-[78vh] left-[70vw] text-white !w-[14vw] !h-[14vw] !p-0 !gap-0 rounded-full flex items-center justify-center text-[clamp(0.8rem,2vw,1.6rem)] leading-[1.02] text-center font-semibold md:top-[110vh] md:left-[66vw] md:!w-[9vw] md:!h-[9vw] lg:top-[118vh] lg:left-[68vw] lg:!w-[10vw] lg:!h-[10vw]"
+          className="animate-float-bob will-change-transform glass-bubble absolute z-30 top-[78vh] left-[70vw] text-white !w-[14vw] !h-[14vw] !p-0 !gap-0 rounded-full flex items-center justify-center text-[clamp(0.8rem,2vw,1.6rem)] leading-[1.02] text-center font-semibold md:top-[110vh] md:left-[66vw] md:!w-[9vw] md:!h-[9vw] lg:top-[118vh] lg:left-[68vw] lg:!w-[10vw] lg:!h-[10vw]"
           style={{
             ['--bubble-c1' as any]: '#50987C',
             ['--bubble-c2' as any]: '#49289D',
@@ -74,7 +74,7 @@ export default function Hero() {
         </div>
         <div className="block md:hidden">
           <div
-            className="bob-slow glass-bubble absolute z-30 top-[95vh] left-[45vw] text-white !w-[25vw] !h-[25vw] !p-0 !gap-0 rounded-full flex items-center justify-center text-[clamp(1rem,2.5vw,2rem)] leading-[1.02] text-center font-semibold"
+            className="animate-float-bob will-change-transform glass-bubble absolute z-30 top-[95vh] left-[45vw] text-white !w-[25vw] !h-[25vw] !p-0 !gap-0 rounded-full flex items-center justify-center text-[clamp(1rem,2.5vw,2rem)] leading-[1.02] text-center font-semibold"
             style={{
               ['--bubble-c1' as any]: 'rgba(82, 123, 186, 1)',
               ['--bubble-c2' as any]: 'rgba(83, 23, 118, 1)',
@@ -89,7 +89,7 @@ export default function Hero() {
         </div>
         <div className="hidden md:block">
           <div
-            className="bob-slow glass-bubble absolute z-10 top-[125vh] left-[46vw] text-white !w-[13vw] !h-[13vw] !p-0 !gap-0 rounded-full flex items-center justify-center text-[clamp(1rem,2.5vw,2rem)] leading-[1.02] text-center font-semibold lg:top-[143vh] lg:left-[50vw] lg:!w-[14vw] lg:!h-[14vw]"
+            className="animate-float-bob will-change-transform glass-bubble absolute z-10 top-[125vh] left-[46vw] text-white !w-[13vw] !h-[13vw] !p-0 !gap-0 rounded-full flex items-center justify-center text-[clamp(1rem,2.5vw,2rem)] leading-[1.02] text-center font-semibold lg:top-[143vh] lg:left-[50vw] lg:!w-[14vw] lg:!h-[14vw]"
             style={{
               ['--bubble-c1' as any]: 'rgba(72, 239, 169, 0.35)',
               ['--bubble-c2' as any]: 'rgba(88, 42, 228, 0.35)',
@@ -103,7 +103,7 @@ export default function Hero() {
           </div>
         </div>
         <div
-          className="bob-slow glass-bubble absolute z-30 top-[90vh] left-[78vw] text-white !w-[17vw] !h-[17vw] !p-0 !gap-0 rounded-full flex items-center justify-center text-[clamp(0.9rem,2.2vw,1.8rem)] leading-[1.02] text-center font-semibold md:top-[118vh] md:left-[72vw] md:!w-[12vw] md:!h-[12vw] lg:top-[140vh] lg:!w-[14vw] lg:!h-[14vw]"
+          className="animate-float-bob will-change-transform glass-bubble absolute z-30 top-[90vh] left-[78vw] text-white !w-[17vw] !h-[17vw] !p-0 !gap-0 rounded-full flex items-center justify-center text-[clamp(0.9rem,2.2vw,1.8rem)] leading-[1.02] text-center font-semibold md:top-[118vh] md:left-[72vw] md:!w-[12vw] md:!h-[12vw] lg:top-[140vh] lg:!w-[14vw] lg:!h-[14vw]"
           style={{
             ['--bubble-c1' as any]: 'rgba(82, 123, 186, 0.9)',
             ['--bubble-c2' as any]: 'rgba(83, 23, 118, 0.9)',
@@ -116,7 +116,7 @@ export default function Hero() {
           </span>
         </div>
         <div
-          className="bob-slow glass-bubble absolute z-30 top-[105vh] left-[7vw] text-white !w-[35vw] !h-[35vw] !p-0 !gap-0 rounded-full flex items-center justify-center text-[clamp(1.4rem,3.4vw,3rem)] leading-[1.02] text-center font-semibold md:top-[145vh] md:left-[28vw] md:!w-[18vw] md:!h-[18vw] lg:top-[170vh] lg:left-[35vw] lg:!w-[19vw] lg:!h-[19vw]"
+          className="animate-float-bob will-change-transform glass-bubble absolute z-30 top-[105vh] left-[7vw] text-white !w-[35vw] !h-[35vw] !p-0 !gap-0 rounded-full flex items-center justify-center text-[clamp(1.4rem,3.4vw,3rem)] leading-[1.02] text-center font-semibold md:top-[145vh] md:left-[28vw] md:!w-[18vw] md:!h-[18vw] lg:top-[170vh] lg:left-[35vw] lg:!w-[19vw] lg:!h-[19vw]"
           style={{
             ['--bubble-c1' as any]: '#49289D',
             ['--bubble-c2' as any]: '#451E60',
