@@ -1,10 +1,11 @@
-import AllAbout from './_components/AllAbout/AllAbout';
+import Hero from '@app/(pages)/about-us/_components/Hero/Hero';
+import Header from '@components/Header/Header';
 
 export default function AboutUs() {
   return (
-    <div>
-      <p>About Us</p>
-      <AllAbout />
+    <div className="relative">
+      <Header />
+      <Hero />
     </div>
   );
 }
