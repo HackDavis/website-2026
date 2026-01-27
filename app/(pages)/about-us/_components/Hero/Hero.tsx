@@ -2,11 +2,12 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <div className="relative isolate w-full min-h-[180vh] bg-white max-[375px]:min-h-[220vh] md:h-[210vh] lg:h-[225vh]">
+    <div className="relative isolate w-full pb-20 md:pb-5 bg-white">
       <div className="relative w-full">
         <div className="absolute inset-0 overflow-hidden z-0">
           <div className="absolute inset-0 bg-[linear-gradient(225deg,_#3E3A95_0%,_#24175F_8%,_#11043F_20%)] bg-[length:100%_100%] bg-[position:100%_0%] bg-no-repeat [clip-path:polygon(0_0,100%_0,100%_70%,0_95%)]" />
         </div>
+
         <Image
           src="/Images/hero/cloud_and_book.svg"
           alt="Cloud and Book"
@@ -29,7 +30,8 @@ export default function Hero() {
           className="absolute top-[53vw] left-[1%] z-30 w-[55vw] h-auto animate-float-bob will-change-transform md:top-[18vw] md:left-[6%] md:w-[42vw] lg:top-[14vw] lg:left-[8%] lg:w-[40vw]"
         />
       </div>
-      <div className=" z-40 hero-tight absolute top-[75vw] left-[50vw] text-white p-0 m-0 flex flex-col gap-0 md:top-[28vw] md:left-[50vw] lg:top-[21vw] lg:left-[52vw]">
+
+      <div className="z-40 hero-tight absolute top-[75vw] left-[50vw] text-white p-0 m-0 flex flex-col gap-0 md:top-[28vw] md:left-[50vw] lg:top-[21vw] lg:left-[52vw]">
         <h3 className="font-[var(--font-metropolis)] uppercase tracking-wider m-0 p-0 text-[clamp(0.9rem,3.5vw,1.2rem)] md:text-[clamp(1rem,2.6vw,1.8rem)] lg:text-[clamp(1rem,2.2vw,2rem)]">
           Hello, we're
         </h3>
@@ -40,7 +42,8 @@ export default function Hero() {
           2026
         </h3>
       </div>
-      <div className="absolute z-10 top-[125vw] left-[6%] w-[50vw] text-white sm:top-[60%] md:top-[65vw] md:left-[10%] md:w-[40vw] lg:top-[65vw] lg:left-[12%] lg:w-auto xl:top-[56%] 2xl:top-[60%]">
+
+      <div className="absolute z-10 top-[125vw] left-[6%] w-[50vw] text-white sm:top-[60%] md:top-[65vw] md:left-[10%] md:w-[40vw] lg:top-[60vw] lg:left-[12%] lg:w-auto xl:top-[50%] 2xl:top-[60%]">
         <div className="relative border border-white py-3 px-3 pr-4 md:py-[1.4vw] md:px-[1.2vw] md:pr-[2vw] lg:py-[2vw] lg:px-[1vw] lg:pr-[2vw]">
           <span className="absolute -top-2 -left-2 h-5 w-5 rounded-full border border-white bg-[#11043F]" />
           <span className="absolute -top-2 -right-2 h-5 w-5 rounded-full border border-white bg-[#11043F]" />
