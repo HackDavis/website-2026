@@ -43,8 +43,8 @@ export default function OurTeam() {
     [
       filterBase,
       active
-        ? 'bg-[var(--card-light-blue)] text-[var(--text-dark)]'
-        : 'bg-[var(--text-dark)] text-white border border-[var(--text-dark)] hover:bg-[var(--card-light-blue)]',
+        ? 'bg-[var(--card-light-blue)] text-[var(--text-dark)] font-bold'
+        : 'bg-[var(--text-dark)] text-white border border-[var(--text-dark)] hover:text-[var(--text-dark)] hover:bg-[var(--card-light-blue)]',
     ].join(' ');
 
   return (
