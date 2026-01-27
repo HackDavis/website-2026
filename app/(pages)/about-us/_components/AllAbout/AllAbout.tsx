@@ -2,15 +2,15 @@ import Image from 'next/image';
 
 export default function AllAbout() {
   return (
-    <div className="flex flex-col gap-6 md:pb-40">
-      <div className="flex ml-[13%] text-left">
+    <div className="flex flex-col gap-6 md:pb-40 border-8 border-blue-300">
+      <div className="flex ml-[15%] text-left">
         <h1 className="text-3xl md:text-5xl font-bold leading-none">
           What we're all about
         </h1>
       </div>
 
-      <div className="flex flex-col gap-8 md:flex-row md:justify-between px-[15%]">
-        <div className="relative flex flex-col w-60 h-48 md:w-96 md:h-60 border-2 border-shadow rounded-xl shadow-card p-5 md:p-8 bg-secondary gap-3 group">
+      <div className="grid gap-8 px-[15%] md:grid-cols-3 md:items-stretch">
+        <div className="relative flex flex-col h-full w-60 md:w-auto border-2 border-shadow rounded-xl shadow-card p-5 md:p-8 bg-secondary gap-3 group">
           <h2 className="relative text-lg md:text-2xl text-left md:text-left font-bold z-10">
             Hands-on Learning
           </h2>
@@ -21,7 +21,7 @@ export default function AllAbout() {
           </p>
 
           <Image
-            src="/Images/frog.svg"
+            src="/Images/allabout/frog.svg"
             alt="Frog mascot"
             width={110}
             height={144}
@@ -29,7 +29,7 @@ export default function AllAbout() {
           />
         </div>
 
-        <div className="relative flex flex-col w-60 h-48 md:w-96 md:h-60 border-2 border-shadow rounded-xl shadow-card p-5 ml-[20%] md:ml-0 md:p-8 bg-secondary gap-3 group">
+        <div className="relative flex flex-col h-full w-60 md:w-auto border-2 border-shadow rounded-xl shadow-card p-5 md:p-8 bg-secondary gap-3 group">
           <h2 className="relative text-lg md:text-2xl text-left md:text-left font-bold z-10">
             Inclusivity
           </h2>
@@ -40,7 +40,7 @@ export default function AllAbout() {
           </p>
 
           <Image
-            src="/Images/chicken.svg"
+            src="/Images/allabout/chicken.svg"
             alt="Frog mascot"
             width={110}
             height={144}
@@ -48,7 +48,7 @@ export default function AllAbout() {
           />
         </div>
 
-        <div className="relative flex flex-col w-60 h-48 md:w-96 md:h-60 border-2 border-shadow rounded-xl shadow-card p-5 md:p-8 bg-secondary gap-3 group">
+        <div className="relative flex flex-col h-full w-60 md:w-auto border-2 border-shadow rounded-xl shadow-card p-5 md:p-8 bg-secondary gap-3 group">
           <h2 className="relative text-lg md:text-2xl text-left md:text-left font-bold z-10">
             Impactful projects
           </h2>
@@ -59,7 +59,7 @@ export default function AllAbout() {
           </p>
 
           <Image
-            src="/Images/rabbit.svg"
+            src="/Images/allabout/rabbit.svg"
             alt="Frog mascot"
             width={110}
             height={144}

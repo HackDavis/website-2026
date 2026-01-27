@@ -63,6 +63,7 @@ export default function Header() {
             </Link>
           </div>
         </div>
+
         <Image
           src="/Images/header/mlh_badge.svg"
           alt="MLH Badge"
