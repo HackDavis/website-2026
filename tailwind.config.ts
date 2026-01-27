@@ -12,6 +12,11 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        secondary: "#E5EEF1",
+        shadow: "#A6BFC7",
+      },
+      boxShadow: {
+        card: "4px 4px 0 0 #A6BFC7",
       },
       keyframes: {
         "float-bob": {
