@@ -1,6 +1,6 @@
 export default function Directors() {
   return (
-    <section className="px-[6%] sm:px-[8%] lg:px-[10%] py-6 sm:py-8">
+    <section className="px-[10%] sm:px-[10%] lg:px-[10%] pt-28 sm:pt-16">
       <div className="max-w-4xl">
         <h1
           className="

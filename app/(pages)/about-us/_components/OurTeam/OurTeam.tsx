@@ -15,7 +15,7 @@ type TeamMember = {
 };
 
 const filterBase =
-  'px-5 py-2 rounded-full uppercase cursor-pointer whitespace-nowrap transition';
+  'px-4 py-2 sm:px-5 rounded-full uppercase cursor-pointer whitespace-nowrap transition';
 
 export default function OurTeam() {
   const teamMembers = teamMembersRaw as TeamMember[];
@@ -50,7 +50,7 @@ export default function OurTeam() {
   return (
     <section className="px-[10%] py-[1%]">
       {/* Tabs */}
-      <div className="mb-10 flex gap-4 overflow-x-auto pb-2">
+      <div className="mb-10 flex flex-wrap gap-3 justify-center sm:justify-start">
         {categories.map((cat) => (
           <button
             key={cat}
@@ -64,7 +64,7 @@ export default function OurTeam() {
       </div>
 
       {/* Cards */}
-      <div className="grid gap-8 grid-cols-3 md:grid-cols-3 sm:grid-cols-3 lg:grid-cols-4  xl:grid-cols-5 place-items-center">
+      <div className="grid gap-3 grid-cols-3 md:gap-8 md:grid-cols-3 sm:grid-cols-3 lg:grid-cols-4  xl:grid-cols-5 place-items-center">
         {filteredMembers.map((m) => (
           <ProfileCard
             key={`${m.name}-${m.year}`}

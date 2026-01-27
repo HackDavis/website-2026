@@ -37,10 +37,11 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
         style={{ ['--tilt' as any]: `${tilt}deg` }}
         className="
           rounded-2xl
-          border-[3px] border-[#A6BFC7]
+          border-[2px] sm:border-[3px] border-[#A6BFC7]
           bg-[#E5EEF1]
-          p-2 sm:p-3
-          shadow-[6px_6px_0px_#A6BFC7]
+          p-1.5 sm:p-3
+          shadow-[3px_3px_0px_#A6BFC7]
+          sm:shadow-[6px_6px_0px_#A6BFC7]
           transition-transform transition-shadow
           duration-200
           lg:[transform:rotate(var(--tilt))]
@@ -63,11 +64,11 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
         </div>
 
         {/* text */}
-        <div className="mt-2 sm:mt-3">
-          <h3 className="text-sm sm:text-base font-extrabold leading-tight text-black">
+        <div className="mt-1 sm:mt-3">
+          <h3 className="text-[10px] leading-tight sm:text-base font-extrabold text-black">
             {name}
           </h3>
-          <p className="mt-0.5 text-xs sm:text-sm text-black/80">{title}</p>
+          <p className="mt-0.5 text-[9px] sm:text-sm text-black/80">{title}</p>
         </div>
       </div>
     </a>
