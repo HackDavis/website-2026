@@ -25,7 +25,7 @@ export default function AllAbout() {
             alt="Frog mascot"
             width={110}
             height={144}
-            className="hidden lg:block absolute top-0 right-14 transition-all duration-1000 ease-out group-hover:scale-125 group-hover:translate-y-48 -z-10"
+            className="hidden lg:block absolute top-0 right-14 transition-all duration-700 ease-out group-hover:scale-125 group-hover:translate-y-48 -z-10"
           />
         </div>
 
@@ -44,7 +44,7 @@ export default function AllAbout() {
             alt="Chicken mascot"
             width={110}
             height={144}
-            className="hidden lg:block absolute top-2 right-14 transition-all duration-1000 ease-out group-hover:scale-125 group-hover:translate-y-48 -z-10"
+            className="hidden lg:block absolute top-2 right-14 transition-all duration-700 ease-out group-hover:scale-125 group-hover:translate-y-48 -z-10"
           />
         </div>
 
@@ -63,7 +63,7 @@ export default function AllAbout() {
             alt="Rabbit mascot"
             width={110}
             height={144}
-            className="hidden lg:block absolute top-4 right-14 transition-all duration-100 ease-out group-hover:scale-125 group-hover:translate-y-48 -z-10"
+            className="hidden lg:block absolute top-4 right-14 transition-all duration-700 ease-out group-hover:scale-125 group-hover:translate-y-48 -z-10"
           />
         </div>
       </div>
