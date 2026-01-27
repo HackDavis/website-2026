@@ -1,12 +1,11 @@
-import Directors from './_components/Directors/directors';
-import OurTeam from './_components/OurTeam/OurTeam';
+import Hero from '@app/(pages)/about-us/_components/Hero/Hero';
+import Header from '@components/Header/Header';
 
 export default function AboutUs() {
   return (
-    <div>
-      <p>About Us</p>
-      <Directors />
-      <OurTeam />
+    <div className="relative">
+      <Header />
+      <Hero />
     </div>
   );
 }
