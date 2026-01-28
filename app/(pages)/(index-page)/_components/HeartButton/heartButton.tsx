@@ -1,0 +1,58 @@
+'use client';
+
+import Link from 'next/link';
+import Image from 'next/image';
+
+export default function HeartButton({
+  text,
+  href,
+}: {
+  text: string;
+  href: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className="
+        group relative flex items-center overflow-hidden
+        w-full h-full rounded-full
+        text-[var(--text-light)] no-underline
+        transition-[background,flex-direction] duration-300
+        hover:flex-row-reverse
+        hover:bg-[var(--highlight-yellow)]
+        hover:text-[var(--background-dark)]
+      "
+    >
+      {/* static placeholder (hidden but preserves layout) */}
+      <div className="relative aspect-square h-full rounded-full invisible" />
+
+      {/* animated heart coin */}
+      <div
+        className="
+          absolute left-0 top-0 z-10
+          aspect-square h-full rounded-full
+          shadow-[0px_9px_75px_rgba(0,0,0,0.75)]
+          group-hover:animate-slide-right
+        "
+      >
+        <Image
+          src="/images/donate/button_heart_coin-cropped.svg"
+          alt="heart"
+          fill
+        />
+      </div>
+
+      <h4 className="w-full text-center font-bold transition-all">
+        {text}
+      </h4>
+
+      {/* overlay */}
+      <span
+        className="
+          pointer-events-none absolute inset-0
+          bg-[var(--background-light)] opacity-15
+        "
+      />
+    </Link>
+  );
+}
