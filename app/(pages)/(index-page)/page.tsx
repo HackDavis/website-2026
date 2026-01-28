@@ -1,7 +1,11 @@
+import HeroInfo from "./_components/heroInfo/heroInfo";
+
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center p-8 pb-20 gap-16 sm:p-20">
-      <p>Halo! Welcome to the HackDavis template repo :D</p>
+    <div className="border-8 border-blue-600 p-4 flex flex-end">
+      <div className="border-8 border-blue-600 flex-end">
+        <HeroInfo />
+      </div>
     </div>
   );
 }
