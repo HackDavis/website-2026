@@ -1,11 +1,12 @@
 import Hero from '@app/(pages)/about-us/_components/Hero/Hero';
 import Header from '@components/Header/Header';
+import Sponsers from './_components/Sponsers/Sponsers';
 
 export default function AboutUs() {
   return (
     <div className="relative">
       <Header />
-      <Hero />
+      <Sponsers />
     </div>
   );
 }
