@@ -146,6 +146,7 @@ export default {
       animation: {
         'float-bob': 'float-bob 3s ease-in-out infinite',
         'slide-right': 'slide-right 500ms linear forwards',
+        'slow-spin': 'spin 8s linear infinite',
       },
     },
   },

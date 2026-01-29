@@ -3,17 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { SwitchTransition, CSSTransition } from 'react-transition-group';
 
-const words = [
-  'create',
-  'code',
-  'design',
-  'collab',
-  'ideate',
-  'craft',
-  'hack',
-  'strive',
-  'build',
-];
+const words = ['create', 'code', 'design', 'collab', 'ideate', 'craft', 'hack', 'strive', 'build'];
 
 export default function WordCycle() {
   const [wordIdx, setWordIdx] = useState(0);
@@ -23,12 +13,11 @@ export default function WordCycle() {
     const swapInterval = setInterval(() => {
       setWordIdx((idx) => (idx + 1) % words.length);
     }, 3000);
-
     return () => clearInterval(swapInterval);
   }, []);
 
   return (
-    <span className="block mb-[13px] font-bold">
+    <span className="inline-block align-baseline text-[#AFD157] font-bold">
       <SwitchTransition>
         <CSSTransition
           key={words[wordIdx]}
@@ -46,19 +35,12 @@ export default function WordCycle() {
           <span
             ref={nodeRef}
             className="inline-block will-change-transform will-change-opacity"
-            // We apply the different easings depending on the phase by relying on class changes,
-            // and using a transition that covers both. Enter uses this easing; exit overrides below.
-            style={{
-              transition: 'all 400ms cubic-bezier(0.165, 0.84, 0.44, 1)',
-            }}
-            // Override easing for exit-active via inline style when that class is present is hard,
-            // so instead we do it with a tiny trick: a data attribute and a CSS selector in globals.
-            data-wordcycle
+            style={{ transition: 'all 400ms cubic-bezier(0.165, 0.84, 0.44, 1)' }}
           >
             {words[wordIdx]}
           </span>
         </CSSTransition>
-      </SwitchTransition>{' '}
+      </SwitchTransition>
     </span>
   );
 }

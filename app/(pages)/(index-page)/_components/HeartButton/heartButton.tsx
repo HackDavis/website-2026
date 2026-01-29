@@ -19,12 +19,12 @@ export default function HeartButton({
         text-[var(--text-light)] no-underline
         transition-[background,flex-direction] duration-300
         hover:flex-row-reverse
-        hover:bg-[var(--highlight-yellow)]
-        hover:text-[var(--background-dark)]
+        border-2 border-[#bfcacd]
+        bg-white
       "
     >
       {/* static placeholder (hidden but preserves layout) */}
-      <div className="relative aspect-square h-full rounded-full invisible" />
+      <div className="relative aspect-square h-full rounded-full border-2 border-[#005271] invisible" />
 
       {/* animated heart coin */}
       <div
@@ -36,7 +36,7 @@ export default function HeartButton({
         "
       >
         <Image
-          src="/Images/reghero/ButtonHeart.svg"
+          src="/Images/reghero/HeartButton.svg"
           alt="heart"
           fill
           className="object-contain"
@@ -56,9 +56,9 @@ export default function HeartButton({
         /> */}
       </div>
 
-      <h4 className="w-full text-center font-bold transition-all">
+      <p className="w-full text-center font-bold transition-all">
         {text}
-      </h4>
+      </p>
 
       {/* overlay */}
       <span
