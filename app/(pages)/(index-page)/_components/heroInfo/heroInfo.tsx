@@ -8,17 +8,17 @@ export default function HeroInfo() {
   return (
     <div className="flex flex-col items-start gap-[22px] break-625:items-end break-625:gap-[31px]">
       <div className="flex flex-col items-start text-left break-625:items-end break-625:text-right">
-        <p className="flex gap-2 font-metropolis text-[30px] font-bold leading-[115%] tracking-[0.8px] break-625:text-[40px]">
+        <p className="flex gap-2 text-[30px] font-bold leading-[115%] tracking-[0.8px] break-625:text-[40px]">
           <span className="text-black">
             <WordCycle />
           </span>
           <span className="text-black/50">for</span>
         </p>
-        <h1 className="font-metropolis text-[45px] font-bold leading-[115%] tracking-[0.9px] text-black break-625:text-[66px] break-625:leading-[100%] break-625:tracking-[3.52px] md:text-[88px]">
+        <h1 className="text-[45px] font-bold leading-[115%] tracking-[0.9px] text-[var(--text-hero)] break-625:text-[66px] break-625:leading-[100%] break-625:tracking-[3.52px] md:text-[88px]">
           social good
         </h1>
-        <p className="mt-[31px] font-metropolis text-[16px] font-normal tracking-[0.48px] text-black break-625:text-[20px]">
-          Apply to direct <strong>HackDavis 2026</strong>
+        <p className="mt-[31px] text-[16px] font-normal tracking-[0.48px] text-black break-625:text-[20px]">
+          May 9-10, 2026 @ UCenter
         </p>
       </div>
 
@@ -30,7 +30,7 @@ export default function HeroInfo() {
         >
           Director Application
         </Link>
-        <div className="flex h-[40px] w-[138px] flex-shrink-0 items-center rounded-[100px] bg-black/15 text-center font-metropolis text-[18px] font-bold tracking-[0.4px] text-black break-625:h-[50px] break-625:w-[170px] break-625:py-0 break-625:text-[20px]">
+        <div className="flex h-[40px] w-[138px] flex-shrink-0 items-center rounded-[100px] bg-black/15 text-center text-[18px] font-bold tracking-[0.4px] text-black break-625:h-[50px] break-625:w-[170px] break-625:py-0 break-625:text-[20px]">
           {/* <div className="flex h-[40px] w-[40px] flex-shrink-0 items-center justify-center rounded-[50px] bg-highlight-yellow shadow-[0px_5px_75px_0px_rgba(0,0,0,0.25)] break-625:h-[50px] break-625:w-[50px]">
             <Image
               src="/Hero/heart.svg"
@@ -46,12 +46,12 @@ export default function HeroInfo() {
       </div>
 
       <div className="flex flex-col items-start gap-2 text-left break-625:flex-row break-625:items-end break-625:text-right">
-        <span className="hidden font-metropolis text-[18px] font-normal tracking-[0.48px] text-black break-625:inline md:text-[20px]">
+        <span className="hidden text-[18px] font-normal tracking-[0.48px] text-black break-625:inline md:text-[20px]">
           Check out the{' '}
         </span>
         <div className="flex items-center gap-2 text-black">
           <FormLink
-            text="roles and teams"
+            text="Apply to be a Judge, Mentor, or Volunteer"
             href="/?section=teams"
             // includeComma={true}
             includeComma={false}
@@ -62,7 +62,7 @@ export default function HeroInfo() {
             // includeComma={true}
             includeComma={false}
           /> */}
-          <span className="font-metropolis text-[18px] font-normal tracking-[0.48px] md:text-[20px]">
+          <span className=" text-black text-[18px] font-normal tracking-[0.48px] md:text-[20px]">
             we have!
           </span>
           {/* <FormLink
@@ -87,7 +87,7 @@ function FormLink({ text, href, includeComma }: FormLinkProps) {
     <Link
       href={href}
       // target="_blank"
-      className="flex font-metropolis text-[18px] font-bold tracking-[0.48px] text-white md:text-[20px]"
+      className="flex text-[18px] font-bold tracking-[0.48px] text-black md:text-[20px]"
     >
       <p className="border-b-2 border-b-white font-bold">{text}</p>
       <Image
