@@ -39,9 +39,16 @@ export default function HeartButton({
           src="/Images/reghero/ButtonHeart.svg"
           alt="heart"
           fill
+          className="object-contain"
+          priority
         />
         {/* <Image
           src="/Images/reghero/ButtonHeart.svg"
+          alt="heart"
+          fill
+        />
+        <Image
+          src="/Images/reghero/heart.svg"
           alt="Heart icon"
           width={24}
           height={24}
