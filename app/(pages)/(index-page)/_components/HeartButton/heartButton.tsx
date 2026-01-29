@@ -36,10 +36,17 @@ export default function HeartButton({
         "
       >
         <Image
-          src="/images/donate/button_heart_coin-cropped.svg"
+          src="/Images/reghero/ButtonHeart.svg"
           alt="heart"
           fill
         />
+        {/* <Image
+          src="/Images/reghero/ButtonHeart.svg"
+          alt="Heart icon"
+          width={24}
+          height={24}
+          className="h-[15px] w-[17px] object-contain break-625:h-[24px] break-625:w-[24px]"
+        /> */}
       </div>
 
       <h4 className="w-full text-center font-bold transition-all">
