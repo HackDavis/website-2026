@@ -7,6 +7,15 @@ import WordCycle from '../wordCycle/wordCycle';
 export default function HeroInfo() {
   return (
     <>
+      {/* hd logo pink bg */}
+      <Image
+        src="/Images/reghero/LogoBG.svg"
+        alt="watertower"
+        width={100}
+        height={100}
+        className="absolute top-3.5 left-3.5 -z-10 animate-slow-spin"
+      />
+
       <div className="flex flex-row items-stretch gap-6">
         <div className="absolute top-0 left-[30%] -z-10 overflow-hidden">
           <Image
@@ -19,18 +28,25 @@ export default function HeroInfo() {
         </div>
         <div>
           <Image
+            src="/Images/reghero/Watertower.svg"
+            alt="watertower"
+            width={156.5}
+            height={221.27}
+            className="absolute top-29 left-27 -z-10"
+          />
+          <Image
             src="/Images/reghero/YellowDonut.svg"
             alt="Animals on couch"
             width={100}
             height={100}
-            className="absolute -z-10 top-[50%] left-[2%] justify-center object-contain"
+            className="absolute -z-10 top-[50%] left-[2%] justify-center object-contain animate-slow-spin"
           />
           <Image
             src="/Images/reghero/BlueThing.svg"
             alt="Animals on couch"
             width={100}
             height={100}
-            className="absolute top-[85%] left-[35%] justify-center -z-10 object-contain"
+            className="absolute top-[85%] left-[35%] justify-center -z-10 object-contain animate-slow-spin"
           />
         </div>
         {/* animals on couch */}
@@ -47,9 +63,9 @@ export default function HeroInfo() {
         {/* right side */}
         <div className="flex flex-col justify-between">
           {/* here text + buttons */}
-          <div className="flex flex-row border-4 justify-end items-end">
-            <div className="flex flex-col items-start gap-[22px] break-625:items-end break-625:gap-[31px]">
-              <div className="flex flex-col items-start text-right break-625:items-end break-625:text-right">
+          <div className="flex flex-row justify-end items-end">
+            <div className="flex flex-col items-end gap-[22px] break-625:gap-[31px] text-right">
+              <div className="flex flex-col items-end text-right">
                 <p className="flex gap-2 text-[30px] font-bold leading-[115%] tracking-[0.8px] break-625:text-[40px]">
                   <span className="text-black">
                     <WordCycle />
@@ -59,7 +75,7 @@ export default function HeroInfo() {
                 <h1 className="text-[45px] font-bold leading-[115%] tracking-[0.9px] text-[var(--text-hero)] break-625:text-[66px] break-625:leading-[100%] break-625:tracking-[3.52px] md:text-[88px]">
                   social good
                 </h1>
-                <p className="mt-[31px] text-[16px] text-right border-4 tracking-[0.48px] text-black break-625:text-[20px]">
+                <p className="mt-[31px] text-[16px] text-right tracking-[0.48px] text-black break-625:text-[20px]">
                   May 9-10, 2026 @ UCenter
                 </p>
               </div>
@@ -68,9 +84,9 @@ export default function HeroInfo() {
                 <Link
                   href="https://hackdavis.typeform.com/to/N6DEZIVH"
                   target="_blank"
-                  className="inline-flex h-[40px] items-center justify-center gap-[10px] whitespace-nowrap rounded-[100px] bg-highlight-yellow px-[10px] py-[11px] text-center font-metropolis text-[18px] font-bold tracking-[0.4px] text-text-dark shadow-[0px_5px_75px_0px_rgba(0,0,0,0.25)] break-625:h-[50px] break-625:px-[40px] break-625:py-0 break-625:text-[20px]"
+                  className="rounded-full px-6 py-2 border border-[#005271] bg-white shadow-[4px_4px_0_0_#005271]"
                 >
-                  Director Application
+                  Register Now
                 </Link>
                 <div className="flex h-[40px] w-[138px] flex-shrink-0 items-center rounded-[100px] bg-black/15 text-center text-[18px] font-bold tracking-[0.4px] text-black break-625:h-[50px] break-625:w-[170px] break-625:py-0 break-625:text-[20px]">
                   {/* <div className="flex h-[40px] w-[40px] flex-shrink-0 items-center justify-center rounded-[50px] bg-highlight-yellow shadow-[0px_5px_75px_0px_rgba(0,0,0,0.25)] break-625:h-[50px] break-625:w-[50px]">
@@ -152,7 +168,7 @@ function FormLink({ text, href, includeComma }: FormLinkProps) {
     >
       <p className="font-bold">{text}</p>
       <Image
-        src="/Hero/icon_arrow.svg"
+        src="/Images/reghero/icon_arrow.svg"
         alt="Arrow icon"
         width={10}
         height={10}
