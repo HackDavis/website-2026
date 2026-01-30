@@ -7,15 +7,6 @@ import WordCycle from '../wordCycle/wordCycle';
 export default function HeroInfo() {
   return (
     <>
-      {/* hd logo pink bg */}
-      <Image
-        src="/Images/reghero/LogoBG.svg"
-        alt="watertower"
-        width={100}
-        height={100}
-        className="absolute top-3.5 left-3.5 -z-10 animate-slow-spin"
-      />
-
       <div className="flex flex-row items-stretch gap-6">
         <div className="absolute top-0 left-[30%] -z-10 overflow-hidden">
           <Image
