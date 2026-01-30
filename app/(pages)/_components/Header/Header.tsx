@@ -3,9 +3,16 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isAboutPage = pathname === '/about-us';
+  const isHomePage = pathname === '/';
+  const linkTextClass = isAboutPage
+    ? 'text-white'
+    : 'text-[var(--text-dark-blue)]';
 
   useEffect(() => {
     if (!isMenuOpen) return;
@@ -22,13 +29,29 @@ export default function Header() {
         isMenuOpen ? 'z-[60]' : 'z-20'
       }`}
     >
-      <Image
-        src="/Images/header/hd_logo.svg"
-        alt="HackDavis Logo"
-        width={200}
-        height={200}
-        className="hidden md:block w-[4vw] min-w-[48px] m-[2vw]"
-      />
+      <div className="sticky top-0 relative hidden md:flex items-center justify-center m-[2vw] z-40">
+        {isHomePage ? (
+          <Image
+            src="/Images/header/pinkcloud.svg"
+            alt="pink cloud background"
+            width={100}
+            height={100}
+            className="block w-[8vw] min-w-[120px] h-auto animate-[cloud-spin_18s_linear_infinite]"
+            style={{
+              filter: 'drop-shadow(4px 10px 0px var(--text-dark-blue))',
+            }}
+          />
+        ) : null}
+        <Image
+          src="/Images/header/hd_logo.svg"
+          alt="HackDavis Logo"
+          width={200}
+          height={200}
+          className={`absolute left-1/2 top-1/2 w-[4vw] min-w-[48px] -translate-x-1/2 -translate-y-1/2 z-30 ${
+            isAboutPage ? 'm-[2vw]' : ''
+          }`}
+        />
+      </div>
       <button
         type="button"
         aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
@@ -48,22 +71,38 @@ export default function Header() {
       </button>
       <div className="w-full flex items-center justify-start md:ml-auto md:w-auto md:items-start md:justify-end md:gap-2">
         <div className="hidden md:flex">
-          <div className="glass-pill w-[15vw] h-[5.6vh] m-[3vw] items-center justify-evenly">
+          <div
+            className={`w-[27vw] h-[5.6vh] m-[3vw] items-center justify-evenly glass-pill`}
+            style={
+              isHomePage ? { backgroundColor: 'var(--navbar-bg)' } : undefined
+            }
+          >
             <Link
               href="/?section="
-              className="text-[1vw] text-white uppercase font-[var(--font-metropolis)]"
+              className={`text-[1vw] uppercase font-black underline font-[var(--font-metropolis)] mx-[1vw] ${linkTextClass}`}
             >
               Home
             </Link>
             <Link
+              href="/"
+              className={`text-[1vw] uppercase font-[var(--font-metropolis)] mx-[1vw] ${linkTextClass}`}
+            >
+              FAQ
+            </Link>
+            <Link
+              href="/"
+              className={`text-[1vw] uppercase font-[var(--font-metropolis)] mx-[1vw] ${linkTextClass}`}
+            >
+              Sponsors
+            </Link>
+            <Link
               href="/about-us"
-              className="text-[1vw] text-white uppercase font-[var(--font-metropolis)] font-bold"
+              className={`text-[1vw] uppercase font-[var(--font-metropolis)] mx-[1vw] ${linkTextClass}`}
             >
               About
             </Link>
           </div>
         </div>
-
         <Image
           src="/Images/header/mlh_badge.svg"
           alt="MLH Badge"
