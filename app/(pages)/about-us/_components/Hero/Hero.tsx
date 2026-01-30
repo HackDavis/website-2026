@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <div className="relative isolate w-full pb-20 md:pb-5 bg-white">
+    <div className="font-[var(--font-metropolis)] relative isolate w-full pb-20 md:pb-5 bg-white">
       <div className="relative w-full">
         <div className="absolute inset-0 overflow-hidden z-0">
           <div className="absolute inset-0 bg-[linear-gradient(225deg,_#3E3A95_0%,_#24175F_8%,_#11043F_20%)] bg-[length:100%_100%] bg-[position:100%_0%] bg-no-repeat [clip-path:polygon(0_0,100%_0,100%_70%,0_95%)]" />
