@@ -8,7 +8,8 @@ export default function Directors() {
             font-extrabold
             tracking-tight
             leading-tight
-            text-3xl sm:text-4xl lg:text-5xl
+            text-2xl sm:text-4xl lg:text-5xl
+
           "
         >
           Get to know our team
@@ -20,7 +21,7 @@ export default function Directors() {
             text-[var(--text-dark)]
            /80
             leading-snug
-            text-sm sm:text-base lg:text-lg
+            text-[14px] sm:text-base lg:text-lg
           "
         >
           HackDavis is built by students, for students.

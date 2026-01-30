@@ -15,7 +15,7 @@ type TeamMember = {
 };
 
 const filterBase =
-  'px-4 py-2 sm:px-5 rounded-full uppercase cursor-pointer whitespace-nowrap transition';
+  'px-4 py-0.5 text-[12px] sm:text-lg sm:py-2 sm:px-5 rounded-full uppercase cursor-pointer whitespace-nowrap transition';
 
 export default function OurTeam() {
   const teamMembers = teamMembersRaw as TeamMember[];
@@ -50,7 +50,7 @@ export default function OurTeam() {
   return (
     <section className="px-[10%] py-[1%]">
       {/* Tabs */}
-      <div className="mb-10 flex flex-wrap gap-3 justify-center sm:justify-start">
+      <div className="mb-30 sm:mb-20 flex flex-wrap gap-1 sm:gap-3 justify-center pt-[3%] py-[5%] sm:pb-[0%] sm:justify-start">
         {categories.map((cat) => (
           <button
             key={cat}

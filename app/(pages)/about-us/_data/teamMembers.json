@@ -84,7 +84,7 @@
     "profile_image_url": "/Images/team_members/sponsorship/Maanit_Shah.jpg",
     "team_category": "Sponsorship",
     "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/carvo/"
+    "linkedinURL": "http://www.linkedin.com/in/maanit-shah"
   },
   {
     "_id": {
@@ -95,7 +95,7 @@
     "profile_image_url": "/Images/team_members/sponsorship/Leland_Chung.jpg",
     "team_category": "Sponsorship",
     "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/carvo/"
+    "linkedinURL": "https://www.linkedin.com/in/leland-chung/"
   },
   {
     "_id": {
@@ -458,5 +458,5 @@
     "profile_image_url": "/Images/team_members/technical/Jack_Zheng.jpg",
     "team_category": "Technical",
     "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/jack-zheng-24a175320/"
+    "linkedinURL": "https://www.linkedin.com/in/jack00z/"
   }]

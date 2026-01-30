@@ -4,7 +4,7 @@ export default function AllAbout() {
   return (
     <div className="flex flex-col gap-6 lg:pb-40">
       <div className="px-[10%] text-left">
-        <h1 className="text-3xl lg:text-5xl font-bold leading-none text-[var(--text-dark)]">
+        <h1 className="text-2xl lg:text-5xl font-bold leading-none text-[var(--text-dark)]">
           What we're all about
         </h1>
       </div>
