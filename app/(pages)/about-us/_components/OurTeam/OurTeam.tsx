@@ -64,7 +64,7 @@ export default function OurTeam() {
       </div>
 
       {/* Cards */}
-      <div className="grid gap-3 grid-cols-3 md:gap-8 md:grid-cols-3 sm:grid-cols-3 lg:grid-cols-4  xl:grid-cols-5 place-items-center">
+      <div className="grid gap-3 grid-cols-2 md:gap-8 md:grid-cols-3 sm:grid-cols-3 lg:grid-cols-4  xl:grid-cols-5 place-items-center">
         {filteredMembers.map((m) => (
           <ProfileCard
             key={`${m.name}-${m.year}`}

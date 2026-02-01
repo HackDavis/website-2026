@@ -65,10 +65,10 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
 
         {/* text */}
         <div className="mt-1 sm:mt-3">
-          <h3 className="text-[10px] leading-tight sm:text-base font-extrabold text-black">
+          <h3 className="text-[12px] leading-tight sm:text-base font-extrabold text-black">
             {name}
           </h3>
-          <p className="mt-0.5 text-[9px] sm:text-sm text-black/80">{title}</p>
+          <p className="mt-0.5 text-[11px] sm:text-sm text-black/80">{title}</p>
         </div>
       </div>
     </a>
