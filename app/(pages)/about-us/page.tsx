@@ -1,4 +1,4 @@
-import CelebratePast from './_components/CelebratePast/CelebratePast';
+import CelebratePast from './_components/CelebratePast/celebratePast';
 
 export default function AboutUs() {
   return (
