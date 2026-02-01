@@ -3,15 +3,15 @@ import CarouselArrows from './CarouselArrows';
 import CarouselWindow from './CarouselWindow';
 import Archive from './Archive';
 
-import circle2017 from '@public/aboutUs/archives/2017-circle.svg';
-import circle2018 from '@public/aboutUs/archives/2018-circle.svg';
-import circle2019 from '@public/aboutUs/archives/2019-circle.svg';
-import circle2020 from '@public/aboutUs/archives/2020-circle.svg';
-import circle2021 from '@public/aboutUs/archives/2021-circle.svg';
-import circle2022 from '@public/aboutUs/archives/2022-circle.svg';
-import circle2023 from '@public/aboutUs/archives/2023-circle.svg';
-import circle2024 from '@public/aboutUs/archives/2024-circle.svg';
-import circle2025 from '@public/aboutUs/archives/2025-circle.svg';
+import circle2017 from '@public/Images/archives/2017-circle.svg';
+import circle2018 from '@public/Images/archives/2018-circle.svg';
+import circle2019 from '@public/Images/archives/2019-circle.svg';
+import circle2020 from '@public/Images/archives/2020-circle.svg';
+import circle2021 from '@public/Images/archives/2021-circle.svg';
+import circle2022 from '@public/Images/archives/2022-circle.svg';
+import circle2023 from '@public/Images/archives/2023-circle.svg';
+import circle2024 from '@public/Images/archives/2024-circle.svg';
+import circle2025 from '@public/Images/archives/2025-circle.svg';
 
 const archives = [
   {
