@@ -18,13 +18,13 @@ const scrollToTop = () => {
 
 export default function Footer() {
   const logoStyles =
-    'h-6 text-white transition hover:text-gray-300 break-400:h-8 md:h-12 lg:h-8 xl:h-12 2xl:h-15';
+    'h-6 text-white transition hover:text-gray-300 break-400:h-7 md:h-8 lg:h-8 xl:h-10 2xl:h-15';
   return (
-    <footer className="relative z-10 flex w-full h-70 flex-col bg-[#11043F]">
+    <footer className="relative z-10 flex w-full h-70 flex-col bg-[#122537]">
       {/* Content Container */}
-      <div className="mx-auto mt-[30%] flex w-3/4 flex-col items-center justify-around gap-8 break-400:mt-[5%] break-625:gap-12 md:mt-[5%] lg:relative lg:my-[5%] lg:flex-row lg:justify-between lg:gap-0 lg:px-0">
+      <div className="mx-auto mt-[20%] flex w-3/4 flex-col items-center justify-around gap-8 break-400:mt-[7%] break-625:gap-12 md:mt-[7%] lg:relative lg:my-[5%] lg:flex-row lg:justify-between lg:gap-0 lg:px-0">
         {/* HackDavis Logo */}
-        <div className="flex w-full flex-row items-center justify-center gap-4 lg:w-1/3 bg-[#11043F]">
+        <div className="flex w-full flex-row items-center justify-center gap-4 lg:w-1/3 bg-[#122537]">
           <Image
             src="/Footer/hdLogoWhite.svg"
             alt="HackDavis Logo"
@@ -98,7 +98,7 @@ export default function Footer() {
 
         {/* Back to Top Arrow */}
         <div
-          className="md-4 lg-8 absolute right-6 top-[20%] flex cursor-pointer flex-row items-center gap-2 text-white transition-transform hover:scale-110 lg:relative lg:right-0 lg:top-0 lg:w-fit lg:justify-end lg:gap-3 2xl:gap-4"
+          className="md-4 lg-8 absolute right-6 top-6 sm:top-8 md:top-10 flex cursor-pointer flex-row items-center gap-2 text-white transition-transform hover:scale-110 lg:relative lg:right-0 lg:top-0 lg:w-fit lg:justify-end lg:gap-3 2xl:gap-4"
           onClick={scrollToTop}
         >
           <p className="text-xs break-400:text-sm sm:text-base lg:text-lg 2xl:text-3xl">
