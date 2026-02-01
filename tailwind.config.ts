@@ -17,175 +17,137 @@ export default {
         montserrat: 'var(--font-montserrat)',
         jakarta: 'var(--font-jakarta)',
       },
+
       keyframes: {
         picture1: {
-          // picture 1 position
-          '0%': {
-            transform: 'translateY(0%)',
-            zIndex: '5',
-          },
-          // picture 1 position
-          '50%': {
-            transform: 'translateY(0%)',
-            zIndex: '5',
-          },
-          // spread position
-          '55%': {
-            transform: 'translateY(40%)',
-            zIndex: '5',
-          },
-          // spread position
-          '80%': {
-            transform: 'translateY(40%)',
-            zIndex: '5',
-          },
-          // anticipation position
-          '83.9%': {
-            transform: 'translateY(150%)',
-            zIndex: '5',
-          },
-          // anticipation position
-          '84%': {
-            transform: 'translateY(150%)',
-            zIndex: '0',
-          },
-          // picture 5 poistion
-          '89%': {
-            transform: 'translateY(0%)',
-            zIndex: '0',
-          },
-          // picture 5 poistion
-          '100%': {
-            transform: 'translateY(0%)',
-            zIndex: '0',
-          },
+          // hold front
+          '0%, 45%': { transform: 'translateY(0%)', zIndex: '5' },
+
+          // ease into spread (no sudden jump at 55)
+          '55%': { transform: 'translateY(40%)', zIndex: '5' },
+          '75%': { transform: 'translateY(40%)', zIndex: '5' },
+
+          // smooth drop out (instead of 83.9 -> 84 pop)
+          '84%': { transform: 'translateY(150%)', zIndex: '5' },
+
+          // once it's fully off-screen, send to back
+          '85%': { transform: 'translateY(150%)', zIndex: '0' },
+
+          // come back as the back card
+          '92%': { transform: 'translateY(0%)', zIndex: '0' },
+          '100%': { transform: 'translateY(0%)', zIndex: '0' },
         },
+
         picture2: {
-          // picture 2 position
-          '0%': {
+          // hold
+          '0%, 45%': {
             transform: 'translateX(-30%) translateY(-10%) rotate(-15deg)',
             zIndex: '4',
             backgroundColor: '#BDC7D0',
           },
-          // picture 2 position
-          '50%': {
-            transform: 'translateX(-30%) translateY(-10%) rotate(-15deg)',
-            zIndex: '4',
-            backgroundColor: '#BDC7D0',
-          },
-          // spread position
+
+          // spread (ease)
           '55%': {
             transform: 'translateX(-70%) translateY(-20%) rotate(-5deg)',
             zIndex: '4',
             backgroundColor: '#BDC7D0',
           },
-          // spread position
-          '90%': {
+          '82%': {
             transform: 'translateX(-70%) translateY(-20%) rotate(-5deg)',
             zIndex: '4',
             backgroundColor: '#BDC7D0',
           },
-          // picture 1 position
-          '95%': {
-            transform: 'translateX(0%) translateY(0%) rotate(0deg)',
-            zIndex: '4',
-            backgroundColor: '#DCE3EA',
-          },
-          // picture 1 position
-          '100%': {
-            transform: 'translateX(0%) translateY(0%) rotate(0deg)',
-            zIndex: '4',
-            backgroundColor: '#DCE3EA',
-          },
-        },
-        picture3: {
-          // picture 3 position
-          '0%': {
-            transform: 'translateX(5%) translateY(-25%) rotate(10deg)',
-            zIndex: '3',
-          },
-          // picture 3 position
-          '50%': {
-            transform: 'translateX(5%) translateY(-25%) rotate(10deg)',
-            zIndex: '3',
-          },
-          // spread position
-          '55%': {
-            transform: 'translateX(10%) translateY(-50%) rotate(3deg)',
-            zIndex: '3',
-          },
-          // spread position
+
+          // ease into front pose
           '92%': {
+            transform: 'translateX(-20%) translateY(-6%) rotate(-8deg)',
+            zIndex: '4',
+            backgroundColor: '#C9D2DA',
+          },
+          '100%': {
+            transform: 'translateX(0%) translateY(0%) rotate(0deg)',
+            zIndex: '4',
+            backgroundColor: '#DCE3EA',
+          },
+        },
+
+        picture3: {
+          '0%, 45%': {
+            transform: 'translateX(5%) translateY(-25%) rotate(10deg)',
+            zIndex: '3',
+          },
+
+          '55%': {
             transform: 'translateX(10%) translateY(-50%) rotate(3deg)',
             zIndex: '3',
           },
-          // picture 2 position
-          '97%': {
-            transform: 'translateX(-30%) translateY(-10%) rotate(-15deg)',
+          '84%': {
+            transform: 'translateX(10%) translateY(-50%) rotate(3deg)',
             zIndex: '3',
           },
-          // picture 2 position
+
+          // ease toward picture2 pose (avoid snap near 97)
+          '93%': {
+            transform: 'translateX(-10%) translateY(-18%) rotate(-4deg)',
+            zIndex: '3',
+          },
           '100%': {
             transform: 'translateX(-30%) translateY(-10%) rotate(-15deg)',
             zIndex: '3',
           },
         },
+
         picture4: {
-          // picture 4 position
-          '0%': {
+          '0%, 45%': {
             transform: 'translateX(30%) translateY(-15%) rotate(20deg)',
             zIndex: '2',
           },
-          // picture 4 position
-          '50%': {
-            transform: 'translateX(30%) translateY(-15%) rotate(20deg)',
-            zIndex: '2',
-          },
-          // spread position
+
           '55%': {
             transform: 'translateX(70%) translateY(-15%) rotate(10deg)',
             zIndex: '2',
           },
-          // spread position
-          '93%': {
+          '85%': {
             transform: 'translateX(70%) translateY(-15%) rotate(10deg)',
             zIndex: '2',
           },
-          // picture 3 position
-          '98%': {
-            transform: 'translateX(5%) translateY(-25%) rotate(10deg)',
+
+          // ease toward picture3 pose
+          '94%': {
+            transform: 'translateX(18%) translateY(-22%) rotate(8deg)',
             zIndex: '2',
           },
-          // picture 3 position
           '100%': {
             transform: 'translateX(5%) translateY(-25%) rotate(10deg)',
             zIndex: '2',
           },
         },
+
         picture5: {
-          // picture 5 position
-          '0%': {
+          '0%, 85%': {
             transform: 'translateX(0%) translateY(0%) rotate(0deg)',
             zIndex: '1',
           },
-          // picture 5 position
-          '95%': {
-            transform: 'translateX(0%) translateY(0%) rotate(0deg)',
+
+          // ease toward picture4 pose (avoid last-frame snap)
+          '94%': {
+            transform: 'translateX(18%) translateY(-10%) rotate(12deg)',
             zIndex: '1',
           },
-          // picture 4 position
           '100%': {
             transform: 'translateX(30%) translateY(-15%) rotate(20deg)',
             zIndex: '1',
           },
         },
       },
+
       animation: {
-        picture1: 'picture1 10000ms forwards',
-        picture2: 'picture2 10000ms forwards',
-        picture3: 'picture3 10000ms forwards',
-        picture4: 'picture4 10000ms forwards',
-        picture5: 'picture5 10000ms forwards',
+        // 6s total, smooth easing, loops forever
+        picture1: 'picture1 6000ms cubic-bezier(0.22, 1, 0.36, 1) infinite',
+        picture2: 'picture2 6000ms cubic-bezier(0.22, 1, 0.36, 1) infinite',
+        picture3: 'picture3 6000ms cubic-bezier(0.22, 1, 0.36, 1) infinite',
+        picture4: 'picture4 6000ms cubic-bezier(0.22, 1, 0.36, 1) infinite',
+        picture5: 'picture5 6000ms cubic-bezier(0.22, 1, 0.36, 1) infinite',
       },
     },
   },
