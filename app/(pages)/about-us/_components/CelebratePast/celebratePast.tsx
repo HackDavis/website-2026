@@ -42,16 +42,16 @@ function Pictures({
 
 export default function CelebratePast() {
   const [images, setImages] = useState<Img[]>([
-    { path: '/placeholder.jpg', alt: 'i like among us' },
-    { path: '/anotherplaceholder.png', alt: 'its pretty cool' },
-    { path: '/clouds.jpg', alt: 'cheese is also cool' },
-    { path: '/realclouds.jpg', alt: 'amongsus' },
-    { path: '/frog.png', alt: 'among us!!!' },
+    { path: '/Images/celebrateus/one.png', alt: 'i like among us' },
+    { path: '/Images/celebrateus/two.png', alt: 'its pretty cool' },
+    { path: '/Images/celebrateus/three.png', alt: 'cheese is also cool' },
+    { path: '/Images/celebrateus/four.png', alt: 'amongsus' },
+    { path: '/Images/celebrateus/five.png', alt: 'among us!!!' },
   ]);
 
   useEffect(() => {
     // match this interval to your CSS animation duration
-    const DURATION_MS = 6000;
+    const DURATION_MS = 3000;
 
     const id = window.setInterval(() => {
       setImages((prev) => {

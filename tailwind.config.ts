@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
 
-const DURATION = "2s"; // must match DURATION_MS = 6000
+const DURATION = "3s"; 
 
 export default {
   content: [
@@ -29,42 +29,48 @@ export default {
 
 
         picture1: {
-          /* front position (stable) */
-          "0%, 52%": {
+          // front (A) - stable
+          "0%, 40%, 100%": {
             transform:
               "translate(-50%, -50%) translate(0%, 0%) rotate(0deg) scale(1)",
             zIndex: "50",
           },
 
-          /* pull down */
-          "60%": {
+          // pull down (still front)
+          "52%": {
             transform:
               "translate(-50%, -50%) translate(0%, 105%) rotate(0deg) scale(0.98)",
             zIndex: "50",
           },
 
-          /* pause while fully down (safe moment to reorder) */
-          "68%": {
+          // safe moment to drop behind
+          "58%": {
             transform:
               "translate(-50%, -50%) translate(0%, 105%) rotate(0deg) scale(0.98)",
             zIndex: "5",
           },
 
-          /* move behind */
-          "90%": {
+          // behind (E)
+          "72%": {
             transform:
               "translate(-50%, -50%) translate(18%, -10%) rotate(8deg) scale(0.92)",
             zIndex: "5",
           },
 
-          /* settle — MUST equal start of next cycle */
-          "100%": {
+          // come back toward front (still low z while passing under)
+          "86%": {
             transform:
-              "translate(-50%, -50%) translate(18%, -10%) rotate(8deg) scale(0.92)",
+              "translate(-50%, -50%) translate(0%, 0%) rotate(0deg) scale(1)",
             zIndex: "5",
+          },
+
+          // regain front at end (matches 0%)
+          "92%": {
+            transform:
+              "translate(-50%, -50%) translate(0%, 0%) rotate(0deg) scale(1)",
+            zIndex: "50",
           },
         },
-
 
         picture2: {
           // B (left)
