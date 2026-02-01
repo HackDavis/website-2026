@@ -1,8 +1,9 @@
 'use client';
 
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+
+type Img = { path: string; alt: string };
 
 function Pictures({
   path,
@@ -15,38 +16,32 @@ function Pictures({
 }) {
   if (order > 5) return null;
 
-  const picture = (
-    <div className="w-[18cqw] h-[18cqw] relative overflow-hidden">
-      <Image src={path} alt={alt} fill className="object-cover" />
-    </div>
-  );
+  const animClass =
+    order === 1
+      ? 'animate-picture1 bg-[#DCE3EA]'
+      : order === 2
+      ? 'animate-picture2 bg-[#BDC7D0]'
+      : order === 3
+      ? 'animate-picture3 bg-[#BDC7D0]'
+      : order === 4
+      ? 'animate-picture4 bg-[#BDC7D0]'
+      : order === 5
+      ? 'animate-picture5 bg-[#BDC7D0]'
+      : '';
 
-  const frame = (
+  return (
     <div
-      className={`p-[0.8cqw] pb-[5cqw] absolute flex justify-center items-center ${
-        order === 1
-          ? 'animate-picture1 bg-[#DCE3EA]'
-          : order === 2
-          ? 'animate-picture2 bg-[#BDC7D0]'
-          : order === 3
-          ? 'animate-picture3 bg-[#BDC7D0]'
-          : order === 4
-          ? 'animate-picture4 bg-[#BDC7D0]'
-          : order === 5
-          ? 'animate-picture5 bg-[#BDC7D0]'
-          : ''
-      }`}
+      className={`p-[0.8cqw] pb-[5cqw] absolute flex justify-center items-center ${animClass}`}
     >
-      {picture}
+      <div className="w-[18cqw] h-[18cqw] relative overflow-hidden">
+        <Image src={path} alt={alt} fill className="object-cover" />
+      </div>
     </div>
   );
-
-  return frame;
 }
 
 export default function CelebratePast() {
-  // REPLACE
-  const [images, setImages] = useState([
+  const [images, setImages] = useState<Img[]>([
     { path: '/placeholder.jpg', alt: 'i like among us' },
     { path: '/anotherplaceholder.png', alt: 'its pretty cool' },
     { path: '/clouds.jpg', alt: 'cheese is also cool' },
@@ -55,20 +50,17 @@ export default function CelebratePast() {
   ]);
 
   useEffect(() => {
-    const handleAnimationEnd = (e: AnimationEvent) => {
-      if (e.animationName === 'picture1') {
-        setImages((prev) => {
-          const [first, ...rest] = prev;
-          return [...rest, first];
-        });
-      }
-    };
+    // match this interval to your CSS animation duration
+    const DURATION_MS = 6000;
 
-    document.addEventListener('animationend', handleAnimationEnd);
+    const id = window.setInterval(() => {
+      setImages((prev) => {
+        const [first, ...rest] = prev;
+        return [...rest, first];
+      });
+    }, DURATION_MS);
 
-    return () => {
-      document.removeEventListener('animationend', handleAnimationEnd);
-    };
+    return () => window.clearInterval(id);
   }, []);
 
   return (
@@ -80,6 +72,7 @@ export default function CelebratePast() {
             <br className="md:hidden" /> our past with us!
           </p>
         </div>
+
         <div className="py-[0.5cqw] text-center">
           <p className="text-[2.4cqw] md:text-[1.2cqw] text-[#123041] font-jakarta">
             We truly could not have done any of this
@@ -88,6 +81,7 @@ export default function CelebratePast() {
           </p>
         </div>
       </div>
+
       <div className="h-[50cqw] relative flex items-center justify-center">
         {images.map((image, index) => (
           <Pictures
@@ -98,6 +92,7 @@ export default function CelebratePast() {
           />
         ))}
       </div>
+
       <button className="px-[3cqw] py-[1cqw] md:px-[1.5cqw] md:py-[.5cqw] rounded-full bg-[#123041] text-[#F9FBFC]">
         <p className="text-[3cqw] md:text-[1.3cqw] font-medium font-jakarta tracking-wide">
           VIEW 2025 WINNERS
