@@ -1,11 +1,13 @@
 import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
 
+const DURATION = "2s"; // must match DURATION_MS = 6000
+
 export default {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -18,17 +20,125 @@ export default {
       boxShadow: {
         card: "4px 4px 0 0 #A6BFC7",
       },
+
       keyframes: {
         "float-bob": {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-20px)" },
         },
+
+
+        picture1: {
+          /* front position (stable) */
+          "0%, 52%": {
+            transform:
+              "translate(-50%, -50%) translate(0%, 0%) rotate(0deg) scale(1)",
+            zIndex: "50",
+          },
+
+          /* pull down */
+          "60%": {
+            transform:
+              "translate(-50%, -50%) translate(0%, 105%) rotate(0deg) scale(0.98)",
+            zIndex: "50",
+          },
+
+          /* pause while fully down (safe moment to reorder) */
+          "68%": {
+            transform:
+              "translate(-50%, -50%) translate(0%, 105%) rotate(0deg) scale(0.98)",
+            zIndex: "5",
+          },
+
+          /* move behind */
+          "90%": {
+            transform:
+              "translate(-50%, -50%) translate(18%, -10%) rotate(8deg) scale(0.92)",
+            zIndex: "5",
+          },
+
+          /* settle — MUST equal start of next cycle */
+          "100%": {
+            transform:
+              "translate(-50%, -50%) translate(18%, -10%) rotate(8deg) scale(0.92)",
+            zIndex: "5",
+          },
+        },
+
+
+        picture2: {
+          // B (left)
+          "0%, 55%": {
+            transform:
+              "translate(-50%, -50%) translate(-32%, 6%) rotate(-14deg) scale(0.95)",
+            zIndex: "30",
+          },
+          // to A (front)
+          "100%": {
+            transform:
+              "translate(-50%, -50%) translate(0%, 0%) rotate(0deg) scale(1)",
+            zIndex: "50",
+          },
+        },
+
+        picture3: {
+          // C (right)
+          "0%, 55%": {
+            transform:
+              "translate(-50%, -50%) translate(32%, 6%) rotate(14deg) scale(0.95)",
+            zIndex: "20",
+          },
+          // to B (left)
+          "100%": {
+            transform:
+              "translate(-50%, -50%) translate(-32%, 6%) rotate(-14deg) scale(0.95)",
+            zIndex: "30",
+          },
+        },
+
+        picture4: {
+          // D (back-left)
+          "0%, 55%": {
+            transform:
+              "translate(-50%, -50%) translate(-18%, -10%) rotate(-8deg) scale(0.92)",
+            zIndex: "10",
+          },
+          // to C (right)
+          "100%": {
+            transform:
+              "translate(-50%, -50%) translate(32%, 6%) rotate(14deg) scale(0.95)",
+            zIndex: "20",
+          },
+        },
+
+        picture5: {
+          // E (back-right)
+          "0%, 55%": {
+            transform:
+              "translate(-50%, -50%) translate(18%, -10%) rotate(8deg) scale(0.92)",
+            zIndex: "5",
+          },
+          // to D (back-left)
+          "100%": {
+            transform:
+              "translate(-50%, -50%) translate(-18%, -10%) rotate(-8deg) scale(0.92)",
+            zIndex: "10",
+          },
+        },
       },
+
       animation: {
         "float-bob": "float-bob 3s ease-in-out infinite",
+
+        picture1: `picture1 ${DURATION} ease-in-out infinite`,
+        picture2: `picture2 ${DURATION} ease-in-out infinite`,
+        picture3: `picture3 ${DURATION} ease-in-out infinite`,
+        picture4: `picture4 ${DURATION} ease-in-out infinite`,
+        picture5: `picture5 ${DURATION} ease-in-out infinite`,
       },
     },
   },
+
   plugins: [
     plugin(({ addUtilities }) => {
       addUtilities({
