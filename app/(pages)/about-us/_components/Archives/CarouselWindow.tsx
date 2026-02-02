@@ -1,6 +1,10 @@
 'use client';
 import { useRef } from 'react';
 import { useCarouselContext } from '@pages/about-us/_hooks/useCarouselContext';
+import UnderCloud from '@public/Images/archives/UnderCloud.svg';
+import LeftCloud from '@public/Images/archives/LeftCloud.svg';
+import RightCloud from '@public/Images/archives/RightCloud.svg';
+import Image from 'next/image';
 
 export default function CarouselWindow({
   children = [],
@@ -40,9 +44,7 @@ export default function CarouselWindow({
     }
 
     contentBeltResizeObserverRef.current = new ResizeObserver((entries) => {
-      if (!Array.isArray(entries) || entries.length === 0) {
-        return;
-      }
+      if (!Array.isArray(entries) || entries.length === 0) return;
       const entry = entries[0];
       onContentBeltChange(entry.target);
     });
@@ -66,9 +68,7 @@ export default function CarouselWindow({
     }
 
     contentWindowResizeObserverRef.current = new ResizeObserver((entries) => {
-      if (!Array.isArray(entries) || entries.length === 0) {
-        return;
-      }
+      if (!Array.isArray(entries) || entries.length === 0) return;
       const entry = entries[0];
       onContentWindowChange(entry.target);
     });
@@ -83,16 +83,106 @@ export default function CarouselWindow({
   };
 
   return (
-    <div
-      className="flex flex-row items-center overflow-x-scroll pr-[13%] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden md:pr-16"
-      ref={onContentWindowMount}
-      onScroll={handleScroll}
-    >
+    // NON-SCROLLING FRAME (clouds pinned here)
       <div
-        className="flex flex-row items-center gap-[60px] px-[13%] [&>*]:shrink-0 md:px-16"
-        ref={onContentBeltMount}
+        style={
+          {
+            '--undercloud': `url(${UnderCloud.src})`,
+          } as React.CSSProperties
+        }
+        className="
+        relative
+        border-8 border-green-400
+        pt-0 md:pt-[230px]
+        pb-0 md:pb-[220px]
+        min-h-[60px] md:min-h-[320px]
+        overflow-hidden
+        bg-[image:none] md:bg-[image:var(--undercloud)]
+        bg-no-repeat
+        bg-[position:center_60%]
+        bg-[length:100vw]
+      ">
+      
+      {/* bg color */}
+      <div
+        aria-hidden
+        className="
+          absolute
+          bottom-0
+          left-0
+          h-[40%]
+          w-full
+          bg-[#11043F]
+          -z-10
+          hidden
+          md:block
+        "
+      />
+      {/* pinned clouds (NOT inside the scroller) */}
+      <Image
+        src={LeftCloud}
+        alt=""
+        aria-hidden
+        className="
+          pointer-events-none
+          absolute
+          left-[-1%]
+          sm:top-[32%]
+          md:top-[47%]
+          lg:top-[43%]
+          xlg:top-[45%]
+          w-[100vw]
+          max-w-none
+          -translate-y-1/2
+          z-30
+          hidden
+          md:block
+        "
+      />
+
+      <Image
+        src={RightCloud}
+        alt=""
+        aria-hidden
+        className="
+          pointer-events-none
+          absolute
+          right-[0]
+          sm:top-[46%]
+          md:top-[47%]
+          lg:top-[40%]
+          xlg:top-[42%]
+          w-[100vw]
+          max-w-none
+          -translate-y-1/2
+          z-30
+          hidden
+          md:block
+        "
+      />
+
+      {/* HORIZONTAL-ONLY SCROLLER (circles only) */}
+      <div
+        ref={onContentWindowMount}
+        onScroll={handleScroll}
+        className="
+          relative z-10
+          flex flex-row items-center
+          overflow-x-auto overflow-y-hidden
+          overscroll-y-none
+          touch-pan-x
+          [scrollbar-width:none]
+          [-ms-overflow-style:none]
+          [&::-webkit-scrollbar]:hidden
+          md:pr-16
+        "
       >
-        {children}
+        <div
+          className="flex flex-row items-center gap-[60px] px-[13%] [&>*]:shrink-0 md:px-16"
+          ref={onContentBeltMount}
+        >
+          {children}
+        </div>
       </div>
     </div>
   );
