@@ -102,22 +102,6 @@ export default function CarouselWindow({
         bg-[length:100vw]
       "
     >
-      {/* bg color
-      <div
-        aria-hidden
-        className="
-          absolute
-          bottom-0
-          left-0
-          h-[40%]
-          w-full
-          bg-[#11043F]
-          -z-10
-          hidden
-          md:block
-          md:pb-[150px]
-        "
-      />*/}
 
       {/* pinned clouds (NOT inside the scroller) */}
       <Image

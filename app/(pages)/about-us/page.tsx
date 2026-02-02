@@ -4,6 +4,7 @@ import Directors from './_components/Directors/directors';
 import OurTeam from './_components/OurTeam/OurTeam';
 import AllAbout from './_components/AllAbout/AllAbout';
 import Archives from './_components/Archives/Archives';
+import CelebratePast from './_components/CelebratePast/celebratePast';
 
 export default function AboutUs() {
   return (
@@ -13,6 +14,7 @@ export default function AboutUs() {
       <AllAbout />
       <Directors />
       <OurTeam />
+      <CelebratePast />
       <Archives />
     </div>
   );
