@@ -29,7 +29,7 @@ export default function CarouselArrows() {
   const canGoRight = scroll + windowWidth < contentWidth - 1;
 
   const baseButtonClasses =
-    'flex h-12 w-12 items-center justify-center rounded-full p-4 text-[#929292] transition-colors duration-200 bg-[#DBDBDB]';
+    'flex h-12 w-12 items-center justify-center rounded-full p-4 text-[#929292] transition-colors duration-200 bg-[#DBDBDB] hover:bg-[#9DE7E5] hover:text-[#123041] disabled:bg-[#E0E0E0] disabled:text-[#C0C0C0]';
   const activeButtonClasses = 'bg-[#9DE7E5] text-[#123041] cursor-pointer';
   const inactiveButtonClasses = 'cursor-default';
 
