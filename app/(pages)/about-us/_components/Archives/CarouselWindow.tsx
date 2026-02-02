@@ -102,7 +102,6 @@ export default function CarouselWindow({
         bg-[length:100vw]
       "
     >
-
       {/* pinned clouds (NOT inside the scroller) */}
       <Image
         src={LeftCloud}
