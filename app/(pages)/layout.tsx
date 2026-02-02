@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import '@globals/styles/globals.scss';
 import metadataJSON from '@app/(pages)/_globals/metadata.json';
 import fonts from './_globals/fonts';
-import Navbar from '@app/(pages)/_components/Navbar/Navbar';
+import Header from './_components/Header/Header';
 import Footer from '@app/(pages)/_components/Footer/Footer';
 
 export const metadata: Metadata = metadataJSON;
@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${fonts} antialiased`}>
-        <Navbar />
+        <Header />
         {children}
         <Footer />
       </body>
