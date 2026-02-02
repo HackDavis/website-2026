@@ -78,37 +78,9 @@ const archives = [
 export default function Archives() {
   return (
     <CarouselContextProvider>
-      <div className="relative z-0 flex w-full flex-col gap-[45px] pb-[50px] sm:gap-[50px] border-blue-600 border-8">
-
-        {/*  cloud container  */}
-        {/* <div className="border-pink-600 border-8 relative h-[150px] w-full sm:h-[200px] md:h-[250px] lg:h-[300px]">
-          {/* left cloud 
-          <Image
-            src={LeftCloud}
-            alt=""
-            aria-hidden
-            className="pointer-events-none cover absolute left-[-1%] w-[420px] sm:block md:w-full"
-          />
-
-          {/* right cloud 
-          <Image
-            src={RightCloud}
-            alt=""
-            aria-hidden
-            className="pointer-events-none absolute right-[-1%] w-[420px] sm:block md:w-full"
-          />
-
-          {/* under cloud 
-          <Image
-            src={UnderCloud}
-            alt=""
-            aria-hidden
-            className="pointer-events-none absolute right-[-1%] -z-10 w-[420px] sm:block md:w-full"
-          />
-        </div>  */}
-
+      <div className="relative z-0 flex w-full flex-col border-blue-600 border-8">
         <div className="flex flex-row items-center justify-between px-[13%] md:px-8 ">
-          <h2 className="font-metropolis px-5 text-xl font-bold text-[#123041] sm:text-[2.25rem]">
+          <h2 className="font-metropolis ml-[13%] mb-[-26%] md:mb-[-16%] lg:mb-[-6%] text-xl font-bold text-[#123041] sm:text-[2.25rem]">
             From the archive
           </h2>
           <div className="hidden sm:flex">

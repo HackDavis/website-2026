@@ -92,11 +92,10 @@ export default function CarouselWindow({
         }
         className="
         relative
-        border-8 border-green-400
         pt-0 md:pt-[230px]
         pb-0 md:pb-[220px]
         min-h-[60px] md:min-h-[320px]
-        overflow-hidden
+        overflow-visible
         bg-[image:none] md:bg-[image:var(--undercloud)]
         bg-no-repeat
         bg-[position:center_60%]
@@ -129,8 +128,8 @@ export default function CarouselWindow({
           left-[-1%]
           sm:top-[32%]
           md:top-[47%]
-          lg:top-[43%]
-          xlg:top-[45%]
+          lg:top-[32%]
+          xlg:top-[25%]
           w-[100vw]
           max-w-none
           -translate-y-1/2
@@ -147,11 +146,11 @@ export default function CarouselWindow({
         className="
           pointer-events-none
           absolute
-          right-[0]
+          right-[-10px]
           sm:top-[46%]
           md:top-[47%]
-          lg:top-[40%]
-          xlg:top-[42%]
+          lg:top-[28%]
+          xlg:top-[25%]
           w-[100vw]
           max-w-none
           -translate-y-1/2
