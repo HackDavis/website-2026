@@ -3,7 +3,7 @@ import Header from '@components/Header/Header';
 import Directors from './_components/Directors/directors';
 import OurTeam from './_components/OurTeam/OurTeam';
 import AllAbout from './_components/AllAbout/AllAbout';
-import CelebratePast from './_components/CelebratePast/celebratePast';
+import Archives from './_components/Archives/Archives';
 
 export default function AboutUs() {
   return (
@@ -13,7 +13,7 @@ export default function AboutUs() {
       <AllAbout />
       <Directors />
       <OurTeam />
-      <CelebratePast />
+      <Archives />
     </div>
   );
 }

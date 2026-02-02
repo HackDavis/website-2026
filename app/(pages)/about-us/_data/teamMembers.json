@@ -29,7 +29,7 @@
     "profile_image_url": "/Images/team_members/finance/Tyler_Kao.jpg",
     "team_category": "Finance",
     "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/krishna-thaker"
+    "linkedinURL": "https://www.linkedin.com/in/tyler-kao/"
   },
   {
     "_id": {
@@ -40,7 +40,7 @@
     "profile_image_url": "/Images/team_members/finance/Jiayang_Liu.jpg",
     "team_category": "Finance",
     "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/jiayang-liu-789012345"
+    "linkedinURL": "https://www.linkedin.com/in/jiayangliu0302/"
   },
   {
     "_id": {
@@ -62,7 +62,7 @@
     "profile_image_url": "/Images/team_members/sponsorship/Eunice_Huang.jpg",
     "team_category": "Sponsorship",
     "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/eunice-huang-543210987/"
+    "linkedinURL": "https://www.linkedin.com/in/yanjiao-huang-580995287/"
   },
   {
     "_id": {
@@ -73,7 +73,7 @@
     "profile_image_url": "/Images/team_members/sponsorship/Jayden_Kwong.jpg",
     "team_category": "Sponsorship",
     "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/jayden-kwong-543210987/"
+    "linkedinURL": "https://www.linkedin.com/in/jaydendkwong"
   },
   {
     "_id": {
@@ -139,7 +139,7 @@
     "profile_image_url": "/Images/team_members/technical/Afifah_Hadi.jpg",
     "team_category": "Technical",
     "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/afifah-hadi-2639281a3/"
+    "linkedinURL": "https://www.linkedin.com/in/afifah-hadi/"
   },
   {
     "_id": {
@@ -183,7 +183,7 @@
     "profile_image_url": "/Images/team_members/design/Shampave_Kandiah.jpg",
     "team_category": "Design",
     "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/shampave-kandiah/"
+    "linkedinURL": "https://www.linkedin.com/in/shampave/"
   },
   {
     "_id": {
@@ -194,7 +194,7 @@
     "profile_image_url": "/Images/team_members/technical/Alex_Marasigan.jpg",
     "team_category": "Technical",
     "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/brandonw504"
+    "linkedinURL": "https://www.linkedin.com/in/alex-marasigan"
   },
   {
     "_id": {
@@ -238,7 +238,7 @@
     "profile_image_url": "/Images/team_members/Operations/Daniel_Yang.jpg",
     "team_category": "Operations",
     "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/shuoning-yang-24a175320/"
+    "linkedinURL": "https://www.linkedin.com/in/daniel-yang-24a175320/"
   },
   {
     "_id": {
@@ -260,7 +260,7 @@
     "profile_image_url": "/Images/team_members/marketing/Jordan_Wu.jpg",
     "team_category": "Marketing",
     "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/vanessaguo03/"
+    "linkedinURL": "https://www.linkedin.com/in/jordan-x-wu/"
   },
   {
     "_id": {
@@ -282,7 +282,7 @@
     "profile_image_url": "/Images/team_members/Operations/Cindy_Xing.jpg",
     "team_category": "Operations",
     "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/joyce-kim-profile/"
+    "linkedinURL": "www.linkedin.com/in/cindyxingg"
   },
   {
     "_id": {
@@ -304,18 +304,7 @@
     "profile_image_url": "/Images/team_members/design/Daisy_Williams.jpg",
     "team_category": "Design",
     "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/daisy-williams-2639281a3/"
-  },
-  {
-    "_id": {
-      "$oid": "65b6e0a06a7eaf354ea8e4bd"
-    },
-    "name": "Hema Madichetty",
-    "position": "Marketing Director",
-    "profile_image_url": "/Images/team_members/marketing/Hema_Madichetty.jpg",
-    "team_category": "Marketing",
-    "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/vanessaguo03/"
+    "linkedinURL": "https://www.linkedin.com/in/daisy-williams-5698a1346/"
   },
   {
     "_id": {
@@ -326,7 +315,7 @@
     "profile_image_url": "/Images/team_members/marketing/Raquib_Alam.jpg",
     "team_category": "Marketing",
     "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/vanessaguo03/"
+    "linkedinURL": "https://www.linkedin.com/in/raquib-alam/"
   },
   {
     "_id": {
@@ -337,7 +326,7 @@
     "profile_image_url": "/Images/team_members/marketing/Anmond_Wong.jpg",
     "team_category": "Marketing",
     "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/vanessaguo03/"
+    "linkedinURL": "https://www.linkedin.com/in/anmond-wong-3b9958364/"
   },
   {
     "_id": {
@@ -348,7 +337,7 @@
     "profile_image_url": "/Images/team_members/marketing/Andrew_Luyapan.jpg",
     "team_category": "Marketing",
     "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/andrewluyapan/"
+    "linkedinURL": "https://www.linkedin.com/in/andrew-luyapan-1ba3782b6/"
   },
   {
     "_id": {
@@ -392,7 +381,7 @@
     "profile_image_url": "/Images/team_members/external/Samara_Dixon.jpg",
     "team_category": "External",
     "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/saili-karkare-08a01223b/"
+    "linkedinURL": "https://www.linkedin.com/in/skdixon/"
   },
   {
     "_id": {
@@ -403,7 +392,7 @@
     "profile_image_url": "/Images/team_members/design/Aubrey_Reyes.jpg",
     "team_category": "Design",
     "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/aubrey-reyes-226217295/"
+    "linkedinURL": "https://www.linkedin.com/"
   },
   {
     "_id": {
@@ -414,7 +403,7 @@
     "profile_image_url": "/Images/team_members/external/Taran_Wariyar.jpg",
     "team_category": "External",
     "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/killedar/"
+    "linkedinURL": "https://www.linkedin.com/in/taran-wariyar-987a20295/"
   },
   {
     "_id": {
@@ -425,7 +414,7 @@
     "profile_image_url": "/Images/team_members/design/Brandon_Wong.jpg",
     "team_category": "Design",
     "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/fengmichelle/"
+    "linkedinURL": "https://www.linkedin.com/in/brandon-wong-43449827a/"
   },
   {
     "_id": {
@@ -436,7 +425,7 @@
     "profile_image_url": "/Images/team_members/design/Emerson_Lo.jpg",
     "team_category": "Design",
     "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/emerson-lo-2639281a3/"
+    "linkedinURL": "https://www.linkedin.com/in/emerson-lo/"
   },
   {
     "_id": {
@@ -447,7 +436,7 @@
     "profile_image_url": "/Images/team_members/design/Gabrielle_Gutierrez.jpg",
     "team_category": "Design",
     "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/gaby-gutierrez-2639281a3/"
+    "linkedinURL": "https://www.linkedin.com/in/gabrielle-gutierrez01234/"
   },
   {
     "_id": {
