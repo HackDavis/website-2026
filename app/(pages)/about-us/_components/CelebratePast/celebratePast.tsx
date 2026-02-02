@@ -31,12 +31,12 @@ function Pictures({
 
   return (
     <div
-    className={`absolute left-1/2 top-1/2 will-change-transform flex justify-center items-center p-[0.8cqw] pb-[5cqw] ${animClass}`}
-  >
+      className={`absolute left-1/2 top-1/2 will-change-transform flex justify-center items-center p-[0.8cqw] pb-[5cqw] ${animClass}`}
+    >
       <div className="w-[18cqw] h-[18cqw] relative overflow-hidden">
         <Image src={path} alt={alt} fill className="object-cover" />
       </div>
-  </div>
+    </div>
   );
 }
 
@@ -96,7 +96,11 @@ export default function CelebratePast() {
       </div>
 
       <button className="px-[3cqw] py-[1cqw] md:px-[1.5cqw] md:py-[.5cqw] rounded-full bg-[#123041] text-[#F9FBFC]">
-        <a href="https://hackdavis-2025.devpost.com/project-gallery" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://hackdavis-2025.devpost.com/project-gallery"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <p className="text-[3cqw] md:text-[1.3cqw] font-medium font-jakarta tracking-wide">
             VIEW 2025 WINNERS
           </p>

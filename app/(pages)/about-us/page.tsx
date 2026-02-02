@@ -5,7 +5,6 @@ import OurTeam from './_components/OurTeam/OurTeam';
 import AllAbout from './_components/AllAbout/AllAbout';
 import CelebratePast from './_components/CelebratePast/celebratePast';
 
-
 export default function AboutUs() {
   return (
     <div className="relative">
