@@ -84,13 +84,13 @@ export default function CarouselWindow({
 
   return (
     // NON-SCROLLING FRAME (clouds pinned here)
-      <div
-        style={
-          {
-            '--undercloud': `url(${UnderCloud.src})`,
-          } as React.CSSProperties
-        }
-        className="
+    <div
+      style={
+        {
+          '--undercloud': `url(${UnderCloud.src})`,
+        } as React.CSSProperties
+      }
+      className="
         relative
         pt-0 md:pt-[230px]
         pb-0 md:pb-[220px]
@@ -100,9 +100,9 @@ export default function CarouselWindow({
         bg-no-repeat
         bg-[position:center_60%]
         bg-[length:100vw]
-      ">
-      
-      {/* bg color */}
+      "
+    >
+      {/* bg color
       <div
         aria-hidden
         className="
@@ -115,8 +115,10 @@ export default function CarouselWindow({
           -z-10
           hidden
           md:block
+          md:pb-[150px]
         "
-      />
+      />*/}
+
       {/* pinned clouds (NOT inside the scroller) */}
       <Image
         src={LeftCloud}

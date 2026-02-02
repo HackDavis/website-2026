@@ -20,11 +20,11 @@ export default function Footer() {
   const logoStyles =
     'h-6 text-white transition hover:text-gray-300 break-400:h-7 md:h-8 lg:h-8 xl:h-10 2xl:h-15';
   return (
-    <footer className="relative z-10 flex w-full h-70 flex-col bg-[#122537]">
+    <footer className="relative -z-10 flex w-full h-70 flex-col bg-[#11043F]">
       {/* Content Container */}
       <div className="mx-auto mt-[20%] flex w-3/4 flex-col items-center justify-around gap-8 break-400:mt-[7%] break-625:gap-12 md:mt-[7%] lg:relative lg:my-[5%] lg:flex-row lg:justify-between lg:gap-0 lg:px-0">
         {/* HackDavis Logo */}
-        <div className="flex w-full flex-row items-center justify-center gap-4 lg:w-1/3 bg-[#122537]">
+        <div className="flex w-full flex-row items-center justify-center gap-4 lg:w-1/3 bg-[#11043F]">
           <Image
             src="/Footer/hdLogoWhite.svg"
             alt="HackDavis Logo"

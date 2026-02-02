@@ -12,11 +12,6 @@ import circle2022 from '@public/Images/archives/2022-circle.svg';
 import circle2023 from '@public/Images/archives/2023-circle.svg';
 import circle2024 from '@public/Images/archives/2024-circle.svg';
 import circle2025 from '@public/Images/archives/2025-circle.svg';
-import LeftCloud from '@public/Images/archives/LeftCloud.svg';
-import RightCloud from '@public/Images/archives/RightCloud.svg';
-import UnderCloud from '@public/Images/archives/UnderCloud.svg';
-import Image from 'next/image';
-
 
 const archives = [
   {
@@ -78,13 +73,29 @@ const archives = [
 export default function Archives() {
   return (
     <CarouselContextProvider>
-      <div className="relative z-0 flex w-full flex-col border-blue-600 border-8">
+      <div className="relative z-0 flex w-full flex-col py-[15%] md:pb-[150px] md:pt-[5%]">
+        <div
+          aria-hidden
+          className="
+          absolute
+          bottom-0
+          left-0
+          h-[45%]
+          w-full
+          bg-[#11043F]
+          -z-10
+          hidden
+          md:block
+        "
+        />
         <div className="flex flex-row items-center justify-between px-[13%] md:px-8 ">
-          <h2 className="font-metropolis ml-[13%] mb-[-26%] md:mb-[-16%] lg:mb-[-6%] text-xl font-bold text-[#123041] sm:text-[2.25rem]">
-            From the archive
-          </h2>
-          <div className="hidden sm:flex">
-            <CarouselArrows />
+          <div className="flex flex-row items-center justify-between pb-10 md:pb-0 w-full">
+            <h2 className="sm:m-0 md:ml-[13%] text-xl font-bold text-[#123041] sm:text-[2.25rem]">
+              From the archive
+            </h2>
+            <div className="hidden sm:flex">
+              <CarouselArrows />
+            </div>
           </div>
         </div>
         <CarouselWindow>
@@ -92,7 +103,7 @@ export default function Archives() {
             <Archive key={year} imageSrc={imageSrc} alt={alt} link={link} />
           ))}
         </CarouselWindow>
-        <div className="relative -top-[75px] px-[13%] sm:hidden">
+        <div className="relative z-10 py-5 px-[13%] sm:hidden">
           <CarouselArrows />
         </div>
       </div>
