@@ -42,11 +42,11 @@ function Pictures({
 
 export default function CelebratePast() {
   const [images, setImages] = useState<Img[]>([
-    { path: '/Images/celebrateus/one.png', alt: 'i like among us' },
-    { path: '/Images/celebrateus/two.png', alt: 'its pretty cool' },
-    { path: '/Images/celebrateus/three.png', alt: 'cheese is also cool' },
-    { path: '/Images/celebrateus/four.png', alt: 'amongsus' },
-    { path: '/Images/celebrateus/five.png', alt: 'among us!!!' },
+    { path: '/Images/celebrateus/One.jpeg', alt: 'i like among us' },
+    { path: '/Images/celebrateus/Two.jpg', alt: 'its pretty cool' },
+    { path: '/Images/celebrateus/Three.jpg', alt: 'cheese is also cool' },
+    { path: '/Images/celebrateus/Four.jpg', alt: 'amongsus' },
+    { path: '/Images/celebrateus/Five.jpg', alt: 'among us!!!' },
   ]);
 
   useEffect(() => {
