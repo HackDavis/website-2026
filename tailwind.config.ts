@@ -159,6 +159,15 @@ export default {
           boxShadow:
             'inset 0 0 0 1px color-mix(in srgb, var(--glass-light) calc(var(--glass-reflex-light) * 10%), transparent 70%), inset 1.7px 2.8px 2px -2.1px color-mix(in srgb, var(--glass-light) calc(var(--glass-reflex-light) * 90%), transparent 70%), inset -1.5px 2.5px 2px -2px color-mix(in srgb, var(--glass-dark) calc(var(--glass-reflex-dark) * 20%), transparent 70%), inset 0px 3px 6px -2px color-mix(in srgb, var(--glass-dark) calc(var(--glass-reflex-dark) * 20%), transparent 70%)',
         },
+        '.header-navbar': {
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '2%',
+          height: '10%',
+          padding: '2% 3% 2.5%',
+          borderRadius: '99em',
+          backgroundColor: 'rgba(255, 255, 255, 0.1)',
+        },
         '.glass-bubble': {
           display: 'inline-flex',
           alignItems: 'center',

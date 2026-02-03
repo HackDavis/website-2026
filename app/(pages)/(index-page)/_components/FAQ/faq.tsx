@@ -19,18 +19,14 @@ const whatIsHackathonAnswer = (
       style={{
         textDecoration: 'underline',
         fontWeight: 'normal',
-        fontFamily: 'Metropolis',
       }}
+      className="font-[var(--font-metropolis)]"
       href="https://drive.google.com/file/d/1KnWwN5sFYTe49Z5312OKnS5FA8OtL4iD/view"
       target="_blank"
     >
       HackDavis Rules & Policies,
     </Link>{' '}
-    <span
-      style={{
-        fontFamily: 'Metropolis',
-      }}
-    >
+    <span className="font-[var(--font-metropolis)]">
       {' '}
       and{' '}
     </span>
@@ -38,8 +34,8 @@ const whatIsHackathonAnswer = (
       style={{
         textDecoration: 'underline',
         fontWeight: 'normal',
-        fontFamily: 'Metropolis',
       }}
+      className="font-[var(--font-metropolis)]"
       href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
       target="_blank"
     >
@@ -59,8 +55,8 @@ const whatToHelpAnswer = (
       style={{
         textDecoration: 'underline',
         fontWeight: 'normal',
-        fontFamily: 'Metropolis',
       }}
+      className="font-[var(--font-metropolis)]"
       href="mailto:team@hackdavis.io"
     >
       team@hackdavis.io.
@@ -139,14 +135,14 @@ const AccordionFAQ = () => {
     <div className="relative left-1/2 right-1/2 w-screen -mx-[50vw] bg-[url('/Images/faq/faq-bg.svg')] bg-no-repeat bg-[position:top_center] bg-cover">
 
         <Image
-      src="/Images/faq/faqcloud.svg"
+          src="/Images/faq/faqcloud.svg"
           alt="Cloud"
           width={2000}
           height={1200}
-          className="absolute z-40 mt-0 -top-[18vw]"
-      />
+          className="absolute z-40 mt-0 -top-[18vw] pointer-events-none"
+        />
       <div
-        className="relative z-10 flex flex-col text-white w-[40vw] m-[10vw] pt-[40vw] pb-[20vw]"
+        className="relative z-10 flex flex-col text-white  m-[10vw] pt-[40vw] pb-[20vw] "
         ref={containerRef}
         style={{ height: 'auto' }}
       >
@@ -156,7 +152,8 @@ const AccordionFAQ = () => {
       <h1 className="pb-[4%] text-[4rem] font-bold tracking-[1.28px] text-[var(--text-light)] font-[var(--font-metropolis)] max-[760px]:text-[2.5rem] ">
         FAQ
       </h1>
-
+      <div className="grid grid-cols-1 md:grid-cols-2">
+      <div className="w-full">
       <Accordion transition transitionTimeout={250}>
         {faqs.map(({ question, answer }, index) => (
           <React.Fragment key={index}>
@@ -194,7 +191,7 @@ const AccordionFAQ = () => {
                 className: 'transition-[height] duration-300 ease-in-out',
               }}
             >
-              <p className="pb-[2%] text-[1rem] font-normal leading-[30px] tracking-[0.4px] text-[var(--text-light)] font-[var(--font-metropolis)] max-[760px]:text-[0.75rem] max-[760px]:leading-[21px]">
+              <p className="pb-[2%] text-[1rem] font-normal leading-[30px] tracking-[0.4px] text-[var(--text-light)] font-[var(--font-metropolis)] max-[760px]:text-[0.75rem] max-[760px]:leading-[21px] max-[760px]:my-[5vw]">
                 {answer}
               </p>
             </Item>
@@ -202,6 +199,17 @@ const AccordionFAQ = () => {
           </React.Fragment>
         ))}
       </Accordion>
+      </div>
+      <div className="hidden md:flex items-center justify-center translate-x-20">
+        <Image
+          src="/Images/hero/Cow.svg"
+          alt="HD Cow"
+          width={1000}
+          height={1000}
+          className="animate-float-bob will-change-transfor"
+        />
+      </div>
+      </div>
       </div>
     </div>
   );
