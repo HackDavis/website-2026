@@ -35,7 +35,7 @@ export default function Hero() {
         <h3 className="font-[var(--font-metropolis)] uppercase tracking-wider m-0 p-0 text-[clamp(0.9rem,3.5vw,1.2rem)] md:text-[clamp(1rem,2.6vw,1.8rem)] lg:text-[clamp(1rem,2.2vw,2rem)]">
           Hello, we're
         </h3>
-        <h1 className="font-[var(--font-metropolis)] font-black m-0 p-0 text-[clamp(1.8rem,8vw,3rem)] md:text-[clamp(2.2rem,6.2vw,5rem)] lg:text-[clamp(2.5rem,6vw,6rem)]">
+        <h1 className="font-[var(--font-metropolis)] font-black m-0 p-0 text-[clamp(2.1rem,9vw,3.6rem)] md:text-[clamp(2.6rem,7vw,5.6rem)] lg:text-[clamp(4.1rem,7.8vw,9.5rem)]">
           HackDavis
         </h1>
         <h3 className="text-right font-black text-[var(--text-purple)] m-0 p-0 text-[clamp(0.9rem,3.5vw,1.2rem)] md:text-[clamp(1rem,2.6vw,1.8rem)] lg:text-[clamp(1rem,2.2vw,2rem)]">
@@ -43,7 +43,10 @@ export default function Hero() {
         </h3>
       </div>
 
-      <div className="absolute z-10 top-[125vw] left-[6%] w-[50vw] text-white sm:top-[60%] md:top-[65vw] md:left-[10%] md:w-[40vw] lg:top-[60vw] lg:left-[12%] lg:w-auto xl:top-[50%] 2xl:top-[60%]">
+      <div className="absolute z-10 top-[125vw] left-[6%] w-[50vw] h-[200vw] text-white sm:w-[42vw] sm:min-h-[120vw]
+      sm:top-[60%] 
+      md:top-[70vw] md:left-[10%] md:w-[40vw] 
+      lg:top-[75vw] lg:left-[12%] lg:w-auto">
         <div className="relative border border-white py-3 px-3 pr-4 md:py-[1.4vw] md:px-[1.2vw] md:pr-[2vw] lg:py-[2vw] lg:px-[1vw] lg:pr-[2vw]">
           <span className="absolute -top-2 -left-2 h-5 w-5 rounded-full border border-white bg-[#11043F]" />
           <span className="absolute -top-2 -right-2 h-5 w-5 rounded-full border border-white bg-[#11043F]" />
