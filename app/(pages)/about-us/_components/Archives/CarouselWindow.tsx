@@ -152,9 +152,9 @@ export default function CarouselWindow({
         className="
           relative z-10
           flex flex-row items-center
-          overflow-x-auto overflow-y-hidden
-          overscroll-y-auto
-          touch-pan-x
+          overflow-x-auto
+          overflow-y-visible
+          touch-pan-x touch-pan-y
           [scrollbar-width:none]
           [-ms-overflow-style:none]
           [&::-webkit-scrollbar]:hidden
