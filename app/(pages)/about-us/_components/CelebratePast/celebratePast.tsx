@@ -33,7 +33,7 @@ function Pictures({
     <div
       className={`absolute left-1/2 top-1/2 will-change-transform flex justify-center items-center p-[0.8cqw] pb-[5cqw] ${animClass}`}
     >
-      <div className="w-[18cqw] h-[18cqw] relative overflow-hidden">
+      <div className="w-[20cqw] h-[20cqw] sm:w-[18cqw] sm:h-[18cqw] relative overflow-hidden">
         <Image src={path} alt={alt} fill className="object-cover" />
       </div>
     </div>

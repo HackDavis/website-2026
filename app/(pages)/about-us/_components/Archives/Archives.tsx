@@ -103,7 +103,7 @@ export default function Archives() {
             <Archive key={year} imageSrc={imageSrc} alt={alt} link={link} />
           ))}
         </CarouselWindow>
-        <div className="relative z-10 py-5 px-[13%] sm:hidden">
+        <div className="relative z-10 py-5 px-[10%] sm:hidden">
           <CarouselArrows />
         </div>
       </div>

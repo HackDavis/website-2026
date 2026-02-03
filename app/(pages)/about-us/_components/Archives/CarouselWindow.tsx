@@ -134,7 +134,7 @@ export default function CarouselWindow({
           right-[-10px]
           sm:top-[46%]
           md:top-[47%]
-          lg:top-[28%]
+          lg:top-[33%]
           xlg:top-[25%]
           w-[100vw]
           max-w-none
@@ -153,7 +153,7 @@ export default function CarouselWindow({
           relative z-10
           flex flex-row items-center
           overflow-x-auto overflow-y-hidden
-          overscroll-y-none
+          overscroll-y-auto
           touch-pan-x
           [scrollbar-width:none]
           [-ms-overflow-style:none]
@@ -162,7 +162,7 @@ export default function CarouselWindow({
         "
       >
         <div
-          className="flex flex-row items-center gap-[60px] px-[13%] [&>*]:shrink-0 md:px-16"
+          className="flex flex-row items-center gap-6 sm:gap-10 md:gap-[60px] px-[10%] [&>*]:shrink-0"
           ref={onContentBeltMount}
         >
           {children}
