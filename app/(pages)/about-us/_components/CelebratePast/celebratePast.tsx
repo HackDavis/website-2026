@@ -68,14 +68,20 @@ export default function CelebratePast() {
       {/* text */}
       <div className="flex flex-col items-center">
         <div className="py-[0.5cqw] text-center">
-          <p className="text-[5cqw] md:text-[3cqw] leading-tight text-[#123041] font-bold font-montserrat">
+          <p className="text-2xl sm:text-4xl lg:text-5xl font-bold leading-none text-[#123041] text-center">
             Come celebrate
             <br className="md:hidden" /> our past with us!
           </p>
         </div>
         {/* paragraph */}
         <div className="py-[0.5cqw] text-center ">
-          <p className="text-[2.4cqw] md:text-[1.2cqw] text-[#123041] font-jakarta">
+          <p
+            className="mt-2
+            text-[var(--text-dark)]
+           /80
+            leading-snug
+            text-[14px] sm:text-base lg:text-lg font-jakarta"
+          >
             We truly could not have done any of this
             <br className="md:hidden" /> without you. Your support means the
             world!
