@@ -25,7 +25,7 @@ export default function Stats() {
     <div className="stats-section relative w-full h-[1200px] sm:h-[1400px] md:max-h-screen md:h-screen overflow-x-clip ">
       <div className="relative w-full h-full">
         {/* Top Left - Scissors */}
-        <div className="absolute md:left-[-10%] md:top-[-10%] w-[38%] max-w-92 hidden md:block">
+        <div className="absolute md:left-[-10%] md:top-[calc(25%-21vw)] w-[38%] max-w-92 hidden md:block">
           <Image src={scissors} alt="Scissors" className="w-full h-auto" />
         </div>
 
@@ -94,7 +94,7 @@ export default function Stats() {
         </div>
 
         {/* Circle of Circles Pink */}
-        <div className="absolute md:top-[53%] right-[0%] md:w-[12%] md:max-w-24 sm:top-[57%] sm:max-w-20 max-w-16 w-[20vw] top-[50%]">
+        <div className="absolute md:top-[53%] right-[0%] md:w-[8vw] md:max-w-20 sm:top-[57%] sm:max-w-20 max-w-16 w-[20vw] top-[50%]">
           <Image
             src={circle_of_circles_pink}
             alt="Circle of Circles"
@@ -103,7 +103,7 @@ export default function Stats() {
         </div>
 
         {/* Cross Cyan */}
-        <div className="absolute md:top-[80%] md:right-[10%] md:w-[8%] md:max-w-48 md:rotate-0 sm:top-[81%] sm:right-[60%] sm:w-[28%] top-[75%] right-[55%] rotate-[45deg]">
+        <div className="absolute md:top-[calc(45%+21vw)] md:right-[10%] md:w-[8vw] md:max-w-48 md:rotate-0 sm:top-[81%] sm:right-[60%] sm:w-[28%] top-[75%] right-[55%] rotate-[45deg]">
           <Image src={cross_cyan} alt="Cross" className="w-full h-auto" />
         </div>
 
@@ -126,7 +126,7 @@ export default function Stats() {
         </div>
 
         {/* Bottom Left - Tape (diagonal) */}
-        <div className="absolute md:top-[72%] md:left-[5%] md:w-[30%] md:max-w-100 hidden md:block">
+        <div className="absolute md:top-[calc(32%+21vw)] md:left-[5%] md:w-[30%] md:max-w-100 hidden md:block">
           <Image src={tape} alt="Tape" className="w-full h-auto" />
         </div>
 
