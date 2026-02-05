@@ -22,7 +22,7 @@ export default function Stats() {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="stats-section relative w-full h-[1200px] sm:h-[1400px] md:max-h-screen md:h-screen overflow-x-clip bg-slate-300">
+    <div className="stats-section relative w-full h-[1200px] sm:h-[1400px] md:max-h-screen md:h-screen overflow-x-clip ">
       <div className="relative w-full h-full">
         {/* Top Left - Scissors */}
         <div className="absolute md:left-[-10%] md:top-[-10%] w-[38%] max-w-92 hidden md:block">
@@ -30,7 +30,7 @@ export default function Stats() {
         </div>
 
         {/* Top area - Cross (lime green) */}
-        <div className="absolute md:top-[30%] md:left-[20%] md:w-[15%] md:max-w-64 sm:top-[35%] sm:left-[-15%]">
+        <div className="absolute md:top-[30%] md:left-[20%] md:w-[15%] md:max-w-64 sm:top-[35%] sm:left-[-15%] top-[30%] left-[-15%] w-[30%]">
           <Image src={cross_lime} alt="Cross" className="w-full h-auto" />
         </div>
 
@@ -44,12 +44,12 @@ export default function Stats() {
         </div>
 
         {/* Green Flower Thing */}
-        <div className="absolute md:top-[15%] md:left-[89%] md:w-[10%] md:max-w-32 sm:right-[-7%] sm:top-[13%]">
+        <div className="absolute md:top-[15%] md:left-[89%] md:w-[10%] md:max-w-32 sm:right-[-7%] sm:top-[13%] right-[-7%] top-[9%]">
           <Image src={flower_thing} alt="Flower" className="w-full h-auto" />
         </div>
 
         {/* Projects w-[16%] md:w-[24%] lg: xs:max-w-24  md:max-w-48 lg:*/}
-        <div className="absolute md:top-[25%] md:right-[34%] md:w-[20vw] sm:right-[55%] sm:top-[4%] sm:w-[45vw] w-[40vw] left-[5vw] top-[5vw]">
+        <div className="absolute md:top-[25%] md:right-[34%] md:w-[20vw] sm:right-[55%] sm:top-[4%] sm:w-[45vw] w-[40vw] right-[50vw] top-[5%]">
           <Image
             src={projects_count}
             alt="Projects Count"
@@ -58,7 +58,7 @@ export default function Stats() {
         </div>
 
         {/* Hackers */}
-        <div className="absolute md:top-[23%] md:left-[65%] md:w-[32%] md:max-w-2xl sm:right-[-17%] sm:top-[19%] sm:max-w-xl sm:w-[90%]">
+        <div className="absolute md:top-[23%] md:left-[65%] md:w-[32%] md:max-w-2xl sm:right-[-17%] sm:top-[19%] sm:max-w-xl sm:w-[90%] right-[-15%] max-w-lg w-[90vw] top-[16%]">
           <Image
             src={hackers_count}
             alt="Hackers Count"
@@ -67,12 +67,12 @@ export default function Stats() {
         </div>
 
         {/* Time Count */}
-        <div className="absolute md:top-[38%] md:left-[30%] md:w-[20%] md:max-w-92 sm:top-[43%] sm:left-[-1%]">
+        <div className="absolute md:top-[38%] md:left-[30%] md:w-[20%] md:max-w-92 sm:top-[43%] sm:left-[-1%] top-[37%] left-[-5vw] w-[60vw]">
           <Image src={time_count} alt="Time Count" className="w-full h-auto" />
         </div>
 
-        {/* Prize Amount */}
-        <div className="absolute md:top-[74%] md:right-[23%] md:w-[17%] md:max-w-100 sm:top-[70%] sm:right-[5%]">
+        {/* Prize Amount  md:top-[74%]*/}
+        <div className="absolute md:top-[calc(34%+21vw)] md:right-[23%] md:w-[17%] md:max-w-100 sm:top-[70%] sm:right-[5%] top-[63%] right-[0vw] w-[50vw]">
           <Image
             src={prize_amount}
             alt="Prize Amount"
@@ -82,7 +82,7 @@ export default function Stats() {
 
         {/* Sponsor Button */}
         <div
-          className="absolute md:top-[63%] md:left-[46%] md:w-[18%] cursor-pointer transition-all max-w-100 sm:top-[60%] sm:right-[25%]"
+          className="absolute md:top-[calc(25%+21vw)] md:left-[46%] md:w-[20vw] cursor-pointer transition-all sm:max-w-128 sm:w-[50vw] sm:top-[60%] sm:right-[25%] top-[54%] max-w-56 right-[25vw] w-[40vw]"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
@@ -94,7 +94,7 @@ export default function Stats() {
         </div>
 
         {/* Circle of Circles Pink */}
-        <div className="absolute md:top-[53%] right-[0%] md:w-[12%] md:max-w-24 sm:top-[57%] sm:max-w-20">
+        <div className="absolute md:top-[53%] right-[0%] md:w-[12%] md:max-w-24 sm:top-[57%] sm:max-w-20 max-w-16 w-[20vw] top-[50%]">
           <Image
             src={circle_of_circles_pink}
             alt="Circle of Circles"
@@ -103,12 +103,12 @@ export default function Stats() {
         </div>
 
         {/* Cross Cyan */}
-        <div className="absolute md:top-[80%] md:right-[10%] md:w-[8%] md:max-w-48 md:rotate-0 sm:top-[81%] sm:right-[60%] sm:w-[28%] rotate-[45deg]">
+        <div className="absolute md:top-[80%] md:right-[10%] md:w-[8%] md:max-w-48 md:rotate-0 sm:top-[81%] sm:right-[60%] sm:w-[28%] top-[75%] right-[55%] rotate-[45deg]">
           <Image src={cross_cyan} alt="Cross" className="w-full h-auto" />
         </div>
 
         {/* Squiggly Circle Yellow */}
-        <div className="absolute md:top-[55%] md:left-[6%] md:w-[10%] md:max-w-24 sm:top-[68%] sm:max-w-24 sm:w-[20%] sm:left-[5%]">
+        <div className="absolute md:top-[calc(20%+20vw)] md:left-[5vw] md:w-[10vw] md:max-w-20 sm:top-[68%] sm:max-w-24 sm:w-[20%] sm:left-[5%] left-[5vw] top-[65%]">
           <Image
             src={squiggly_circle_yellow}
             alt="Circle"
@@ -117,7 +117,7 @@ export default function Stats() {
         </div>
 
         {/* Squiggly Circle Pink */}
-        <div className="absolute md:top-[55%] md:left-[16%] md:w-[10%] md:max-w-48 sm:max-w-32 sm:right-[15%] max-w-24 left-[50vw]">
+        <div className="absolute md:top-[calc(35%+12vw)] md:left-[16%] md:w-[10%] md:max-w-48 sm:max-w-32 sm:right-[15%] max-w-24 left-[55vw]">
           <Image
             src={squiggly_circle_pink}
             alt="Circle"
@@ -131,7 +131,7 @@ export default function Stats() {
         </div>
 
         {/* Background gradient */}
-        <div className="absolute md:top-[62%] md:left-[27%] md:w-[35%] md:max-w-164 z-[-1]">
+        <div className="absolute md:top-[62%] md:left-[27%] md:w-[35%] md:max-w-164 z-[-1] top-[76%] left-[5%] w-[80vw]">
           <Image
             src={background_gradient}
             alt="Tape"
