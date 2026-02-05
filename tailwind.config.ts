@@ -9,6 +9,11 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        inter: ['var(--font-inter)', 'arial'],
+        montserrat: ['var(--font-montserrat)', 'arial'],
+        jakarta: ['var(--font-jakarta)', 'arial'],
+      },
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
