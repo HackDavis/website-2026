@@ -13,7 +13,7 @@ function SponsorElement({
 }) {
   return (
     <div
-      className={`relative flex-shrink-0 bg-[#612D72] rounded-[3vw] w-[30vw] h-[20vw] flex items-center justify-center`}
+      className={`relative flex-shrink-0 bg-[#612D72] rounded-[2vw] w-[30vw] h-[20vw] flex items-center justify-center`}
     >
       <div className="absolute inset-[10%]">
         <a
