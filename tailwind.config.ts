@@ -26,8 +26,13 @@ export default {
           '0%': { transform: 'translateX(100%)' },
           '100%': { transform: 'translateX(-100%)' },
         },
+        scroll: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
       },
       animation: {
+        'test': 'scroll 20s linear infinite',
         'float-bob': 'float-bob 3s ease-in-out infinite',
         'slide-right': 'slide-right 20s linear forwards',
         'slide-left': 'slide-left 20s linear forwards',
