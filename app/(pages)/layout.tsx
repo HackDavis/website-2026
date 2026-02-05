@@ -3,7 +3,7 @@ import '@globals/styles/globals.scss';
 import metadataJSON from '@app/(pages)/_globals/metadata.json';
 import fonts from './_globals/fonts';
 import Header from './_components/Header/Header';
-import Footer from '@app/(pages)/_components/Footer/Footer';
+import FooterWrapper from './_components/FooterWrapper';
 
 export const metadata: Metadata = metadataJSON;
 
@@ -17,7 +17,7 @@ export default function RootLayout({
       <body className={`${fonts} antialiased`}>
         <Header />
         {children}
-        <Footer />
+        <FooterWrapper />
       </body>
     </html>
   );
