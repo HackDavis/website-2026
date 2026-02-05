@@ -96,7 +96,7 @@ export default function Archives() {
         "
         />
         <div className="flex flex-row items-center justify-between px-[10%]">
-          <div className="flex flex-row items-center justify-between pb-10 md:pb-0 w-full">
+          <div className="flex flex-row justify-between pb-10 md:pb-0 w-full">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold leading-none text-[#123041] text-center md:text-left">
               From the archive
             </h2>

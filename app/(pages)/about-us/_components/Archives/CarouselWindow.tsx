@@ -85,24 +85,34 @@ export default function CarouselWindow({
   return (
     // NON-SCROLLING FRAME (clouds pinned here)
     <div
-      style={
-        {
-          '--undercloud': `url(${UnderCloud.src})`,
-        } as React.CSSProperties
-      }
       className="
         relative
-        pt-0 md:pt-[230px]
-        pb-0 md:pb-[220px]
-        min-h-[60px] md:min-h-[320px]
+        top-[30%]
+        min-h-[60px] md:min-h-[20vw]
         overflow-y-visible
         overflow-x-clip
-        bg-[image:none] md:bg-[image:var(--undercloud)]
-        bg-no-repeat
-        bg-[position:center_60%]
-        bg-[length:100vw]
+        lg:min-h-[30vw]
+        sm:h-[10vw]
       "
     >
+      <Image
+        src={UnderCloud}
+        alt=""
+        aria-hidden
+        className="
+          pointer-events-none
+          absolute
+          left-1/2
+          top-[30%]
+          w-[100vw]
+          max-w-none
+          -translate-x-1/2
+          -translate-y-1/2
+          -z-10
+          hidden
+          md:block
+        "
+      />
       {/* pinned clouds (NOT inside the scroller) */}
       <Image
         src={LeftCloud}
@@ -113,9 +123,7 @@ export default function CarouselWindow({
           absolute
           left-[-1%]
           sm:top-[32%]
-          md:top-[47%]
-          lg:top-[32%]
-          xlg:top-[25%]
+          md:top-[32%]
           w-[100vw]
           max-w-none
           -translate-y-1/2
@@ -133,11 +141,8 @@ export default function CarouselWindow({
           pointer-events-none
           absolute
           right-[-10px]
-          sm:top-[46%]
-          md:top-[47%]
-          lg:top-[33%]
-          xlg:top-[25%]
-          w-[100vw]
+          md:top-[25%]
+          w-[90vw]
           max-w-none
           -translate-y-1/2
           z-30
@@ -160,10 +165,13 @@ export default function CarouselWindow({
           [-ms-overflow-style:none]
           [&::-webkit-scrollbar]:hidden
           md:pr-16
+          md:pt-10
+          lg:pt-24
+          2xl:pt-52
         "
       >
         <div
-          className="flex flex-row items-center gap-6 sm:gap-10 md:gap-[60px] px-[10%] [&>*]:shrink-0"
+          className="flex flex-row items-center gap-6 sm:gap-10 md:gap-[60px] px-[10%] [&>*]:shrink-0 "
           ref={onContentBeltMount}
         >
           {children}
