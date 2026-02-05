@@ -12,7 +12,7 @@ export default {
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
-        'background-dark-purple': 'var(--background-dark-purple)',
+        darkpurple: 'var(--background-dark-purple)',
       },
       keyframes: {
         'float-bob': {
