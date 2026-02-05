@@ -6,7 +6,7 @@ import { useRef } from 'react';
 
 function SponsorElement({ src, url, alt }: { src: string; url: string; alt: string }) {
     return (
-        <div className='relative bg-[#612D72] rounded-[5%] w-[30%] aspect-[1/${num}] flex items-center justify-center'>
+        <div className={`relative bg-[#612D72] rounded-[5%] w-[30%] aspect-[1/${1}] flex items-center justify-center`}>
             <div className="absolute inset-[10%]">
                 <Image
                     src={src}
