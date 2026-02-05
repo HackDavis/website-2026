@@ -12,8 +12,15 @@ import circle2022 from '@public/Images/archives/2022-circle.svg';
 import circle2023 from '@public/Images/archives/2023-circle.svg';
 import circle2024 from '@public/Images/archives/2024-circle.svg';
 import circle2025 from '@public/Images/archives/2025-circle.svg';
+import blankImg from '@public/Images/archives/blank.svg';
 
 const archives = [
+  {
+    year: 2026,
+    imageSrc: blankImg,
+    alt: "Wait... You're already on the 2026 HackDavis page?",
+    link: 'https://hackdavis.io/',
+  },
   {
     year: 2017,
     imageSrc: circle2017,

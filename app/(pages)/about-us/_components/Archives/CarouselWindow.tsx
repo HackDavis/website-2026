@@ -95,7 +95,8 @@ export default function CarouselWindow({
         pt-0 md:pt-[230px]
         pb-0 md:pb-[220px]
         min-h-[60px] md:min-h-[320px]
-        overflow-visible
+        overflow-y-visible
+        overflow-x-clip
         bg-[image:none] md:bg-[image:var(--undercloud)]
         bg-no-repeat
         bg-[position:center_60%]
