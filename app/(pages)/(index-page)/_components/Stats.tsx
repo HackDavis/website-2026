@@ -22,20 +22,20 @@ export default function Stats() {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <section className="stats-section relative w-full h-[1200px] ">
+    <div className="stats-section relative w-full h-[1200px] sm:h-[1400px] md:max-h-screen md:h-screen overflow-x-clip bg-slate-300">
       <div className="relative w-full h-full">
         {/* Top Left - Scissors */}
-        <div className="absolute left-[-10%] top-[-10%] w-[38%] max-w-92">
+        <div className="absolute md:left-[-10%] md:top-[-10%] w-[38%] max-w-92 hidden md:block">
           <Image src={scissors} alt="Scissors" className="w-full h-auto" />
         </div>
 
         {/* Top area - Cross (lime green) */}
-        <div className="absolute top-[30%] left-[20%] w-[15%] max-w-64">
+        <div className="absolute md:top-[30%] md:left-[20%] md:w-[15%] md:max-w-64 sm:top-[35%] sm:left-[-15%]">
           <Image src={cross_lime} alt="Cross" className="w-full h-auto" />
         </div>
 
         {/* Circle of Circles (cyan) */}
-        <div className="absolute top-[20%] left-[35%] w-[12%] max-w-40">
+        <div className="absolute md:top-[20%] md:left-[35%] md:w-[12%] md:max-w-40 hidden md:block">
           <Image
             src={circle_of_circles_cyan}
             alt="Circle of Circles"
@@ -44,22 +44,21 @@ export default function Stats() {
         </div>
 
         {/* Green Flower Thing */}
-        <div className="absolute top-[15%] left-[89%] w-[10%] max-w-32">
+        <div className="absolute md:top-[15%] md:left-[89%] md:w-[10%] md:max-w-32 sm:right-[-7%] sm:top-[13%]">
           <Image src={flower_thing} alt="Flower" className="w-full h-auto" />
         </div>
 
-        {/* Projects */}
-        <div className="absolute top-[25%] left-[46%] w-[28%] max-w-80">
+        {/* Projects w-[16%] md:w-[24%] lg: xs:max-w-24  md:max-w-48 lg:*/}
+        <div className="absolute md:top-[25%] md:right-[34%] md:w-[20vw] sm:right-[55%] sm:top-[4%] sm:w-[45vw] w-[40vw] left-[5vw] top-[5vw]">
           <Image
             src={projects_count}
             alt="Projects Count"
-            width={200}
             className="w-full h-auto"
           />
         </div>
 
         {/* Hackers */}
-        <div className="absolute top-[23%] left-[65%] w-[32%] max-w-2xl">
+        <div className="absolute md:top-[23%] md:left-[65%] md:w-[32%] md:max-w-2xl sm:right-[-17%] sm:top-[19%] sm:max-w-xl sm:w-[90%]">
           <Image
             src={hackers_count}
             alt="Hackers Count"
@@ -68,12 +67,12 @@ export default function Stats() {
         </div>
 
         {/* Time Count */}
-        <div className="absolute top-[38%] left-[30%] w-[20%] max-w-92">
+        <div className="absolute md:top-[38%] md:left-[30%] md:w-[20%] md:max-w-92 sm:top-[43%] sm:left-[-1%]">
           <Image src={time_count} alt="Time Count" className="w-full h-auto" />
         </div>
 
         {/* Prize Amount */}
-        <div className="absolute top-[74%] right-[23%] w-[17%] max-w-100">
+        <div className="absolute md:top-[74%] md:right-[23%] md:w-[17%] md:max-w-100 sm:top-[70%] sm:right-[5%]">
           <Image
             src={prize_amount}
             alt="Prize Amount"
@@ -83,7 +82,7 @@ export default function Stats() {
 
         {/* Sponsor Button */}
         <div
-          className="absolute top-[60%] left-[46%] w-[18%] max-w-100 cursor-pointer transition-all"
+          className="absolute md:top-[63%] md:left-[46%] md:w-[18%] cursor-pointer transition-all max-w-100 sm:top-[60%] sm:right-[25%]"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
@@ -95,7 +94,7 @@ export default function Stats() {
         </div>
 
         {/* Circle of Circles Pink */}
-        <div className="absolute top-[53%] right-[0%] w-[12%] max-w-24">
+        <div className="absolute md:top-[53%] right-[0%] md:w-[12%] md:max-w-24 sm:top-[57%] sm:max-w-20">
           <Image
             src={circle_of_circles_pink}
             alt="Circle of Circles"
@@ -104,12 +103,12 @@ export default function Stats() {
         </div>
 
         {/* Cross Cyan */}
-        <div className="absolute top-[80%] right-[10%] w-[8%] max-w-48">
+        <div className="absolute md:top-[80%] md:right-[10%] md:w-[8%] md:max-w-48 md:rotate-0 sm:top-[81%] sm:right-[60%] sm:w-[28%] rotate-[45deg]">
           <Image src={cross_cyan} alt="Cross" className="w-full h-auto" />
         </div>
 
         {/* Squiggly Circle Yellow */}
-        <div className="absolute top-[55%] left-[6%] w-[10%] max-w-24">
+        <div className="absolute md:top-[55%] md:left-[6%] md:w-[10%] md:max-w-24 sm:top-[68%] sm:max-w-24 sm:w-[20%] sm:left-[5%]">
           <Image
             src={squiggly_circle_yellow}
             alt="Circle"
@@ -118,7 +117,7 @@ export default function Stats() {
         </div>
 
         {/* Squiggly Circle Pink */}
-        <div className="absolute top-[55%] left-[16%] w-[10%] max-w-48">
+        <div className="absolute md:top-[55%] md:left-[16%] md:w-[10%] md:max-w-48 sm:max-w-32 sm:right-[15%] max-w-24 left-[50vw]">
           <Image
             src={squiggly_circle_pink}
             alt="Circle"
@@ -127,12 +126,12 @@ export default function Stats() {
         </div>
 
         {/* Bottom Left - Tape (diagonal) */}
-        <div className="absolute top-[72%] left-[5%] w-[30%] max-w-100">
+        <div className="absolute md:top-[72%] md:left-[5%] md:w-[30%] md:max-w-100 hidden md:block">
           <Image src={tape} alt="Tape" className="w-full h-auto" />
         </div>
 
-        {/* Bottom Left - Tape (diagonal) */}
-        <div className="absolute top-[62%] left-[27%] w-[35%] max-w-164 z-[-1]">
+        {/* Background gradient */}
+        <div className="absolute md:top-[62%] md:left-[27%] md:w-[35%] md:max-w-164 z-[-1]">
           <Image
             src={background_gradient}
             alt="Tape"
@@ -140,6 +139,6 @@ export default function Stats() {
           />
         </div>
       </div>
-    </section>
+    </div>
   );
 }
