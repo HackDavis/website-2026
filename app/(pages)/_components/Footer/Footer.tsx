@@ -16,15 +16,24 @@ const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
-export default function Footer() {
+interface FooterProps {
+  variant?: 'index' | 'about-us';
+}
+
+export default function Footer({ variant = 'about-us' }: FooterProps) {
   const logoStyles =
     'h-6 text-white transition hover:text-gray-300 break-400:h-7 md:h-8 lg:h-8 xl:h-10 2xl:h-15';
+
+  const bgColor = variant === 'index' ? 'bg-[#000008] z-[-1]' : 'bg-[#11043F]';
+
   return (
-    <footer className="relative z-10 flex w-full h-70 flex-col bg-[#11043F]">
+    <footer className={`relative z-10 flex w-full h-70 flex-col ${bgColor}`}>
       {/* Content Container */}
       <div className="mx-auto mt-[20%] flex w-3/4 flex-col items-center justify-around gap-8 break-400:mt-[7%] break-625:gap-12 md:mt-[7%] lg:relative lg:my-[5%] lg:flex-row lg:justify-between lg:gap-0 lg:px-0">
         {/* HackDavis Logo */}
-        <div className="flex w-full flex-row items-center justify-center gap-4 lg:w-1/3 bg-[#11043F]">
+        <div
+          className={`flex w-full flex-row items-center justify-center gap-4 lg:w-1/3 ${bgColor}`}
+        >
           <Image
             src="/Footer/hdLogoWhite.svg"
             alt="HackDavis Logo"
