@@ -106,7 +106,11 @@ export default function Header() {
         aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
         onClick={() => setIsMenuOpen((open) => !open)}
         className={`absolute right-[5vw] top-[5vw] block md:hidden z-[60] mr-[7vw] mt-[1vw] h-8 w-8 pointer-events-auto transition-colors duration-300 ${
-          isMenuOpen ? 'text-white' : isHomePage ? 'text-[#005271]' : 'text-white'
+          isMenuOpen
+            ? 'text-white'
+            : isHomePage
+            ? 'text-[#005271]'
+            : 'text-white'
         }`}
       >
         <span
@@ -194,14 +198,18 @@ export default function Header() {
             <nav className="flex flex-col items-center gap-7 text-white font-[var(--font-metropolis)] uppercase text-lg">
               <Link
                 href="/"
-                className={`${activeSection === 'home' ? 'font-bold underline' : ''}`}
+                className={`${
+                  activeSection === 'home' ? 'font-bold underline' : ''
+                }`}
                 onClick={handleMobileNavClick('/')}
               >
                 Home
               </Link>
               <Link
                 href="/about-us"
-                className={`${activeSection === 'about' ? 'font-bold underline' : ''}`}
+                className={`${
+                  activeSection === 'about' ? 'font-bold underline' : ''
+                }`}
                 onClick={handleMobileNavClick('/about-us')}
               >
                 About
@@ -211,7 +219,9 @@ export default function Header() {
               </Link>
               <Link
                 href="/#faq"
-                className={`${activeSection === 'faq' ? 'font-bold underline' : ''}`}
+                className={`${
+                  activeSection === 'faq' ? 'font-bold underline' : ''
+                }`}
                 onClick={handleMobileNavClick('/#faq')}
               >
                 FAQ

@@ -1,6 +1,5 @@
 'use client';
 import React from 'react';
-import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Accordion, AccordionItem as Item } from '@szhsin/react-accordion';
 import Image from 'next/image';
@@ -26,10 +25,7 @@ const whatIsHackathonAnswer = (
     >
       HackDavis Rules & Policies,
     </Link>{' '}
-    <span className="font-[var(--font-metropolis)]">
-      {' '}
-      and{' '}
-    </span>
+    <span className="font-[var(--font-metropolis)]"> and </span>
     <Link
       style={{
         textDecoration: 'underline',
@@ -110,106 +106,84 @@ const AccordionFAQ = () => {
     },
   ];
 
-
-
-  {
-    /*
-      This interface and AccordionItem is used to define the structure of the accordion item, allowing us to apply our styling to it
-    */
-  }
-
-  const [fixedHeight, setFixedHeight] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const longestAnswerRef = useRef<HTMLParagraphElement>(null);
-
-  useEffect(() => {
-    if (containerRef.current && longestAnswerRef.current) {
-      const collapsedHeight = containerRef.current.scrollHeight;
-      const longestAnswerHeight = longestAnswerRef.current.scrollHeight;
-
-      setFixedHeight(collapsedHeight + longestAnswerHeight);
-    }
-  }, []);
-
   return (
     <div className="relative left-1/2 right-1/2 w-screen -mx-[50vw] bg-[url('/Images/faq/faq-bg.svg')] bg-no-repeat bg-[position:top_center] bg-cover">
-
-        <Image
-          src="/Images/faq/faqcloud.svg"
-          alt="Cloud"
-          width={2000}
-          height={1200}
-          className="absolute z-40 mt-0 -top-[18vw] pointer-events-none"
-        />
+      <Image
+        src="/Images/faq/faqcloud.svg"
+        alt="Cloud"
+        width={2000}
+        height={1200}
+        className="absolute z-40 mt-0 -top-[18vw] pointer-events-none"
+      />
       <div
-        className="relative z-10 flex flex-col text-white  m-[10vw] pt-[40vw] pb-[20vw] "
-        ref={containerRef}
+        className="relative z-10 flex flex-col text-white m-[10vw] pt-[40vw] pb-[20vw] "
         style={{ height: 'auto' }}
       >
-
-      <br id="faq" />
-      <br />
-      <h1 className="pb-[4%] text-[4rem] font-bold tracking-[1.28px] text-[var(--text-light)] font-[var(--font-metropolis)] max-[760px]:text-[2.5rem] ">
-        FAQ
-      </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2">
-      <div className="w-full">
-      <Accordion transition transitionTimeout={250}>
-        {faqs.map(({ question, answer }, index) => (
-          <React.Fragment key={index}>
-            <Item
-              key={index}
-              header={
-                <div className="text-white flex w-full flex-row items-center justify-between">
-                  <p className="my-[0.5vw] text-[1.25rem] text-white font-bold leading-[45px] tracking-[0.4px] text-[var(--text-light)] font-[var(--font-metropolis)] max-[1048px]:text-base max-[760px]:text-[0.875rem] max-[760px]:leading-[38px]">
-                    {question}
-                  </p>
-                  <div>
-                    <div className="absolute -rotate-90 transition-transform duration-300 ease-[cubic-bezier(0,0,0,1)] group-[aria-expanded=true]:rotate-0">
-                      <Image
-                        src="/Images/faq/plus.svg"
-                        alt="expand icon"
-                        width={19}
-                        height={3}
-                        className="max-w-none"
-                      />
-                    </div>
-                    <Image
-                      src="/Images/faq/minus.svg"
-                      alt="collapse icon"
-                      width={19}
-                      height={3}
-                    />
-                  </div>
-                </div>
-              }
-              buttonProps={{
-                className: ({ isEnter }: { isEnter: boolean }) =>
-                  `group w-full cursor-pointer border-0 bg-transparent text-left ${isEnter ? '' : ''}`,
-              }}
-              contentProps={{
-                className: 'transition-[height] duration-300 ease-in-out',
-              }}
-            >
-              <p className="pb-[2%] text-[1rem] font-normal leading-[30px] tracking-[0.4px] text-[var(--text-light)] font-[var(--font-metropolis)] max-[760px]:text-[0.75rem] max-[760px]:leading-[21px] max-[760px]:my-[5vw]">
-                {answer}
-              </p>
-            </Item>
-            {index < faqs.length - 1 && <hr />}
-          </React.Fragment>
-        ))}
-      </Accordion>
-      </div>
-      <div className="hidden md:flex items-center justify-center translate-x-20">
-        <Image
-          src="/Images/hero/Cow.svg"
-          alt="HD Cow"
-          width={1000}
-          height={1000}
-          className="animate-float-bob will-change-transfor"
-        />
-      </div>
-      </div>
+        <br id="faq" />
+        <br />
+        <h1 className="pb-[4%] text-[4rem] font-bold tracking-[1.28px] text-[var(--text-light)] font-[var(--font-metropolis)] max-[760px]:text-[2.5rem] ">
+          FAQ
+        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-2">
+          <div className="w-full">
+            <Accordion transition transitionTimeout={250}>
+              {faqs.map(({ question, answer }, index) => (
+                <React.Fragment key={index}>
+                  <Item
+                    key={index}
+                    header={
+                      <div className="text-white flex w-full flex-row items-center justify-between">
+                        <p className="my-[0.5vw] text-[1.25rem] text-white font-bold leading-[45px] tracking-[0.4px] text-[var(--text-light)] font-[var(--font-metropolis)] max-[1048px]:text-base max-[760px]:text-[0.875rem] max-[760px]:leading-[38px]">
+                          {question}
+                        </p>
+                        <div>
+                          <div className="absolute -rotate-90 transition-transform duration-300 ease-[cubic-bezier(0,0,0,1)] group-[aria-expanded=true]:rotate-0">
+                            <Image
+                              src="/Images/faq/plus.svg"
+                              alt="expand icon"
+                              width={19}
+                              height={3}
+                              className="max-w-none"
+                            />
+                          </div>
+                          <Image
+                            src="/Images/faq/minus.svg"
+                            alt="collapse icon"
+                            width={19}
+                            height={3}
+                          />
+                        </div>
+                      </div>
+                    }
+                    buttonProps={{
+                      className: ({ isEnter }: { isEnter: boolean }) =>
+                        `group w-full cursor-pointer border-0 bg-transparent text-left ${
+                          isEnter ? '' : ''
+                        }`,
+                    }}
+                    contentProps={{
+                      className: 'transition-[height] duration-300 ease-in-out',
+                    }}
+                  >
+                    <p className="pb-[2%] text-[1rem] font-normal leading-[30px] tracking-[0.4px] text-[var(--text-light)] font-[var(--font-metropolis)] max-[760px]:text-[0.75rem] max-[760px]:leading-[21px] max-[760px]:my-[5vw]">
+                      {answer}
+                    </p>
+                  </Item>
+                  {index < faqs.length - 1 && <hr />}
+                </React.Fragment>
+              ))}
+            </Accordion>
+          </div>
+          <div className="hidden md:flex items-center justify-center translate-x-20">
+            <Image
+              src="/Images/hero/Cow.svg"
+              alt="HD Cow"
+              width={1000}
+              height={1000}
+              className="animate-float-bob will-change-transfor"
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
