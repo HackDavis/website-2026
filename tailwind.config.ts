@@ -12,27 +12,26 @@ export default {
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
+        'background-dark-purple': 'var(--background-dark-purple)',
       },
       keyframes: {
         'float-bob': {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-20px)' },
         },
-        'slide-right': {
-          '0%': { transform: 'translateX(-100%)' },
-          '100%': { transform: 'translateX(100%)' },
-        },
-        'slide-left': {
-          '0%': { transform: 'translateX(100%)' },
-          '100%': { transform: 'translateX(-100%)' },
-        },
-        scroll: {
+        'move-right': {
           '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(33.333333333%)' },
+        },
+        'move-left': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-33.333333333%)' },
         },
       },
       animation: {
-        'test': 'scroll 20s linear infinite',
+        'sponsers-row1': 'move-right 15s linear infinite',
+        'sponsers-row2': 'move-left 13s linear infinite',
+        'sponsers-row3': 'move-right 16s linear infinite',
         'float-bob': 'float-bob 3s ease-in-out infinite',
         'slide-right': 'slide-right 20s linear forwards',
         'slide-left': 'slide-left 20s linear forwards',
