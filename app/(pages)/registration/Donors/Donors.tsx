@@ -32,16 +32,16 @@ function DonorRow({
 
 export default function Donors() {
   const row1_names = [
-    'Alex Marasigan',
-    'Also Alex Marasigan',
-    'Also Also Alex Marasigan',
-    'Also Also Also Alex Marasigan',
-    'Also Also Also Also Alex Marasigan',
-    'Also Also Also Also Also Alex Marasigan',
+    'Pranav Lal',
+    'Anonymous',
+    'Pranav Lal',
+    'Anonymous',
+    'Pranav Lal',
+    'Anonymous',
   ];
 
   const row2_names = [
-    'ALEX Marasigan',
+    'Alex Marasigan',
     'Also ALEX Marasigan',
     'Also Also ALEX Marasigan',
     'Also Also Also ALEX Marasigan',
@@ -58,7 +58,7 @@ export default function Donors() {
         <LuHeart className="text-white text-[3vw]" />
       </div>
       <DonorRow rowNames={row1_names} rowNum={1} />
-      <DonorRow rowNames={row2_names} rowNum={2} />
+      {/* <DonorRow rowNames={row2_names} rowNum={2} />*/}
     </div>
   );
 }
