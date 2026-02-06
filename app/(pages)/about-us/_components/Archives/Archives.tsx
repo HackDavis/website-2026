@@ -12,8 +12,15 @@ import circle2022 from '@public/Images/archives/2022-circle.svg';
 import circle2023 from '@public/Images/archives/2023-circle.svg';
 import circle2024 from '@public/Images/archives/2024-circle.svg';
 import circle2025 from '@public/Images/archives/2025-circle.svg';
+import blankImg from '@public/Images/archives/blank.svg';
 
 const archives = [
+  {
+    year: 2026,
+    imageSrc: blankImg,
+    alt: "Wait... You're already on the 2026 HackDavis page?",
+    link: 'https://hackdavis.io/',
+  },
   {
     year: 2017,
     imageSrc: circle2017,
@@ -89,7 +96,7 @@ export default function Archives() {
         "
         />
         <div className="flex flex-row items-center justify-between px-[10%]">
-          <div className="flex flex-row items-center justify-between pb-10 md:pb-0 w-full">
+          <div className="flex flex-row justify-between pb-10 md:pb-0 w-full">
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold leading-none text-[#123041] text-center md:text-left">
               From the archive
             </h2>
