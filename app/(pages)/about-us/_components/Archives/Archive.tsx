@@ -15,7 +15,7 @@ export default function Archive({ imageSrc, alt, link }: ArchiveProps) {
         <Image
           src={imageSrc}
           alt={alt}
-          className="h-[150px] w-auto object-contain md:h-[20vw]"
+          className="h-[150px] w-auto object-contain md:h-[12vw]"
         />
       </div>
     </Link>
