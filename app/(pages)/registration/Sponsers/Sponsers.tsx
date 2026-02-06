@@ -47,10 +47,10 @@ function SponserRow({
         className={
           'flex flex-row inline-flex gap-[2vw] hover:[animation-play-state:paused] ' +
           (rowNum === 1
-            ? 'animate-sponsers-row1'
+            ? 'animate-slide-row1'
             : rowNum === 2
-            ? 'animate-sponsers-row2'
-            : 'animate-sponsers-row3')
+            ? 'animate-slide-row2'
+            : 'animate-slide-row3')
         }
       >
         {[...rowImages, ...rowImages, ...rowImages].map((image, i) => (

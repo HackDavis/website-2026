@@ -34,9 +34,9 @@ export default {
         },
       },
       animation: {
-        'sponsers-row1': 'move-right 15s linear infinite',
-        'sponsers-row2': 'move-left 13s linear infinite',
-        'sponsers-row3': 'move-right 16s linear infinite',
+        'slide-row1': 'move-right 15s linear infinite',
+        'slide-row2': 'move-left 13s linear infinite',
+        'slide-row3': 'move-right 16s linear infinite',
         'float-bob': 'float-bob 3s ease-in-out infinite',
         'slide-right': 'slide-right 20s linear forwards',
         'slide-left': 'slide-left 20s linear forwards',

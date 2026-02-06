@@ -12,7 +12,7 @@ function DonorRow({
       <div
         className={
           'flex flex-row inline-flex gap-[2vw] hover:[animation-play-state:paused] whitespace-nowrap ' +
-          (rowNum === 1 ? 'animate-sponsers-row1' : 'animate-sponsers-row2')
+          (rowNum === 1 ? 'animate-slide-row1' : 'animate-slide-row2')
         }
       >
         {[...rowNames, ...rowNames, ...rowNames].map((name, i) => (
@@ -32,6 +32,8 @@ function DonorRow({
 
 export default function Donors() {
   const row1_names = [
+    'Pranav Lal',
+    'Anonymous',
     'Pranav Lal',
     'Anonymous',
     'Pranav Lal',
