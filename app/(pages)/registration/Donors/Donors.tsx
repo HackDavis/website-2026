@@ -55,7 +55,7 @@ export default function Donors() {
         <p className="text-[3vw] text-white flex justify-center items-center font-inter font-semibold">
           And a special thanks to our donors!
         </p>
-        <LuHeart className="text-white" />
+        <LuHeart className="text-white text-[3vw]" />
       </div>
       <DonorRow rowNames={row1_names} rowNum={1} />
       <DonorRow rowNames={row2_names} rowNum={2} />
