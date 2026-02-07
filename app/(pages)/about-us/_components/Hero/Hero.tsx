@@ -43,7 +43,7 @@ export default function Hero() {
         </h3>
       </div>
 
-      <div className="absolute z-10 top-[125vw] left-[6%] w-[50vw] text-white sm:top-[60%] md:top-[70vw] md:left-[10%] md:w-[40vw] lg:top-[75vw] lg:left-[12%] lg:w-auto">
+      <div className="absolute z-10 top-[125vw] left-[6%] w-[50vw] text-white sm:w-[42vw] sm:top-[60%] md:top-[70vw] md:left-[10%] md:w-[40vw] lg:top-[75vw] lg:left-[12%] lg:w-auto">
         <div className="relative border border-white py-3 px-3 pr-4 md:py-[1.4vw] md:px-[1.2vw] md:pr-[2vw] lg:py-[2vw] lg:px-[1vw] lg:pr-[2vw]">
           <span className="absolute -top-2 -left-2 h-5 w-5 rounded-full border border-white bg-[#11043F]" />
           <span className="absolute -top-2 -right-2 h-5 w-5 rounded-full border border-white bg-[#11043F]" />
