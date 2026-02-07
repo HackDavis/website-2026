@@ -19,7 +19,7 @@ export default function HeartButton({
         text-[var(--text-light)] no-underline
         transition-[background,flex-direction] duration-300
         hover:flex-row-reverse
-        border-2 border-[#bfcacd]
+        border-2 border-[#D5E1E5]
         bg-white
       "
     >
@@ -42,23 +42,15 @@ export default function HeartButton({
           className="object-contain"
           priority
         />
-        {/* <Image
-          src="/Images/reghero/ButtonHeart.svg"
-          alt="heart"
-          fill
-        />
-        <Image
-          src="/Images/reghero/heart.svg"
-          alt="Heart icon"
-          width={24}
-          height={24}
-          className="h-[15px] w-[17px] object-contain break-625:h-[24px] break-625:w-[24px]"
-        /> */}
       </div>
 
-      <p className="w-full text-center font-bold transition-all">
-        {text}
-      </p>
+      <p className="w-full text-center transition-all
+                    rounded-full
+                    font-bold
+                    tracking-[0.32px]
+                    text-[16.001px]
+                    text-[var(--teal-1,#005271)]
+                  ">{text}</p>
 
       {/* overlay */}
       <span
