@@ -27,7 +27,7 @@ export default function WordCycle() {
   }, []);
 
   return (
-    <span className="inline-block align-baseline text-[#AFD157] font-bold">
+    <span className="inline-block align-baseline text-[#AFD157] font-bold text-left md:text-right">
       <SwitchTransition>
         <CSSTransition
           key={words[wordIdx]}
