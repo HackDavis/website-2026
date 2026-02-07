@@ -48,7 +48,8 @@ export default function HeartButton({
                     rounded-full
                     font-bold
                     tracking-[0.32px]
-                    text-[16.001px]
+                    text-[14px]
+                    md:text-[16px]
                     text-[var(--teal-1,#005271)]
                   ">{text}</p>
 
