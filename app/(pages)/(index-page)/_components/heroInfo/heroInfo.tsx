@@ -8,13 +8,13 @@ export default function HeroInfo() {
   return (
     <>
       <div className="flex flex-col items-center -pl-5 p-5 md:p-0 gap-6 md:flex-row break-625:items-stretch">
-        <div className="absolute top-0 left-[30%] -z-10 overflow-hidden">
+        <div className="absolute top-0 left-[27%] md:left-[30%] -z-10 overflow-hidden">
           <Image
             src="/Images/reghero/Green.svg"
             alt="Animals on couch"
             width={300}
             height={300}
-            className="flex flex-row justify-center object-contain h-full w-full"
+            className="flex flex-row justify-center object-contain w-[40%] md:h-full md:w-full"
           />
         </div>
         <div>
@@ -77,7 +77,11 @@ export default function HeroInfo() {
                   target="_blank"
                   className="
                     rounded-full
-                    px-6 py-2
+                    px-2 py-2
+                    md:px-6 md:py-2
+                    text-[14px]
+                    text-nowrap
+                    md:text-[16px]
                     border border-[var(--teal-1,#005271)]
                     bg-white
                     shadow-[4px_4px_0_0_#005271]
@@ -112,7 +116,7 @@ export default function HeroInfo() {
           </div>
 
           {/* numbers */}
-          <div className="order-3 relative ml-[20%] md:order-none md:ml-0 pt-[9%] md:pt-[15%] flex flex-row items-stretch sm:pl-0 md:pl-[25%]">
+          <div className="hidden md:block relative ml-[20%] md:order-none md:ml-0 pt-0 md:pt-[15%] flex flex-row items-stretch sm:pl-0 md:pl-[25%]">
             <Image
               src="/Images/reghero/One.svg"
               alt="Animals on couch"
@@ -141,6 +145,34 @@ export default function HeroInfo() {
           </div>
         </div>
       </div>
+
+      <div className="block md:hidden relative ml-[25%] md:order-none md:ml-0 pt-[9%] flex flex-row items-stretch sm:pl-0 md:pl-[25%]">
+        <Image
+          src="/Images/reghero/One.svg"
+          alt="Animals on couch"
+          width={150}
+          height={150}
+          className="
+            object-contain
+            w-[120px] h-[120px]
+            md:w-[200px] md:h-[200px]
+          "
+        />
+        <Image
+          src="/Images/reghero/Zero.svg"
+          alt="Animals on couch"
+          width={150}
+          height={150}
+          className="
+            object-contain
+            w-[120px] h-[120px]
+            md:w-[200px] md:h-[200px]
+            translate-y-[30px]
+            -translate-x-[20px]
+            md:translate-y-[24px]
+          "
+        />
+      </div>
     </>
   );
 }
@@ -155,7 +187,7 @@ function FormLink({ href, includeComma, children }: FormLinkProps) {
   return (
     <Link
       href={href}
-      className="group flex items-center text-[18px] font-bold tracking-[0.48px] text-black md:text-[20px]"
+      className="group flex items-center text-[16px] md:text-[18px] font-bold tracking-[0.48px] text-black md:text-[20px]"
     >
       <span className="font-bold">{children}</span>
 
