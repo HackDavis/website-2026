@@ -7,7 +7,7 @@ import WordCycle from '../wordCycle/wordCycle';
 export default function HeroInfo() {
   return (
     <>
-      <div className="flex flex-row items-stretch gap-6">
+      <div className="flex flex-col items-center -pl-5 p-5 md:p-0 gap-6 md:flex-row break-625:items-stretch">
         <div className="absolute top-0 left-[30%] -z-10 overflow-hidden">
           <Image
             src="/Images/reghero/Green.svg"
@@ -23,40 +23,40 @@ export default function HeroInfo() {
             alt="watertower"
             width={156.5}
             height={221.27}
-            className="absolute top-29 left-27 -z-10"
+            className="absolute top-29 left-27 -z-10 hidden md:block"
           />
           <Image
             src="/Images/reghero/YellowDonut.svg"
             alt="Animals on couch"
             width={100}
             height={100}
-            className="absolute -z-10 top-[50%] left-[2%] justify-center object-contain animate-slow-spin"
+            className="absolute -z-10 top-[50%] left-[2%] hidden md:block justify-center object-contain animate-slow-spin"
           />
           <Image
             src="/Images/reghero/BlueThing.svg"
             alt="Animals on couch"
             width={100}
             height={100}
-            className="absolute top-[85%] left-[35%] justify-center -z-10 object-contain animate-slow-spin"
+            className="absolute top-[85%] left-[35%] justify-center hidden md:block -z-10 object-contain animate-slow-spin"
           />
         </div>
         {/* animals on couch */}
-        <div className="flex flex-row items-stretch gap-6">
+        <div className="order-2 flex flex-row items-stretch gap-6 md:order-none">
           <Image
             src="/Images/reghero/Couch.svg"
             alt="Animals on couch"
             width={110}
             height={144}
-            className="flex flex-row justify-center object-contain h-full w-full"
+            className="flex flex-row justify-center object-contain pr-[13%] md:p-0 md:h-full w-full"
           />
         </div>
 
         {/* right side */}
-        <div className="flex flex-col justify-between">
+        <div className="flex w-full flex-col justify-between md:w-auto">
           {/* here text + buttons */}
-          <div className="flex flex-row justify-end items-end">
-            <div className="flex flex-col items-end gap-[22px] break-625:gap-[31px] text-right">
-              <div className="flex flex-col items-end text-right">
+          <div className="flex flex-row justify-start items-start md:justify-end md:items-end">
+            <div className="flex flex-col items-start gap-[22px] text-left md:items-end md:gap-[31px] md:text-right">
+              <div className="flex flex-col items-start text-left md:items-end md:text-right w-full">
                 <p className="flex gap-2 text-[30px] font-bold leading-[115%] tracking-[0.8px] break-625:text-[40px]">
                   <span className="text-black">
                     <WordCycle />
@@ -66,7 +66,7 @@ export default function HeroInfo() {
                 <h1 className="text-[45px] font-bold leading-[115%] tracking-[0.9px] text-[var(--text-hero)] break-625:text-[66px] break-625:leading-[100%] break-625:tracking-[3.52px] md:text-[88px]">
                   social good
                 </h1>
-                <p className="mt-[31px] text-[16px] text-right tracking-[0.48px] text-black break-625:text-[20px]">
+                <p className="mt-[10px] text-[16px] w-full tracking-[0.48px] text-black break-625:text-[20px]">
                   May 9-10, 2026 @ UCenter
                 </p>
               </div>
@@ -95,7 +95,7 @@ export default function HeroInfo() {
                 </div>
               </div>
 
-              <div className="flex flex-col items-start gap-2 text-right break-625:flex-row break-625:items-end break-625:text-right">
+              <div className="flex flex-col items-start gap-2 text-left break-625:flex-row break-625:items-end break-625:text-right">
                 <span className="hidden text-[18px] font-normal tracking-[0.48px] text-black break-625:inline md:text-[20px]">
                   Check out the{' '}
                 </span>
@@ -112,20 +112,31 @@ export default function HeroInfo() {
           </div>
 
           {/* numbers */}
-          <div className="relative flex flex-row items-stretch pl-[25%]">
+          <div className="order-3 relative ml-[20%] md:order-none md:ml-0 pt-[9%] md:pt-[15%] flex flex-row items-stretch sm:pl-0 md:pl-[25%]">
             <Image
               src="/Images/reghero/One.svg"
               alt="Animals on couch"
               width={150}
               height={150}
-              className="flex flex-row justify-center object-contain"
+              className="
+                object-contain
+                w-[120px] h-[120px]
+                md:w-[200px] md:h-[200px]
+              "
             />
             <Image
               src="/Images/reghero/Zero.svg"
               alt="Animals on couch"
               width={150}
               height={150}
-              className="flex pt-[15%] flex-row justify-center object-contain"
+              className="
+                object-contain
+                w-[120px] h-[120px]
+                md:w-[200px] md:h-[200px]
+                translate-y-[30px]
+                -translate-x-[20px]
+                md:translate-y-[24px]
+              "
             />
           </div>
         </div>
