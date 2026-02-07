@@ -1,4 +1,4 @@
-import HeroInfo from "./_components/heroInfo/heroInfo";
+import HeroInfo from './_components/heroInfo/heroInfo';
 
 export default function Home() {
   return (

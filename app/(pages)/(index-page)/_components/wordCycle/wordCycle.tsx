@@ -3,7 +3,17 @@
 import { useEffect, useRef, useState } from 'react';
 import { SwitchTransition, CSSTransition } from 'react-transition-group';
 
-const words = ['create', 'code', 'design', 'collab', 'ideate', 'craft', 'hack', 'strive', 'build'];
+const words = [
+  'create',
+  'code',
+  'design',
+  'collab',
+  'ideate',
+  'craft',
+  'hack',
+  'strive',
+  'build',
+];
 
 export default function WordCycle() {
   const [wordIdx, setWordIdx] = useState(0);
@@ -35,7 +45,9 @@ export default function WordCycle() {
           <span
             ref={nodeRef}
             className="inline-block will-change-transform will-change-opacity"
-            style={{ transition: 'all 400ms cubic-bezier(0.165, 0.84, 0.44, 1)' }}
+            style={{
+              transition: 'all 400ms cubic-bezier(0.165, 0.84, 0.44, 1)',
+            }}
           >
             {words[wordIdx]}
           </span>

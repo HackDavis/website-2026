@@ -75,21 +75,22 @@ export default function HeroInfo() {
                 <Link
                   href="https://hackdavis.typeform.com/to/N6DEZIVH"
                   target="_blank"
-                  className="rounded-full px-6 py-2 border border-[#005271] bg-white shadow-[4px_4px_0_0_#005271]"
+                  className="
+                    rounded-full
+                    px-6 py-2
+                    border border-[var(--teal-1,#005271)]
+                    bg-white
+                    shadow-[4px_4px_0_0_#005271]
+                    text-center
+                    font-bold
+                    tracking-[0.32px]
+                    text-[var(--teal-1,#005271)]
+                  "
                 >
                   Register Now
                 </Link>
+
                 <div className="flex h-[40px] w-[138px] flex-shrink-0 items-center rounded-[100px] bg-black/15 text-center text-[18px] font-bold tracking-[0.4px] text-black break-625:h-[50px] break-625:w-[170px] break-625:py-0 break-625:text-[20px]">
-                  {/* <div className="flex h-[40px] w-[40px] flex-shrink-0 items-center justify-center rounded-[50px] bg-highlight-yellow shadow-[0px_5px_75px_0px_rgba(0,0,0,0.25)] break-625:h-[50px] break-625:w-[50px]">
-                    <Image
-                      src="/Hero/heart.svg"
-                      alt="Heart icon"
-                      width={24}
-                      height={24}
-                      className="h-[15px] w-[17px] object-contain break-625:h-[24px] break-625:w-[24px]"
-                    />
-                  </div>
-                  <span className="flex-1 pl-[9px] pr-[15px] text-center">Sponsor</span> */}
                   <HeartButton text="Sponsor" href="mailto:team@hackdavis.io" />
                 </div>
               </div>
@@ -99,30 +100,19 @@ export default function HeroInfo() {
                   Check out the{' '}
                 </span>
                 <div className="flex items-center gap-2 text-black">
-                  <FormLink
-                    text="Apply to be a Judge, Mentor, or Volunteer"
-                    href="/?section=teams"
-                    // includeComma={true}
-                    includeComma={false}
-                  />
-                  {/* <FormLink
-                    text="Mentor"
-                    href="https://form.typeform.com/to/uNuWRicb"
-                    // includeComma={true}
-                    includeComma={false}
-                  /> */}
-                  {/* <FormLink
-                    text="Volunteer"
-                    href="https://form.typeform.com/to/sTYMFPMW"
-                    includeComma={false}
-                  /> */}
+                  <FormLink href="/?section=teams" includeComma={false}>
+                    Apply to be a{' '}
+                    <span style={{ color: '#FFC53D' }}>Judge</span>,{' '}
+                    <span style={{ color: '#FFC5AB' }}>Mentor</span>, or{' '}
+                    <span style={{ color: '#9EE7E5' }}>Volunteer</span>
+                  </FormLink>
                 </div>
               </div>
             </div>
           </div>
 
           {/* numbers */}
-          <div className="relative flex flex-row items-stretch pl-[10%]">
+          <div className="relative flex flex-row items-stretch pl-[25%]">
             <Image
               src="/Images/reghero/One.svg"
               alt="Animals on couch"
@@ -145,19 +135,19 @@ export default function HeroInfo() {
 }
 
 interface FormLinkProps {
-  text: string;
   href: string;
   includeComma: boolean;
+  children: React.ReactNode;
 }
 
-function FormLink({ text, href, includeComma }: FormLinkProps) {
+function FormLink({ href, includeComma, children }: FormLinkProps) {
   return (
     <Link
       href={href}
-      // target="_blank"
-      className="flex text-[18px] font-bold tracking-[0.48px] text-black md:text-[20px]"
+      className="group flex items-center text-[18px] font-bold tracking-[0.48px] text-black md:text-[20px]"
     >
-      <p className="font-bold">{text}</p>
+      <span className="font-bold">{children}</span>
+
       <Image
         src="/Images/reghero/icon_arrow.svg"
         alt="Arrow icon"
@@ -165,7 +155,8 @@ function FormLink({ text, href, includeComma }: FormLinkProps) {
         height={10}
         className="m-1 object-contain transition-transform group-hover:translate-x-1"
       />
-      {includeComma && <p>,</p>}
+
+      {includeComma && <span>,</span>}
     </Link>
   );
 }
