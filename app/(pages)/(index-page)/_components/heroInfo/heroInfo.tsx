@@ -7,7 +7,7 @@ import WordCycle from '../wordCycle/wordCycle';
 export default function HeroInfo() {
   return (
     <>
-      <div className="flex flex-colitems-center -pl-5 p-5 w-full gap-6 md:flex-row md:items-stretch md:pr-[13%]">
+      <div className="flex flex-col items-center -pl-5 p-5 w-full gap-6 md:flex-row md:items-stretch md:pr-[13%]">
         <div className="absolute top-0 left-[27%] md:left-[30%] -z-10 overflow-hidden">
           <Image
             src="/Images/reghero/Green.svg"
@@ -30,18 +30,18 @@ export default function HeroInfo() {
             alt="Animals on couch"
             width={100}
             height={100}
-            className="absolute -z-10 top-[50%] left-[2%] hidden md:block justify-center object-contain animate-slow-spin"
+            className="absolute -z-10 top-[56%] md:top-[50%] left-[2%] justify-center object-contain animate-slow-spin"
           />
           <Image
             src="/Images/reghero/BlueThing.svg"
             alt="Animals on couch"
             width={100}
             height={100}
-            className="absolute top-[85%] left-[35%] justify-center hidden md:block -z-10 object-contain animate-slow-spin"
+            className="absolute order-2 md:order-none top-[85%] -left-[5%] md:left-[35%] justify-center -z-10 object-contain animate-slow-spin"
           />
         </div>
         {/* animals on couch */}
-        <div className="flex flex-row items-stretch gap-6">
+        <div className="order-2 md:order-none flex flex-row items-stretch gap-6">
           <Image
             src="/Images/reghero/Couch.svg"
             alt="Animals on couch"
@@ -52,7 +52,7 @@ export default function HeroInfo() {
         </div>
 
         {/* right side */}
-        <div className="flex w-full flex-col justify-between md:w-full">
+        <div className="order-1 md:order-none flex w-full flex-col justify-between md:w-full">
           {/* here text + buttons */}
           <div className="flex flex-row justify-start items-start md:justify-end md:items-end">
             <div className="flex flex-col items-start gap-[22px] text-left md:items-end md:gap-[31px] md:text-right">
@@ -61,7 +61,7 @@ export default function HeroInfo() {
                   <span className="text-black">
                     <WordCycle />
                   </span>
-                  <span className="text-black/50">for</span>
+                  <span className="text-[#005271]">for</span>
                 </p>
                 <h1 className="text-[45px] font-bold leading-[115%] tracking-[0.9px] text-[var(--text-hero)] break-625:text-[66px] break-625:leading-[100%] break-625:tracking-[3.52px] md:text-[88px]">
                   social good
@@ -135,7 +135,7 @@ export default function HeroInfo() {
         </div>
       </div>
 
-      <div className="block md:hidden relative ml-[25%] md:ml-0 pt-[9%] flex flex-row items-stretch sm:pl-0 md:pl-[25%]">
+      <div className="block md:hidden order-1 md:order-none relative ml-[25%] md:ml-0 pt-[9%] flex flex-row items-stretch sm:pl-0 md:pl-[25%]">
         <Image
           src="/Images/reghero/One.svg"
           alt="Animals on couch"
