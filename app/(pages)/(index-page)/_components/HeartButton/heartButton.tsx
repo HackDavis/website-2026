@@ -44,14 +44,18 @@ export default function HeartButton({
         />
       </div>
 
-      <p className="w-full text-center transition-all
+      <p
+        className="w-full text-center transition-all
                     rounded-full
                     font-bold
                     tracking-[0.32px]
                     text-[14px]
                     md:text-[16px]
                     text-[var(--teal-1,#005271)]
-                  ">{text}</p>
+                  "
+      >
+        {text}
+      </p>
 
       {/* overlay */}
       <span
