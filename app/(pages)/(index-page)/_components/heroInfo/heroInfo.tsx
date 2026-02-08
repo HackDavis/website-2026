@@ -7,7 +7,7 @@ import WordCycle from '../wordCycle/wordCycle';
 export default function HeroInfo() {
   return (
     <>
-      <div className="flex flex-col items-center -pl-5 p-5 w-full gap-6 md:flex-row md:items-stretch md:pr-[13%]">
+      <div className="flex flex-col pl-[9%] items-center -pl-5 p-5 w-full gap-6 md:flex-row md:items-stretch md:pr-[13%]">
         <div className="absolute top-0 left-[27%] md:left-[30%] -z-10 overflow-hidden">
           <Image
             src="/Images/reghero/Green.svg"
