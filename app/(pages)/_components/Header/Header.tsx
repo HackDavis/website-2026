@@ -48,7 +48,7 @@ export default function Header() {
       </button>
       <div className="w-full flex items-center justify-start md:ml-auto md:w-auto md:items-start md:justify-end md:gap-2">
         <div className="hidden md:flex">
-          <div className="glass-pill w-[17vw] h-[5.6vh] m-[3vw] items-center justify-evenly">
+          <div className="glass-pill w-[15vw] h-[5.6vh] m-[3vw] items-center justify-evenly">
             <Link
               href="/?section="
               className="text-[1vw] text-white uppercase font-[var(--font-metropolis)]"
