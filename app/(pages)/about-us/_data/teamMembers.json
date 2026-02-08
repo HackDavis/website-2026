@@ -1,5 +1,4 @@
-[
-  {
+[ {
     "_id": {
       "$oid": "65b6e0a06a7eaf354ea8e4b3"
     },
@@ -118,7 +117,7 @@
     "profile_image_url": "/Images/team_members/technical/Sandeep_Reehal.jpg",
     "team_category": "Technical",
     "year": 2024,
-    "linkedinURL": "https://www.linkedin.com/in/sandeep-reehal"
+    "linkedinURL": "https://www.linkedin.com/in/sandeep-reehal-385821263"
   },
   {
     "_id": {
@@ -449,5 +448,4 @@
     "team_category": "Technical",
     "year": 2024,
     "linkedinURL": "https://www.linkedin.com/in/jack00z/"
-  }
-]
+  }]
