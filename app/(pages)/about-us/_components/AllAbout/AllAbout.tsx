@@ -3,13 +3,13 @@ import Image from 'next/image';
 export default function AllAbout() {
   return (
     <div className="flex flex-col gap-6 lg:pb-40">
-      <div className="px-[10%] text-left">
-        <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold leading-none text-[var(--text-dark)]">
+      <div className="px-[15%] text-left">
+        <h1 className="text-3xl lg:text-5xl font-bold leading-none">
           What we're all about
         </h1>
       </div>
 
-      <div className="grid grid-cols-1 gap-10 px-[10%] justify-items-center lg:grid-cols-3 lg:gap-8 lg:items-stretch">
+      <div className="grid grid-cols-1 gap-10 px-[15%] justify-items-center lg:grid-cols-3 lg:gap-8 lg:items-stretch">
         <div className="relative flex flex-col h-full w-full max-w-[22rem] lg:max-w-none border-2 border-shadow rounded-xl shadow-card p-5 lg:p-8 bg-secondary gap-3 group justify-self-start lg:justify-self-auto">
           <h2 className="relative text-lg lg:text-2xl font-bold z-10">
             Hands-on Learning

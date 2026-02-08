@@ -1,10 +1,6 @@
 import Hero from '@app/(pages)/about-us/_components/Hero/Hero';
 import Header from '@components/Header/Header';
-import Directors from './_components/Directors/directors';
-import OurTeam from './_components/OurTeam/OurTeam';
 import AllAbout from './_components/AllAbout/AllAbout';
-import Archives from './_components/Archives/Archives';
-import CelebratePast from './_components/CelebratePast/celebratePast';
 
 export default function AboutUs() {
   return (
@@ -12,10 +8,6 @@ export default function AboutUs() {
       <Header />
       <Hero />
       <AllAbout />
-      <Directors />
-      <OurTeam />
-      <CelebratePast />
-      <Archives />
     </div>
   );
 }
