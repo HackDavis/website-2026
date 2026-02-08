@@ -41,7 +41,7 @@ export default function HeroInfo() {
           />
         </div>
         {/* animals on couch */}
-        <div className="order-2 md:order-none flex flex-row items-stretch gap-6">
+        <div className="order-2 md:order-none flex flex-row md:min-w-[360px] items-stretch gap-6">
           <Image
             src="/Images/reghero/Couch.svg"
             alt="Animals on couch"
