@@ -7,7 +7,7 @@ import WordCycle from '../wordCycle/wordCycle';
 export default function HeroInfo() {
   return (
     <>
-      <div className="flex flex-col items-center -pl-5 p-5 md:p-0 gap-6 md:flex-row break-625:items-stretch">
+      <div className="flex flex-colitems-center -pl-5 p-5 w-full gap-6 md:flex-row md:items-stretch md:pr-[13%]">
         <div className="absolute top-0 left-[27%] md:left-[30%] -z-10 overflow-hidden">
           <Image
             src="/Images/reghero/Green.svg"
@@ -41,18 +41,18 @@ export default function HeroInfo() {
           />
         </div>
         {/* animals on couch */}
-        <div className="order-2 flex flex-row items-stretch gap-6 md:order-none">
+        <div className="flex flex-row items-stretch gap-6">
           <Image
             src="/Images/reghero/Couch.svg"
             alt="Animals on couch"
             width={110}
             height={144}
-            className="flex flex-row justify-center object-contain pr-[13%] md:p-0 md:h-full w-full"
+            className="flex flex-row justify-center object-contain pr-[13%] md:p-0 md:h-full w-screen md:w-screen"
           />
         </div>
 
         {/* right side */}
-        <div className="flex w-full flex-col justify-between md:w-auto">
+        <div className="flex w-full flex-col justify-between md:w-full">
           {/* here text + buttons */}
           <div className="flex flex-row justify-start items-start md:justify-end md:items-end">
             <div className="flex flex-col items-start gap-[22px] text-left md:items-end md:gap-[31px] md:text-right">
@@ -77,7 +77,7 @@ export default function HeroInfo() {
                   target="_blank"
                   className="
                     rounded-full
-                    px-2 py-2
+                    px-4 py-2
                     md:px-6 md:py-2
                     text-[14px]
                     text-nowrap
@@ -115,38 +115,27 @@ export default function HeroInfo() {
             </div>
           </div>
 
-          {/* numbers */}
-          <div className="hidden md:block relative ml-[20%] md:order-none md:ml-0 pt-0 md:pt-[15%] flex flex-row items-stretch sm:pl-0 md:pl-[25%]">
+          {/* desktop numbers */}
+          <div className="hidden md:flex items-end gap-0 pt-[15%] pl-[25%]">
             <Image
               src="/Images/reghero/One.svg"
-              alt="Animals on couch"
+              alt="1"
               width={150}
               height={150}
-              className="
-                object-contain
-                w-[120px] h-[120px]
-                md:w-[200px] md:h-[200px]
-              "
+              className="object-contain w-[200px] h-[200px] shrink-0"
             />
             <Image
               src="/Images/reghero/Zero.svg"
-              alt="Animals on couch"
+              alt="0"
               width={150}
               height={150}
-              className="
-                object-contain
-                w-[120px] h-[120px]
-                md:w-[200px] md:h-[200px]
-                translate-y-[30px]
-                -translate-x-[20px]
-                md:translate-y-[24px]
-              "
+              className="object-contain w-[200px] h-[200px] shrink-0 translate-y-[24px] -translate-x-[20px]"
             />
           </div>
         </div>
       </div>
 
-      <div className="block md:hidden relative ml-[25%] md:order-none md:ml-0 pt-[9%] flex flex-row items-stretch sm:pl-0 md:pl-[25%]">
+      <div className="block md:hidden relative ml-[25%] md:ml-0 pt-[9%] flex flex-row items-stretch sm:pl-0 md:pl-[25%]">
         <Image
           src="/Images/reghero/One.svg"
           alt="Animals on couch"
