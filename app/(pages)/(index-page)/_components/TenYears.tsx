@@ -1,50 +1,126 @@
+'use client';
+
 import Image from 'next/image';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
+import { useState, useEffect } from 'react';
+
+// Helper to scale all numbers in the path
+function scalePath(path: string, scale: number) {
+  return path.replace(/([0-9.]+)/g, (num) => `${parseFloat(num) * scale}`);
+}
+
+function FlyingMascot({ mascot, scrollYProgress, wavePath }) {
+  const progress = useTransform(
+    scrollYProgress,
+    [0, 0.7], // defines the scroll range over which the mascot will move
+    [`${(1 - mascot.start) * 100}%`, `${(1 - mascot.end) * 100}%`]
+  );
+
+  return (
+    <motion.div
+      style={{
+        offsetPath: `path('${wavePath}')`,
+        offsetDistance: progress,
+        offsetRotate: '0deg',
+        x: '-50%',
+        y: '-50%',
+      }}
+      className="hidden md:block absolute top-0 left-0"
+    >
+      <Image
+        src={mascot.src}
+        alt={mascot.alt}
+        width={80}
+        height={80}
+        className="md:w-12 lg:w-20 h-auto"
+      />
+    </motion.div>
+  );
+}
 
 export default function TenYears() {
+  const containerRef = useRef(null);
+  const waveWrapperRef = useRef<HTMLDivElement>(null);
+  const [scale, setScale] = useState(1);
+
+  // track scroll progress
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start end', 'end start'],
+  });
+
+  // scale the wave and mascots based on the height of the wave wrapper
+  useEffect(() => {
+    if (!waveWrapperRef.current) return;
+
+    const resizeObserver = new ResizeObserver((entries) => {
+      const height = entries[0].contentRect.height;
+      setScale(height / 429); // original SVG height
+    });
+
+    resizeObserver.observe(waveWrapperRef.current);
+
+    return () => resizeObserver.disconnect();
+  }, []);
+
+  const mascots = [
+    {
+      src: '/home/tenyears/flying-rabbit.svg',
+      alt: 'Bunny',
+      start: 0.2,
+      end: 0.6,
+    },
+    {
+      src: '/home/tenyears/flying-chicken.svg',
+      alt: 'Duck',
+      start: 0.25,
+      end: 0.65,
+    },
+    {
+      src: '/home/tenyears/flying-frog.svg',
+      alt: 'Frog',
+      start: 0.3,
+      end: 0.7,
+    },
+    {
+      src: '/home/tenyears/flying-cow.svg',
+      alt: 'Cow',
+      start: 0.35,
+      end: 0.75,
+    },
+  ];
+
+  const wavePath =
+    'M131 409C131 409 285.299 340.014 256.392 221.784C230.003 113.851 110.376 62.4755 20 20C101.525 64.7392 194.54 116.442 211.469 215.913C228.556 316.312 131 409 131 409';
+  const scaledWavePath = scalePath(wavePath, scale);
+
   return (
-    <div className="relative flex flex-col">
-      <Image
-        src="/Images/cheers/wave.svg"
-        alt="Light green wave"
-        width={80}
-        height={80}
-        className="absolute top-[15%] sm:top-[10%] left-[55%] sm:left-[50%] h-[240px] sm:h-[500px] xl:h-[895px] w-auto"
-      />
+    <div ref={containerRef} className="relative flex flex-col">
+      <div
+        ref={waveWrapperRef}
+        className="absolute top-[15%] sm:top-[10%] left-[55%] sm:left-[50%]"
+      >
+        <Image
+          src="/home/tenyears/wave.svg"
+          alt="Light green wave"
+          width={280}
+          height={429}
+          className="h-[240px] sm:h-[500px] xl:h-[895px] w-auto"
+        />
+
+        {mascots.map((mascot, index) => (
+          <FlyingMascot
+            key={index}
+            mascot={mascot}
+            scrollYProgress={scrollYProgress}
+            wavePath={scaledWavePath}
+          />
+        ))}
+      </div>
 
       <Image
-        src="/Images/cheers/flying-rabbit.svg"
-        alt="Bunny mascot"
-        width={80}
-        height={80}
-        className="hidden md:block md:w-12 lg:w-20 absolute top-[3%] left-[47%]"
-      />
-
-      <Image
-        src="/Images/cheers/flying-chicken.svg"
-        alt="Duck mascot"
-        width={80}
-        height={80}
-        className="hidden md:block md:w-12 lg:w-20 absolute top-[8%] left-[53%]"
-      />
-
-      <Image
-        src="/Images/cheers/flying-frog.svg"
-        alt="Frog mascot"
-        width={80}
-        height={80}
-        className="hidden md:block md:w-12 lg:w-20 absolute top-[15%] right-[36%]"
-      />
-
-      <Image
-        src="/Images/cheers/flying-cow.svg"
-        alt="Cow mascot"
-        width={80}
-        height={80}
-        className="hidden md:block md:w-12 lg:w-20 absolute top-[20%] right-[30%]"
-      />
-
-      <Image
-        src="/Images/cheers/cheers.svg"
+        src="/home/tenyears/cheers.svg"
         alt="Cheers to 10 years!"
         width={110}
         height={144}
@@ -52,7 +128,7 @@ export default function TenYears() {
       />
 
       <Image
-        src="/Images/cheers/sm-pink-flower.svg"
+        src="/home/tenyears/sm-pink-flower.svg"
         alt="Small Pink Flower"
         width={110}
         height={144}
