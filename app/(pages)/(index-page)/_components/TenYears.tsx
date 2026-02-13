@@ -10,7 +10,11 @@ function scalePath(path: string, scale: number) {
   return path.replace(/([0-9.]+)/g, (num) => `${parseFloat(num) * scale}`);
 }
 
-function FlyingMascot({ mascot, scrollYProgress, wavePath }) {
+function FlyingMascot({ mascot, scrollYProgress, wavePath }: {
+  mascot: { src: string; alt: string; start: number; end: number };
+  scrollYProgress: any;
+  wavePath: string;
+}) {
   const progress = useTransform(
     scrollYProgress,
     [0, 0.7], // defines the scroll range over which the mascot will move
