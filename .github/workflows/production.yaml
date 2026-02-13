@@ -5,7 +5,7 @@ on:
     types: [published]
 
 jobs:
-  deploy_staging:
+  deploy_production:
     name: Deploy Production
     runs-on: ubuntu-latest
     environment:
