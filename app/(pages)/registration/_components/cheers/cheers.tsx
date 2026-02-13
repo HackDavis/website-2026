@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function TenYears() {
   return (
     <div className="relative flex flex-col">
-	      <Image
+      <Image
         src="/Images/cheers/wave.svg"
         alt="Light green wave"
         width={80}
