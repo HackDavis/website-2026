@@ -16,7 +16,7 @@ export default function TenYears() {
         alt="Bunny mascot"
         width={80}
         height={80}
-        className="hidden md:block absolute top-[3%] left-[47%] animate-bounce"
+        className="hidden md:block md:w-12 lg:w-20 absolute top-[3%] left-[47%]"
       />
 
       <Image
@@ -24,8 +24,7 @@ export default function TenYears() {
         alt="Duck mascot"
         width={80}
         height={80}
-        className="hidden md:block absolute top-[8%] left-[53%] animate-bounce"
-        style={{ animationDelay: '0.5s' }}
+        className="hidden md:block md:w-12 lg:w-20 absolute top-[8%] left-[53%]"
       />
 
       <Image
@@ -33,8 +32,7 @@ export default function TenYears() {
         alt="Frog mascot"
         width={80}
         height={80}
-        className="hidden md:block absolute top-[15%] right-[36%] animate-bounce"
-        style={{ animationDelay: '1s' }}
+        className="hidden md:block md:w-12 lg:w-20 absolute top-[15%] right-[36%]"
       />
 
       <Image
@@ -42,8 +40,7 @@ export default function TenYears() {
         alt="Cow mascot"
         width={80}
         height={80}
-        className="hidden md:block absolute top-[20%] right-[30%] animate-bounce"
-        style={{ animationDelay: '1.5s' }}
+        className="hidden md:block md:w-12 lg:w-20 absolute top-[20%] right-[30%]"
       />
 
       <Image

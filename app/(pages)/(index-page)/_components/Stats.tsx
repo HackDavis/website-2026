@@ -117,7 +117,7 @@ export default function Stats() {
         </div>
 
         {/* Squiggly Circle Pink */}
-        <div className="absolute md:top-[calc(35%+12vw)] md:left-[16%] md:w-[10%] md:max-w-48 sm:max-w-32 sm:right-[15%] max-w-24 left-[55vw]">
+        <div className="hidden md:block absolute md:top-[calc(35%+12vw)] md:left-[16%] md:w-[10%] md:max-w-48">
           <Image
             src={squiggly_circle_pink}
             alt="Circle"
