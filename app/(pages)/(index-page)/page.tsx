@@ -1,7 +1,11 @@
+import React from "react";
+import Create from "./_components/Create/create";
+
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center p-8 pb-20 gap-16 sm:p-20">
+    <div>
       <p>Halo! Welcome to the HackDavis template repo :D</p>
+      <Create />
     </div>
   );
 }

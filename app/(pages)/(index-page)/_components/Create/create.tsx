@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import HeartButton from '@app/(pages)/(index-page)/_components/HeartButton/heartButton';
 
-export default function create() {
+export default function Create() {
   return (
     <div className="relative flex flex-col gap-5 w-full md md:w-auto md:mb-32">
       {/* Background decorative images - hidden on mobile */}
