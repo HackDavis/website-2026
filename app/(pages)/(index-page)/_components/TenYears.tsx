@@ -76,25 +76,25 @@ export default function TenYears() {
     {
       src: '/home/tenyears/flying-rabbit.svg',
       alt: 'Bunny',
-      start: 0.4,
+      start: 0.45,
       end: 0.85,
     },
     {
       src: '/home/tenyears/flying-chicken.svg',
       alt: 'Duck',
-      start: 0.45,
+      start: 0.50,
       end: 0.9,
     },
     {
       src: '/home/tenyears/flying-frog.svg',
       alt: 'Frog',
-      start: 0.5,
+      start: 0.55,
       end: 0.95,
     },
     {
       src: '/home/tenyears/flying-cow.svg',
       alt: 'Cow',
-      start: 0.55,
+      start: 0.60,
       end: 1,
     },
   ];
