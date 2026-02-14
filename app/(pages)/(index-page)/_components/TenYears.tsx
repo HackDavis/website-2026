@@ -82,7 +82,7 @@ export default function TenYears() {
     {
       src: '/home/tenyears/flying-chicken.svg',
       alt: 'Duck',
-      start: 0.50,
+      start: 0.5,
       end: 0.9,
     },
     {
@@ -94,7 +94,7 @@ export default function TenYears() {
     {
       src: '/home/tenyears/flying-cow.svg',
       alt: 'Cow',
-      start: 0.60,
+      start: 0.6,
       end: 1,
     },
   ];
