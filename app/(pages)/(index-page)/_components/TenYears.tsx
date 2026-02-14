@@ -41,7 +41,7 @@ function FlyingMascot({
         alt={mascot.alt}
         width={80}
         height={80}
-        className="md:w-12 lg:w-20 h-auto"
+        className="md:w-12 lg:w-15 xl:w-20 h-auto"
       />
     </motion.div>
   );
@@ -76,26 +76,26 @@ export default function TenYears() {
     {
       src: '/home/tenyears/flying-rabbit.svg',
       alt: 'Bunny',
-      start: 0.2,
-      end: 0.6,
+      start: 0.4,
+      end: 0.85,
     },
     {
       src: '/home/tenyears/flying-chicken.svg',
       alt: 'Duck',
-      start: 0.25,
-      end: 0.65,
+      start: 0.45,
+      end: 0.9,
     },
     {
       src: '/home/tenyears/flying-frog.svg',
       alt: 'Frog',
-      start: 0.3,
-      end: 0.7,
+      start: 0.5,
+      end: 0.95,
     },
     {
       src: '/home/tenyears/flying-cow.svg',
       alt: 'Cow',
-      start: 0.35,
-      end: 0.75,
+      start: 0.55,
+      end: 1,
     },
   ];
 
