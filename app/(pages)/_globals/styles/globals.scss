@@ -1,21 +1,69 @@
-@tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind base;
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/fonts/Metropolis/TrueType/Metropolis-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/fonts/Metropolis/TrueType/Metropolis-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/fonts/Metropolis/TrueType/Metropolis-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/fonts/Metropolis/TrueType/Metropolis-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/fonts/Metropolis/TrueType/Metropolis-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('/fonts/Metropolis/TrueType/Metropolis-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
 
 :root {
+  --font-metropolis: 'Metropolis', sans-serif;
+  --metropolis: 'Metropolis', sans-serif;
   /* About Us Colors */
   --background-medium-purple: #3E3A95;
   --background-dark-purple: #11043F;
   --background-white: #F9FBFC;
   --background-light-grey: #DCE3EA;
+  --polaroid-shadow: #A6BFC7;
+  --polaroid-fill: #E5EEF1;
 
   /* About Us Text Colors */
   --text-dark: #123041;
+  --text-hero: #005271;
   --text-extra-dark: #0E2535;
-  --text-black: #000000
+  --text-black: #000000;
   --text-white: #FFFFFF;
+  --text-purple: #BE5BA8;
 
-  /* About Us Cards */
+  /* About Us Cards */ 
   --card-light-blue: #9EE7E5;
   --card-light-green: #AFD157;
   --card-light-yellow: #FFC53D;
@@ -30,12 +78,21 @@
   --about-us-smaller-spacer: 30px;
   --about-us-small-spacer: 40px;
   --about-us-medium-spacer: 50px;
+
+  /* Glass UI defaults */
+  --glass-bg: #bbbbbc;
+  --glass-light: #fff;
+  --glass-dark: #000;
+  --glass-saturation: 100%;
+  --glass-reflex-dark: 1;
+  --glass-reflex-light: 1;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: var(--font-metropolis);
 }
 
 h1 {
@@ -48,6 +105,12 @@ h2 {
 
 h3 {
   font-size: 2rem; //32px
+}
+
+.hero-tight h1,
+.hero-tight h3 {
+  line-height: 1.2;
+  margin: 0vh;
 }
 
 h4 {
