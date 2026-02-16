@@ -28,7 +28,7 @@ export default function Create() {
           alt="Big Yellow Star"
           width={111}
           height={111}
-          className="hidden md:block absolute w-auto h-[130px] ml-[20%] -mt-[8%] transition-transform duration-300 hover:animate-spin-10"
+          className="hidden md:block absolute w-auto h-[130px] ml-[20%] -mt-[8%] transition-transform duration-300 animate-spin-10"
         />
 
         {/* Frog + Yellow bar wrapper - side by side on mobile */}
@@ -92,7 +92,7 @@ export default function Create() {
           alt="Green Flower"
           width={131}
           height={131}
-          className="hidden xl:block ml-[2%] mt-auto mb-[4%] h-[131px] transition-transform duration-300 hover:animate-spin-10"
+          className="hidden xl:block ml-[2%] mt-auto mb-[4%] h-[131px] transition-transform duration-300 animate-spin-10"
         />
       </div>
 
@@ -138,7 +138,7 @@ export default function Create() {
             alt="Pink Flower"
             width={111}
             height={111}
-            className="hidden md:block absolute w-auto h-[78px] -bottom-[5%] ml-[10%] transition-transform duration-300 hover:animate-spin-10"
+            className="hidden md:block absolute w-auto h-[78px] -bottom-[5%] ml-[10%] transition-transform duration-300 animate-spin-10"
           />
         </div>
 
@@ -157,7 +157,7 @@ export default function Create() {
             alt="Blue Flower"
             width={111}
             height={111}
-            className="absolute w-auto h-[200px] bottom-0 mb-[2%] transition-transform duration-300 hover:animate-spin-10"
+            className="absolute w-auto h-[200px] bottom-0 mb-[2%] transition-transform duration-300 animate-spin-10"
           />
         </div>
       </div>

@@ -1,5 +1,5 @@
-import React from "react";
-import Create from "./_components/Create/create";
+import React from 'react';
+import Create from './_components/Create/create';
 
 export default function Home() {
   return (
