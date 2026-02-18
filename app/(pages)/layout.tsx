@@ -4,6 +4,7 @@ import metadataJSON from '@app/(pages)/_globals/metadata.json';
 import fonts from './_globals/fonts';
 import Header from './_components/Header/Header';
 import Footer from '@app/(pages)/_components/Footer/Footer';
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = metadataJSON;
 
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body className={`${fonts} antialiased`}>
         <Header />
         {children}
+        <Analytics />
         <Footer />
       </body>
     </html>

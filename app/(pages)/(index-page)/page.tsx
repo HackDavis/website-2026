@@ -1,9 +1,15 @@
-import AccordionFAQ from './_components/FAQ/faq';
+import HeroInfo from './_components/heroInfo/heroInfo';
+import Stats from './_components/Stats';
+import TenYears from './_components/TenYears';
 
 export default function Home() {
   return (
-    <div className="p-8 pb-20 sm:p-20">
-      <AccordionFAQ />
+    <div className="pt-40 flex flex-end w-full">
+      <div className="flex-end">
+        <HeroInfo />
+        <TenYears />
+        <Stats />
+      </div>
     </div>
   );
 }
