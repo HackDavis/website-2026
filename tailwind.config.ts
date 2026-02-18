@@ -27,6 +27,11 @@ export default {
           '50%': { transform: 'translateY(-20px)' },
         },
 
+        'slide-right': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(calc(100% - 100%))' },
+        },
+
         picture1: {
           // front (A) - stable
           '0%, 40%, 100%': {
@@ -134,6 +139,7 @@ export default {
 
       animation: {
         'float-bob': 'float-bob 3s ease-in-out infinite',
+        'slide-right': 'slide-right 300ms ease forwards',
 
         picture1: `picture1 ${DURATION} ease-in-out infinite`,
         picture2: `picture2 ${DURATION} ease-in-out infinite`,
