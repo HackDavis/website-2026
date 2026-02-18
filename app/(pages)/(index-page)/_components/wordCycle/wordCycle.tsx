@@ -36,10 +36,10 @@ export default function WordCycle() {
           mountOnEnter
           unmountOnExit
           classNames={{
-            enter: 'opacity-0 translate-y-[35px]',
+            enter: 'opacity-0 translate-y-[35px] text-white',
             enterActive: 'opacity-100 translate-y-0',
             exit: 'opacity-100',
-            exitActive: 'opacity-0 -translate-y-[35px]',
+            exitActive: 'opacity-0 -translate-y-[35px] text-white',
           }}
         >
           <span
