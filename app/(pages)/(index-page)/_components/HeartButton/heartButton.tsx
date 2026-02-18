@@ -14,19 +14,29 @@ export default function HeartButton({
     <Link
       href={href}
       className="
-        group relative flex items-center overflow-hidden
-        w-full h-full rounded-full
+        group relative w-full h-full
+        flex items-center overflow-hidden
+        rounded-full
+        transition-[background,flex-direction] duration-300
         bg-white border-2 border-[#D5E1E5]
-        no-underline
-        transition-[background] duration-300
+        text-[var(--teal-1,#005271)]
+        hover:bg-[var(--highlight-yellow)]
+        hover:text-[var(--background-dark)]
         hover:flex-row-reverse
+        no-underline
       "
     >
+      {/* invisible placeholder (preserves layout width) */}
+      <div className="relative aspect-square h-full rounded-full invisible" />
+
+      {/* animated heart coin */}
       <div
         className="
-          relative z-10 shrink-0
+          heart-animated
+          absolute left-0 top-0
           aspect-square h-full rounded-full
           shadow-[0px_9px_75px_rgba(0,0,0,0.75)]
+          group-hover:animate-slide-right
         "
       >
         <Image
@@ -38,17 +48,17 @@ export default function HeartButton({
         />
       </div>
 
-      <p
+      {/* text */}
+      <h4
         className="
-          flex-1 text-center
-          rounded-full font-bold
+          w-full text-center
+          font-bold
           tracking-[0.32px]
           text-[14px] md:text-[16px]
-          text-[var(--teal-1,#005271)]
         "
       >
         {text}
-      </p>
+      </h4>
 
       {/* overlay */}
       <span

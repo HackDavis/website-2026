@@ -28,8 +28,12 @@ export default {
         },
 
         'slide-right': {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(calc(100% - 100%))' },
+          '0%': { left: '0%' },
+          '75%': { left: '70%' },
+          '100%': {
+            left: 'unset',
+            right: '0%',
+          },
         },
 
         picture1: {
@@ -139,7 +143,7 @@ export default {
 
       animation: {
         'float-bob': 'float-bob 3s ease-in-out infinite',
-        'slide-right': 'slide-right 300ms ease forwards',
+        'slide-right': 'slide-right 300ms linear forwards',
 
         picture1: `picture1 ${DURATION} ease-in-out infinite`,
         picture2: `picture2 ${DURATION} ease-in-out infinite`,

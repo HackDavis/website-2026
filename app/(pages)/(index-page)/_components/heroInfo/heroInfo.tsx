@@ -83,12 +83,15 @@ export default function HeroInfo() {
                     text-nowrap
                     md:text-[16px]
                     border border-[var(--teal-1,#005271)]
+                    hover:border-white
                     bg-white
+                    hover:bg-[var(--teal-1,#005271)]
                     shadow-[4px_4px_0_0_#005271]
                     text-center
                     font-bold
                     tracking-[0.32px]
                     text-[var(--teal-1,#005271)]
+                    hover:text-white
                   "
                 >
                   Register Now
