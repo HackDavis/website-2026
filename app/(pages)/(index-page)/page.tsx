@@ -11,8 +11,8 @@ export default function Home() {
         <HeroInfo />
         <TenYears />
         <Stats />
-        <AccordionFAQ />
         <Create />
+        <AccordionFAQ />
       </div>
     </div>
   );
