@@ -133,7 +133,7 @@ const AccordionFAQ = () => {
                     key={index}
                     header={
                       <div className="text-white flex w-full flex-row items-center justify-between">
-                        <p className="my-[0.5vw] text-[1.25rem] text-white font-bold leading-[45px] tracking-[0.4px] text-[var(--text-light)] font-[var(--font-metropolis)] max-[1048px]:text-base max-[760px]:text-[0.875rem] max-[760px]:leading-[38px]">
+                        <p className="my-[0.5vw] text-[1.25rem] text-white font-bold md:leading-[45px] tracking-[0.4px] text-[var(--text-light)] font-[var(--font-metropolis)] max-[1048px]:text-base max-[760px]:text-[0.875rem] max-[760px]:py-[10px]">
                           {question}
                         </p>
                         <div>

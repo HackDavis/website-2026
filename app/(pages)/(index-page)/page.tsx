@@ -1,6 +1,7 @@
 import HeroInfo from './_components/heroInfo/heroInfo';
 import Stats from './_components/Stats';
 import TenYears from './_components/TenYears';
+import AccordionFAQ from './_components/FAQ/faq';
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
         <HeroInfo />
         <TenYears />
         <Stats />
+        <AccordionFAQ />
       </div>
     </div>
   );
