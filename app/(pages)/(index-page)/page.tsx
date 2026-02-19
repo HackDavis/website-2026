@@ -9,12 +9,12 @@ import DonorScroll from './_components/DonorScroll/DonorScroll';
 export default function Home() {
   return (
     <div className="pt-40 flex flex-col w-full">
-        <HeroInfo />
-        <TenYears />
-        <Stats />
-        <Create />
-        <AccordionFAQ />
-        <DonorScroll />
+      <HeroInfo />
+      <TenYears />
+      <Stats />
+      <Create />
+      <AccordionFAQ />
+      <DonorScroll />
     </div>
   );
 }
