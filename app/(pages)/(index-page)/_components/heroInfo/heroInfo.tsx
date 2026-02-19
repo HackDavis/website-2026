@@ -1,20 +1,55 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import HeartButton from '../HeartButton/heartButton';
 import WordCycle from '../wordCycle/wordCycle';
+import { useEffect, useRef, useState } from 'react';
+
+/**
+ * NOTE FOR ALEX: GET GREEN FLOWER FULL 
+ */
 
 export default function HeroInfo() {
+
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+
+    const handleMouseMove = (event: MouseEvent) => {
+      if (container && window.innerWidth > 425) {
+        const rect = container.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+        setMousePosition({ x, y });
+      }
+    };
+
+    container?.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      container?.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
   return (
     <>
-      <div className="flex flex-col pl-[9%] items-center -pl-5 p-5 w-full gap-6 md:flex-row md:items-stretch md:pr-[13%]">
-        <div className="absolute top-0 left-[27%] md:left-[30%] -z-10 overflow-hidden">
+      <div ref={containerRef} className="flex flex-col pl-[9%] items-center -pl-5 p-5 w-full gap-6 md:flex-row md:items-stretch md:pr-[13%]">
+        <div className="absolute top-0 left-[27%] md:left-[30%] -z-10">
           <Image
             src="/Images/reghero/Green.svg"
             alt="Animals on couch"
             width={300}
             height={300}
             className="flex flex-row justify-center object-contain w-[40%] md:h-full md:w-full"
+            style={{
+              transform: `translateX(${mousePosition.x / 30}px) translateY(${
+                mousePosition.y / 30
+              }px)`,
+            }}
           />
         </div>
         <div>
@@ -24,6 +59,11 @@ export default function HeroInfo() {
             width={156.5}
             height={221.27}
             className="absolute top-29 left-27 -z-10 hidden md:block"
+            style={{
+              transform: `translateX(${mousePosition.x / 50}px) translateY(${
+                mousePosition.y / 50
+              }px)`,
+            }}
           />
           <Image
             src="/Images/reghero/YellowDonut.svg"
@@ -31,6 +71,11 @@ export default function HeroInfo() {
             width={100}
             height={100}
             className="absolute -z-10 top-[56%] md:top-[50%] left-[2%] justify-center object-contain animate-slow-spin"
+            style={{
+              transform: `translateX(${mousePosition.x / 40}px) translateY(${
+                mousePosition.y / 40
+              }px)`,
+            }}
           />
           <Image
             src="/Images/reghero/BlueThing.svg"
@@ -38,6 +83,11 @@ export default function HeroInfo() {
             width={100}
             height={100}
             className="absolute order-2 md:order-none top-[85%] -left-[5%] md:left-[35%] justify-center -z-10 object-contain animate-slow-spin"
+            style={{
+              transform: `translateX(${mousePosition.x / 35}px) translateY(${
+                mousePosition.y / 35
+              }px)`,
+            }}
           />
         </div>
         {/* animals on couch */}
