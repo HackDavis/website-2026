@@ -121,16 +121,16 @@ export default function Create() {
             <h2 className="text-2xl md:text-4xl text-center font-bold text-[#005271]">
               support us!
             </h2>
-
+            <a href="https://www.guidestar.org/profile/shared/4cf39094-2e34-44e6-890e-7a547408155b" target="_blank" rel="noopener noreferrer">
             <Image
               src="/Images/Create/support.svg"
-              alt="Gold Transparency 2024 Candid"
+              alt="Platinum Transparency 2025 Candid"
               width={500}
               height={288}
               className="mb-auto w-[170px] md:w-[136px] h-auto md:h-[136px] object-contain"
             />
-
-            <HeartButton text="Donate" href="#" />
+            </a>
+            <HeartButton text="Donate" href="https://giveto.ucdavis.edu/schools/UniversityofCaliforniaDavis/crowdfund-uc-davis-february-2026/pages/hackdavis/?a=12060603" />
           </div>
 
           <Image

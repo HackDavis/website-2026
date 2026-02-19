@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useRef, useState, createRef } from 'react';
+import { useEffect, useMemo, useState, createRef } from 'react';
 import { SwitchTransition, CSSTransition } from 'react-transition-group';
 
 const words = [
@@ -51,7 +51,9 @@ export default function WordCycle() {
           <span
             ref={activeRef}
             className="inline-block will-change-transform will-change-opacity"
-            style={{ transition: 'all 400ms cubic-bezier(0.165, 0.84, 0.44, 1)' }}
+            style={{
+              transition: 'all 400ms cubic-bezier(0.165, 0.84, 0.44, 1)',
+            }}
           >
             {words[wordIdx]}
           </span>
