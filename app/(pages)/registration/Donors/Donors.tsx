@@ -1,23 +1,29 @@
-import { LuHeart } from 'react-icons/lu';
+'use client';
 
-function DonorRow({
-  rowNames,
-  rowNum,
-}: {
-  rowNames: string[];
-  rowNum: number;
-}) {
+function DonorRow({ rowNames, rowNum }: { rowNames: string[]; rowNum: 1 | 2 }) {
+  const anim = rowNum === 2 ? 'animate-sponsor-right' : 'animate-sponsor-left';
+
   return (
-    <div className="flex flex-row inline-flex overflow-hidden justify-center items-center">
+    <div className="group w-full overflow-hidden">
       <div
-        className={
-          'flex flex-row inline-flex gap-[2vw] hover:[animation-play-state:paused] whitespace-nowrap ' +
-          (rowNum === 1 ? 'animate-slide-row1' : 'animate-slide-row2')
-        }
+        className={`flex w-max items-center whitespace-nowrap gap-[2vw] ${anim} group-hover:[animation-play-state:paused]`}
       >
-        {[...rowNames, ...rowNames, ...rowNames].map((name, i) => (
+        {/* copy A */}
+        {rowNames.map((name, i) => (
           <div
-            key={`${i}-${name}`}
+            key={`a-${i}`}
+            className="glass-pill flex items-center justify-center !p-[1vw] !px-[2.5vw]"
+          >
+            <p className="cursor-default text-[1vw] text-white font-metropolis uppercase font-medium">
+              {name}
+            </p>
+          </div>
+        ))}
+
+        {/* copy B (identical) */}
+        {rowNames.map((name, i) => (
+          <div
+            key={`b-${i}`}
             className="glass-pill flex items-center justify-center !p-[1vw] !px-[2.5vw]"
           >
             <p className="cursor-default text-[1vw] text-white font-metropolis uppercase font-medium">
@@ -57,8 +63,8 @@ export default function Donors() {
         <p className="text-white text-[36px] flex justify-center items-center text-xl font-semibold">
           And a special thanks to our donors!
         </p>
-        {/* <LuHeart className="text-white text-[4rem]" /> */}
       </div>
+
       <DonorRow rowNames={row1_names} rowNum={1} />
       <DonorRow rowNames={row2_names} rowNum={2} />
     </div>

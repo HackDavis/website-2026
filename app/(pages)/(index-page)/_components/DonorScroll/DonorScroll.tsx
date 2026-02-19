@@ -6,7 +6,6 @@ import Donors from '@app/(pages)/registration/Donors/Donors';
 export default function DonorScroll() {
   return (
     <div className="relative w-full overflow-x-clip bg-[#11043F] min-h-[140vw] sm:min-h-[1100px]">
-      
       {/* Cloud */}
       <Image
         src={mobile_cloud}
@@ -27,7 +26,6 @@ export default function DonorScroll() {
         />
         <div className="w-full h-[120px] -mt-[8%] bg-[#080022] -z-30" />
       </div>
-
     </div>
   );
 }

@@ -197,7 +197,6 @@ export default function Sponsers() {
           sizes="100vw"
         />
       </div>
-
     </div>
   );
 }
