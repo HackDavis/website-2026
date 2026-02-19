@@ -2,14 +2,9 @@ import type { Config } from 'tailwindcss';
 import plugin from 'tailwindcss/plugin';
 
 const DURATION = '3s';
-import type { Config } from 'tailwindcss';
-import plugin from 'tailwindcss/plugin';
 
 export default {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
@@ -35,68 +30,59 @@ export default {
       },
 
       keyframes: {
+        // existing
         'float-bob': {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-20px)' },
-        'float-bob': {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-20px)' },
-        },
-        'move-right': {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(33.333333333%)' },
-        },
-        'move-left': {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-33.333333333%)' },
         },
 
         'slide-right': {
           '0%': { left: '0%' },
           '75%': { left: '70%' },
-          '100%': {
-            left: 'unset',
-            right: '0%',
-          },
+          '100%': { left: 'unset', right: '0%' },
         },
 
+        // =========================
+        // ✅ Infinite sponsor marquee
+        // Track must contain TWO identical copies of content
+        // and we animate by -50% for seamless looping.
+        // =========================
+        'sponsor-marquee-left': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        'sponsor-marquee-right': {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+
+        // existing picture stack
         picture1: {
-          // front (A) - stable
           '0%, 40%, 100%': {
             transform:
               'translate(-50%, -50%) translate(0%, 0%) rotate(0deg) scale(1)',
             zIndex: '50',
           },
-
-          // pull down (still front)
           '52%': {
             transform:
               'translate(-50%, -50%) translate(0%, 105%) rotate(0deg) scale(0.98)',
             zIndex: '50',
           },
-
-          // safe moment to drop behind
           '58%': {
             transform:
               'translate(-50%, -50%) translate(0%, 105%) rotate(0deg) scale(0.98)',
             zIndex: '5',
           },
-
-          // behind (E)
           '72%': {
             transform:
               'translate(-50%, -50%) translate(18%, -10%) rotate(8deg) scale(0.92)',
             zIndex: '5',
           },
-
-          // come back toward front (still low z while passing under)
           '86%': {
             transform:
               'translate(-50%, -50%) translate(0%, 0%) rotate(0deg) scale(1)',
             zIndex: '5',
           },
-
-          // regain front at end (matches 0%)
           '92%': {
             transform:
               'translate(-50%, -50%) translate(0%, 0%) rotate(0deg) scale(1)',
@@ -105,13 +91,11 @@ export default {
         },
 
         picture2: {
-          // B (left)
           '0%, 55%': {
             transform:
               'translate(-50%, -50%) translate(-32%, 6%) rotate(-14deg) scale(0.95)',
             zIndex: '30',
           },
-          // to A (front)
           '100%': {
             transform:
               'translate(-50%, -50%) translate(0%, 0%) rotate(0deg) scale(1)',
@@ -120,13 +104,11 @@ export default {
         },
 
         picture3: {
-          // C (right)
           '0%, 55%': {
             transform:
               'translate(-50%, -50%) translate(32%, 6%) rotate(14deg) scale(0.95)',
             zIndex: '20',
           },
-          // to B (left)
           '100%': {
             transform:
               'translate(-50%, -50%) translate(-32%, 6%) rotate(-14deg) scale(0.95)',
@@ -135,13 +117,11 @@ export default {
         },
 
         picture4: {
-          // D (back-left)
           '0%, 55%': {
             transform:
               'translate(-50%, -50%) translate(-18%, -10%) rotate(-8deg) scale(0.92)',
             zIndex: '10',
           },
-          // to C (right)
           '100%': {
             transform:
               'translate(-50%, -50%) translate(32%, 6%) rotate(14deg) scale(0.95)',
@@ -150,13 +130,11 @@ export default {
         },
 
         picture5: {
-          // E (back-right)
           '0%, 55%': {
             transform:
               'translate(-50%, -50%) translate(18%, -10%) rotate(8deg) scale(0.92)',
             zIndex: '5',
           },
-          // to D (back-left)
           '100%': {
             transform:
               'translate(-50%, -50%) translate(-18%, -10%) rotate(-8deg) scale(0.92)',
@@ -166,6 +144,7 @@ export default {
       },
 
       animation: {
+        // existing
         'float-bob': 'float-bob 3s ease-in-out infinite',
         'slide-right': 'slide-right 300ms linear forwards',
 
@@ -174,12 +153,11 @@ export default {
         picture3: `picture3 ${DURATION} ease-in-out infinite`,
         picture4: `picture4 ${DURATION} ease-in-out infinite`,
         picture5: `picture5 ${DURATION} ease-in-out infinite`,
-        'slide-row1': 'move-right 15s linear infinite',
-        'slide-row2': 'move-left 13s linear infinite',
-        'slide-row3': 'move-right 16s linear infinite',
-        'float-bob': 'float-bob 3s ease-in-out infinite',
-        'slide-right': 'slide-right 20s linear forwards',
-        'slide-left': 'slide-left 20s linear forwards',
+
+        // ✅ New marquee utilities
+        // adjust durations to change speed
+        'sponsor-left': 'sponsor-marquee-left 55s linear infinite',
+        'sponsor-right': 'sponsor-marquee-right 65s linear infinite',
       },
     },
   },
@@ -194,11 +172,13 @@ export default {
           height: '10%',
           padding: '2% 3% 2.5%',
           borderRadius: '99em',
-          backgroundColor: 'rgba(255, 255, 255, 0.1)',
-          // WebkitBackdropFilter: 'blur(10px)',
+          backgroundColor: 'rgba(255, 255, 255, 0.2)',
+          backdropFilter: 'blur(10px)',
+          WebkitBackdropFilter: 'blur(10px)',
           boxShadow:
-            'inset 0 0 0 1px color-mix(in srgb, var(--glass-light) calc(var(--glass-reflex-light) * 10%), transparent 70%), inset 1.7px 2.8px 2px -2.1px color-mix(in srgb, var(--glass-light) calc(var(--glass-reflex-light) * 90%), transparent 70%), inset -1.5px 2.5px 2px -2px color-mix(in srgb, var(--glass-dark) calc(var(--glass-reflex-dark) * 20%), transparent 70%), inset 0px 3px 6px -2px color-mix(in srgb, var(--glass-dark) calc(var(--glass-reflex-dark) * 20%), transparent 70%)',
+            'inset 0 0 0 1px color-mix(in srgb, var(--glass-light) calc(var(--glass-reflex-light) * 6%), transparent 75%), inset 1.4px 2.2px 2px -2px color-mix(in srgb, var(--glass-light) calc(var(--glass-reflex-light) * 60%), transparent 75%), inset -1px 1.6px 2px -2px color-mix(in srgb, var(--glass-dark) calc(var(--glass-reflex-dark) * 10%), transparent 80%), inset 0px 2px 4px -2px color-mix(in srgb, var(--glass-dark) calc(var(--glass-reflex-dark) * 10%), transparent 80%)',
         },
+
         '.header-navbar': {
           display: 'inline-flex',
           alignItems: 'center',
@@ -209,31 +189,8 @@ export default {
           backgroundColor: 'rgba(255, 255, 255, 0.18)',
           backdropFilter: 'blur(12px) saturate(140%)',
           WebkitBackdropFilter: 'blur(12px) saturate(140%)',
-        '.glass-pill': {
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '2%',
-          height: '10%',
-          padding: '2% 3% 2.5%',
-          borderRadius: '99em',
-          backgroundColor: 'rgba(255, 255, 255, 0.2)',
-          backdropFilter: 'blur(10px)',
-          WebkitBackdropFilter: 'blur(10px)',
-          boxShadow:
-            'inset 0 0 0 1px color-mix(in srgb, var(--glass-light) calc(var(--glass-reflex-light) * 6%), transparent 75%), inset 1.4px 2.2px 2px -2px color-mix(in srgb, var(--glass-light) calc(var(--glass-reflex-light) * 60%), transparent 75%), inset -1px 1.6px 2px -2px color-mix(in srgb, var(--glass-dark) calc(var(--glass-reflex-dark) * 10%), transparent 80%), inset 0px 2px 4px -2px color-mix(in srgb, var(--glass-dark) calc(var(--glass-reflex-dark) * 10%), transparent 80%)',
-            'inset 0 0 0 1px color-mix(in srgb, var(--glass-light) calc(var(--glass-reflex-light) * 10%), transparent), inset 1.7px 2.8px 0px -2.1px color-mix(in srgb, var(--glass-light) calc(var(--glass-reflex-light) * 90%), transparent), inset -1.7px -1.7px 0px -2.1px color-mix(in srgb, var(--glass-light) calc(var(--glass-reflex-light) * 80%), transparent), inset -2.6px -7px 1px -6.2px color-mix(in srgb, var(--glass-light) calc(var(--glass-reflex-light) * 60%), transparent), inset -0.3px -1px 4px 0px color-mix(in srgb, var(--glass-dark) calc(var(--glass-reflex-dark) * 12%), transparent), inset -1.5px 2.5px 0px -2px color-mix(in srgb, var(--glass-dark) calc(var(--glass-reflex-dark) * 20%), transparent), inset 0px 3px 4px -2px color-mix(in srgb, var(--glass-dark) calc(var(--glass-reflex-dark) * 20%), transparent), inset 2px -6.5px 1px -4px color-mix(in srgb, var(--glass-dark) calc(var(--glass-reflex-dark) * 10%), transparent), 0px 1px 5px 0px color-mix(in srgb, var(--glass-dark) calc(var(--glass-reflex-dark) * 10%), transparent), 0px 6px 16px 0px color-mix(in srgb, var(--glass-dark) calc(var(--glass-reflex-dark) * 8%), transparent)',
         },
-        '.glass-bubble': {
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '2%',
-          height: '10%',
-          padding: '2% 3% 2.5%',
-          borderRadius: '99em',
-          '--bubble-x': '50%',
-          '--bubble-y': '50%',
-          '--bubble-c1': 'rgba(255, 255, 255, 0.35)',
-          '--bubble-c2': 'rgba(255, 255, 255, 0.12)',
+
         '.glass-bubble': {
           display: 'inline-flex',
           alignItems: 'center',
@@ -246,9 +203,6 @@ export default {
           '--bubble-c1': 'rgba(255, 255, 255, 0.35)',
           '--bubble-c2': 'rgba(255, 255, 255, 0.12)',
           background:
-            'radial-gradient(circle at var(--bubble-x) var(--bubble-y), var(--bubble-c1) 0%, var(--bubble-c2) 70%)',
-          backdropFilter: 'blur(10px)',
-          WebkitBackdropFilter: 'blur(10px)',
             'radial-gradient(circle at var(--bubble-x) var(--bubble-y), var(--bubble-c1) 0%, var(--bubble-c2) 70%)',
           backdropFilter: 'blur(10px)',
           WebkitBackdropFilter: 'blur(10px)',

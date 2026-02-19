@@ -107,7 +107,7 @@ const AccordionFAQ = () => {
   ];
 
   return (
-    <div className="relative left-1/2 right-1/2 w-screen -mx-[50vw] bg-[url('/Images/faq/faq-bg.svg')] bg-no-repeat bg-[position:top_center] bg-cover">
+    <div className="relative -mb-[25%] left-1/2 right-1/2 w-screen -mx-[50vw] bg-[url('/Images/faq/faq-bg.svg')] bg-no-repeat bg-[position:top_center] bg-cover">
       <Image
         src="/Images/faq/faqcloud.svg"
         alt="Cloud"

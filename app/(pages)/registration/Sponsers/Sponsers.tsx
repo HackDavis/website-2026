@@ -30,7 +30,7 @@ function SponsorElement({ src, url, alt }: Sponsor) {
             alt={alt ?? 'Unknown sponsor logo'}
             fill
             className="object-contain"
-            sizes="(max-width: 640px) 180px, (max-width: 768px) 220px, 260px"
+            sizes="(max-width: 640px) 220px, (max-width: 768px) 260px, (max-width: 1024px) 320px, 380px"
           />
         </a>
       </div>
@@ -41,18 +41,21 @@ function SponsorElement({ src, url, alt }: Sponsor) {
 function SponserRow({
   rowImages,
   rowNum,
+  durationClass,
 }: {
   rowImages: Sponsor[];
   rowNum: 1 | 2 | 3;
+  durationClass?: string;
 }) {
-  // row 1 + 3 go left, row 2 goes right (adjust if you want)
-  const anim =
-    rowNum === 2 ? 'sponsor-marquee-right' : 'sponsor-marquee-left';
+  // uses the NEW tailwind config animations:
+  // animate-sponsor-left / animate-sponsor-right
+  const anim = rowNum === 2 ? 'animate-sponsor-right' : 'animate-sponsor-left';
 
-  // If your list is short, repeat it BEFORE we do the 2-copy marquee
-  // (this prevents empty gaps on large screens)
+  // if list is short, repeat before the 2-copy marquee to avoid gaps
   const base =
-    rowImages.length < 6 ? [...rowImages, ...rowImages, ...rowImages] : rowImages;
+    rowImages.length < 6
+      ? [...rowImages, ...rowImages, ...rowImages]
+      : rowImages;
 
   return (
     <div className="group w-full overflow-hidden">
@@ -61,6 +64,7 @@ function SponserRow({
           'flex w-max items-center',
           'gap-6 sm:gap-8 md:gap-10',
           anim,
+          durationClass ?? '',
           'group-hover:[animation-play-state:paused]',
         ].join(' ')}
       >
@@ -73,37 +77,6 @@ function SponserRow({
           <SponsorElement key={`b-${image.id}`} {...image} />
         ))}
       </div>
-
-      {/* local CSS so you don't have to touch tailwind.config */}
-      <style jsx global>{`
-        @keyframes sponsorMarqueeLeft {
-          from {
-            transform: translateX(0);
-          }
-          to {
-            transform: translateX(-50%);
-          }
-        }
-
-        @keyframes sponsorMarqueeRight {
-          from {
-            transform: translateX(-50%);
-          }
-          to {
-            transform: translateX(0);
-          }
-        }
-
-        .sponsor-marquee-left {
-          animation: sponsorMarqueeLeft 50s linear infinite;
-          will-change: transform;
-        }
-
-        .sponsor-marquee-right {
-          animation: sponsorMarqueeRight 50s linear infinite;
-          will-change: transform;
-        }
-      `}</style>
     </div>
   );
 }
@@ -192,7 +165,11 @@ export default function Sponsers() {
 
   return (
     <div className="relative bg-darkpurple w-screen overflow-hidden">
-      <div className="bg-transparent md:bg-[#3F1959] py-6 md:py-10 flex flex-col gap-6 md:gap-8">
+      <div className="bg-[#11043F] md:bg-[#3F1959] py-6 md:py-10 flex flex-col gap-6 md:gap-8">
+        {/* durations come from tailwind config:
+            animate-sponsor-left (55s) / animate-sponsor-right (65s)
+            If you want per-row speed, set them in config or I can show a CSS-var approach.
+        */}
         <SponserRow rowImages={row1_images} rowNum={1} />
         <SponserRow rowImages={row2_images} rowNum={2} />
         <SponserRow rowImages={row3_images} rowNum={3} />

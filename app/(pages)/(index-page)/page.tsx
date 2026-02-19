@@ -5,20 +5,17 @@ import AccordionFAQ from './_components/FAQ/faq';
 import Create from './_components/Create/create';
 
 import React from 'react';
-import Donors from '../registration/Donors/Donors';
+// import Donors from '../registration/Donors/Donors';
 import Sponsers from '../registration/Sponsers/Sponsers';
 export default function Home() {
   return (
-    <div className="pt-40 flex flex-end w-full">
-      <div className="flex-end">
-        <HeroInfo />
-        <TenYears />
-        <Stats />
-        <Create />
-        <AccordionFAQ />
-      </div>
-    <div>
-      <Donors />
+    <div className="pt-40 w-full">
+      <HeroInfo />
+      <TenYears />
+      <Stats />
+      <Create />
+      <AccordionFAQ />
+      {/* <Donors /> */}
       <Sponsers />
     </div>
   );

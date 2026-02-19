@@ -60,7 +60,7 @@ export default function Donors() {
         <LuHeart className="text-white text-[3vw]" />
       </div>
       <DonorRow rowNames={row1_names} rowNum={1} />
-      {/* <DonorRow rowNames={row2_names} rowNum={2} />*/}
+      <DonorRow rowNames={row2_names} rowNum={2} />
     </div>
   );
 }
