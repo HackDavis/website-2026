@@ -5,7 +5,7 @@ import AccordionFAQ from './_components/FAQ/faq';
 import Create from './_components/Create/create';
 
 import React from 'react';
-// import Donors from '../registration/Donors/Donors';
+import Donors from '../registration/Donors/Donors';
 import Sponsers from '../registration/Sponsers/Sponsers';
 export default function Home() {
   return (
@@ -15,8 +15,8 @@ export default function Home() {
       <Stats />
       <Create />
       <AccordionFAQ />
-      {/* <Donors /> */}
       <Sponsers />
+      <Donors />
     </div>
   );
 }
