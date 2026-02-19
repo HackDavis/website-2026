@@ -1,0 +1,453 @@
+[
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4b3"
+    },
+    "name": "Anna Pandey",
+    "position": "Vice President",
+    "profile_image_url": "/Images/team_members/finance/Anna_Pandey.jpg",
+    "team_category": "Finance",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/anna-pandey-274960302"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4b3"
+    },
+    "name": "Aidan Kim",
+    "position": "Finance Lead",
+    "profile_image_url": "/Images/team_members/finance/Aidan_Kim.jpg",
+    "team_category": "Finance",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/aidan-jason-kim"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4b3"
+    },
+    "name": "Tyler Kao",
+    "position": "Finance Director",
+    "profile_image_url": "/Images/team_members/finance/Tyler_Kao.jpg",
+    "team_category": "Finance",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/tyler-kao/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4b3"
+    },
+    "name": "Jiayang Liu",
+    "position": "Finance Director",
+    "profile_image_url": "/Images/team_members/finance/Jiayang_Liu.jpg",
+    "team_category": "Finance",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/jiayangliu0302/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4b3"
+    },
+    "name": "Morgan Brady",
+    "position": "Sponsorship Lead",
+    "profile_image_url": "/Images/team_members/sponsorship/Morgan_Brady.jpg",
+    "team_category": "Sponsorship",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/morgan-brady-b11bb4242"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4b3"
+    },
+    "name": "Eunice Huang",
+    "position": "Sponsorship Director",
+    "profile_image_url": "/Images/team_members/sponsorship/Eunice_Huang.jpg",
+    "team_category": "Sponsorship",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/yanjiao-huang-580995287/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4b3"
+    },
+    "name": "Jayden Kwong",
+    "position": "Sponsorship Director",
+    "profile_image_url": "/Images/team_members/sponsorship/Jayden_Kwong.jpg",
+    "team_category": "Sponsorship",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/jaydendkwong"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4b3"
+    },
+    "name": "Maanit Shah",
+    "position": "Sponsorship Director",
+    "profile_image_url": "/Images/team_members/sponsorship/Maanit_Shah.jpg",
+    "team_category": "Sponsorship",
+    "year": 2024,
+    "linkedinURL": "http://www.linkedin.com/in/maanit-shah"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4b3"
+    },
+    "name": "Leland Chung",
+    "position": "Sponsorship Director",
+    "profile_image_url": "/Images/team_members/sponsorship/Leland_Chung.jpg",
+    "team_category": "Sponsorship",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/leland-chung/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4ab"
+    },
+    "name": "Michelle Yeoh",
+    "position": "Technical Lead",
+    "profile_image_url": "/Images/team_members/technical/Michelle_Yeoh.jpg",
+    "team_category": "Technical",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/myeoh"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4ad"
+    },
+    "name": "Sandeep Reehal",
+    "position": "Technical Director",
+    "profile_image_url": "/Images/team_members/technical/Sandeep_Reehal.jpg",
+    "team_category": "Technical",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/sandeep-reehal"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4ad"
+    },
+    "name": "Haylie Tan",
+    "position": "Technical Director",
+    "profile_image_url": "/Images/team_members/technical/Haylie_Tan.jpg",
+    "team_category": "Technical",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/haylietan27/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4ad"
+    },
+    "name": "Afifah Hadi",
+    "position": "Technical Director",
+    "profile_image_url": "/Images/team_members/technical/Afifah_Hadi.jpg",
+    "team_category": "Technical",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/afifah-hadi/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4b6"
+    },
+    "name": "Jason Xie",
+    "position": "Design Co-Lead",
+    "profile_image_url": "/Images/team_members/design/Jason_Xie.jpg",
+    "team_category": "Design",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/jason-xie-0b45b7270/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4ac"
+    },
+    "name": "Sidney Heng",
+    "position": "Design Co-Lead",
+    "profile_image_url": "/Images/team_members/design/Sidney_Heng.jpg",
+    "team_category": "Design",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/sidney-heng-603662263/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4aa"
+    },
+    "name": "Samantha Zhang",
+    "position": "UI/UX Design Director",
+    "profile_image_url": "/Images/team_members/design/Samantha_Zhang.jpg",
+    "team_category": "Design",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/samanthaw-zhang/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4ae"
+    },
+    "name": "Shampave Kandiah",
+    "position": "Brand Design Director",
+    "profile_image_url": "/Images/team_members/design/Shampave_Kandiah.jpg",
+    "team_category": "Design",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/shampave/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4b4"
+    },
+    "name": "Alex Marasigan",
+    "position": "Technical Director",
+    "profile_image_url": "/Images/team_members/technical/Alex_Marasigan.jpg",
+    "team_category": "Technical",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/alex-marasigan"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4c8"
+    },
+    "name": "Michael Tsortos",
+    "position": "Sponsorship Director",
+    "profile_image_url": "/Images/team_members/Sponsorship/Finance/Michael_Tsortos.jpeg",
+    "team_category": "Sponsorship/Finance",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/michael-tsortos/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4cb"
+    },
+    "name": "Matthew Hong",
+    "position": "Operations Co-Lead",
+    "profile_image_url": "/Images/team_members/Operations/Matthew_Hong.jpg",
+    "team_category": "Operations",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/matthewlhong/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4cc"
+    },
+    "name": "Alice Nguyen",
+    "position": "Operations Co-Lead",
+    "profile_image_url": "/Images/team_members/Operations/Alice_Nguyen.jpg",
+    "team_category": "Operations",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/alice-t-nguyen/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4cb"
+    },
+    "name": "Daniel Yang",
+    "position": "Operations Director",
+    "profile_image_url": "/Images/team_members/Operations/Daniel_Yang.jpg",
+    "team_category": "Operations",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/daniel-yang-24a175320/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4bc"
+    },
+    "name": "Jamie Chac",
+    "position": "Marketing Co-Lead",
+    "profile_image_url": "/Images/team_members/marketing/Jamie_Chac.jpg",
+    "team_category": "Marketing",
+    "year": 2024,
+    "linkedinURL": "http://www.linkedin.com/in/jamie-c-172228213"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4bd"
+    },
+    "name": "Jordan Wu",
+    "position": "Marketing Co-Lead",
+    "profile_image_url": "/Images/team_members/marketing/Jordan_Wu.jpg",
+    "team_category": "Marketing",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/jordan-x-wu/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4ca"
+    },
+    "name": "Jonathan Lew",
+    "position": "Operations Director",
+    "profile_image_url": "/Images/team_members/Operations/Jonathan_Lew.jpg",
+    "team_category": "Operations",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/jonathan-lew12345/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4c3"
+    },
+    "name": "Cindy Xing",
+    "position": "Operations Director",
+    "profile_image_url": "/Images/team_members/Operations/Cindy_Xing.jpg",
+    "team_category": "Operations",
+    "year": 2024,
+    "linkedinURL": "www.linkedin.com/in/cindyxingg"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4c3"
+    },
+    "name": "Joyce Kim",
+    "position": "Operations Director",
+    "profile_image_url": "/Images/team_members/Operations/Joyce_Kim.jpg",
+    "team_category": "Operations",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/joyce-kim-profile/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4b0"
+    },
+    "name": "Daisy Williams",
+    "position": "Motion Design Director",
+    "profile_image_url": "/Images/team_members/design/Daisy_Williams.jpg",
+    "team_category": "Design",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/daisy-williams-5698a1346/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4bd"
+    },
+    "name": "Raquib Alam",
+    "position": "Marketing Director",
+    "profile_image_url": "/Images/team_members/marketing/Raquib_Alam.jpg",
+    "team_category": "Marketing",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/raquib-alam/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4bd"
+    },
+    "name": "Anmond Wong",
+    "position": "Marketing Director",
+    "profile_image_url": "/Images/team_members/marketing/Anmond_Wong.jpg",
+    "team_category": "Marketing",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/anmond-wong-3b9958364/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4b9"
+    },
+    "name": "Andrew Luyapan",
+    "position": "Marketing Director",
+    "profile_image_url": "/Images/team_members/marketing/Andrew_Luyapan.jpg",
+    "team_category": "Marketing",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/andrew-luyapan-1ba3782b6/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4bf"
+    },
+    "name": "Roshni Sandhu",
+    "position": "External Co-Lead",
+    "profile_image_url": "/Images/team_members/external/Roshni_Sandhu.jpg",
+    "team_category": "External",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/roshni-sandhu-06a273290/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4ce"
+    },
+    "name": "Abirami Kathiresan",
+    "position": "External Co-Lead",
+    "profile_image_url": "/Images/team_members/external/Abirami_Kathiresan.jpg",
+    "team_category": "External",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/abirami-kathiresan-289b9a262/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4d0"
+    },
+    "name": "Kelly Tran",
+    "position": "External Director",
+    "profile_image_url": "/Images/team_members/external/Kelly_Tran.jpg",
+    "team_category": "External",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/kxtran"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4ce"
+    },
+    "name": "Samara Dixon",
+    "position": "External Director",
+    "profile_image_url": "/Images/team_members/external/Samara_Dixon.jpg",
+    "team_category": "External",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/skdixon/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4af"
+    },
+    "name": "Aubrey Reyes",
+    "position": "Graphic Design Director",
+    "profile_image_url": "/Images/team_members/design/Aubrey_Reyes.jpg",
+    "team_category": "Design",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4d2"
+    },
+    "name": "Taran Wariyar",
+    "position": "External Director",
+    "profile_image_url": "/Images/team_members/external/Taran_Wariyar.jpg",
+    "team_category": "External",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/taran-wariyar-987a20295/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4b2"
+    },
+    "name": "Brandon Wong",
+    "position": "UI/UX Design Director",
+    "profile_image_url": "/Images/team_members/design/Brandon_Wong.jpg",
+    "team_category": "Design",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/brandon-wong-43449827a/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4b2"
+    },
+    "name": "Emerson Lo",
+    "position": "UI/UX Design Director",
+    "profile_image_url": "/Images/team_members/design/Emerson_Lo.jpg",
+    "team_category": "Design",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/emerson-lo/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4b2"
+    },
+    "name": "Gabrielle Gutierrez",
+    "position": "UI/UX Design Director",
+    "profile_image_url": "/Images/team_members/design/Gabrielle_Gutierrez.jpg",
+    "team_category": "Design",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/gabrielle-gutierrez01234/"
+  },
+  {
+    "_id": {
+      "$oid": "65b6e0a06a7eaf354ea8e4b7"
+    },
+    "name": "Jack Zheng",
+    "position": "Technical Director",
+    "profile_image_url": "/Images/team_members/technical/Jack_Zheng.jpg",
+    "team_category": "Technical",
+    "year": 2024,
+    "linkedinURL": "https://www.linkedin.com/in/jack00z/"
+  }
+]
