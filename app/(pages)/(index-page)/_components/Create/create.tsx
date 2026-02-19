@@ -145,7 +145,7 @@ export default function Create() {
             alt="Pink Flower"
             width={111}
             height={111}
-            className="hidden md:block absolute w-auto h-[78px] -bottom-[5%] ml-[10%] transition-transform duration-300 animate-spin-10"
+            className="hidden md:block absolute w-auto h-[78px] -bottom-[5%] ml-[3%] transition-transform duration-300 animate-spin-10"
           />
         </div>
 
@@ -164,7 +164,7 @@ export default function Create() {
             alt="Blue Flower"
             width={111}
             height={111}
-            className="absolute w-auto h-[200px] bottom-0 mb-[2%] transition-transform duration-300 animate-spin-10"
+            className="absolute w-auto h-[200px] bottom-0 mb-[2%] ml-[20%] pt-[10%] transition-transform duration-300 animate-spin-10"
           />
         </div>
       </div>

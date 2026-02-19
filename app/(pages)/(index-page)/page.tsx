@@ -3,8 +3,8 @@ import Stats from './_components/Stats';
 import TenYears from './_components/TenYears';
 import AccordionFAQ from './_components/FAQ/faq';
 import Create from './_components/Create/create';
-
 import DonorScroll from './_components/DonorScroll/DonorScroll';
+import Sponsers from '../registration/Sponsers/Sponsers';
 
 export default function Home() {
   return (
@@ -14,6 +14,7 @@ export default function Home() {
       <Stats />
       <Create />
       <AccordionFAQ />
+      <Sponsers />
       <DonorScroll />
     </div>
   );
