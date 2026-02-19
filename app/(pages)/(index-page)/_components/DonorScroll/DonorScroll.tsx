@@ -14,10 +14,10 @@ export default function DonorScroll() {
         <Image
           src={tent}
           alt="Tent"
-          className="hidden md:block md:h-[580px] md:mt-[300px] md:ml-[80px] z-10"
+          className="hidden pb-[2%] md:block md:h-[580px] md:mt-[300px] md:ml-[80px] z-10"
         />
         {/* Just a black div to elevate the 'ground' */}
-        <div className="h-0 md:h-[250px] bg-black w-full -mt-[120px]"></div>
+        <div className="h-0 md:h-[250px] bg-[#080022] w-full -mt-[120px]"></div>
       </div>
     </>
   );

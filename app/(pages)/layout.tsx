@@ -5,7 +5,7 @@ import fonts from './_globals/fonts';
 import Header from './_components/Header/Header';
 import Footer from '@app/(pages)/_components/Footer/Footer';
 import { Analytics } from '@vercel/analytics/next';
-import FooterWrapper from './_components/FooterWrapper';
+// import FooterWrapper from './_components/FooterWrapper';
 
 export const metadata: Metadata = metadataJSON;
 
@@ -21,7 +21,7 @@ export default function RootLayout({
         {children}
         <Analytics />
         <Footer />
-        <FooterWrapper />
+        {/* <FooterWrapper /> */}
       </body>
     </html>
   );

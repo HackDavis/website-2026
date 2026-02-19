@@ -24,7 +24,7 @@ export default function Footer({ variant = 'about-us' }: FooterProps) {
   const logoStyles =
     'h-6 text-white transition hover:text-gray-300 break-400:h-7 md:h-8 lg:h-8 xl:h-10 2xl:h-15';
 
-  const bgColor = variant === 'index' ? 'bg-[#000008] z-[-1]' : 'bg-[#11043F]';
+  const bgColor = variant === 'index' ? 'bg-[#080022] z-[-1]' : 'bg-[#080022]';
 
   return (
     <footer className={`relative z-10 flex w-full h-70 flex-col ${bgColor}`}>
