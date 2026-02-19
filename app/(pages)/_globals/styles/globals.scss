@@ -57,10 +57,12 @@
 
   /* About Us Text Colors */
   --text-dark: #123041;
+  --text-hero: #005271;
   --text-extra-dark: #0E2535;
   --text-black: #000000;
   --text-white: #FFFFFF;
   --text-purple: #BE5BA8;
+  --text-dark-blue: #005271;
 
   /* About Us Cards */ 
   --card-light-blue: #9EE7E5;
@@ -85,6 +87,17 @@
   --glass-saturation: 100%;
   --glass-reflex-dark: 1;
   --glass-reflex-light: 1;
+
+  --navbar-bg: #E5EEF180;
+}
+
+@keyframes cloud-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 * {
