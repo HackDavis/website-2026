@@ -52,7 +52,7 @@ export default function Donors() {
   ];
 
   return (
-    <div className="bg-darkpurple mt-[5%] gap-[2vw] flex flex-col ">
+    <div className="bg-darkpurple mt-[8%] border-8 gap-[1.5vw] py-[4vw] px-[3vw] flex flex-col">
       <div className="flex flex-row items-center justify-center gap-[1.5vw]">
         <p className="text-white text-[36px] flex justify-center items-center text-xl font-semibold">
           And a special thanks to our donors!

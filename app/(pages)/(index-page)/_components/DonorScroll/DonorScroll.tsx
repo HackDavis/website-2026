@@ -5,7 +5,7 @@ import Donors from '@app/(pages)/registration/Donors/Donors';
 
 export default function DonorScroll() {
   return (
-    <div className="donor-scroll-section  border-red-400 border-8 py-5 flex flex-col items-center relative w-full h-[100vw] sm:h-[800px] overflow-x-clip bg-[#11043F]">
+    <div className="donor-scroll-section py-5 flex flex-col items-center relative w-full min-h-[140vw] sm:min-h-[1100px] overflow-x-clip bg-[#11043F]">
       <Image
         src={mobile_cloud}
         alt="Cloud"
@@ -19,10 +19,10 @@ export default function DonorScroll() {
       <Image
         src={tent}
         alt="Tent"
-        className="hidden pb-[2%] md:block md:h-[580px] md:mt-[300px] md:ml-[80px] z-20"
+        className="hidden md:block md:h-[580px] md:mt-[30%] md:ml-[80px] z-20"
       />
 
-      <div className="h-[120px] bg-[#080022] w-full -mt-[120px] z-30" />
+      <div className="h-[120px] bg-[#080022] w-full -mt-[120px]" />
     </div>
   );
 }
