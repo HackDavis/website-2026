@@ -11,10 +11,10 @@ function SponsorElement({ src, url, alt }: Sponsor) {
         relative flex-shrink-0
         bg-[#612D72]
         rounded-2xl
-        w-[220px] h-[150px]
-        sm:w-[260px] sm:h-[170px]
-        md:w-[320px] md:h-[200px]
-        lg:w-[380px] lg:h-[240px]
+        w-[165px] h-[105px]
+        sm:w-[195px] sm:h-[125px]
+        md:w-[240px] md:h-[150px]
+        lg:w-[285px] lg:h-[180px]
         flex items-center justify-center
       "
     >
@@ -176,10 +176,10 @@ export default function Sponsers() {
       </div>
 
       {/* Left cloud */}
-      <div className="hidden md:block pointer-events-none absolute inset-y-0 left-0 w-full h-[min(70vh,700px)] -translate-y-6 -translate-x-2 z-10">
+      <div className="hidden md:block pointer-events-none absolute -top-40 -bottom-40 left-0 right-0 z-50">
         <Image
           src="/Images/sponsers/leftcloud.png"
-          alt="Purple cloud wrapping around the left side of the sponsors"
+          alt="Left cloud"
           fill
           className="object-contain object-left"
           priority
@@ -188,15 +188,16 @@ export default function Sponsers() {
       </div>
 
       {/* Right cloud */}
-      <div className="hidden md:block pointer-events-none absolute inset-y-0 right-0 w-full h-[min(70vh,700px)] -translate-y-20 z-10">
+      <div className="hidden md:block pointer-events-none absolute -top-40 -bottom-40 left-0 right-0 z-10">
         <Image
           src="/Images/sponsers/rightcloud.png"
-          alt="Purple cloud wrapping around the right side of the sponsors"
+          alt="Right cloud"
           fill
           className="object-contain object-right"
           sizes="100vw"
         />
       </div>
+
     </div>
   );
 }
