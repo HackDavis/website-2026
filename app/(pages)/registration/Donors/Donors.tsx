@@ -52,12 +52,12 @@ export default function Donors() {
   ];
 
   return (
-    <div className="bg-darkpurple py-[3vw] gap-[2vw] flex flex-col">
+    <div className="bg-darkpurple mt-[5%] gap-[2vw] flex flex-col ">
       <div className="flex flex-row items-center justify-center gap-[1.5vw]">
-        <p className="text-[3vw] text-white flex justify-center items-center font-inter font-semibold">
+        <p className="text-white text-[36px] flex justify-center items-center text-xl font-semibold">
           And a special thanks to our donors!
         </p>
-        <LuHeart className="text-white text-[3vw]" />
+        {/* <LuHeart className="text-white text-[4rem]" /> */}
       </div>
       <DonorRow rowNames={row1_names} rowNum={1} />
       <DonorRow rowNames={row2_names} rowNum={2} />
