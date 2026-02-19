@@ -2,31 +2,35 @@
 
 import Image from 'next/image';
 
-function SponsorElement({
-  src,
-  url,
-  alt,
-}: {
-  src?: string;
-  url?: string;
-  alt?: string;
-}) {
+type Sponsor = { id: string; src?: string; url?: string; alt?: string };
+
+function SponsorElement({ src, url, alt }: Sponsor) {
   return (
     <div
-      className={`relative flex-shrink-0 bg-[#612D72] rounded-[2vw] w-[30vw] h-[20vw] flex items-center justify-center`}
+      className="
+        relative flex-shrink-0
+        bg-[#612D72]
+        rounded-2xl
+        w-[220px] h-[150px]
+        sm:w-[260px] sm:h-[170px]
+        md:w-[320px] md:h-[200px]
+        lg:w-[380px] lg:h-[240px]
+        flex items-center justify-center
+      "
     >
       <div className="absolute inset-[10%]">
         <a
-          href={url ? url : '#'}
+          href={url ?? '#'}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full h-full"
+          className="block w-full h-full"
         >
           <Image
-            src={src ? src : '/Images/sponsers/abbottlogo.png'} // default image?
-            alt={alt ? alt : 'Unknown sponsor logo'}
+            src={src ?? '/Images/sponsers/abbottlogo.png'}
+            alt={alt ?? 'Unknown sponsor logo'}
             fill
             className="object-contain"
+            sizes="(max-width: 640px) 180px, (max-width: 768px) 220px, 260px"
           />
         </a>
       </div>
@@ -38,31 +42,74 @@ function SponserRow({
   rowImages,
   rowNum,
 }: {
-  rowImages: { id: string; src?: string; url?: string; alt?: string }[];
-  rowNum: number;
+  rowImages: Sponsor[];
+  rowNum: 1 | 2 | 3;
 }) {
+  // row 1 + 3 go left, row 2 goes right (adjust if you want)
+  const anim =
+    rowNum === 2 ? 'sponsor-marquee-right' : 'sponsor-marquee-left';
+
+  // If your list is short, repeat it BEFORE we do the 2-copy marquee
+  // (this prevents empty gaps on large screens)
+  const base =
+    rowImages.length < 6 ? [...rowImages, ...rowImages, ...rowImages] : rowImages;
+
   return (
-    <div className="flex flex-row inline-flex overflow-hidden justify-center">
+    <div className="group w-full overflow-hidden">
       <div
-        className={
-          'flex flex-row inline-flex gap-[2vw] hover:[animation-play-state:paused] ' +
-          (rowNum === 1
-            ? 'animate-slide-row1'
-            : rowNum === 2
-            ? 'animate-slide-row2'
-            : 'animate-slide-row3')
-        }
+        className={[
+          'flex w-max items-center',
+          'gap-6 sm:gap-8 md:gap-10',
+          anim,
+          'group-hover:[animation-play-state:paused]',
+        ].join(' ')}
       >
-        {[...rowImages, ...rowImages, ...rowImages].map((image, i) => (
-          <SponsorElement key={`${image.id}-${i}`} {...image} />
+        {/* copy A */}
+        {base.map((image) => (
+          <SponsorElement key={`a-${image.id}`} {...image} />
+        ))}
+        {/* copy B (identical) */}
+        {base.map((image) => (
+          <SponsorElement key={`b-${image.id}`} {...image} />
         ))}
       </div>
+
+      {/* local CSS so you don't have to touch tailwind.config */}
+      <style jsx global>{`
+        @keyframes sponsorMarqueeLeft {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-50%);
+          }
+        }
+
+        @keyframes sponsorMarqueeRight {
+          from {
+            transform: translateX(-50%);
+          }
+          to {
+            transform: translateX(0);
+          }
+        }
+
+        .sponsor-marquee-left {
+          animation: sponsorMarqueeLeft 50s linear infinite;
+          will-change: transform;
+        }
+
+        .sponsor-marquee-right {
+          animation: sponsorMarqueeRight 50s linear infinite;
+          will-change: transform;
+        }
+      `}</style>
     </div>
   );
 }
 
 export default function Sponsers() {
-  const row1_images = [
+  const row1_images: Sponsor[] = [
     {
       id: 'ucdavis',
       src: '/Images/sponsers/ucd.png',
@@ -89,54 +136,54 @@ export default function Sponsers() {
     },
   ];
 
-  const row2_images = [
+  const row2_images: Sponsor[] = [
     {
-      id: 'ucdavis',
+      id: 'ucdavis-2',
       src: '/Images/sponsers/ucd.png',
       url: 'https://www.ucdavis.edu/',
       alt: 'University of California Davis Logo',
     },
     {
-      id: 'ucdcs',
+      id: 'ucdcs-2',
       src: '/Images/sponsers/ucdcs.png',
       url: 'https://cs.ucdavis.edu/',
       alt: 'UC Davis Department of Computer Science Logo',
     },
     {
-      id: 'ucdavis-again',
+      id: 'ucdavis-again-2',
       src: '/Images/sponsers/ucd.png',
       url: 'https://www.ucdavis.edu/',
       alt: 'University of California Davis Logo',
     },
     {
-      id: 'ucdcs-again',
+      id: 'ucdcs-again-2',
       src: '/Images/sponsers/ucdcs.png',
       url: 'https://cs.ucdavis.edu/',
       alt: 'UC Davis Department of Computer Science Logo',
     },
   ];
 
-  const row3_images = [
+  const row3_images: Sponsor[] = [
     {
-      id: 'ucdavis',
+      id: 'ucdavis-3',
       src: '/Images/sponsers/ucd.png',
       url: 'https://www.ucdavis.edu/',
       alt: 'University of California Davis Logo',
     },
     {
-      id: 'ucdcs',
+      id: 'ucdcs-3',
       src: '/Images/sponsers/ucdcs.png',
       url: 'https://cs.ucdavis.edu/',
       alt: 'UC Davis Department of Computer Science Logo',
     },
     {
-      id: 'ucdavis-again',
+      id: 'ucdavis-again-3',
       src: '/Images/sponsers/ucd.png',
       url: 'https://www.ucdavis.edu/',
       alt: 'University of California Davis Logo',
     },
     {
-      id: 'ucdcs-again',
+      id: 'ucdcs-again-3',
       src: '/Images/sponsers/ucdcs.png',
       url: 'https://cs.ucdavis.edu/',
       alt: 'UC Davis Department of Computer Science Logo',
@@ -144,29 +191,33 @@ export default function Sponsers() {
   ];
 
   return (
-    <div className="relative bg-darkpurple">
-      <div className="bg-transparent md:bg-[#3F1959] py-[2vw] gap-[2vw] flex flex-col">
+    <div className="relative bg-darkpurple w-screen overflow-hidden">
+      <div className="bg-transparent md:bg-[#3F1959] py-6 md:py-10 flex flex-col gap-6 md:gap-8">
         <SponserRow rowImages={row1_images} rowNum={1} />
         <SponserRow rowImages={row2_images} rowNum={2} />
         <SponserRow rowImages={row3_images} rowNum={3} />
       </div>
 
-      <div className="hidden md:flex pointer-events-none absolute inset-y-0 left-0 w-[100vw] h-[95vw] translate-y-[-5vw] translate-x-[-1vw] z-10">
+      {/* Left cloud */}
+      <div className="hidden md:block pointer-events-none absolute inset-y-0 left-0 w-full h-[min(70vh,700px)] -translate-y-6 -translate-x-2 z-10">
         <Image
           src="/Images/sponsers/leftcloud.png"
           alt="Purple cloud wrapping around the left side of the sponsors"
           fill
           className="object-contain object-left"
           priority
+          sizes="100vw"
         />
       </div>
 
-      <div className="hidden md:flex pointer-events-none absolute inset-y-0 right-0 w-[100vw] h-[95vw] translate-y-[-20.9vw] z-10">
+      {/* Right cloud */}
+      <div className="hidden md:block pointer-events-none absolute inset-y-0 right-0 w-full h-[min(70vh,700px)] -translate-y-20 z-10">
         <Image
           src="/Images/sponsers/rightcloud.png"
           alt="Purple cloud wrapping around the right side of the sponsors"
           fill
           className="object-contain object-right"
+          sizes="100vw"
         />
       </div>
     </div>
