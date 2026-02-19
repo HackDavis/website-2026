@@ -8,30 +8,72 @@ import WordCycle from '../wordCycle/wordCycle';
 import { useEffect, useRef, useState } from 'react';
 
 /**
- * NOTE FOR ALEX: GET GREEN FLOWER FULL 
+ * NOTES:
+ * - Need full image of green flower?
+ * - velofactor ~ how fast it moves
+ * - damping ~ how much it slows down over time
+ * - note if dont want ugly spring
+ *    - if want inc velo, decrease damping 
+ *    - if want dec velo, increase damping
+ * - i like among us
+ * - if want to add more movement, decrease pixels dividing by in transform
  */
 
 export default function HeroInfo() {
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
+  const targetPositionRef = useRef({ x: 0, y: 0 });
+  const currentPositionRef = useRef({ x: 0, y: 0 });
+  const velocityRef = useRef({ x: 0, y: 0 });
+  const animationFrameRef = useRef<number | null>(null);
 
   useEffect(() => {
     const container = containerRef.current;
+
+    const veloFactor = 0.01;
+    const damping = 0.83;
+    
+
+    const animate = () => {
+      const xVelo = (targetPositionRef.current.x - currentPositionRef.current.x) * veloFactor;
+      const yVelo = (targetPositionRef.current.y - currentPositionRef.current.y) * veloFactor;
+
+      velocityRef.current.x += xVelo; 
+      velocityRef.current.y += yVelo; 
+
+      velocityRef.current.x *= damping;
+      velocityRef.current.y *= damping;
+
+      currentPositionRef.current.x += velocityRef.current.x;
+      currentPositionRef.current.y += velocityRef.current.y;
+
+      setMousePosition({
+        x: currentPositionRef.current.x,
+        y: currentPositionRef.current.y,
+      });
+
+      animationFrameRef.current = requestAnimationFrame(animate);
+    }
 
     const handleMouseMove = (event: MouseEvent) => {
       if (container && window.innerWidth > 425) {
         const rect = container.getBoundingClientRect();
         const x = event.clientX - rect.left;
         const y = event.clientY - rect.top;
-        setMousePosition({ x, y });
+        targetPositionRef.current = { x, y };
+        //setMousePosition({ x, y });
       }
     };
 
+    animationFrameRef.current = requestAnimationFrame(animate);
     container?.addEventListener('mousemove', handleMouseMove);
 
     return () => {
       container?.removeEventListener('mousemove', handleMouseMove);
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
     };
   }, []);
 
@@ -46,8 +88,8 @@ export default function HeroInfo() {
             height={300}
             className="flex flex-row justify-center object-contain w-[40%] md:h-full md:w-full"
             style={{
-              transform: `translateX(${mousePosition.x / 30}px) translateY(${
-                mousePosition.y / 30
+              transform: `translateX(${mousePosition.x / 20}px) translateY(${
+                mousePosition.y / 20
               }px)`,
             }}
           />
@@ -60,8 +102,8 @@ export default function HeroInfo() {
             height={221.27}
             className="absolute top-29 left-27 -z-10 hidden md:block"
             style={{
-              transform: `translateX(${mousePosition.x / 50}px) translateY(${
-                mousePosition.y / 50
+              transform: `translateX(${mousePosition.x / 40}px) translateY(${
+                mousePosition.y / 40
               }px)`,
             }}
           />
@@ -72,8 +114,8 @@ export default function HeroInfo() {
             height={100}
             className="absolute -z-10 top-[56%] md:top-[50%] left-[2%] justify-center object-contain animate-slow-spin"
             style={{
-              transform: `translateX(${mousePosition.x / 40}px) translateY(${
-                mousePosition.y / 40
+              transform: `translateX(${mousePosition.x / 30}px) translateY(${
+                mousePosition.y / 30
               }px)`,
             }}
           />
@@ -84,8 +126,8 @@ export default function HeroInfo() {
             height={100}
             className="absolute order-2 md:order-none top-[85%] -left-[5%] md:left-[35%] justify-center -z-10 object-contain animate-slow-spin"
             style={{
-              transform: `translateX(${mousePosition.x / 35}px) translateY(${
-                mousePosition.y / 35
+              transform: `translateX(${mousePosition.x / 25}px) translateY(${
+                mousePosition.y / 25
               }px)`,
             }}
           />
