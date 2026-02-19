@@ -32,14 +32,14 @@ function DonorRow({
 
 export default function Donors() {
   const row1_names = [
-    'Pranav Lal',
+    'Haylie Tan',
     'Anonymous',
-    'Pranav Lal',
-    'Anonymous',
-    'Pranav Lal',
-    'Anonymous',
-    'Pranav Lal',
-    'Anonymous',
+    'Michelle Yeoh',
+    'Sandeep Reehal',
+    'Afifah Hadi',
+    'Kelly Tran',
+    'Alex Marasigan',
+    'Sidney Heng',
   ];
 
   const row2_names = [
