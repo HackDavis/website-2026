@@ -14,22 +14,26 @@ export default function HeartButton({
     <Link
       href={href}
       className="
-        group relative flex items-center overflow-hidden
-        w-full h-full rounded-full
-        text-[var(--text-light)] no-underline
+        group relative w-full h-full
+        flex items-center overflow-hidden
+        rounded-full
         transition-[background,flex-direction] duration-300
+        bg-white border-2 border-[#D5E1E5]
+        text-[var(--teal-1,#005271)]
+        hover:bg-[var(--highlight-yellow)]
+        hover:text-[var(--background-dark)]
         hover:flex-row-reverse
-        border-2 border-[#D5E1E5]
-        bg-white
+        no-underline
       "
     >
-      {/* static placeholder (hidden but preserves layout) */}
-      <div className="relative aspect-square h-full rounded-full border-2 border-[#005271] invisible" />
+      {/* invisible placeholder (preserves layout width) */}
+      <div className="relative aspect-square h-full rounded-full invisible" />
 
       {/* animated heart coin */}
       <div
         className="
-          absolute left-0 top-0 z-10
+          heart-animated
+          absolute left-0 top-0
           aspect-square h-full rounded-full
           shadow-[0px_9px_75px_rgba(0,0,0,0.75)]
           group-hover:animate-slide-right
@@ -44,18 +48,17 @@ export default function HeartButton({
         />
       </div>
 
-      <p
-        className="w-full text-center transition-all
-                    rounded-full
-                    font-bold
-                    tracking-[0.32px]
-                    text-[14px]
-                    md:text-[16px]
-                    text-[var(--teal-1,#005271)]
-                  "
+      {/* text */}
+      <h4
+        className="
+          w-full text-center
+          font-bold
+          tracking-[0.32px]
+          text-[14px] md:text-[16px]
+        "
       >
         {text}
-      </p>
+      </h4>
 
       {/* overlay */}
       <span

@@ -7,7 +7,7 @@ import WordCycle from '../wordCycle/wordCycle';
 export default function HeroInfo() {
   return (
     <>
-      <div className="flex flex-col pl-[9%] items-center -pl-5 p-5 w-full gap-6 md:flex-row md:items-stretch md:pr-[13%]">
+      <div className="flex flex-col pl-[9%] items-center -pl-5 p-5 w-full gap-6 md:flex-row md:items-stretch md:pr-[5%]">
         <div className="absolute top-0 left-[27%] md:left-[30%] -z-10 overflow-hidden">
           <Image
             src="/Images/reghero/Green.svg"
@@ -52,7 +52,7 @@ export default function HeroInfo() {
         </div>
 
         {/* right side */}
-        <div className="order-1 md:order-none flex w-full flex-col justify-between md:w-full">
+        <div className="order-1 md:order-none flex w-full min-w-0 flex-col justify-between md:w-full md:pr-0 pr-[5%]">
           {/* here text + buttons */}
           <div className="flex flex-row justify-start items-start md:justify-end md:items-end">
             <div className="flex flex-col items-start gap-[22px] text-left md:items-end md:gap-[31px] md:text-right">
@@ -63,7 +63,7 @@ export default function HeroInfo() {
                   </span>
                   <span className="text-[#005271]">for</span>
                 </p>
-                <h1 className="text-[45px] font-bold leading-[115%] tracking-[0.9px] text-[var(--text-hero)] break-625:text-[66px] break-625:leading-[100%] break-625:tracking-[3.52px] md:text-[88px]">
+                <h1 className="text-[45px] font-bold leading-[115%] tracking-[0.9px] text-[var(--text-hero)] break-900:text-[50px] break-625:text-[66px] break-625:leading-[100%] break-625:tracking-[3.52px] md:text-[88px]">
                   social good
                 </h1>
                 <p className="mt-[10px] text-[16px] w-full tracking-[0.48px] text-black break-625:text-[20px]">
@@ -83,12 +83,15 @@ export default function HeroInfo() {
                     text-nowrap
                     md:text-[16px]
                     border border-[var(--teal-1,#005271)]
+                    hover:border-white
                     bg-white
+                    hover:bg-[var(--teal-1,#005271)]
                     shadow-[4px_4px_0_0_#005271]
                     text-center
                     font-bold
                     tracking-[0.32px]
                     text-[var(--teal-1,#005271)]
+                    hover:text-white
                   "
                 >
                   Register Now
@@ -116,26 +119,27 @@ export default function HeroInfo() {
           </div>
 
           {/* desktop numbers */}
-          <div className="hidden md:flex items-end gap-0 pt-[15%] pl-[25%]">
+          <div className="hidden md:flex items-end gap-0 pt-[15%] md:pl-[5%] lg:pl-[30%]">
             <Image
               src="/Images/reghero/One.svg"
               alt="1"
-              width={150}
-              height={150}
-              className="object-contain w-[200px] h-[200px] shrink-0"
+              width={130}
+              height={130}
+              className="object-contain w-[150px] h-[150px] lg:w-[170px] lg:h-[170px] shrink-0"
             />
             <Image
               src="/Images/reghero/Zero.svg"
               alt="0"
-              width={150}
-              height={150}
-              className="object-contain w-[200px] h-[200px] shrink-0 translate-y-[24px] -translate-x-[20px]"
+              width={130}
+              height={130}
+              className="object-contain sm:w-[150px] sm:h-[150px] md:w-[150px] md:h-[150px] lg:w-[170px] lg:h-[170px] shrink-0 translate-y-[24px] -translate-x-[20px]"
             />
           </div>
         </div>
       </div>
 
-      <div className="block md:hidden order-1 md:order-none relative ml-[25%] md:ml-0 pt-[9%] flex flex-row items-stretch sm:pl-0 md:pl-[25%]">
+      {/* mobile numbers: 10 */}
+      <div className="block md:hidden order-1 md:order-none relative ml-[25%] md:ml-0  pt-[9%] flex flex-row items-stretch sm:pl-0 md:pl-[25%]">
         <Image
           src="/Images/reghero/One.svg"
           alt="Animals on couch"
@@ -143,8 +147,7 @@ export default function HeroInfo() {
           height={150}
           className="
             object-contain
-            w-[120px] h-[120px]
-            md:w-[200px] md:h-[200px]
+            w-[180px] h-[180px]
           "
         />
         <Image
@@ -154,8 +157,7 @@ export default function HeroInfo() {
           height={150}
           className="
             object-contain
-            w-[120px] h-[120px]
-            md:w-[200px] md:h-[200px]
+            w-[180px] h-[180px]
             translate-y-[30px]
             -translate-x-[20px]
             md:translate-y-[24px]
