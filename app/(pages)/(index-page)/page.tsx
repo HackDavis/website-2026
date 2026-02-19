@@ -4,16 +4,17 @@ import TenYears from './_components/TenYears';
 import AccordionFAQ from './_components/FAQ/faq';
 import Create from './_components/Create/create';
 
+import DonorScroll from './_components/DonorScroll/DonorScroll';
+
 export default function Home() {
   return (
-    <div className="pt-40 flex flex-end w-full">
-      <div className="flex-end">
-        <HeroInfo />
-        <TenYears />
-        <Stats />
-        <Create />
-        <AccordionFAQ />
-      </div>
+    <div className="pt-40 flex flex-col w-full">
+      <HeroInfo />
+      <TenYears />
+      <Stats />
+      <Create />
+      <AccordionFAQ />
+      <DonorScroll />
     </div>
   );
 }
