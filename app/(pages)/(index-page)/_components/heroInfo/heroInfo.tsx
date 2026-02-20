@@ -107,14 +107,15 @@ export default function HeroInfo() {
                   Check out the{' '}
                 </span>
                 <div className="flex items-center gap-2 text-black text-[19px]">
-                  
-                    Apply to be a{' '}
-                    <FormLink href="https://forms.gle/rvMKjxw6GjiaKPjc7" includeComma={false}>
+                  Apply to be a{' '}
+                  <FormLink
+                    href="https://forms.gle/rvMKjxw6GjiaKPjc7"
+                    includeComma={false}
+                  >
                     <span style={{ color: '#FFC53D' }}>Judge</span>
-                    </FormLink>
-                    {/* <span style={{ color: '#FFC5AB' }}>Mentor</span>, or{' '}
+                  </FormLink>
+                  {/* <span style={{ color: '#FFC5AB' }}>Mentor</span>, or{' '}
                     <span style={{ color: '#9EE7E5' }}>Volunteer</span> */}
-                  
                 </div>
               </div>
             </div>
@@ -140,31 +141,31 @@ export default function HeroInfo() {
         </div>
 
         {/* mobile numbers: 10 */}
-      <div className="block md:hidden order-3 md:order-none relative ml-[25%] md:ml-0  pt-[9%] flex flex-row items-stretch sm:pl-0 md:pl-[25%]">
-        <Image
-          src="/Images/reghero/One.svg"
-          alt="Animals on couch"
-          width={150}
-          height={150}
-          className="
+        <div className="block md:hidden order-3 md:order-none relative ml-[25%] md:ml-0  pt-[9%] flex flex-row items-stretch sm:pl-0 md:pl-[25%]">
+          <Image
+            src="/Images/reghero/One.svg"
+            alt="Animals on couch"
+            width={150}
+            height={150}
+            className="
             object-contain
             w-[180px] h-[180px]
           "
-        />
-        <Image
-          src="/Images/reghero/Zero.svg"
-          alt="Animals on couch"
-          width={150}
-          height={150}
-          className="
+          />
+          <Image
+            src="/Images/reghero/Zero.svg"
+            alt="Animals on couch"
+            width={150}
+            height={150}
+            className="
             object-contain
             w-[180px] h-[180px]
             translate-y-[30px]
             -translate-x-[20px]
             md:translate-y-[24px]
           "
-        />
-      </div>
+          />
+        </div>
       </div>
     </>
   );

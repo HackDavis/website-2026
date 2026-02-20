@@ -97,7 +97,10 @@ export default function Create() {
       </div>
 
       {/* Second Section - Support Us & Rabbit */}
-      <div className="flex flex-col items-center md:items-stretch md:flex-row gap-5 md:gap-8 w-full md:w-[100%] md:mr-auto mb-8 md:mb-[50px]" id="donate">
+      <div
+        className="flex flex-col items-center md:items-stretch md:flex-row gap-5 md:gap-8 w-full md:w-[100%] md:mr-auto mb-8 md:mb-[50px]"
+        id="donate"
+      >
         {/* Yellow background - desktop only */}
         <Image
           src="/Images/Create/yellow.svg"
