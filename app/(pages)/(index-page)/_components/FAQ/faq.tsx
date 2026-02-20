@@ -131,30 +131,38 @@ const AccordionFAQ = () => {
                 <React.Fragment key={index}>
                   <Item
                     key={index}
-                    header={
+                    header={({ state }) => (
                       <div className="text-white flex w-full flex-row items-center justify-between">
                         <p className="my-[0.5vw] text-[1.25rem] text-white font-bold md:leading-[45px] tracking-[0.4px] text-[var(--text-light)] font-[var(--font-metropolis)] max-[1048px]:text-base max-[760px]:text-[0.875rem] max-[760px]:py-[10px]">
                           {question}
                         </p>
-                        <div>
-                          <div className="absolute -rotate-90 transition-transform duration-300 ease-[cubic-bezier(0,0,0,1)] group-[aria-expanded=true]:rotate-0">
-                            <Image
-                              src="/Images/faq/plus.svg"
-                              alt="expand icon"
-                              width={19}
-                              height={3}
-                              className="max-w-none"
-                            />
-                          </div>
+                        <div className="relative w-[19px] h-[19px] flex items-center justify-center">
+                          {/* PLUS */}
+                          <Image
+                            src="/Images/faq/plus.svg"
+                            alt="expand icon"
+                            width={19}
+                            height={19}
+                            className={`transition-all duration-300 ease-in-out ${
+                              state.isEnter
+                                ? 'opacity-0 rotate-90'
+                                : 'opacity-100 rotate-0'
+                            }`}
+                          />
+
+                          {/* MINUS */}
                           <Image
                             src="/Images/faq/minus.svg"
                             alt="collapse icon"
                             width={19}
-                            height={3}
+                            height={19}
+                            className={`absolute transition-opacity duration-300 ${
+                              state.isEnter ? 'opacity-100' : 'opacity-0'
+                            }`}
                           />
                         </div>
                       </div>
-                    }
+                    )}
                     buttonProps={{
                       className: ({ isEnter }: { isEnter: boolean }) =>
                         `group w-full cursor-pointer border-0 bg-transparent text-left ${
@@ -174,14 +182,16 @@ const AccordionFAQ = () => {
               ))}
             </Accordion>
           </div>
-          <div className="hidden md:flex items-center justify-center translate-x-20">
-            <Image
-              src="/Images/hero/Cow.svg"
-              alt="HD Cow"
-              width={1000}
-              height={1000}
-              className="animate-float-bob will-change-transfor"
-            />
+          <div className="hidden md:block absolute top-[50vw] right-[3vw] z-20 pointer-events-none">
+            <div className="translate-x-20">
+              <Image
+                src="/Images/hero/Cow.svg"
+                alt="HD Cow"
+                width={600}
+                height={600}
+                className="animate-float-bob will-change-transform w-[40vw] max-w-[600px] h-auto"
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -99,6 +99,9 @@
     transform: rotate(360deg);
   }
 }
+html {
+  @apply scroll-smooth;
+}
 
 * {
   box-sizing: border-box;

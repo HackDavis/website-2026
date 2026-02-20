@@ -214,7 +214,7 @@ export default function Header() {
               >
                 About
               </Link>
-              <Link href="/donate" onClick={handleMobileNavClick('/donate')}>
+              <Link href="/#donate" onClick={handleMobileNavClick('/#donate')}>
                 Donate
               </Link>
               <Link

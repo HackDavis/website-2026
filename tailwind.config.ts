@@ -156,8 +156,8 @@ export default {
 
         // ✅ New marquee utilities
         // adjust durations to change speed
-        'sponsor-left': 'sponsor-marquee-left 55s linear infinite',
-        'sponsor-right': 'sponsor-marquee-right 65s linear infinite',
+        'sponsor-left': 'sponsor-marquee-left 100s linear infinite',
+        'sponsor-right': 'sponsor-marquee-right 89s linear infinite',
       },
     },
   },

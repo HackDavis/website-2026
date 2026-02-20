@@ -8,25 +8,13 @@ function DonorRow({ rowNames, rowNum }: { rowNames: string[]; rowNum: 1 | 2 }) {
       <div
         className={`flex w-max items-center whitespace-nowrap gap-[2vw] ${anim} group-hover:[animation-play-state:paused]`}
       >
-        {/* copy A */}
-        {rowNames.map((name, i) => (
+        {/* Triple the array to guarantee the screen is always full */}
+        {[...rowNames, ...rowNames, ...rowNames].map((name, i) => (
           <div
-            key={`a-${i}`}
+            key={i}
             className="glass-pill flex items-center justify-center !p-[1vw] !px-[2.5vw]"
           >
-            <p className="cursor-default text-[1vw] text-white font-metropolis uppercase font-medium">
-              {name}
-            </p>
-          </div>
-        ))}
-
-        {/* copy B (identical) */}
-        {rowNames.map((name, i) => (
-          <div
-            key={`b-${i}`}
-            className="glass-pill flex items-center justify-center !p-[1vw] !px-[2.5vw]"
-          >
-            <p className="cursor-default text-[1vw] text-white font-metropolis uppercase font-medium">
+            <p className="cursor-default text-[14px] md:text-[1vw] text-white font-metropolis uppercase font-medium">
               {name}
             </p>
           </div>
@@ -46,22 +34,43 @@ export default function Donors() {
     'Kelly Tran',
     'Alex Marasigan',
     'Sidney Heng',
+    'Ravi Surinder Singh Sandhu',
+    'Roshan Pandey',
+    'Sathiyaseelan Kandiah',
+    'Stanley Kim',
+    'Thenushaa Kandiah',
+    'Trang Nguyen',
+    'Vivek Sandhu',
+    'Vivek Shome',
+    'Vivian Nguyen',
+    'Youza Pak',
+    'Zhaoheng Ding',
   ];
 
   const row2_names = [
-    'Alex Marasigan',
-    'Also ALEX Marasigan',
-    'Also Also ALEX Marasigan',
-    'Also Also Also ALEX Marasigan',
-    'Also Also Also Also ALEX Marasigan',
-    'Also Also Also Also Also ALEX Marasigan',
+    'Alexander Do',
+    'Anna Pandey',
+    'Ashley Heng',
+    'Asif Mansoor Amanullah',
+    'Christina Chung',
+    'Christina Zhu',
+    'Eric Lin',
+    'Glenn Suravech',
+    'Hung Nguyen',
+    'Jayden Kwong',
+    'Levi Tobias Loureiro',
+    'Lynn Farias',
+    'Mai Nguyen',
+    'Orion Ho',
+    'Pranav Lal',
+    'Ram Pandey',
   ];
 
   return (
     <div className="bg-darkpurple mt-[8%] gap-[1.5vw] py-[4vw] px-[3vw] flex flex-col">
       <div className="flex flex-row items-center justify-center gap-[1.5vw]">
-        <p className="text-white text-[36px] flex justify-center items-center text-xl font-semibold">
-          And a special thanks to our donors!
+        <p className="text-white flex justify-center items-center text-[20px] md:text-[35px] font-semibold">
+          And a special thanks to our donors! ♡
         </p>
       </div>
 

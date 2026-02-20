@@ -57,18 +57,22 @@ export default function HeroInfo() {
           <div className="flex flex-row justify-start items-start md:justify-end md:items-end">
             <div className="flex flex-col items-start gap-[22px] text-left md:items-end md:gap-[31px] md:text-right">
               <div className="flex flex-col items-start text-left md:items-end md:text-right w-full">
-                <p className="flex gap-2 text-[30px] font-bold leading-[115%] tracking-[0.8px] break-625:text-[40px]">
-                  <span className="text-black">
-                    <WordCycle />
-                  </span>
-                  <span className="text-[#005271]">for</span>
-                </p>
-                <h1 className="text-[45px] font-bold leading-[115%] tracking-[0.9px] text-[var(--text-hero)] break-900:text-[50px] break-625:text-[66px] break-625:leading-[100%] break-625:tracking-[3.52px] md:text-[88px]">
-                  social good
-                </h1>
-                <p className="mt-[10px] text-[16px] w-full tracking-[0.48px] text-black break-625:text-[20px]">
-                  May 9-10, 2026 @ UCenter
-                </p>
+                <div className="flex flex-col items-start text-left md:items-end md:text-right w-full">
+                  <p className="flex gap-2 text-[30px] font-bold leading-[115%] tracking-[0.8px] break-625:text-[40px]">
+                    <span className="text-black">
+                      <WordCycle />
+                    </span>
+                    <span className="text-[#005271]">for</span>
+                  </p>
+
+                  <h1 className="whitespace-nowrap text-[45px] font-bold leading-[115%] tracking-[0.9px] text-[var(--text-hero)] break-900:text-[50px] break-625:text-[66px] break-625:leading-[100%] break-625:tracking-[3.52px] md:text-[88px]">
+                    social good
+                  </h1>
+
+                  <p className="mt-[10px] text-[16px] w-full tracking-[0.48px] text-black break-625:text-[20px]">
+                    May 9-10, 2026 @ UCenter
+                  </p>
+                </div>
               </div>
 
               <div className="flex flex-row items-start gap-[12px] break-625:flex-col break-625:items-end break-625:gap-[28px] sm:flex-row sm:items-center">
@@ -106,13 +110,16 @@ export default function HeroInfo() {
                 <span className="hidden text-[18px] font-normal tracking-[0.48px] text-black break-625:inline md:text-[20px]">
                   Check out the{' '}
                 </span>
-                <div className="flex items-center gap-2 text-black">
-                  <FormLink href="/?section=teams" includeComma={false}>
-                    Apply to be a{' '}
-                    <span style={{ color: '#FFC53D' }}>Judge</span>,{' '}
-                    <span style={{ color: '#FFC5AB' }}>Mentor</span>, or{' '}
-                    <span style={{ color: '#9EE7E5' }}>Volunteer</span>
+                <div className="flex items-center gap-2 text-black text-[19px]">
+                  Apply to be a{' '}
+                  <FormLink
+                    href="https://forms.gle/rvMKjxw6GjiaKPjc7"
+                    includeComma={false}
+                  >
+                    <span style={{ color: '#FFC53D' }}>Judge</span>
                   </FormLink>
+                  {/* <span style={{ color: '#FFC5AB' }}>Mentor</span>, or{' '}
+                    <span style={{ color: '#9EE7E5' }}>Volunteer</span> */}
                 </div>
               </div>
             </div>
@@ -136,33 +143,33 @@ export default function HeroInfo() {
             />
           </div>
         </div>
-      </div>
 
-      {/* mobile numbers: 10 */}
-      <div className="block md:hidden order-1 md:order-none relative ml-[25%] md:ml-0  pt-[9%] flex flex-row items-stretch sm:pl-0 md:pl-[25%]">
-        <Image
-          src="/Images/reghero/One.svg"
-          alt="Animals on couch"
-          width={150}
-          height={150}
-          className="
+        {/* mobile numbers: 10 */}
+        <div className="block md:hidden order-3 md:order-none relative ml-[25%] md:ml-0  pt-[9%] flex flex-row items-stretch sm:pl-0 md:pl-[25%]">
+          <Image
+            src="/Images/reghero/One.svg"
+            alt="Animals on couch"
+            width={150}
+            height={150}
+            className="
             object-contain
             w-[180px] h-[180px]
           "
-        />
-        <Image
-          src="/Images/reghero/Zero.svg"
-          alt="Animals on couch"
-          width={150}
-          height={150}
-          className="
+          />
+          <Image
+            src="/Images/reghero/Zero.svg"
+            alt="Animals on couch"
+            width={150}
+            height={150}
+            className="
             object-contain
             w-[180px] h-[180px]
             translate-y-[30px]
             -translate-x-[20px]
             md:translate-y-[24px]
           "
-        />
+          />
+        </div>
       </div>
     </>
   );
@@ -179,6 +186,7 @@ function FormLink({ href, includeComma, children }: FormLinkProps) {
     <Link
       href={href}
       className="group flex items-center text-[16px] md:text-[18px] font-bold tracking-[0.48px] text-black md:text-[20px]"
+      target="_blank"
     >
       <span className="font-bold">{children}</span>
 
