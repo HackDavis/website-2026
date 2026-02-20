@@ -19,7 +19,7 @@ export default function HeroInfo() {
         </div>
         <div>
           <Image
-            src="/Images/reghero/Watertower.svg"
+            src="/Images/reghero/WaterTower.svg"
             alt="watertower"
             width={156.5}
             height={221.27}
@@ -76,7 +76,7 @@ export default function HeroInfo() {
               </div>
 
               <div className="flex flex-row items-start gap-[12px] break-625:flex-col break-625:items-end break-625:gap-[28px] sm:flex-row sm:items-center">
-                <Link
+                {/* <Link
                   href="https://apply.hackdavis.io/"
                   target="_blank"
                   className="
@@ -99,7 +99,7 @@ export default function HeroInfo() {
                   "
                 >
                   Register Now
-                </Link>
+                </Link> */}
 
                 <div className="flex h-[40px] w-[138px] flex-shrink-0 items-center rounded-[100px] bg-black/15 text-center text-[18px] font-bold tracking-[0.4px] text-black break-625:h-[50px] break-625:w-[170px] break-625:py-0 break-625:text-[20px]">
                   <HeartButton text="Sponsor" href="mailto:team@hackdavis.io" />
