@@ -106,13 +106,15 @@ export default function HeroInfo() {
                 <span className="hidden text-[18px] font-normal tracking-[0.48px] text-black break-625:inline md:text-[20px]">
                   Check out the{' '}
                 </span>
-                <div className="flex items-center gap-2 text-black">
-                  <FormLink href="/?section=teams" includeComma={false}>
+                <div className="flex items-center gap-2 text-black text-[19px]">
+                  
                     Apply to be a{' '}
-                    <span style={{ color: '#FFC53D' }}>Judge</span>,{' '}
-                    <span style={{ color: '#FFC5AB' }}>Mentor</span>, or{' '}
-                    <span style={{ color: '#9EE7E5' }}>Volunteer</span>
-                  </FormLink>
+                    <FormLink href="https://forms.gle/rvMKjxw6GjiaKPjc7" includeComma={false}>
+                    <span style={{ color: '#FFC53D' }}>Judge</span>
+                    </FormLink>
+                    {/* <span style={{ color: '#FFC5AB' }}>Mentor</span>, or{' '}
+                    <span style={{ color: '#9EE7E5' }}>Volunteer</span> */}
+                  
                 </div>
               </div>
             </div>
@@ -136,10 +138,9 @@ export default function HeroInfo() {
             />
           </div>
         </div>
-      </div>
 
-      {/* mobile numbers: 10 */}
-      <div className="block md:hidden order-1 md:order-none relative ml-[25%] md:ml-0  pt-[9%] flex flex-row items-stretch sm:pl-0 md:pl-[25%]">
+        {/* mobile numbers: 10 */}
+      <div className="block md:hidden order-3 md:order-none relative ml-[25%] md:ml-0  pt-[9%] flex flex-row items-stretch sm:pl-0 md:pl-[25%]">
         <Image
           src="/Images/reghero/One.svg"
           alt="Animals on couch"
@@ -164,6 +165,7 @@ export default function HeroInfo() {
           "
         />
       </div>
+      </div>
     </>
   );
 }
@@ -179,6 +181,7 @@ function FormLink({ href, includeComma, children }: FormLinkProps) {
     <Link
       href={href}
       className="group flex items-center text-[16px] md:text-[18px] font-bold tracking-[0.48px] text-black md:text-[20px]"
+      target="_blank"
     >
       <span className="font-bold">{children}</span>
 
