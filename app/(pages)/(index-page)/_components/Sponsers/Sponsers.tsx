@@ -164,7 +164,7 @@ export default function Sponsers() {
   ];
 
   return (
-    <div className="relative bg-darkpurple w-screen overflow-hidden">
+    <div className="relative bg-darkpurple w-screen overflow-hidden"  id="sponsors">
       <div className="bg-[#11043F] md:bg-[#3F1959] py-6 md:py-10 flex flex-col gap-6 md:gap-8">
         {/* durations come from tailwind config:
             animate-sponsor-left (55s) / animate-sponsor-right (65s)

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import tent from '@public/Images/donor_scroll/tent.svg';
 import mobile_cloud from '@public/Images/donor_scroll/mobile_cloud.svg';
-import Donors from '@app/(pages)/registration/Donors/Donors';
+import Donors from '@app/(pages)/(index-page)/_components/Donors/Donors';
 
 export default function DonorScroll() {
   return (
