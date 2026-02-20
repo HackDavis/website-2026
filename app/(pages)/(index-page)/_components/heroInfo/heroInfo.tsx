@@ -77,7 +77,7 @@ export default function HeroInfo() {
 
               <div className="flex flex-row items-start gap-[12px] break-625:flex-col break-625:items-end break-625:gap-[28px] sm:flex-row sm:items-center">
                 {/* <Link
-                  href="https://hackdavis.typeform.com/to/N6DEZIVH"
+                  href="https://apply.hackdavis.io/"
                   target="_blank"
                   className="
                     rounded-full
