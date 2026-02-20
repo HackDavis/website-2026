@@ -19,7 +19,7 @@ export default function HeroInfo() {
         </div>
         <div>
           <Image
-            src="/Images/reghero/Watertower.svg"
+            src="/Images/reghero/WaterTower.svg"
             alt="watertower"
             width={156.5}
             height={221.27}
