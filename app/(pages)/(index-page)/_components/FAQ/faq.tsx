@@ -174,14 +174,16 @@ const AccordionFAQ = () => {
               ))}
             </Accordion>
           </div>
-          <div className="hidden md:flex items-center justify-center translate-x-20">
-            <Image
-              src="/Images/hero/Cow.svg"
-              alt="HD Cow"
-              width={1000}
-              height={1000}
-              className="animate-float-bob will-change-transfor"
-            />
+          <div className="hidden md:block absolute top-[50vw] right-[3vw] z-20 pointer-events-none">
+            <div className="translate-x-20">
+              <Image
+                src="/Images/hero/Cow.svg"
+                alt="HD Cow"
+                width={600}
+                height={600}
+                className="animate-float-bob will-change-transform w-[40vw] max-w-[600px] h-auto"
+              />
+            </div>
           </div>
         </div>
       </div>
