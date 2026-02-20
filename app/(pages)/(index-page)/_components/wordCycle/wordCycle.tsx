@@ -40,10 +40,10 @@ export default function WordCycle() {
         <CSSTransition
           key={words[wordIdx]}
           nodeRef={activeRef}
-          timeout={400}
+          timeout={200}
           classNames={{
             enter: 'opacity-0 translate-y-[35px] text-white',
-            enterActive: 'opacity-100 translate-y-0',
+            enterActive: 'opacity-0 translate-y-0',
             exit: 'opacity-100',
             exitActive: 'opacity-0 -translate-y-[35px] text-white',
           }}

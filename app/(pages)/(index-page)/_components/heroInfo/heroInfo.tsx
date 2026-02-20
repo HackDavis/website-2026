@@ -57,18 +57,22 @@ export default function HeroInfo() {
           <div className="flex flex-row justify-start items-start md:justify-end md:items-end">
             <div className="flex flex-col items-start gap-[22px] text-left md:items-end md:gap-[31px] md:text-right">
               <div className="flex flex-col items-start text-left md:items-end md:text-right w-full">
-                <p className="flex gap-2 text-[30px] font-bold leading-[115%] tracking-[0.8px] break-625:text-[40px]">
-                  <span className="text-black">
-                    <WordCycle />
-                  </span>
-                  <span className="text-[#005271]">for</span>
-                </p>
-                <h1 className="text-[45px] font-bold leading-[115%] tracking-[0.9px] text-[var(--text-hero)] break-900:text-[50px] break-625:text-[66px] break-625:leading-[100%] break-625:tracking-[3.52px] md:text-[88px]">
-                  social good
-                </h1>
-                <p className="mt-[10px] text-[16px] w-full tracking-[0.48px] text-black break-625:text-[20px]">
-                  May 9-10, 2026 @ UCenter
-                </p>
+                <div className="flex flex-col items-start text-left md:items-end md:text-right w-full">
+                  <p className="flex gap-2 text-[30px] font-bold leading-[115%] tracking-[0.8px] break-625:text-[40px]">
+                    <span className="text-black">
+                      <WordCycle />
+                    </span>
+                    <span className="text-[#005271]">for</span>
+                  </p>
+
+                  <h1 className="whitespace-nowrap text-[45px] font-bold leading-[115%] tracking-[0.9px] text-[var(--text-hero)] break-900:text-[50px] break-625:text-[66px] break-625:leading-[100%] break-625:tracking-[3.52px] md:text-[88px]">
+                    social good
+                  </h1>
+
+                  <p className="mt-[10px] text-[16px] w-full tracking-[0.48px] text-black break-625:text-[20px]">
+                    May 9-10, 2026 @ UCenter
+                  </p>
+                </div>
               </div>
 
               <div className="flex flex-row items-start gap-[12px] break-625:flex-col break-625:items-end break-625:gap-[28px] sm:flex-row sm:items-center">
