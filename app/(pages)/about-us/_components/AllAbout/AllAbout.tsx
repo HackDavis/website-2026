@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function AllAbout() {
   return (
-    <div className="flex flex-col gap-6 lg:pb-40">
+    <div className="flex flex-col gap-6 lg:pb-40 lg:pt-40">
       <div className="px-[10%] text-left">
         <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold leading-none text-[var(--text-dark)]">
           What we're all about
