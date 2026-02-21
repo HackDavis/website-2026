@@ -20,8 +20,8 @@ export default function HeartButton({
         transition-[background,flex-direction] duration-300
         bg-white border-2 border-[#D5E1E5]
         text-[var(--teal-1,#005271)]
-        hover:bg-[var(--highlight-yellow)]
-        hover:text-[var(--background-dark)]
+        hover:bg-[var(--teal-1,#005271)]
+        hover:text-white
         hover:flex-row-reverse
         no-underline
       "
