@@ -139,14 +139,12 @@ const AccordionFAQ = () => {
                         <div className="relative w-[19px] h-[19px] flex items-center justify-center">
                           {/* PLUS */}
                           <Image
-                            src="/Images/faq/plus.svg"
+                            src="/Images/faq/minus.svg"
                             alt="expand icon"
                             width={19}
                             height={19}
                             className={`transition-all duration-300 ease-in-out ${
-                              state.isEnter
-                                ? 'opacity-0 rotate-90'
-                                : 'opacity-100 rotate-0'
+                              state.isEnter ? 'rotate-0' : 'rotate-90'
                             }`}
                           />
 
@@ -156,9 +154,7 @@ const AccordionFAQ = () => {
                             alt="collapse icon"
                             width={19}
                             height={19}
-                            className={`absolute transition-opacity duration-300 ${
-                              state.isEnter ? 'opacity-100' : 'opacity-0'
-                            }`}
+                            className="absolute transition-opacity duration-300"
                           />
                         </div>
                       </div>
