@@ -191,7 +191,7 @@ export default function Sponsers() {
       </div>
 
       {/* Right cloud */}
-      <div className="hidden md:block pointer-events-none absolute -top-[35%] border-2 border-red-500 -bottom-40 left-0 right-0 z-10">
+      <div className="hidden md:block pointer-events-none absolute -top-[35%] -bottom-40 left-0 right-0 z-10">
         <Image
           src="/Images/sponsers/rightcloud.png"
           alt="Right cloud"

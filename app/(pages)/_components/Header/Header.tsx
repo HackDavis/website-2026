@@ -32,33 +32,59 @@ export default function Header() {
   }, [pathname]);
 
   useEffect(() => {
-    if (pathname === '/about-us') {
-      setActiveSection('about');
-      return;
+  if (pathname === '/about-us') {
+    setActiveSection('about');
+    return;
+  }
+
+  if (pathname !== '/') {
+    setActiveSection('home');
+    return;
+  }
+
+  // On home: track scroll position with IntersectionObserver
+  const homeEl = document.getElementById('home'); // optional if you have it
+  const faqEl = document.getElementById('faq');
+  const sponsorsEl = document.getElementById('sponsors');
+
+  // fallback: still respect hash on load
+  const hash = window.location.hash.replace('#', '');
+  if (hash === 'faq') setActiveSection('faq');
+  else if (hash === 'sponsors') setActiveSection('sponsors');
+  else setActiveSection('home');
+
+  const sections = [
+    { id: 'home', el: homeEl },
+    { id: 'faq', el: faqEl },
+    { id: 'sponsors', el: sponsorsEl },
+  ].filter((s): s is { id: 'home' | 'faq' | 'sponsors'; el: HTMLElement } => !!s.el);
+
+  if (sections.length === 0) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      // pick the most visible intersecting section
+      const visible = entries
+        .filter((e) => e.isIntersecting)
+        .sort((a, b) => (b.intersectionRatio ?? 0) - (a.intersectionRatio ?? 0))[0];
+
+      if (!visible) return;
+
+      const id = visible.target.id as 'home' | 'faq' | 'sponsors';
+      setActiveSection(id);
+    },
+    {
+      // adjust for your fixed header
+      root: null,
+      threshold: [0.2, 0.35, 0.5, 0.65],
+      rootMargin: '-25% 0px -55% 0px',
     }
+  );
 
-    if (pathname !== '/') {
-      setActiveSection('home');
-      return;
-    }
+  sections.forEach((s) => observer.observe(s.el));
 
-    const updateFromHash = () => {
-      const hash = window.location.hash.replace('#', '');
-      if (hash === 'faq') {
-        setActiveSection('faq');
-      } else if (hash === 'sponsors') {
-        setActiveSection('sponsors');
-      } else {
-        setActiveSection('home');
-      }
-    };
-
-    updateFromHash();
-    window.addEventListener('hashchange', updateFromHash);
-    return () => {
-      window.removeEventListener('hashchange', updateFromHash);
-    };
-  }, [pathname]);
+  return () => observer.disconnect();
+}, [pathname]);
 
   useEffect(() => {
     window.dispatchEvent(
