@@ -1,9 +1,11 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
+
+type SectionId = 'home' | 'faq' | 'sponsors' | 'about';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,14 +15,19 @@ export default function Header() {
   const isAboutPage = pathname === '/about-us';
   const isHomePage = pathname === '/';
 
+  // Keep your current choice (white text on About), since we’ll tint the pill darker there.
   const linkTextClass = isAboutPage
     ? 'text-white'
     : 'text-[var(--text-dark-blue)]';
 
-  const [activeSection, setActiveSection] = useState<
-    'home' | 'faq' | 'sponsors' | 'about'
-  >('home');
+  const [activeSection, setActiveSection] = useState<SectionId>('home');
 
+  // Prevent spamming history.replaceState on every scroll tick
+  const lastUrlRef = useRef<string>('');
+  const lastSectionRef = useRef<SectionId>('home');
+  const rafRef = useRef<number | null>(null);
+
+  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (!isMenuOpen) return;
     const previousOverflow = document.body.style.overflow;
@@ -30,91 +37,143 @@ export default function Header() {
     };
   }, [isMenuOpen]);
 
+  // Close menu on route change
   useEffect(() => {
     setIsMenuOpen(false);
   }, [pathname]);
 
-  useEffect(() => {
-  if (pathname === '/about-us') {
-    setActiveSection('about');
-    return;
-  }
-
-  if (pathname !== '/') {
-    setActiveSection('home');
-    return;
-  }
-
-  const homeEl = document.getElementById('home');
-  const faqEl = document.getElementById('faq');
-  const sponsorsEl = document.getElementById('sponsors');
-
-  const sections = [
-    { id: 'home' as const, el: homeEl },
-    { id: 'faq' as const, el: faqEl },
-    { id: 'sponsors' as const, el: sponsorsEl },
-  ].filter(
-    (s): s is { id: 'home' | 'faq' | 'sponsors'; el: HTMLElement } => !!s.el
-  );
-
-  const headerOffset = 120; // adjust if your header is taller/shorter
-
-  const setFromScrollPosition = () => {
-    if (sections.length === 0) return;
-
-    // For each section, compute distance from "active line" (headerOffset)
-    const scored = sections.map((s) => {
-      const top = s.el.getBoundingClientRect().top;
-      return { id: s.id, top, dist: Math.abs(top - headerOffset) };
-    });
-
-    // Prefer sections whose top has passed the header line (top <= headerOffset)
-    const passed = scored
-      .filter((s) => s.top <= headerOffset + 1)
-      .sort((a, b) => b.top - a.top); // closest to header from above (largest top)
-
-    const best = (passed[0] ?? scored.sort((a, b) => a.dist - b.dist)[0])?.id;
-    if (!best) return;
-
-    setActiveSection(best);
-
-    // Optional: sync URL
-    if (best === 'home') history.replaceState(null, '', '/');
-    else history.replaceState(null, '', `/#${best}`);
-  };
-
-  // Initial set (handles direct loads + anchor jumps)
-  setFromScrollPosition();
-
-  // Keep hash clicks working too
-  const onHashChange = () => {
-    // give the browser a beat to jump before measuring
-    requestAnimationFrame(() => setFromScrollPosition());
-  };
-  window.addEventListener('hashchange', onHashChange);
-
-  // Observe + also listen to scroll (anchor jumps sometimes don’t trigger IO the way you want)
-  const observer = new IntersectionObserver(
-    () => setFromScrollPosition(),
-    { root: null, threshold: [0, 0.01, 0.1] }
-  );
-  sections.forEach((s) => observer.observe(s.el));
-
-  const onScroll = () => setFromScrollPosition();
-  window.addEventListener('scroll', onScroll, { passive: true });
-
-  return () => {
-    observer.disconnect();
-    window.removeEventListener('hashchange', onHashChange);
-    window.removeEventListener('scroll', onScroll);
-  };
-}, [pathname]);
-
+  // Broadcast menu toggle (your existing behavior)
   useEffect(() => {
     window.dispatchEvent(
       new CustomEvent('mobile-menu-toggle', { detail: { open: isMenuOpen } })
     );
   }, [isMenuOpen]);
+
+  // Navbar styling: keep glass-pill but tint darker on About so white text is readable
+  const desktopNavPillClass = useMemo(() => {
+    if (isHomePage) return 'header-navbar';
+    if (isAboutPage)
+      return 'glass-pill bg-[#005271]/45 backdrop-blur-md backdrop-saturate-150 shadow-md';
+    return 'glass-pill';
+  }, [isHomePage, isAboutPage]);
+
+  // Helper: navigate to in-page section smoothly when already on "/"
+  const goToSection = (id: 'home' | 'faq' | 'sponsors') => {
+    if (pathname !== '/') {
+      router.push(id === 'home' ? '/' : `/#${id}`);
+      return;
+    }
+
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    // If you have a fixed header, use scroll-margin-top on sections (recommended),
+    // or do an offset scroll here. This uses native smooth scroll:
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // Update URL immediately (scroll handler will keep it in sync too)
+    const nextUrl = id === 'home' ? '/' : `/#${id}`;
+    if (lastUrlRef.current !== nextUrl) {
+      lastUrlRef.current = nextUrl;
+      history.replaceState(null, '', nextUrl);
+    }
+  };
+
+  // Scroll/observer logic: update activeSection + URL while scrolling on "/"
+  useEffect(() => {
+    if (pathname === '/about-us') {
+      setActiveSection('about');
+      lastSectionRef.current = 'about';
+      return;
+    }
+
+    if (pathname !== '/') {
+      setActiveSection('home');
+      lastSectionRef.current = 'home';
+      return;
+    }
+
+    const homeEl = document.getElementById('home');
+    const faqEl = document.getElementById('faq');
+    const sponsorsEl = document.getElementById('sponsors');
+
+    const sections = [
+      { id: 'home' as const, el: homeEl },
+      { id: 'faq' as const, el: faqEl },
+      { id: 'sponsors' as const, el: sponsorsEl },
+    ].filter(
+      (s): s is { id: 'home' | 'faq' | 'sponsors'; el: HTMLElement } => !!s.el
+    );
+
+    const headerOffset = 120; // tweak to match your header height
+
+    const setFromScrollPosition = () => {
+      if (sections.length === 0) return;
+
+      // Score each section based on distance from the headerOffset line
+      const scored = sections.map((s) => {
+        const top = s.el.getBoundingClientRect().top;
+        return { id: s.id, top, dist: Math.abs(top - headerOffset) };
+      });
+
+      // Prefer sections already passed the header line
+      const passed = scored
+        .filter((s) => s.top <= headerOffset + 1)
+        .sort((a, b) => b.top - a.top);
+
+      const best =
+        (passed[0] ?? scored.sort((a, b) => a.dist - b.dist)[0])?.id;
+
+      if (!best) return;
+
+      // Only update state/history if the section actually changed
+      if (lastSectionRef.current !== best) {
+        lastSectionRef.current = best;
+        setActiveSection(best);
+
+        const nextUrl = best === 'home' ? '/' : `/#${best}`;
+        if (lastUrlRef.current !== nextUrl) {
+          lastUrlRef.current = nextUrl;
+          history.replaceState(null, '', nextUrl);
+        }
+      }
+    };
+
+    // Run once after mount (handles direct loads + anchor jumps)
+    setFromScrollPosition();
+
+    const onHashChange = () => {
+      requestAnimationFrame(() => setFromScrollPosition());
+    };
+    window.addEventListener('hashchange', onHashChange);
+
+    const onScroll = () => {
+      // Throttle to one per animation frame
+      if (rafRef.current != null) return;
+      rafRef.current = window.requestAnimationFrame(() => {
+        rafRef.current = null;
+        setFromScrollPosition();
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // IntersectionObserver can help on jumpy scroll/resize
+    const observer = new IntersectionObserver(
+      () => setFromScrollPosition(),
+      { root: null, threshold: [0, 0.01, 0.1] }
+    );
+    sections.forEach((s) => observer.observe(s.el));
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('hashchange', onHashChange);
+      window.removeEventListener('scroll', onScroll);
+      if (rafRef.current != null) {
+        cancelAnimationFrame(rafRef.current);
+        rafRef.current = null;
+      }
+    };
+  }, [pathname]);
 
   const handleMobileNavClick =
     (href: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
@@ -130,28 +189,27 @@ export default function Header() {
     <div className="w-full flex flex-col items-start justify-start bg-transparent fixed top-0 left-0 pl-4 md:pl-0 md:ml-auto md:flex-row md:items-start md:justify-between z-[80] pointer-events-none">
       <div className="sticky top-0 relative hidden md:flex items-center justify-center m-[2vw] z-40">
         {isHomePage ? (
-          <>
-            <div className="relative w-[8vw] min-w-[120px]">
-              {/* Static shadow layer */}
-              <Image
-                src="/Images/header/bluecloud.svg"
-                alt="cloud shadow"
-                width={100}
-                height={100}
-                className="absolute m-[5px] mt-[7px] inset-0 w-full h-auto animate-[cloud-spin_18s_linear_infinite]"
-              />
+          <div className="relative w-[8vw] min-w-[120px]">
+            {/* Static shadow layer */}
+            <Image
+              src="/Images/header/bluecloud.svg"
+              alt="cloud shadow"
+              width={100}
+              height={100}
+              className="absolute m-[5px] mt-[7px] inset-0 w-full h-auto animate-[cloud-spin_18s_linear_infinite]"
+            />
 
-              {/* Spinning visible cloud */}
-              <Image
-                src="/Images/header/pinkcloud.svg"
-                alt="pink cloud background"
-                width={100}
-                height={100}
-                className="block w-full h-auto animate-[cloud-spin_18s_linear_infinite]"
-              />
-            </div>
-          </>
+            {/* Spinning visible cloud */}
+            <Image
+              src="/Images/header/pinkcloud.svg"
+              alt="pink cloud background"
+              width={100}
+              height={100}
+              className="block w-full h-auto animate-[cloud-spin_18s_linear_infinite]"
+            />
+          </div>
         ) : null}
+
         <Image
           src="/Images/header/hd_logo.svg"
           alt="HackDavis Logo"
@@ -168,11 +226,7 @@ export default function Header() {
         aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
         onClick={() => setIsMenuOpen((open) => !open)}
         className={`absolute right-[5vw] top-[5vw] block md:hidden z-[60] mr-[7vw] mt-[1vw] h-8 w-8 pointer-events-auto transition-colors duration-300 ${
-          isMenuOpen
-            ? 'text-white'
-            : isHomePage
-            ? 'text-[#005271]'
-            : 'text-white'
+          isMenuOpen ? 'text-white' : isHomePage ? 'text-[#005271]' : 'text-white'
         }`}
       >
         <span
@@ -195,39 +249,41 @@ export default function Header() {
       <div className="w-full flex items-center justify-start md:ml-auto md:w-auto md:items-start md:justify-end md:gap-2 pointer-events-auto">
         <div className="hidden md:flex">
           <div
-            className={`w-[27vw] h-[5.6vh] m-[3vw] items-center justify-evenly ${
-              isHomePage ? 'header-navbar' : 'glass-pill'
-            }`}
+            className={`w-[27vw] h-[5.6vh] m-[3vw] items-center justify-evenly ${desktopNavPillClass}`}
             style={
               isHomePage ? { backgroundColor: 'var(--navbar-bg)' } : undefined
             }
           >
-            <Link
-              href="/"
+            {/* Desktop links */}
+            <button
+              type="button"
+              onClick={() => goToSection('home')}
               className={`text-[1vw] uppercase font-[var(--font-metropolis)] mx-[1vw] ${linkTextClass} ${
                 activeSection === 'home' ? 'font-black underline' : ''
               }`}
             >
               Home
-            </Link>
+            </button>
 
-            <Link
-              href="/#faq"
+            <button
+              type="button"
+              onClick={() => goToSection('faq')}
               className={`text-[1vw] uppercase font-[var(--font-metropolis)] mx-[1vw] ${linkTextClass} ${
                 activeSection === 'faq' ? 'font-black underline' : ''
               }`}
             >
               FAQ
-            </Link>
+            </button>
 
-            <Link
-              href="/#sponsors"
+            <button
+              type="button"
+              onClick={() => goToSection('sponsors')}
               className={`text-[1vw] uppercase font-[var(--font-metropolis)] mx-[1vw] ${linkTextClass} ${
                 activeSection === 'sponsors' ? 'font-black underline' : ''
               }`}
             >
               Sponsors
-            </Link>
+            </button>
 
             <Link
               href="/about-us"
@@ -249,6 +305,7 @@ export default function Header() {
         />
       </div>
 
+      {/* Mobile overlay */}
       <div
         className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-[rgba(74,74,74,0.5)] backdrop-blur-[12.5px] transform transition-transform duration-[400ms] ease-in-out pointer-events-auto ${
           isMenuOpen ? 'translate-y-0' : '-translate-y-full'
@@ -266,9 +323,7 @@ export default function Header() {
             <nav className="flex flex-col items-center gap-7 text-white font-[var(--font-metropolis)] uppercase text-lg">
               <Link
                 href="/"
-                className={`${
-                  activeSection === 'home' ? 'font-bold underline' : ''
-                }`}
+                className={`${activeSection === 'home' ? 'font-bold underline' : ''}`}
                 onClick={handleMobileNavClick('/')}
               >
                 Home
@@ -276,9 +331,7 @@ export default function Header() {
 
               <Link
                 href="/about-us"
-                className={`${
-                  activeSection === 'about' ? 'font-bold underline' : ''
-                }`}
+                className={`${activeSection === 'about' ? 'font-bold underline' : ''}`}
                 onClick={handleMobileNavClick('/about-us')}
               >
                 About
@@ -294,9 +347,7 @@ export default function Header() {
 
               <Link
                 href="/#faq"
-                className={`${
-                  activeSection === 'faq' ? 'font-bold underline' : ''
-                }`}
+                className={`${activeSection === 'faq' ? 'font-bold underline' : ''}`}
                 onClick={handleMobileNavClick('/#faq')}
               >
                 FAQ
@@ -304,9 +355,7 @@ export default function Header() {
 
               <Link
                 href="/#sponsors"
-                className={`${
-                  activeSection === 'sponsors' ? 'font-bold underline' : ''
-                }`}
+                className={`${activeSection === 'sponsors' ? 'font-bold underline' : ''}`}
                 onClick={handleMobileNavClick('/#sponsors')}
               >
                 Sponsors

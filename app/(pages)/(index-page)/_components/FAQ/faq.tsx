@@ -121,7 +121,10 @@ const AccordionFAQ = () => {
       >
         {/* <br id="faq" />
         <br /> */}
-        <h1 id='faq' className="pb-[4%] text-[4rem] font-bold tracking-[1.28px] text-[var(--text-light)] font-[var(--font-metropolis)] max-[760px]:text-[2.5rem] ">
+        <h1
+          id="faq"
+          className="pb-[4%] text-[4rem] font-bold tracking-[1.28px] text-[var(--text-light)] font-[var(--font-metropolis)] max-[760px]:text-[2.5rem] "
+        >
           FAQ
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2">
