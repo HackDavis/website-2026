@@ -88,7 +88,7 @@ export default function Header() {
                 alt="cloud shadow"
                 width={100}
                 height={100}
-                className="absolute m-[5px] mt-[7px] inset-0 w-full h-auto"
+                className="absolute m-[5px] mt-[7px] inset-0 w-full h-auto animate-[cloud-spin_18s_linear_infinite]"
               />
 
               {/* Spinning visible cloud */}
