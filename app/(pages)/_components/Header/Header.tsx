@@ -80,16 +80,28 @@ export default function Header() {
     <div className="w-full flex flex-col items-start justify-start bg-transparent fixed top-0 left-0 pl-4 md:pl-0 md:ml-auto md:flex-row md:items-start md:justify-between z-[80] pointer-events-none">
       <div className="sticky top-0 relative hidden md:flex items-center justify-center m-[2vw] z-40">
         {isHomePage ? (
-          <Image
-            src="/Images/header/pinkcloud.svg"
-            alt="pink cloud background"
-            width={100}
-            height={100}
-            className="block w-[8vw] min-w-[120px] h-auto animate-[cloud-spin_18s_linear_infinite]"
-            style={{
-              filter: 'drop-shadow(4px 10px 0px var(--text-dark-blue))',
-            }}
-          />
+          <>
+            <Image
+              src="/Images/header/pinkcloud.svg"
+              alt="pink cloud background"
+              width={100}
+              height={100}
+              className="block w-[8vw] min-w-[120px] h-auto animate-[cloud-spin_18s_linear_infinite]"
+              style={{
+                filter: 'drop-shadow(4px 10px 0px var(--text-dark-blue))',
+              }}
+            />
+            <Image
+              src="/Images/header/bluecloud.svg"
+              alt="blue cloud background"
+              width={100}
+              height={100}
+              className="block w-[8vw] min-w-[120px] h-auto"
+              style={{
+                filter: 'drop-shadow(4px 10px 0px var(--text-dark-blue))',
+              }}
+            />
+          </>
         ) : null}
         <Image
           src="/Images/header/hd_logo.svg"
