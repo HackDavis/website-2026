@@ -81,26 +81,25 @@ export default function Header() {
       <div className="sticky top-0 relative hidden md:flex items-center justify-center m-[2vw] z-40">
         {isHomePage ? (
           <>
-            <Image
-              src="/Images/header/pinkcloud.svg"
-              alt="pink cloud background"
-              width={100}
-              height={100}
-              className="block w-[8vw] min-w-[120px] h-auto animate-[cloud-spin_18s_linear_infinite]"
-              style={{
-                filter: 'drop-shadow(4px 10px 0px var(--text-dark-blue))',
-              }}
-            />
-            <Image
-              src="/Images/header/bluecloud.svg"
-              alt="blue cloud background"
-              width={100}
-              height={100}
-              className="block w-[8vw] min-w-[120px] h-auto"
-              style={{
-                filter: 'drop-shadow(4px 10px 0px var(--text-dark-blue))',
-              }}
-            />
+            <div className="relative w-[8vw] min-w-[120px]">
+              {/* Static shadow layer */}
+              <Image
+                src="/Images/header/bluecloud.svg"
+                alt="cloud shadow"
+                width={100}
+                height={100}
+                className="absolute m-[5px] mt-[7px] inset-0 w-full h-auto"
+              />
+
+              {/* Spinning visible cloud */}
+              <Image
+                src="/Images/header/pinkcloud.svg"
+                alt="pink cloud background"
+                width={100}
+                height={100}
+                className="block w-full h-auto animate-[cloud-spin_18s_linear_infinite]"
+              />
+            </div>
           </>
         ) : null}
         <Image

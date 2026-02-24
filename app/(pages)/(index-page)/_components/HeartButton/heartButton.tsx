@@ -18,7 +18,7 @@ export default function HeartButton({
         flex items-center overflow-hidden
         rounded-full
         transition-[background,flex-direction] duration-300
-        bg-white border-2 border-[#D5E1E5]
+        bg-[#EDF2F3]
         text-[var(--teal-1,#005271)]
         hover:bg-[var(--teal-1,#005271)]
         hover:text-white
