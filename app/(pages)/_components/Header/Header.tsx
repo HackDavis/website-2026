@@ -9,11 +9,14 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
+
   const isAboutPage = pathname === '/about-us';
   const isHomePage = pathname === '/';
+
   const linkTextClass = isAboutPage
     ? 'text-white'
     : 'text-[var(--text-dark-blue)]';
+
   const [activeSection, setActiveSection] = useState<
     'home' | 'faq' | 'sponsors' | 'about'
   >('home');
@@ -42,48 +45,69 @@ export default function Header() {
     return;
   }
 
-  // On home: track scroll position with IntersectionObserver
-  const homeEl = document.getElementById('home'); // optional if you have it
+  const homeEl = document.getElementById('home');
   const faqEl = document.getElementById('faq');
   const sponsorsEl = document.getElementById('sponsors');
 
-  // fallback: still respect hash on load
-  const hash = window.location.hash.replace('#', '');
-  if (hash === 'faq') setActiveSection('faq');
-  else if (hash === 'sponsors') setActiveSection('sponsors');
-  else setActiveSection('home');
-
   const sections = [
-    { id: 'home', el: homeEl },
-    { id: 'faq', el: faqEl },
-    { id: 'sponsors', el: sponsorsEl },
-  ].filter((s): s is { id: 'home' | 'faq' | 'sponsors'; el: HTMLElement } => !!s.el);
-
-  if (sections.length === 0) return;
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      // pick the most visible intersecting section
-      const visible = entries
-        .filter((e) => e.isIntersecting)
-        .sort((a, b) => (b.intersectionRatio ?? 0) - (a.intersectionRatio ?? 0))[0];
-
-      if (!visible) return;
-
-      const id = visible.target.id as 'home' | 'faq' | 'sponsors';
-      setActiveSection(id);
-    },
-    {
-      // adjust for your fixed header
-      root: null,
-      threshold: [0.2, 0.35, 0.5, 0.65],
-      rootMargin: '-25% 0px -55% 0px',
-    }
+    { id: 'home' as const, el: homeEl },
+    { id: 'faq' as const, el: faqEl },
+    { id: 'sponsors' as const, el: sponsorsEl },
+  ].filter(
+    (s): s is { id: 'home' | 'faq' | 'sponsors'; el: HTMLElement } => !!s.el
   );
 
+  const headerOffset = 120; // adjust if your header is taller/shorter
+
+  const setFromScrollPosition = () => {
+    if (sections.length === 0) return;
+
+    // For each section, compute distance from "active line" (headerOffset)
+    const scored = sections.map((s) => {
+      const top = s.el.getBoundingClientRect().top;
+      return { id: s.id, top, dist: Math.abs(top - headerOffset) };
+    });
+
+    // Prefer sections whose top has passed the header line (top <= headerOffset)
+    const passed = scored
+      .filter((s) => s.top <= headerOffset + 1)
+      .sort((a, b) => b.top - a.top); // closest to header from above (largest top)
+
+    const best = (passed[0] ?? scored.sort((a, b) => a.dist - b.dist)[0])?.id;
+    if (!best) return;
+
+    setActiveSection(best);
+
+    // Optional: sync URL
+    if (best === 'home') history.replaceState(null, '', '/');
+    else history.replaceState(null, '', `/#${best}`);
+  };
+
+  // Initial set (handles direct loads + anchor jumps)
+  setFromScrollPosition();
+
+  // Keep hash clicks working too
+  const onHashChange = () => {
+    // give the browser a beat to jump before measuring
+    requestAnimationFrame(() => setFromScrollPosition());
+  };
+  window.addEventListener('hashchange', onHashChange);
+
+  // Observe + also listen to scroll (anchor jumps sometimes don’t trigger IO the way you want)
+  const observer = new IntersectionObserver(
+    () => setFromScrollPosition(),
+    { root: null, threshold: [0, 0.01, 0.1] }
+  );
   sections.forEach((s) => observer.observe(s.el));
 
-  return () => observer.disconnect();
+  const onScroll = () => setFromScrollPosition();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  return () => {
+    observer.disconnect();
+    window.removeEventListener('hashchange', onHashChange);
+    window.removeEventListener('scroll', onScroll);
+  };
 }, [pathname]);
 
   useEffect(() => {
@@ -138,6 +162,7 @@ export default function Header() {
           }`}
         />
       </div>
+
       <button
         type="button"
         aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
@@ -166,6 +191,7 @@ export default function Header() {
           }`}
         />
       </button>
+
       <div className="w-full flex items-center justify-start md:ml-auto md:w-auto md:items-start md:justify-end md:gap-2 pointer-events-auto">
         <div className="hidden md:flex">
           <div
@@ -184,6 +210,7 @@ export default function Header() {
             >
               Home
             </Link>
+
             <Link
               href="/#faq"
               className={`text-[1vw] uppercase font-[var(--font-metropolis)] mx-[1vw] ${linkTextClass} ${
@@ -192,6 +219,7 @@ export default function Header() {
             >
               FAQ
             </Link>
+
             <Link
               href="/#sponsors"
               className={`text-[1vw] uppercase font-[var(--font-metropolis)] mx-[1vw] ${linkTextClass} ${
@@ -200,6 +228,7 @@ export default function Header() {
             >
               Sponsors
             </Link>
+
             <Link
               href="/about-us"
               className={`text-[1vw] uppercase font-[var(--font-metropolis)] mx-[1vw] ${linkTextClass} ${
@@ -210,6 +239,7 @@ export default function Header() {
             </Link>
           </div>
         </div>
+
         <Image
           src="/Images/header/mlh_badge.svg"
           alt="MLH Badge"
@@ -232,6 +262,7 @@ export default function Header() {
               width={160}
               height={160}
             />
+
             <nav className="flex flex-col items-center gap-7 text-white font-[var(--font-metropolis)] uppercase text-lg">
               <Link
                 href="/"
@@ -242,6 +273,7 @@ export default function Header() {
               >
                 Home
               </Link>
+
               <Link
                 href="/about-us"
                 className={`${
@@ -251,9 +283,15 @@ export default function Header() {
               >
                 About
               </Link>
-              <Link href="/#donate" onClick={handleMobileNavClick('/#donate')}>
+
+              <Link
+                href="/#donate"
+                className=""
+                onClick={handleMobileNavClick('/#donate')}
+              >
                 Donate
               </Link>
+
               <Link
                 href="/#faq"
                 className={`${
@@ -263,6 +301,7 @@ export default function Header() {
               >
                 FAQ
               </Link>
+
               <Link
                 href="/#sponsors"
                 className={`${
