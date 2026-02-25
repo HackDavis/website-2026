@@ -164,10 +164,7 @@ export default function Sponsers() {
   ];
 
   return (
-    <div
-      className="relative bg-darkpurple w-screen overflow-hidden"
-      id="sponsors"
-    >
+    <div className="relative bg-darkpurple w-screen" id="sponsors">
       <div className="bg-[#11043F] md:bg-[#3F1959] py-6 md:py-10 flex flex-col gap-6 md:gap-8">
         {/* durations come from tailwind config:
             animate-sponsor-left (55s) / animate-sponsor-right (65s)
@@ -179,7 +176,7 @@ export default function Sponsers() {
       </div>
 
       {/* Left cloud */}
-      <div className="hidden md:block pointer-events-none absolute -top-40 -bottom-40 left-0 right-0 z-50">
+      <div className="hidden md:block pointer-events-none absolute top-[10%] mt-[5%] -bottom-40 left-0 right-0 z-50">
         <Image
           src="/Images/sponsers/leftcloud.png"
           alt="Left cloud"
@@ -191,7 +188,7 @@ export default function Sponsers() {
       </div>
 
       {/* Right cloud */}
-      <div className="hidden md:block pointer-events-none absolute -top-40 -bottom-40 left-0 right-0 z-10">
+      <div className="hidden md:block pointer-events-none absolute -top-[35%] -bottom-40 left-0 right-0 z-10">
         <Image
           src="/Images/sponsers/rightcloud.png"
           alt="Right cloud"
