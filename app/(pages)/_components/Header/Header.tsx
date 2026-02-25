@@ -15,19 +15,18 @@ export default function Header() {
   const isAboutPage = pathname === '/about-us';
   const isHomePage = pathname === '/';
 
-  // Keep your current choice (white text on About), since we’ll tint the pill darker there.
   const linkTextClass = isAboutPage
     ? 'text-white'
     : 'text-[var(--text-dark-blue)]';
 
   const [activeSection, setActiveSection] = useState<SectionId>('home');
 
-  // Prevent spamming history.replaceState on every scroll tick
   const lastUrlRef = useRef<string>('');
   const lastSectionRef = useRef<SectionId>('home');
   const rafRef = useRef<number | null>(null);
 
-  // Lock body scroll when mobile menu is open
+  const isNavigatingRef = useRef(false);
+
   useEffect(() => {
     if (!isMenuOpen) return;
     const previousOverflow = document.body.style.overflow;
@@ -37,19 +36,20 @@ export default function Header() {
     };
   }, [isMenuOpen]);
 
-  // Close menu on route change
   useEffect(() => {
     setIsMenuOpen(false);
   }, [pathname]);
 
-  // Broadcast menu toggle (your existing behavior)
+  useEffect(() => {
+    isNavigatingRef.current = false;
+  }, [pathname]);
+
   useEffect(() => {
     window.dispatchEvent(
       new CustomEvent('mobile-menu-toggle', { detail: { open: isMenuOpen } })
     );
   }, [isMenuOpen]);
 
-  // Navbar styling: keep glass-pill but tint darker on About so white text is readable
   const desktopNavPillClass = useMemo(() => {
     if (isHomePage) return 'header-navbar';
     if (isAboutPage)
@@ -57,9 +57,9 @@ export default function Header() {
     return 'glass-pill';
   }, [isHomePage, isAboutPage]);
 
-  // Helper: navigate to in-page section smoothly when already on "/"
   const goToSection = (id: 'home' | 'faq' | 'sponsors') => {
     if (pathname !== '/') {
+      isNavigatingRef.current = true;
       router.push(id === 'home' ? '/' : `/#${id}`);
       return;
     }
@@ -67,11 +67,8 @@ export default function Header() {
     const el = document.getElementById(id);
     if (!el) return;
 
-    // If you have a fixed header, use scroll-margin-top on sections (recommended),
-    // or do an offset scroll here. This uses native smooth scroll:
     el.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-    // Update URL immediately (scroll handler will keep it in sync too)
     const nextUrl = id === 'home' ? '/' : `/#${id}`;
     if (lastUrlRef.current !== nextUrl) {
       lastUrlRef.current = nextUrl;
@@ -79,7 +76,6 @@ export default function Header() {
     }
   };
 
-  // Scroll/observer logic: update activeSection + URL while scrolling on "/"
   useEffect(() => {
     if (pathname === '/about-us') {
       setActiveSection('about');
@@ -105,28 +101,26 @@ export default function Header() {
       (s): s is { id: 'home' | 'faq' | 'sponsors'; el: HTMLElement } => !!s.el
     );
 
-    const headerOffset = 120; // tweak to match your header height
+    const headerOffset = 120; 
 
     const setFromScrollPosition = () => {
+      if (isNavigatingRef.current) return;
+
       if (sections.length === 0) return;
 
-      // Score each section based on distance from the headerOffset line
       const scored = sections.map((s) => {
         const top = s.el.getBoundingClientRect().top;
         return { id: s.id, top, dist: Math.abs(top - headerOffset) };
       });
 
-      // Prefer sections already passed the header line
       const passed = scored
         .filter((s) => s.top <= headerOffset + 1)
         .sort((a, b) => b.top - a.top);
 
-      const best =
-        (passed[0] ?? scored.sort((a, b) => a.dist - b.dist)[0])?.id;
+      const best = (passed[0] ?? scored.sort((a, b) => a.dist - b.dist)[0])?.id;
 
       if (!best) return;
 
-      // Only update state/history if the section actually changed
       if (lastSectionRef.current !== best) {
         lastSectionRef.current = best;
         setActiveSection(best);
@@ -139,7 +133,6 @@ export default function Header() {
       }
     };
 
-    // Run once after mount (handles direct loads + anchor jumps)
     setFromScrollPosition();
 
     const onHashChange = () => {
@@ -148,7 +141,6 @@ export default function Header() {
     window.addEventListener('hashchange', onHashChange);
 
     const onScroll = () => {
-      // Throttle to one per animation frame
       if (rafRef.current != null) return;
       rafRef.current = window.requestAnimationFrame(() => {
         rafRef.current = null;
@@ -157,11 +149,10 @@ export default function Header() {
     };
     window.addEventListener('scroll', onScroll, { passive: true });
 
-    // IntersectionObserver can help on jumpy scroll/resize
-    const observer = new IntersectionObserver(
-      () => setFromScrollPosition(),
-      { root: null, threshold: [0, 0.01, 0.1] }
-    );
+    const observer = new IntersectionObserver(() => setFromScrollPosition(), {
+      root: null,
+      threshold: [0, 0.01, 0.1],
+    });
     sections.forEach((s) => observer.observe(s.el));
 
     return () => {
@@ -181,6 +172,7 @@ export default function Header() {
       event.preventDefault();
       setIsMenuOpen(false);
       window.setTimeout(() => {
+        isNavigatingRef.current = true;
         router.push(href);
       }, 400);
     };
@@ -226,7 +218,11 @@ export default function Header() {
         aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
         onClick={() => setIsMenuOpen((open) => !open)}
         className={`absolute right-[5vw] top-[5vw] block md:hidden z-[60] mr-[7vw] mt-[1vw] h-8 w-8 pointer-events-auto transition-colors duration-300 ${
-          isMenuOpen ? 'text-white' : isHomePage ? 'text-[#005271]' : 'text-white'
+          isMenuOpen
+            ? 'text-white'
+            : isHomePage
+            ? 'text-[#005271]'
+            : 'text-white'
         }`}
       >
         <span
@@ -254,7 +250,6 @@ export default function Header() {
               isHomePage ? { backgroundColor: 'var(--navbar-bg)' } : undefined
             }
           >
-            {/* Desktop links */}
             <button
               type="button"
               onClick={() => goToSection('home')}
@@ -287,6 +282,9 @@ export default function Header() {
 
             <Link
               href="/about-us"
+              onClick={() => {
+                isNavigatingRef.current = true;
+              }}
               className={`text-[1vw] uppercase font-[var(--font-metropolis)] mx-[1vw] ${linkTextClass} ${
                 activeSection === 'about' ? 'font-black underline' : ''
               }`}
@@ -305,7 +303,6 @@ export default function Header() {
         />
       </div>
 
-      {/* Mobile overlay */}
       <div
         className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-[rgba(74,74,74,0.5)] backdrop-blur-[12.5px] transform transition-transform duration-[400ms] ease-in-out pointer-events-auto ${
           isMenuOpen ? 'translate-y-0' : '-translate-y-full'
@@ -323,7 +320,9 @@ export default function Header() {
             <nav className="flex flex-col items-center gap-7 text-white font-[var(--font-metropolis)] uppercase text-lg">
               <Link
                 href="/"
-                className={`${activeSection === 'home' ? 'font-bold underline' : ''}`}
+                className={`${
+                  activeSection === 'home' ? 'font-bold underline' : ''
+                }`}
                 onClick={handleMobileNavClick('/')}
               >
                 Home
@@ -331,7 +330,9 @@ export default function Header() {
 
               <Link
                 href="/about-us"
-                className={`${activeSection === 'about' ? 'font-bold underline' : ''}`}
+                className={`${
+                  activeSection === 'about' ? 'font-bold underline' : ''
+                }`}
                 onClick={handleMobileNavClick('/about-us')}
               >
                 About
@@ -347,7 +348,9 @@ export default function Header() {
 
               <Link
                 href="/#faq"
-                className={`${activeSection === 'faq' ? 'font-bold underline' : ''}`}
+                className={`${
+                  activeSection === 'faq' ? 'font-bold underline' : ''
+                }`}
                 onClick={handleMobileNavClick('/#faq')}
               >
                 FAQ
@@ -355,7 +358,9 @@ export default function Header() {
 
               <Link
                 href="/#sponsors"
-                className={`${activeSection === 'sponsors' ? 'font-bold underline' : ''}`}
+                className={`${
+                  activeSection === 'sponsors' ? 'font-bold underline' : ''
+                }`}
                 onClick={handleMobileNavClick('/#sponsors')}
               >
                 Sponsors
