@@ -139,6 +139,7 @@ export default function Create() {
             </a>
             <HeartButton
               text="Donate"
+              backgroundColor="#60CAD6"
               href="https://giveto.ucdavis.edu/schools/UniversityofCaliforniaDavis/crowdfund-uc-davis-february-2026/pages/hackdavis/?a=12060603"
             />
           </div>
