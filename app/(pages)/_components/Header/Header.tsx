@@ -101,7 +101,7 @@ export default function Header() {
       (s): s is { id: 'home' | 'faq' | 'sponsors'; el: HTMLElement } => !!s.el
     );
 
-    const headerOffset = 120; 
+    const headerOffset = 120;
 
     const setFromScrollPosition = () => {
       if (isNavigatingRef.current) return;
