@@ -105,7 +105,11 @@ export default function HeroInfo() {
                 </Link> */}
 
                 <div className="flex h-[40px] w-[138px] flex-shrink-0 items-center rounded-[100px] bg-black/15 text-center text-[18px] font-bold tracking-[0.4px] text-black break-625:h-[50px] break-625:w-[170px] break-625:py-0 break-625:text-[20px]">
-                  <HeartButton text="Sponsor" href="mailto:team@hackdavis.io" />
+                  <HeartButton
+                    text="Sponsor"
+                    backgroundColor="#EDF2F3"
+                    href="mailto:team@hackdavis.io"
+                  />
                 </div>
               </div>
 
