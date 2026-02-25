@@ -28,6 +28,7 @@ export default function HeartButton({
         hover:flex-row-reverse
         no-underline
       "
+      target="_blank"
     >
       <div className="relative aspect-square h-full rounded-full invisible" />
 
