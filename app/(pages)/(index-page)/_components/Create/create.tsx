@@ -1,9 +1,74 @@
+'use client';
+
 import Image from 'next/image';
 import HeartButton from '@app/(pages)/(index-page)/_components/HeartButton/heartButton';
-
+import { useState, useEffect, useRef } from 'react';
+// HERE
 export default function Create() {
+
+  const bigShape = 50;
+  const mediumShape = 35;
+  const littleShape = 25;
+  const extraTiniTiny = 20;
+
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const containerRef = useRef<HTMLDivElement>(null);
+    const targetPositionRef = useRef({ x: 0, y: 0 });
+    const currentPositionRef = useRef({ x: 0, y: 0 });
+    const velocityRef = useRef({ x: 0, y: 0 });
+    const animationFrameRef = useRef<number | null>(null);
+  
+    useEffect(() => {
+      const container = containerRef.current;
+  
+      const veloFactor = 0.01;
+      const damping = 0.83;
+      
+  
+      const animate = () => {
+        const xVelo = (targetPositionRef.current.x - currentPositionRef.current.x) * veloFactor;
+        const yVelo = (targetPositionRef.current.y - currentPositionRef.current.y) * veloFactor;
+  
+        velocityRef.current.x += xVelo; 
+        velocityRef.current.y += yVelo; 
+  
+        velocityRef.current.x *= damping;
+        velocityRef.current.y *= damping;
+  
+        currentPositionRef.current.x += velocityRef.current.x;
+        currentPositionRef.current.y += velocityRef.current.y;
+  
+        setMousePosition({
+          x: currentPositionRef.current.x,
+          y: currentPositionRef.current.y,
+        });
+  
+        animationFrameRef.current = requestAnimationFrame(animate);
+      }
+  
+      const handleMouseMove = (event: MouseEvent) => {
+        if (container && window.innerWidth > 425) {
+          const rect = container.getBoundingClientRect();
+          const x = event.clientX - rect.left;
+          const y = event.clientY - rect.top;
+          targetPositionRef.current = { x, y };
+          //setMousePosition({ x, y });
+        }
+      };
+  
+      animationFrameRef.current = requestAnimationFrame(animate);
+      container?.addEventListener('mousemove', handleMouseMove);
+  
+      return () => {
+        container?.removeEventListener('mousemove', handleMouseMove);
+        if (animationFrameRef.current) {
+          cancelAnimationFrame(animationFrameRef.current);
+        }
+      };
+    }, []);
+
   return (
-    <div className="relative flex flex-col gap-5 w-full md md:w-auto md:mb-32">
+    <div ref={containerRef} className="relative flex flex-col gap-5 w-full md md:w-auto md:mb-32">
       {/* Background decorative images - hidden on mobile */}
       <Image
         src="/Images/Create/glue.svg"
@@ -28,7 +93,12 @@ export default function Create() {
           alt="Big Yellow Star"
           width={111}
           height={111}
-          className="hidden md:block absolute w-auto h-[130px] ml-[20%] -mt-[8%] transition-transform duration-300 animate-spin-10"
+          className="hidden md:block absolute w-auto h-[130px] ml-[20%] -mt-[8%] animate-spin-10"
+          style={{
+              transform: `translateX(${mousePosition.x / mediumShape}px) translateY(${
+                mousePosition.y / mediumShape
+              }px)`,
+            }}
         />
 
         {/* Frog + Yellow bar wrapper - side by side on mobile */}
@@ -92,7 +162,12 @@ export default function Create() {
           alt="Green Flower"
           width={131}
           height={131}
-          className="hidden xl:block ml-[2%] mt-auto mb-[4%] h-[131px] transition-transform duration-300 animate-spin-10"
+          className="hidden xl:block ml-[2%] mt-auto mb-[4%] h-[131px] animate-spin-10"
+          style={{
+              transform: `translateX(${mousePosition.x / mediumShape}px) translateY(${
+                mousePosition.y / mediumShape
+              }px)`,
+            }}
         />
       </div>
 
@@ -149,7 +224,12 @@ export default function Create() {
             alt="Pink Flower"
             width={111}
             height={111}
-            className="hidden md:block absolute w-auto h-[78px] -bottom-[5%] ml-[3%] transition-transform duration-300 animate-spin-10"
+            className="hidden md:block absolute w-auto h-[78px] -bottom-[5%] ml-[3%] animate-spin-10"
+            style={{
+              transform: `translateX(${mousePosition.x / extraTiniTiny}px) translateY(${
+                mousePosition.y / extraTiniTiny
+              }px)`,
+            }}
           />
         </div>
 
@@ -168,7 +248,12 @@ export default function Create() {
             alt="Blue Flower"
             width={111}
             height={111}
-            className="absolute w-auto h-[200px] bottom-0 mb-[2%] ml-[20%] pt-[10%] transition-transform duration-300 animate-spin-10"
+            className="absolute w-auto h-[200px] bottom-0 mb-[2%] ml-[20%] pt-[10%] animate-spin-10"
+            style={{
+              transform: `translateX(${mousePosition.x / bigShape}px) translateY(${
+                mousePosition.y / bigShape
+              }px)`,
+            }}
           />
         </div>
       </div>

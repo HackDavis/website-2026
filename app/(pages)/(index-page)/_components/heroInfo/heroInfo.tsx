@@ -19,7 +19,14 @@ import { useEffect, useRef, useState } from 'react';
  * - if want to add more movement, decrease pixels dividing by in transform
  */
 
+//HERE
+
 export default function HeroInfo() {
+
+  const bigShape = 50;
+  const mediumShape = 35;
+  const littleShape = 25;
+  const extraTiniTiny = 20;
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
@@ -88,8 +95,8 @@ export default function HeroInfo() {
             height={300}
             className="flex flex-row justify-center object-contain w-[40%] md:h-full md:w-full"
             style={{
-              transform: `translateX(${mousePosition.x / 20}px) translateY(${
-                mousePosition.y / 20
+              transform: `translateX(${mousePosition.x / extraTiniTiny}px) translateY(${
+                mousePosition.y / extraTiniTiny
               }px)`,
             }}
           />
@@ -102,8 +109,8 @@ export default function HeroInfo() {
             height={221.27}
             className="absolute top-29 left-27 -z-10 hidden md:block"
             style={{
-              transform: `translateX(${mousePosition.x / 40}px) translateY(${
-                mousePosition.y / 40
+              transform: `translateX(${mousePosition.x / bigShape}px) translateY(${
+                mousePosition.y / bigShape
               }px)`,
             }}
           />
@@ -114,8 +121,8 @@ export default function HeroInfo() {
             height={100}
             className="absolute -z-10 top-[56%] md:top-[50%] left-[2%] justify-center object-contain animate-slow-spin"
             style={{
-              transform: `translateX(${mousePosition.x / 30}px) translateY(${
-                mousePosition.y / 30
+              transform: `translateX(${mousePosition.x / mediumShape}px) translateY(${
+                mousePosition.y / mediumShape
               }px)`,
             }}
           />
@@ -126,8 +133,8 @@ export default function HeroInfo() {
             height={100}
             className="absolute order-2 md:order-none top-[85%] -left-[5%] md:left-[35%] justify-center -z-10 object-contain animate-slow-spin"
             style={{
-              transform: `translateX(${mousePosition.x / 25}px) translateY(${
-                mousePosition.y / 25
+              transform: `translateX(${mousePosition.x / littleShape}px) translateY(${
+                mousePosition.y / littleShape
               }px)`,
             }}
           />
