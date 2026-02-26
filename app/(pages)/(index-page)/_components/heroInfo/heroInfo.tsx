@@ -96,7 +96,7 @@ export default function HeroInfo() {
         </div>
         <div>
           <Image
-            src="/Images/reghero/Watertower.svg"
+            src="/Images/reghero/WaterTower.svg"
             alt="watertower"
             width={156.5}
             height={221.27}
@@ -144,28 +144,32 @@ export default function HeroInfo() {
         </div>
 
         {/* right side */}
-        <div className="order-1 md:order-none flex w-full flex-col justify-between md:w-full">
+        <div className="order-1 md:order-none flex w-full min-w-0 flex-col justify-between md:w-full md:pr-0 pr-[5%]">
           {/* here text + buttons */}
           <div className="flex flex-row justify-start items-start md:justify-end md:items-end">
             <div className="flex flex-col items-start gap-[22px] text-left md:items-end md:gap-[31px] md:text-right">
               <div className="flex flex-col items-start text-left md:items-end md:text-right w-full">
-                <p className="flex gap-2 text-[30px] font-bold leading-[115%] tracking-[0.8px] break-625:text-[40px]">
-                  <span className="text-black">
-                    <WordCycle />
-                  </span>
-                  <span className="text-[#005271]">for</span>
-                </p>
-                <h1 className="text-[45px] font-bold leading-[115%] tracking-[0.9px] text-[var(--text-hero)] break-625:text-[66px] break-625:leading-[100%] break-625:tracking-[3.52px] md:text-[88px]">
-                  social good
-                </h1>
-                <p className="mt-[10px] text-[16px] w-full tracking-[0.48px] text-black break-625:text-[20px]">
-                  May 9-10, 2026 @ UCenter
-                </p>
+                <div className="flex flex-col items-start text-left md:items-end md:text-right w-full">
+                  <p className="flex gap-2 text-[30px] font-bold leading-[115%] tracking-[0.8px] break-625:text-[40px]">
+                    <span className="text-black">
+                      <WordCycle />
+                    </span>
+                    <span className="text-[#005271]">for</span>
+                  </p>
+
+                  <h1 className="whitespace-nowrap text-[45px] font-bold leading-[115%] tracking-[0.9px] text-[var(--text-hero)] break-900:text-[50px] break-625:text-[66px] break-625:leading-[100%] break-625:tracking-[3.52px] md:text-[88px]">
+                    social good
+                  </h1>
+
+                  <p className="mt-[10px] text-[16px] w-full tracking-[0.48px] text-black break-625:text-[20px]">
+                    May 9-10, 2026 @ UCenter
+                  </p>
+                </div>
               </div>
 
               <div className="flex flex-row items-start gap-[12px] break-625:flex-col break-625:items-end break-625:gap-[28px] sm:flex-row sm:items-center">
-                <Link
-                  href="https://hackdavis.typeform.com/to/N6DEZIVH"
+                {/* <Link
+                  href="https://apply.hackdavis.io/"
                   target="_blank"
                   className="
                     rounded-full
@@ -175,19 +179,26 @@ export default function HeroInfo() {
                     text-nowrap
                     md:text-[16px]
                     border border-[var(--teal-1,#005271)]
+                    hover:border-white
                     bg-white
+                    hover:bg-[var(--teal-1,#005271)]
                     shadow-[4px_4px_0_0_#005271]
                     text-center
                     font-bold
                     tracking-[0.32px]
                     text-[var(--teal-1,#005271)]
+                    hover:text-white
                   "
                 >
                   Register Now
-                </Link>
+                </Link> */}
 
                 <div className="flex h-[40px] w-[138px] flex-shrink-0 items-center rounded-[100px] bg-black/15 text-center text-[18px] font-bold tracking-[0.4px] text-black break-625:h-[50px] break-625:w-[170px] break-625:py-0 break-625:text-[20px]">
-                  <HeartButton text="Sponsor" href="mailto:team@hackdavis.io" />
+                  <HeartButton
+                    text="Sponsor"
+                    backgroundColor="#EDF2F3"
+                    href="mailto:team@hackdavis.io"
+                  />
                 </div>
               </div>
 
@@ -195,64 +206,66 @@ export default function HeroInfo() {
                 <span className="hidden text-[18px] font-normal tracking-[0.48px] text-black break-625:inline md:text-[20px]">
                   Check out the{' '}
                 </span>
-                <div className="flex items-center gap-2 text-black">
-                  <FormLink href="/?section=teams" includeComma={false}>
-                    Apply to be a{' '}
-                    <span style={{ color: '#FFC53D' }}>Judge</span>,{' '}
-                    <span style={{ color: '#FFC5AB' }}>Mentor</span>, or{' '}
-                    <span style={{ color: '#9EE7E5' }}>Volunteer</span>
+                <div className="flex items-center gap-2 text-black text-[19px]">
+                  Apply to be a{' '}
+                  <FormLink
+                    href="https://forms.gle/rvMKjxw6GjiaKPjc7"
+                    includeComma={false}
+                  >
+                    <span style={{ color: '#FFC53D' }}>Judge</span>
                   </FormLink>
+                  {/* <span style={{ color: '#FFC5AB' }}>Mentor</span>, or{' '}
+                    <span style={{ color: '#9EE7E5' }}>Volunteer</span> */}
                 </div>
               </div>
             </div>
           </div>
 
           {/* desktop numbers */}
-          <div className="hidden md:flex items-end gap-0 pt-[15%] pl-[25%]">
+          <div className="hidden md:flex items-end gap-0 pt-[15%] md:pl-[5%] lg:pl-[30%]">
             <Image
               src="/Images/reghero/One.svg"
               alt="1"
-              width={150}
-              height={150}
-              className="object-contain w-[200px] h-[200px] shrink-0"
+              width={130}
+              height={130}
+              className="object-contain w-[150px] h-[150px] lg:w-[170px] lg:h-[170px] shrink-0"
             />
             <Image
               src="/Images/reghero/Zero.svg"
               alt="0"
-              width={150}
-              height={150}
-              className="object-contain w-[200px] h-[200px] shrink-0 translate-y-[24px] -translate-x-[20px]"
+              width={130}
+              height={130}
+              className="object-contain sm:w-[150px] sm:h-[150px] md:w-[150px] md:h-[150px] lg:w-[170px] lg:h-[170px] shrink-0 translate-y-[24px] -translate-x-[20px]"
             />
           </div>
         </div>
-      </div>
 
-      <div className="block md:hidden order-1 md:order-none relative ml-[25%] md:ml-0 pt-[9%] flex flex-row items-stretch sm:pl-0 md:pl-[25%]">
-        <Image
-          src="/Images/reghero/One.svg"
-          alt="Animals on couch"
-          width={150}
-          height={150}
-          className="
+        {/* mobile numbers: 10 */}
+        <div className="block md:hidden order-3 md:order-none relative ml-[25%] md:ml-0  pt-[9%] flex flex-row items-stretch sm:pl-0 md:pl-[25%]">
+          <Image
+            src="/Images/reghero/One.svg"
+            alt="Animals on couch"
+            width={150}
+            height={150}
+            className="
             object-contain
-            w-[120px] h-[120px]
-            md:w-[200px] md:h-[200px]
+            w-[180px] h-[180px]
           "
-        />
-        <Image
-          src="/Images/reghero/Zero.svg"
-          alt="Animals on couch"
-          width={150}
-          height={150}
-          className="
+          />
+          <Image
+            src="/Images/reghero/Zero.svg"
+            alt="Animals on couch"
+            width={150}
+            height={150}
+            className="
             object-contain
-            w-[120px] h-[120px]
-            md:w-[200px] md:h-[200px]
+            w-[180px] h-[180px]
             translate-y-[30px]
             -translate-x-[20px]
             md:translate-y-[24px]
           "
-        />
+          />
+        </div>
       </div>
     </>
   );
@@ -269,6 +282,7 @@ function FormLink({ href, includeComma, children }: FormLinkProps) {
     <Link
       href={href}
       className="group flex items-center text-[16px] md:text-[18px] font-bold tracking-[0.48px] text-black md:text-[20px]"
+      target="_blank"
     >
       <span className="font-bold">{children}</span>
 

@@ -6,30 +6,36 @@ import Image from 'next/image';
 export default function HeartButton({
   text,
   href,
+  backgroundColor = '#EDF2F3',
 }: {
   text: string;
   href: string;
+  backgroundColor?: string;
 }) {
   return (
     <Link
       href={href}
+      style={{ '--btn-bg': backgroundColor } as React.CSSProperties}
       className="
-        group relative flex items-center overflow-hidden
-        w-full h-full rounded-full
-        text-[var(--text-light)] no-underline
-        transition-[background,flex-direction] duration-300
+        group relative w-full h-full
+        flex items-center overflow-hidden
+        rounded-full
+        transition-colors duration-300
+        bg-[var(--btn-bg)]
+        hover:bg-[var(--teal-1,#005271)]
+        text-[var(--teal-1,#005271)]
+        hover:text-white
         hover:flex-row-reverse
-        border-2 border-[#D5E1E5]
-        bg-white
+        no-underline
       "
+      target="_blank"
     >
-      {/* static placeholder (hidden but preserves layout) */}
-      <div className="relative aspect-square h-full rounded-full border-2 border-[#005271] invisible" />
+      <div className="relative aspect-square h-full rounded-full invisible" />
 
-      {/* animated heart coin */}
       <div
         className="
-          absolute left-0 top-0 z-10
+          heart-animated
+          absolute left-0 top-0
           aspect-square h-full rounded-full
           shadow-[0px_9px_75px_rgba(0,0,0,0.75)]
           group-hover:animate-slide-right
@@ -44,26 +50,11 @@ export default function HeartButton({
         />
       </div>
 
-      <p
-        className="w-full text-center transition-all
-                    rounded-full
-                    font-bold
-                    tracking-[0.32px]
-                    text-[14px]
-                    md:text-[16px]
-                    text-[var(--teal-1,#005271)]
-                  "
-      >
+      <h4 className="w-full text-center font-bold tracking-[0.32px] text-[14px] md:text-[16px]">
         {text}
-      </p>
+      </h4>
 
-      {/* overlay */}
-      <span
-        className="
-          pointer-events-none absolute inset-0
-          bg-[var(--background-light)] opacity-15
-        "
-      />
+      <span className="pointer-events-none absolute inset-0 bg-[var(--background-light)] opacity-15" />
     </Link>
   );
 }

@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import circle_of_circles_pink from '@public/home/stats/circle_of_circles_pink.svg';
 import circle_of_circles_cyan from '@public/home/stats/circle_of_circles_cyan.svg';
 import cross_lime from '@public/home/stats/cross_lime.svg';
@@ -81,7 +82,9 @@ export default function Stats() {
         </div>
 
         {/* Sponsor Button */}
-        <div
+        <Link
+          href="mailto:team@hackdavis.io"
+          target="_blank"
           className="absolute md:top-[calc(25%+21vw)] md:left-[46%] md:w-[20vw] cursor-pointer transition-all sm:max-w-128 sm:w-[50vw] sm:top-[60%] sm:right-[25%] top-[54%] max-w-56 right-[25vw] w-[40vw]"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
@@ -91,7 +94,7 @@ export default function Stats() {
             alt="Sponsor 2026"
             className="w-full h-auto"
           />
-        </div>
+        </Link>
 
         {/* Circle of Circles Pink */}
         <div className="absolute md:top-[53%] right-[0%] md:w-[8vw] md:max-w-20 sm:top-[57%] sm:max-w-20 max-w-16 w-[20vw] top-[50%]">
@@ -117,7 +120,7 @@ export default function Stats() {
         </div>
 
         {/* Squiggly Circle Pink */}
-        <div className="absolute md:top-[calc(35%+12vw)] md:left-[16%] md:w-[10%] md:max-w-48 sm:max-w-32 sm:right-[15%] max-w-24 left-[55vw]">
+        <div className="hidden md:block absolute md:top-[calc(35%+12vw)] md:left-[16%] md:w-[10%] md:max-w-48">
           <Image
             src={squiggly_circle_pink}
             alt="Circle"

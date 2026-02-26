@@ -9,7 +9,7 @@ export default function Hero() {
         </div>
 
         <Image
-          src="/Images/hero/cloud_and_book.svg"
+          src="/Images/hero/cloud_book_bubbles.png"
           alt="Cloud and Book"
           width={2000}
           height={1200}

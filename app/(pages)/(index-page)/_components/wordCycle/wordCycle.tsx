@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useState, createRef } from 'react';
 import { SwitchTransition, CSSTransition } from 'react-transition-group';
 
 const words = [
@@ -17,33 +17,39 @@ const words = [
 
 export default function WordCycle() {
   const [wordIdx, setWordIdx] = useState(0);
-  const nodeRef = useRef<HTMLSpanElement | null>(null);
+
+  // one ref per word (stable across renders)
+  const nodeRefs = useMemo(
+    () => words.map(() => createRef<HTMLSpanElement>()),
+    []
+  );
 
   useEffect(() => {
     const swapInterval = setInterval(() => {
       setWordIdx((idx) => (idx + 1) % words.length);
     }, 3000);
+
     return () => clearInterval(swapInterval);
   }, []);
 
+  const activeRef = nodeRefs[wordIdx];
+
   return (
     <span className="inline-block align-baseline text-[#AFD157] font-bold text-left md:text-right">
-      <SwitchTransition>
+      <SwitchTransition mode="out-in">
         <CSSTransition
           key={words[wordIdx]}
-          nodeRef={nodeRef}
-          timeout={400}
-          mountOnEnter
-          unmountOnExit
+          nodeRef={activeRef}
+          timeout={200}
           classNames={{
-            enter: 'opacity-0 translate-y-[35px]',
-            enterActive: 'opacity-100 translate-y-0',
+            enter: 'opacity-0 translate-y-[35px] text-white',
+            enterActive: 'opacity-0 translate-y-0',
             exit: 'opacity-100',
-            exitActive: 'opacity-0 -translate-y-[35px]',
+            exitActive: 'opacity-0 -translate-y-[35px] text-white',
           }}
         >
           <span
-            ref={nodeRef}
+            ref={activeRef}
             className="inline-block will-change-transform will-change-opacity"
             style={{
               transition: 'all 400ms cubic-bezier(0.165, 0.84, 0.44, 1)',
