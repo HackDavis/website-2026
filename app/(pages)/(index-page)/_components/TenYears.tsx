@@ -47,10 +47,7 @@ function FlyingMascot({
   );
 }
 
-  const bigShape = 50;
-  const mediumShape = 35;
-  const littleShape = 25;
-  const extraTiniTiny = 20;
+const littleShape = 25;
 
 export default function TenYears() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -90,9 +87,11 @@ export default function TenYears() {
 
     const animate = () => {
       const xVelo =
-        (targetPositionRef.current.x - currentPositionRef.current.x) * veloFactor;
+        (targetPositionRef.current.x - currentPositionRef.current.x) *
+        veloFactor;
       const yVelo =
-        (targetPositionRef.current.y - currentPositionRef.current.y) * veloFactor;
+        (targetPositionRef.current.y - currentPositionRef.current.y) *
+        veloFactor;
 
       velocityRef.current.x += xVelo;
       velocityRef.current.y += yVelo;
@@ -175,7 +174,9 @@ export default function TenYears() {
           height={429}
           className="h-[240px] sm:h-[500px] xl:h-[895px] w-auto"
           style={{
-            transform: `translateX(${mousePosition.x / littleShape}px) translateY(${mousePosition.y / littleShape}px)`,
+            transform: `translateX(${
+              mousePosition.x / littleShape
+            }px) translateY(${mousePosition.y / littleShape}px)`,
           }}
         />
 
@@ -204,7 +205,9 @@ export default function TenYears() {
         height={144}
         className="absolute right-[20%] sm:right-[2%] -bottom-[10%] sm:bottom-[10%] md:bottom-[20%] w-[70px] xl:w-[120px] h-auto ml-auto sm:-mr-4"
         style={{
-          transform: `translateX(${mousePosition.x / littleShape}px) translateY(${mousePosition.y / littleShape}px)`,
+          transform: `translateX(${
+            mousePosition.x / littleShape
+          }px) translateY(${mousePosition.y / littleShape}px)`,
         }}
       />
     </div>

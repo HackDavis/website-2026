@@ -28,63 +28,69 @@ export default function Stats() {
   const extraTiniTiny = 20;
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-    const containerRef = useRef<HTMLDivElement>(null);
-    const targetPositionRef = useRef({ x: 0, y: 0 });
-    const currentPositionRef = useRef({ x: 0, y: 0 });
-    const velocityRef = useRef({ x: 0, y: 0 });
-    const animationFrameRef = useRef<number | null>(null);
-  
-    useEffect(() => {
-      const container = containerRef.current;
-  
-      const veloFactor = 0.01;
-      const damping = 0.83;
-      
-  
-      const animate = () => {
-        const xVelo = (targetPositionRef.current.x - currentPositionRef.current.x) * veloFactor;
-        const yVelo = (targetPositionRef.current.y - currentPositionRef.current.y) * veloFactor;
-  
-        velocityRef.current.x += xVelo; 
-        velocityRef.current.y += yVelo; 
-  
-        velocityRef.current.x *= damping;
-        velocityRef.current.y *= damping;
-  
-        currentPositionRef.current.x += velocityRef.current.x;
-        currentPositionRef.current.y += velocityRef.current.y;
-  
-        setMousePosition({
-          x: currentPositionRef.current.x,
-          y: currentPositionRef.current.y,
-        });
-  
-        animationFrameRef.current = requestAnimationFrame(animate);
-      }
-  
-      const handleMouseMove = (event: MouseEvent) => {
-        if (container && window.innerWidth > 425) {
-          const rect = container.getBoundingClientRect();
-          const x = event.clientX - rect.left;
-          const y = event.clientY - rect.top;
-          targetPositionRef.current = { x, y };
-          //setMousePosition({ x, y });
-        }
-      };
-  
+  const containerRef = useRef<HTMLDivElement>(null);
+  const targetPositionRef = useRef({ x: 0, y: 0 });
+  const currentPositionRef = useRef({ x: 0, y: 0 });
+  const velocityRef = useRef({ x: 0, y: 0 });
+  const animationFrameRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+
+    const veloFactor = 0.01;
+    const damping = 0.83;
+
+    const animate = () => {
+      const xVelo =
+        (targetPositionRef.current.x - currentPositionRef.current.x) *
+        veloFactor;
+      const yVelo =
+        (targetPositionRef.current.y - currentPositionRef.current.y) *
+        veloFactor;
+
+      velocityRef.current.x += xVelo;
+      velocityRef.current.y += yVelo;
+
+      velocityRef.current.x *= damping;
+      velocityRef.current.y *= damping;
+
+      currentPositionRef.current.x += velocityRef.current.x;
+      currentPositionRef.current.y += velocityRef.current.y;
+
+      setMousePosition({
+        x: currentPositionRef.current.x,
+        y: currentPositionRef.current.y,
+      });
+
       animationFrameRef.current = requestAnimationFrame(animate);
-      container?.addEventListener('mousemove', handleMouseMove);
-  
-      return () => {
-        container?.removeEventListener('mousemove', handleMouseMove);
-        if (animationFrameRef.current) {
-          cancelAnimationFrame(animationFrameRef.current);
-        }
-      };
-    }, []);
+    };
+
+    const handleMouseMove = (event: MouseEvent) => {
+      if (container && window.innerWidth > 425) {
+        const rect = container.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+        targetPositionRef.current = { x, y };
+        //setMousePosition({ x, y });
+      }
+    };
+
+    animationFrameRef.current = requestAnimationFrame(animate);
+    container?.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      container?.removeEventListener('mousemove', handleMouseMove);
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
+  }, []);
 
   return (
-    <div ref={containerRef} className="stats-section relative w-full h-[1200px] sm:h-[1400px] md:max-h-screen md:h-screen overflow-x-clip ">
+    <div
+      ref={containerRef}
+      className="stats-section relative w-full h-[1200px] sm:h-[1400px] md:max-h-screen md:h-screen overflow-x-clip "
+    >
       <div className="relative w-full h-full">
         {/* Top Left - Scissors */}
         <div className="absolute md:left-[-10%] md:top-[calc(25%-21vw)] w-[38%] max-w-92 hidden md:block">
@@ -93,14 +99,14 @@ export default function Stats() {
 
         {/* Top area - Cross (lime green) */}
         <div className="absolute md:top-[30%] md:left-[20%] md:w-[15%] md:max-w-64 sm:top-[35%] sm:left-[-15%] top-[30%] left-[-15%] w-[30%]">
-          <Image 
-          src={cross_lime} 
-          alt="Cross" 
-          className="w-full h-auto" 
-          style={{
-              transform: `translateX(${mousePosition.x / bigShape}px) translateY(${
-                mousePosition.y / bigShape
-              }px)`,
+          <Image
+            src={cross_lime}
+            alt="Cross"
+            className="w-full h-auto"
+            style={{
+              transform: `translateX(${
+                mousePosition.x / bigShape
+              }px) translateY(${mousePosition.y / bigShape}px)`,
             }}
           />
         </div>
@@ -112,22 +118,25 @@ export default function Stats() {
             alt="Circle of Circles"
             className="w-full h-auto"
             style={{
-              transform: `translateX(${mousePosition.x / mediumShape}px) translateY(${
-                mousePosition.y / mediumShape
-              }px)`,
+              transform: `translateX(${
+                mousePosition.x / mediumShape
+              }px) translateY(${mousePosition.y / mediumShape}px)`,
             }}
           />
         </div>
 
         {/* Green Flower Thing */}
         <div className="absolute md:top-[15%] md:left-[89%] md:w-[10%] md:max-w-32 sm:right-[-7%] sm:top-[13%] right-[-7%] top-[9%]">
-          <Image src={flower_thing} alt="Flower" className="w-full h-auto" 
-          style={{
-              transform: `translateX(${mousePosition.x / littleShape}px) translateY(${
-                mousePosition.y / littleShape
-              }px)`,
+          <Image
+            src={flower_thing}
+            alt="Flower"
+            className="w-full h-auto"
+            style={{
+              transform: `translateX(${
+                mousePosition.x / littleShape
+              }px) translateY(${mousePosition.y / littleShape}px)`,
             }}
-            />
+          />
         </div>
 
         {/* Projects w-[16%] md:w-[24%] lg: xs:max-w-24  md:max-w-48 lg:*/}
@@ -184,21 +193,24 @@ export default function Stats() {
             alt="Circle of Circles"
             className="w-full h-auto"
             style={{
-              transform: `translateX(${mousePosition.x / bigShape}px) translateY(${
-                mousePosition.y / bigShape
-              }px)`,
+              transform: `translateX(${
+                mousePosition.x / bigShape
+              }px) translateY(${mousePosition.y / bigShape}px)`,
             }}
           />
         </div>
 
         {/* Cross Cyan */}
         <div className="absolute md:top-[calc(45%+21vw)] md:right-[10%] md:w-[8vw] md:max-w-48 md:rotate-0 sm:top-[81%] sm:right-[60%] sm:w-[28%] top-[75%] right-[55%] rotate-[45deg]">
-          <Image src={cross_cyan} alt="Cross" className="w-full h-auto" 
-          style={{
-            transform: `translateX(${mousePosition.x / littleShape}px) translateY(${
-              mousePosition.y / littleShape
-            }px)`,
-          }}
+          <Image
+            src={cross_cyan}
+            alt="Cross"
+            className="w-full h-auto"
+            style={{
+              transform: `translateX(${
+                mousePosition.x / littleShape
+              }px) translateY(${mousePosition.y / littleShape}px)`,
+            }}
           />
         </div>
 
@@ -209,9 +221,9 @@ export default function Stats() {
             alt="Circle"
             className="w-full h-auto"
             style={{
-              transform: `translateX(${mousePosition.x / extraTiniTiny}px) translateY(${
-                mousePosition.y / extraTiniTiny
-              }px)`,
+              transform: `translateX(${
+                mousePosition.x / extraTiniTiny
+              }px) translateY(${mousePosition.y / extraTiniTiny}px)`,
             }}
           />
         </div>
@@ -223,9 +235,9 @@ export default function Stats() {
             alt="Circle"
             className="w-full h-auto"
             style={{
-              transform: `translateX(${mousePosition.x / littleShape}px) translateY(${
-                mousePosition.y / littleShape
-              }px)`,
+              transform: `translateX(${
+                mousePosition.x / littleShape
+              }px) translateY(${mousePosition.y / littleShape}px)`,
             }}
           />
         </div>

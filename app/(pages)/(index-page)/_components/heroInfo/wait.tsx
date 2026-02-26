@@ -8,7 +8,6 @@ import WordCycle from '../wordCycle/wordCycle';
 import { useEffect, useRef, useState } from 'react';
 
 export default function HeroInfo() {
-
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
   const targetPositionRef = useRef({ x: 0, y: 0 });
@@ -26,8 +25,10 @@ export default function HeroInfo() {
       const dx = targetPositionRef.current.x - currentPositionRef.current.x;
       const dy = targetPositionRef.current.y - currentPositionRef.current.y;
 
-      velocityRef.current.x = (velocityRef.current.x + dx * stiffness) * damping;
-      velocityRef.current.y = (velocityRef.current.y + dy * stiffness) * damping;
+      velocityRef.current.x =
+        (velocityRef.current.x + dx * stiffness) * damping;
+      velocityRef.current.y =
+        (velocityRef.current.y + dy * stiffness) * damping;
 
       currentPositionRef.current.x += velocityRef.current.x;
       currentPositionRef.current.y += velocityRef.current.y;
@@ -62,7 +63,10 @@ export default function HeroInfo() {
 
   return (
     <>
-      <div ref={containerRef} className="flex flex-col pl-[9%] items-center -pl-5 p-5 w-full gap-6 md:flex-row md:items-stretch md:pr-[13%]">
+      <div
+        ref={containerRef}
+        className="flex flex-col pl-[9%] items-center -pl-5 p-5 w-full gap-6 md:flex-row md:items-stretch md:pr-[13%]"
+      >
         <div className="absolute top-0 left-[27%] md:left-[30%] -z-10 overflow-hidden">
           <Image
             src="/Images/reghero/Green.svg"

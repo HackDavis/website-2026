@@ -13,7 +13,7 @@ import { useEffect, useRef, useState } from 'react';
  * - velofactor ~ how fast it moves
  * - damping ~ how much it slows down over time
  * - note if dont want ugly spring
- *    - if want inc velo, decrease damping 
+ *    - if want inc velo, decrease damping
  *    - if want dec velo, increase damping
  * - i like among us
  * - if want to add more movement, decrease pixels dividing by in transform
@@ -22,7 +22,6 @@ import { useEffect, useRef, useState } from 'react';
 //HERE
 
 export default function HeroInfo() {
-
   const bigShape = 50;
   const mediumShape = 35;
   const littleShape = 25;
@@ -40,14 +39,17 @@ export default function HeroInfo() {
 
     const veloFactor = 0.01;
     const damping = 0.83;
-    
 
     const animate = () => {
-      const xVelo = (targetPositionRef.current.x - currentPositionRef.current.x) * veloFactor;
-      const yVelo = (targetPositionRef.current.y - currentPositionRef.current.y) * veloFactor;
+      const xVelo =
+        (targetPositionRef.current.x - currentPositionRef.current.x) *
+        veloFactor;
+      const yVelo =
+        (targetPositionRef.current.y - currentPositionRef.current.y) *
+        veloFactor;
 
-      velocityRef.current.x += xVelo; 
-      velocityRef.current.y += yVelo; 
+      velocityRef.current.x += xVelo;
+      velocityRef.current.y += yVelo;
 
       velocityRef.current.x *= damping;
       velocityRef.current.y *= damping;
@@ -61,7 +63,7 @@ export default function HeroInfo() {
       });
 
       animationFrameRef.current = requestAnimationFrame(animate);
-    }
+    };
 
     const handleMouseMove = (event: MouseEvent) => {
       if (container && window.innerWidth > 425) {
@@ -91,9 +93,6 @@ export default function HeroInfo() {
         className="flex flex-col pl-[9%] items-center -pl-5 p-5 w-full gap-6 md:flex-row md:items-stretch md:pr-[13%]"
       >
         <div className="absolute -top-10 left-[27%] md:left-[30%] -z-10">
-        className="flex flex-col pl-[9%] items-center -pl-5 p-5 w-full gap-6 md:flex-row md:items-stretch md:pr-[13%]"
-      >
-        <div className="absolute -top-10 left-[27%] md:left-[30%] -z-10">
           <Image
             src="/Images/reghero/Green.png"
             alt="Animals on couch"
@@ -101,9 +100,9 @@ export default function HeroInfo() {
             height={300}
             className="flex flex-row justify-center object-contain w-[40%] md:h-full md:w-full"
             style={{
-              transform: `translateX(${mousePosition.x / extraTiniTiny}px) translateY(${
-                mousePosition.y / extraTiniTiny
-              }px)`,
+              transform: `translateX(${
+                mousePosition.x / extraTiniTiny
+              }px) translateY(${mousePosition.y / extraTiniTiny}px)`,
             }}
           />
         </div>
@@ -115,9 +114,9 @@ export default function HeroInfo() {
             height={221.27}
             className="absolute top-29 left-27 -z-10 hidden md:block"
             style={{
-              transform: `translateX(${mousePosition.x / bigShape}px) translateY(${
-                mousePosition.y / bigShape
-              }px)`,
+              transform: `translateX(${
+                mousePosition.x / bigShape
+              }px) translateY(${mousePosition.y / bigShape}px)`,
             }}
           />
           <Image
@@ -127,9 +126,9 @@ export default function HeroInfo() {
             height={100}
             className="absolute -z-10 top-[56%] md:top-[50%] left-[2%] justify-center object-contain animate-slow-spin"
             style={{
-              transform: `translateX(${mousePosition.x / mediumShape}px) translateY(${
-                mousePosition.y / mediumShape
-              }px)`,
+              transform: `translateX(${
+                mousePosition.x / mediumShape
+              }px) translateY(${mousePosition.y / mediumShape}px)`,
             }}
           />
           <Image
@@ -139,9 +138,9 @@ export default function HeroInfo() {
             height={100}
             className="absolute order-2 md:order-none top-[85%] -left-[5%] md:left-[35%] justify-center -z-10 object-contain animate-slow-spin"
             style={{
-              transform: `translateX(${mousePosition.x / littleShape}px) translateY(${
-                mousePosition.y / littleShape
-              }px)`,
+              transform: `translateX(${
+                mousePosition.x / littleShape
+              }px) translateY(${mousePosition.y / littleShape}px)`,
             }}
           />
         </div>

@@ -13,14 +13,13 @@ import { useEffect, useRef, useState } from 'react';
  * - velofactor ~ how fast it moves
  * - damping ~ how much it slows down over time
  * - note if dont want ugly spring
- *    - if want inc velo, decrease damping 
+ *    - if want inc velo, decrease damping
  *    - if want dec velo, increase damping
  * - i like among us
  * - if want to add more movement, decrease pixels dividing by in transform
  */
 
 export default function HeroInfo() {
-
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
   const targetPositionRef = useRef({ x: 0, y: 0 });
@@ -33,11 +32,14 @@ export default function HeroInfo() {
 
     const veloFactor = 0.01;
     const damping = 0.83;
-    
 
     const animate = () => {
-      const xVelo = (targetPositionRef.current.x - currentPositionRef.current.x) * veloFactor;
-      const yVelo = (targetPositionRef.current.y - currentPositionRef.current.y) * veloFactor;
+      const xVelo =
+        (targetPositionRef.current.x - currentPositionRef.current.x) *
+        veloFactor;
+      const yVelo =
+        (targetPositionRef.current.y - currentPositionRef.current.y) *
+        veloFactor;
 
       velocityRef.current.x += xVelo; //* idk;
       velocityRef.current.y += yVelo; //* idk;
@@ -54,7 +56,7 @@ export default function HeroInfo() {
       });
 
       animationFrameRef.current = requestAnimationFrame(animate);
-    }
+    };
 
     const handleMouseMove = (event: MouseEvent) => {
       if (container && window.innerWidth > 425) {
@@ -79,7 +81,10 @@ export default function HeroInfo() {
 
   return (
     <>
-      <div ref={containerRef} className="flex flex-col pl-[9%] items-center -pl-5 p-5 w-full gap-6 md:flex-row md:items-stretch md:pr-[13%]">
+      <div
+        ref={containerRef}
+        className="flex flex-col pl-[9%] items-center -pl-5 p-5 w-full gap-6 md:flex-row md:items-stretch md:pr-[13%]"
+      >
         <div className="absolute top-0 left-[27%] md:left-[30%] -z-10">
           <Image
             src="/Images/reghero/Green.svg"
