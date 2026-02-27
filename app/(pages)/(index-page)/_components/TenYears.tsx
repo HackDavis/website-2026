@@ -111,7 +111,10 @@ export default function TenYears() {
   const scaledWavePath = scalePath(wavePath, scale);
 
   return (
-    <div ref={containerRef} className="relative flex flex-col">
+    <div
+      ref={containerRef}
+      className="relative flex flex-col overflow-x-hidden"
+    >
       <div
         ref={waveWrapperRef}
         className="absolute top-[15%] sm:top-[10%] left-[55%] sm:left-[50%]"
