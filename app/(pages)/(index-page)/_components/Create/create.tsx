@@ -36,15 +36,6 @@ export default function Create() {
 
       {/* First Section - Create for Social Good */}
       <div className="relative flex flex-col items-center md:items-start md:flex-row mt-8 md:mt-[215px] gap-4 md:gap-8 w-full md:w-[100%] md:mr-auto md:min-w-0 ">
-        <Image
-          src="/Images/Create/bigyellowstar.svg"
-          alt="Big Yellow Star"
-          width={111}
-          height={111}
-          style={getParallaxStyle(mousePosition, mediumShape)}
-          className="hidden md:block absolute ml-[20%] -mt-[8%] w-auto h-[130px]"
-        />
-
         {/* Frog + Yellow bar wrapper - side by side on mobile */}
         <div className="flex  border-red justify-between flex-row-reverse w-full gap-7 md:contents">
           <Image
