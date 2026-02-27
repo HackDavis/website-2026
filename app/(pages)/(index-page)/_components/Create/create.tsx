@@ -2,7 +2,11 @@
 
 import Image from 'next/image';
 import HeartButton from '@app/(pages)/(index-page)/_components/HeartButton/heartButton';
-import { useParallax, PARALLAX_SPEEDS, getParallaxStyle } from '@app/(pages)/_hooks/useParallax';
+import {
+  useParallax,
+  PARALLAX_SPEEDS,
+  getParallaxStyle,
+} from '@app/(pages)/_hooks/useParallax';
 
 export default function Create() {
   const { mousePosition, containerRef } = useParallax();

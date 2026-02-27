@@ -4,7 +4,11 @@ import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { useState, useEffect } from 'react';
-import { useParallax, PARALLAX_SPEEDS, getParallaxStyle } from '@app/(pages)/_hooks/useParallax';
+import {
+  useParallax,
+  PARALLAX_SPEEDS,
+  getParallaxStyle,
+} from '@app/(pages)/_hooks/useParallax';
 
 // Helper to scale all numbers in the path
 function scalePath(path: string, scale: number) {

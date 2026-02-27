@@ -5,7 +5,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import HeartButton from '../HeartButton/heartButton';
 import WordCycle from '../wordCycle/wordCycle';
-import { useParallax, PARALLAX_SPEEDS, getParallaxStyle } from '@app/(pages)/_hooks/useParallax';
+import {
+  useParallax,
+  PARALLAX_SPEEDS,
+  getParallaxStyle,
+} from '@app/(pages)/_hooks/useParallax';
 
 export default function HeroInfo() {
   const { mousePosition, containerRef } = useParallax();

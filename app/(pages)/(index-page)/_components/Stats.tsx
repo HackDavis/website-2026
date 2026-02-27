@@ -18,7 +18,11 @@ import time_count from '@public/home/stats/time_count.svg';
 import squiggly_circle_pink from '@public/home/stats/squiggly_circle_pink.svg';
 import squiggly_circle_yellow from '@public/home/stats/squiggly_circle_yellow.svg';
 import background_gradient from '@public/home/stats/background_gradient.svg';
-import { useParallax, PARALLAX_SPEEDS, getParallaxStyle } from '@app/(pages)/_hooks/useParallax';
+import {
+  useParallax,
+  PARALLAX_SPEEDS,
+  getParallaxStyle,
+} from '@app/(pages)/_hooks/useParallax';
 
 export default function Stats() {
   const [isHovered, setIsHovered] = useState(false);
