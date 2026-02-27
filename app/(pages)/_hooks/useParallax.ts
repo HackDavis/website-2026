@@ -46,7 +46,11 @@ export function useParallax() {
     };
 
     const handleMouseMove = (event: MouseEvent) => {
-      if (container && window.innerWidth > 425) {
+      if (
+        container &&
+        window.innerWidth > 425 &&
+        !window.matchMedia('(prefers-reduced-motion: reduce)').matches //check if user has reduced motion preference
+      ) {
         const rect = container.getBoundingClientRect();
         const x = event.clientX - rect.left - rect.width / 2; // center of screen is parallax origin
         const y = event.clientY - rect.top - rect.height / 2; // center of screen is parallax origin
@@ -55,10 +59,10 @@ export function useParallax() {
     };
 
     animationFrameRef.current = requestAnimationFrame(animate);
-    container?.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove);
 
     return () => {
-      container?.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mousemove', handleMouseMove);
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
       }
