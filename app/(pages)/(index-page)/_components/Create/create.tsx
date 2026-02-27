@@ -1,9 +1,22 @@
+'use client';
+
 import Image from 'next/image';
 import HeartButton from '@app/(pages)/(index-page)/_components/HeartButton/heartButton';
+import {
+  useParallax,
+  PARALLAX_SPEEDS,
+  getParallaxStyle,
+} from '@app/(pages)/_hooks/useParallax';
 
 export default function Create() {
+  const { mousePosition, containerRef } = useParallax();
+  const { bigShape, mediumShape, extraTiniTiny } = PARALLAX_SPEEDS;
+
   return (
-    <div className="relative flex flex-col gap-5 w-full md md:w-auto md:mb-32">
+    <div
+      ref={containerRef}
+      className="relative flex flex-col gap-5 w-full md:w-auto md:mb-32"
+    >
       {/* Background decorative images - hidden on mobile */}
       <Image
         src="/Images/Create/glue.svg"
@@ -28,7 +41,8 @@ export default function Create() {
           alt="Big Yellow Star"
           width={111}
           height={111}
-          className="hidden md:block absolute w-auto h-[130px] ml-[20%] -mt-[8%] transition-transform duration-300 animate-spin-10"
+          style={getParallaxStyle(mousePosition, mediumShape)}
+          className="hidden md:block absolute ml-[20%] -mt-[8%] w-auto h-[130px]"
         />
 
         {/* Frog + Yellow bar wrapper - side by side on mobile */}
@@ -92,7 +106,8 @@ export default function Create() {
           alt="Green Flower"
           width={131}
           height={131}
-          className="hidden xl:block ml-[2%] mt-auto mb-[4%] h-[131px] transition-transform duration-300 animate-spin-10"
+          className="hidden xl:block ml-[2%] mt-auto mb-[4%] h-[131px]"
+          style={getParallaxStyle(mousePosition, mediumShape)}
         />
       </div>
 
@@ -149,7 +164,8 @@ export default function Create() {
             alt="Pink Flower"
             width={111}
             height={111}
-            className="hidden md:block absolute w-auto h-[78px] -bottom-[5%] ml-[3%] transition-transform duration-300 animate-spin-10"
+            className="hidden md:block absolute w-auto h-[78px] -bottom-[5%] ml-[3%]"
+            style={getParallaxStyle(mousePosition, extraTiniTiny)}
           />
         </div>
 
@@ -162,14 +178,26 @@ export default function Create() {
             height={288}
             className="mb-auto w-full max-h-[288px] h-auto origin-bottom-right"
           />
-
-          <Image
-            src="/Images/Create/bluedonut.svg"
-            alt="Blue Flower"
-            width={111}
-            height={111}
-            className="absolute w-auto h-[200px] bottom-0 mb-[2%] ml-[20%] pt-[10%] transition-transform duration-300 animate-spin-10"
-          />
+          <div
+            className="absolute bottom-0 mb-[2%] ml-[20%] pt-[10%]"
+            // can't import getParallaxStyle here because it needs to spin at the same time
+            style={{
+              transform: `translateX(${
+                mousePosition.x / bigShape
+              }px) translateY(${mousePosition.y / bigShape}px)`,
+            }}
+          >
+            <Image
+              src="/Images/Create/bluedonut.svg"
+              alt="Blue Flower"
+              width={111}
+              height={111}
+              className="w-auto h-[200px]"
+              style={{
+                animation: 'spin 30s linear infinite',
+              }}
+            />
+          </div>
         </div>
       </div>
     </div>

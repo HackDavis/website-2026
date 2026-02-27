@@ -1,0 +1,84 @@
+import { useState, useEffect, useRef } from 'react';
+
+export const PARALLAX_SPEEDS = {
+  bigShape: 50,
+  mediumShape: 35,
+  littleShape: 25,
+  extraTiniTiny: 20,
+} as const;
+
+export function getParallaxStyle(
+  mousePosition: { x: number; y: number },
+  speed: number
+) {
+  return {
+    transform: `translateX(${mousePosition.x / speed}px) translateY(${
+      mousePosition.y / speed
+    }px)`,
+  };
+}
+
+export function useParallax() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const containerRef = useRef<HTMLDivElement>(null);
+  const targetPositionRef = useRef({ x: 0, y: 0 });
+  const currentPositionRef = useRef({ x: 0, y: 0 });
+  const velocityRef = useRef({ x: 0, y: 0 });
+  const animationFrameRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    const veloFactor = 0.01;
+    const damping = 0.83;
+
+    const animate = () => {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return; // skip animation if user prefers reduced motion
+      }
+      const xVelo =
+        (targetPositionRef.current.x - currentPositionRef.current.x) *
+        veloFactor;
+      const yVelo =
+        (targetPositionRef.current.y - currentPositionRef.current.y) *
+        veloFactor;
+
+      velocityRef.current.x += xVelo;
+      velocityRef.current.y += yVelo;
+
+      velocityRef.current.x *= damping;
+      velocityRef.current.y *= damping;
+
+      currentPositionRef.current.x += velocityRef.current.x;
+      currentPositionRef.current.y += velocityRef.current.y;
+
+      setMousePosition({
+        x: currentPositionRef.current.x,
+        y: currentPositionRef.current.y,
+      });
+
+      animationFrameRef.current = requestAnimationFrame(animate);
+    };
+
+    const handleMouseMove = (event: MouseEvent) => {
+      // md breakpoint - desktop only
+      if (container && window.innerWidth >= 768) {
+        const rect = container.getBoundingClientRect();
+        const x = event.clientX - rect.left - rect.width / 2; // center of screen is parallax origin
+        const y = event.clientY - rect.top - rect.height / 2; // center of screen is parallax origin
+        targetPositionRef.current = { x, y };
+      }
+    };
+
+    animationFrameRef.current = requestAnimationFrame(animate);
+    container?.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      container?.removeEventListener('mousemove', handleMouseMove);
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
+  }, []);
+
+  return { mousePosition, containerRef };
+}
