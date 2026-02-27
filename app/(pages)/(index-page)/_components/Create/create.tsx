@@ -180,7 +180,12 @@ export default function Create() {
           />
           <div
             className="absolute bottom-0 mb-[2%] ml-[20%] pt-[10%]"
-            style={getParallaxStyle(mousePosition, bigShape)}
+            // can't import getParallaxStyle here because it needs to spin at the same time
+            style={{
+              transform: `translateX(${
+                mousePosition.x / bigShape
+              }px) translateY(${mousePosition.y / bigShape}px)`,
+            }}
           >
             <Image
               src="/Images/Create/bluedonut.svg"

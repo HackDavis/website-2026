@@ -24,7 +24,12 @@ export default function HeroInfo() {
       >
         <div
           className="absolute -top-24 left-[27%] md:left-[30%] -z-10"
-          style={getParallaxStyle(mousePosition, extraTiniTiny)}
+          // can't import getParallaxStyle here because it needs to spin at the same time
+          style={{
+            transform: `translateX(${
+              mousePosition.x / extraTiniTiny
+            }px) translateY(${mousePosition.y / extraTiniTiny}px)`,
+          }}
         >
           <Image
             src="/Images/reghero/Green.svg"
@@ -46,7 +51,12 @@ export default function HeroInfo() {
           />
           <div
             className="absolute -z-10 top-[56%] md:top-[50%] left-[2%]"
-            style={getParallaxStyle(mousePosition, mediumShape)}
+            // can't import getParallaxStyle here because it needs to spin at the same time
+            style={{
+              transform: `translateX(${
+                mousePosition.x / mediumShape
+              }px) translateY(${mousePosition.y / mediumShape}px)`,
+            }}
           >
             <Image
               src="/Images/reghero/YellowDonut.svg"

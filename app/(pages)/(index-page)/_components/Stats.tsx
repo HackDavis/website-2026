@@ -44,7 +44,12 @@ export default function Stats() {
         {/* Top area - Cross (lime green) */}
         <div
           className="absolute md:top-[30%] md:left-[20%] md:w-[15%] md:max-w-64 sm:top-[35%] sm:left-[-15%] top-[30%] left-[-15%] w-[30%]"
-          style={getParallaxStyle(mousePosition, bigShape)}
+          // can't import getParallaxStyle here because it needs to spin at the same time
+          style={{
+            transform: `translateX(${
+              mousePosition.x / bigShape
+            }px) translateY(${mousePosition.y / bigShape}px)`,
+          }}
         >
           <Image
             src={cross_lime}
@@ -134,7 +139,12 @@ export default function Stats() {
         {/* Cross Cyan */}
         <div
           className="absolute md:top-[calc(45%+21vw)] md:right-[10%] md:w-[8vw] md:max-w-48 md:rotate-0 sm:top-[81%] sm:right-[60%] sm:w-[28%] top-[75%] right-[55%] rotate-[45deg]"
-          style={getParallaxStyle(mousePosition, littleShape)}
+          // can't import getParallaxStyle here because it needs to spin at the same time
+          style={{
+            transform: `translateX(${
+              mousePosition.x / littleShape
+            }px) translateY(${mousePosition.y / littleShape}px)`,
+          }}
         >
           <Image
             src={cross_cyan}
@@ -147,7 +157,12 @@ export default function Stats() {
         {/* Squiggly Circle Yellow */}
         <div
           className="absolute md:top-[calc(20%+20vw)] md:left-[5vw] md:w-[10vw] md:max-w-20 sm:top-[68%] sm:max-w-24 sm:w-[20%] sm:left-[5%] left-[5vw] top-[65%]"
-          style={getParallaxStyle(mousePosition, extraTiniTiny)}
+          // can't import getParallaxStyle here because it needs to spin at the same time
+          style={{
+            transform: `translateX(${
+              mousePosition.x / extraTiniTiny
+            }px) translateY(${mousePosition.y / extraTiniTiny}px)`,
+          }}
         >
           <Image
             src={squiggly_circle_yellow}
