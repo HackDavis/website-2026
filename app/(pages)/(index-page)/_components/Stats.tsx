@@ -18,7 +18,7 @@ import time_count from '@public/home/stats/time_count.svg';
 import squiggly_circle_pink from '@public/home/stats/squiggly_circle_pink.svg';
 import squiggly_circle_yellow from '@public/home/stats/squiggly_circle_yellow.svg';
 import background_gradient from '@public/home/stats/background_gradient.svg';
-// HErE
+
 export default function Stats() {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -71,7 +71,6 @@ export default function Stats() {
         const x = event.clientX - rect.left;
         const y = event.clientY - rect.top;
         targetPositionRef.current = { x, y };
-        //setMousePosition({ x, y });
       }
     };
 

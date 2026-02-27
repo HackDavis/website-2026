@@ -7,20 +7,6 @@ import HeartButton from '../HeartButton/heartButton';
 import WordCycle from '../wordCycle/wordCycle';
 import { useEffect, useRef, useState } from 'react';
 
-/**
- * NOTES:
- * - Need full image of green flower?
- * - velofactor ~ how fast it moves
- * - damping ~ how much it slows down over time
- * - note if dont want ugly spring
- *    - if want inc velo, decrease damping
- *    - if want dec velo, increase damping
- * - i like among us
- * - if want to add more movement, decrease pixels dividing by in transform
- */
-
-//HERE
-
 export default function HeroInfo() {
   const bigShape = 50;
   const mediumShape = 35;
@@ -71,7 +57,6 @@ export default function HeroInfo() {
         const x = event.clientX - rect.left;
         const y = event.clientY - rect.top;
         targetPositionRef.current = { x, y };
-        //setMousePosition({ x, y });
       }
     };
 

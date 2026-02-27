@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import HeartButton from '@app/(pages)/(index-page)/_components/HeartButton/heartButton';
 import { useState, useEffect, useRef } from 'react';
-// HERE
+
 export default function Create() {
   const bigShape = 50;
   const mediumShape = 35;
@@ -53,7 +53,6 @@ export default function Create() {
         const x = event.clientX - rect.left;
         const y = event.clientY - rect.top;
         targetPositionRef.current = { x, y };
-        //setMousePosition({ x, y });
       }
     };
 
