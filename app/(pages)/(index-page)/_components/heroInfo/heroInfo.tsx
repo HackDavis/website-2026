@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import HeartButton from '../HeartButton/heartButton';
 import WordCycle from '../wordCycle/wordCycle';
-import { useParallax, PARALLAX_SPEEDS } from '@app/(pages)/_hooks/useParallax';
+import { useParallax, PARALLAX_SPEEDS, getParallaxStyle } from '@app/(pages)/_hooks/useParallax';
 
 export default function HeroInfo() {
   const { mousePosition, containerRef } = useParallax();
@@ -20,11 +20,7 @@ export default function HeroInfo() {
       >
         <div
           className="absolute -top-24 left-[27%] md:left-[30%] -z-10"
-          style={{
-            transform: `translateX(${
-              mousePosition.x / extraTiniTiny
-            }px) translateY(${mousePosition.y / extraTiniTiny}px)`,
-          }}
+          style={getParallaxStyle(mousePosition, extraTiniTiny)}
         >
           <Image
             src="/Images/reghero/Green.svg"
@@ -42,19 +38,11 @@ export default function HeroInfo() {
             width={156.5}
             height={221.27}
             className="absolute top-29 left-27 -z-10 hidden md:block"
-            style={{
-              transform: `translateX(${
-                mousePosition.x / bigShape
-              }px) translateY(${mousePosition.y / bigShape}px)`,
-            }}
+            style={getParallaxStyle(mousePosition, bigShape)}
           />
           <div
             className="absolute -z-10 top-[56%] md:top-[50%] left-[2%]"
-            style={{
-              transform: `translateX(${
-                mousePosition.x / mediumShape
-              }px) translateY(${mousePosition.y / mediumShape}px)`,
-            }}
+            style={getParallaxStyle(mousePosition, mediumShape)}
           >
             <Image
               src="/Images/reghero/YellowDonut.svg"
@@ -71,11 +59,7 @@ export default function HeroInfo() {
             width={100}
             height={100}
             className="absolute order-2 md:order-none top-[85%] -left-[5%] md:left-[35%] justify-center -z-10 object-contain"
-            style={{
-              transform: `translateX(${
-                mousePosition.x / littleShape
-              }px) translateY(${mousePosition.y / littleShape}px)`,
-            }}
+            style={getParallaxStyle(mousePosition, littleShape)}
           />
         </div>
         {/* animals on couch */}
@@ -114,7 +98,7 @@ export default function HeroInfo() {
               </div>
 
               <div className="flex flex-row items-start gap-[12px] break-625:flex-col break-625:items-end break-625:gap-[28px] sm:flex-row sm:items-center">
-                {/* <Link
+                <Link
                   href="https://apply.hackdavis.io/"
                   target="_blank"
                   className="
@@ -137,7 +121,7 @@ export default function HeroInfo() {
                   "
                 >
                   Register Now
-                </Link> */}
+                </Link>
 
                 <div className="flex h-[40px] w-[138px] flex-shrink-0 items-center rounded-[100px] bg-black/15 text-center text-[18px] font-bold tracking-[0.4px] text-black break-625:h-[50px] break-625:w-[170px] break-625:py-0 break-625:text-[20px]">
                   <HeartButton

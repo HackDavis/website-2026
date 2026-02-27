@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { useState, useEffect } from 'react';
-import { useParallax, PARALLAX_SPEEDS } from '@app/(pages)/_hooks/useParallax';
+import { useParallax, PARALLAX_SPEEDS, getParallaxStyle } from '@app/(pages)/_hooks/useParallax';
 
 // Helper to scale all numbers in the path
 function scalePath(path: string, scale: number) {
@@ -118,11 +118,7 @@ export default function TenYears() {
           width={280}
           height={429}
           className="h-[240px] sm:h-[500px] xl:h-[895px] w-auto"
-          style={{
-            transform: `translateX(${
-              mousePosition.x / littleShape
-            }px) translateY(${mousePosition.y / littleShape}px)`,
-          }}
+          style={getParallaxStyle(mousePosition, littleShape)}
         />
 
         {mascots.map((mascot, index) => (
@@ -149,11 +145,7 @@ export default function TenYears() {
         width={110}
         height={144}
         className="absolute right-[20%] sm:right-[2%] -bottom-[10%] sm:bottom-[10%] md:bottom-[20%] w-[70px] xl:w-[120px] h-auto ml-auto sm:-mr-4"
-        style={{
-          transform: `translateX(${
-            mousePosition.x / littleShape
-          }px) translateY(${mousePosition.y / littleShape}px)`,
-        }}
+        style={getParallaxStyle(mousePosition, littleShape)}
       />
     </div>
   );

@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import HeartButton from '@app/(pages)/(index-page)/_components/HeartButton/heartButton';
-import { useParallax, PARALLAX_SPEEDS } from '@app/(pages)/_hooks/useParallax';
+import { useParallax, PARALLAX_SPEEDS, getParallaxStyle } from '@app/(pages)/_hooks/useParallax';
 
 export default function Create() {
   const { mousePosition, containerRef } = useParallax();
@@ -37,11 +37,7 @@ export default function Create() {
           alt="Big Yellow Star"
           width={111}
           height={111}
-          style={{
-            transform: `translateX(${
-              mousePosition.x / mediumShape
-            }px) translateY(${mousePosition.y / mediumShape}px)`,
-          }}
+          style={getParallaxStyle(mousePosition, mediumShape)}
           className="hidden md:block absolute ml-[20%] -mt-[8%] w-auto h-[130px]"
         />
 
@@ -107,11 +103,7 @@ export default function Create() {
           width={131}
           height={131}
           className="hidden xl:block ml-[2%] mt-auto mb-[4%] h-[131px]"
-          style={{
-            transform: `translateX(${
-              mousePosition.x / mediumShape
-            }px) translateY(${mousePosition.y / mediumShape}px)`,
-          }}
+          style={getParallaxStyle(mousePosition, mediumShape)}
         />
       </div>
 
@@ -169,11 +161,7 @@ export default function Create() {
             width={111}
             height={111}
             className="hidden md:block absolute w-auto h-[78px] -bottom-[5%] ml-[3%]"
-            style={{
-              transform: `translateX(${
-                mousePosition.x / extraTiniTiny
-              }px) translateY(${mousePosition.y / extraTiniTiny}px)`,
-            }}
+            style={getParallaxStyle(mousePosition, extraTiniTiny)}
           />
         </div>
 
@@ -188,11 +176,7 @@ export default function Create() {
           />
           <div
             className="absolute bottom-0 mb-[2%] ml-[20%] pt-[10%]"
-            style={{
-              transform: `translateX(${
-                mousePosition.x / bigShape
-              }px) translateY(${mousePosition.y / bigShape}px)`,
-            }}
+            style={getParallaxStyle(mousePosition, bigShape)}
           >
             <Image
               src="/Images/Create/bluedonut.svg"

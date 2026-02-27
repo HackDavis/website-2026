@@ -7,6 +7,17 @@ export const PARALLAX_SPEEDS = {
   extraTiniTiny: 20,
 } as const;
 
+export function getParallaxStyle(
+  mousePosition: { x: number; y: number },
+  speed: number
+) {
+  return {
+    transform: `translateX(${mousePosition.x / speed}px) translateY(${
+      mousePosition.y / speed
+    }px)`,
+  };
+}
+
 export function useParallax() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);
@@ -21,6 +32,9 @@ export function useParallax() {
     const damping = 0.83;
 
     const animate = () => {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return; // skip animation if user prefers reduced motion
+      }
       const xVelo =
         (targetPositionRef.current.x - currentPositionRef.current.x) *
         veloFactor;
@@ -46,11 +60,8 @@ export function useParallax() {
     };
 
     const handleMouseMove = (event: MouseEvent) => {
-      if (
-        container &&
-        window.innerWidth > 425 &&
-        !window.matchMedia('(prefers-reduced-motion: reduce)').matches //check if user has reduced motion preference
-      ) {
+      // md breakpoint - desktop only
+      if (container && window.innerWidth >= 768) {
         const rect = container.getBoundingClientRect();
         const x = event.clientX - rect.left - rect.width / 2; // center of screen is parallax origin
         const y = event.clientY - rect.top - rect.height / 2; // center of screen is parallax origin
@@ -59,10 +70,10 @@ export function useParallax() {
     };
 
     animationFrameRef.current = requestAnimationFrame(animate);
-    window.addEventListener('mousemove', handleMouseMove);
+    container?.addEventListener('mousemove', handleMouseMove);
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      container?.removeEventListener('mousemove', handleMouseMove);
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
       }
