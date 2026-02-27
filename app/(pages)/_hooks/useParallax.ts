@@ -41,8 +41,8 @@ export function useParallax() {
     const handleMouseMove = (event: MouseEvent) => {
       if (container && window.innerWidth > 425) {
         const rect = container.getBoundingClientRect();
-        const x = event.clientX - rect.left;
-        const y = event.clientY - rect.top;
+        const x = event.clientX - rect.left - rect.width / 2; // center of screen is parallax origin
+        const y = event.clientY - rect.top - rect.height / 2; // center of screen is parallax origin
         targetPositionRef.current = { x, y };
       }
     };
