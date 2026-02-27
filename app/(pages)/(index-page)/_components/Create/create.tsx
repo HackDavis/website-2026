@@ -13,7 +13,7 @@ export default function Create() {
   return (
     <div
       ref={containerRef}
-      className="relative flex flex-col gap-5 w-full md md:w-auto md:mb-32"
+      className="relative flex flex-col gap-5 w-full md:w-auto md:mb-32"
     >
       {/* Background decorative images - hidden on mobile */}
       <Image
