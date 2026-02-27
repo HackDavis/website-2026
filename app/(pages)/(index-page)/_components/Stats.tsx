@@ -18,16 +18,13 @@ import time_count from '@public/home/stats/time_count.svg';
 import squiggly_circle_pink from '@public/home/stats/squiggly_circle_pink.svg';
 import squiggly_circle_yellow from '@public/home/stats/squiggly_circle_yellow.svg';
 import background_gradient from '@public/home/stats/background_gradient.svg';
-import { useParallax } from '@app/(pages)/_hooks/useParallax';
+import { useParallax, PARALLAX_SPEEDS } from '@app/(pages)/_hooks/useParallax';
 
 export default function Stats() {
   const [isHovered, setIsHovered] = useState(false);
 
   const { mousePosition, containerRef } = useParallax();
-  const bigShape = 50;
-  const mediumShape = 35;
-  const littleShape = 25;
-  const extraTiniTiny = 20;
+  const { bigShape, mediumShape, littleShape, extraTiniTiny } = PARALLAX_SPEEDS;
 
   return (
     <div
@@ -41,16 +38,19 @@ export default function Stats() {
         </div>
 
         {/* Top area - Cross (lime green) */}
-        <div className="absolute md:top-[30%] md:left-[20%] md:w-[15%] md:max-w-64 sm:top-[35%] sm:left-[-15%] top-[30%] left-[-15%] w-[30%]">
+        <div
+          className="absolute md:top-[30%] md:left-[20%] md:w-[15%] md:max-w-64 sm:top-[35%] sm:left-[-15%] top-[30%] left-[-15%] w-[30%]"
+          style={{
+            transform: `translateX(${
+              mousePosition.x / bigShape
+            }px) translateY(${mousePosition.y / bigShape}px)`,
+          }}
+        >
           <Image
             src={cross_lime}
             alt="Cross"
             className="w-full h-auto"
-            style={{
-              transform: `translateX(${
-                mousePosition.x / bigShape
-              }px) translateY(${mousePosition.y / bigShape}px)`,
-            }}
+            style={{ animation: 'spin 30s linear infinite' }}
           />
         </div>
 
@@ -144,30 +144,36 @@ export default function Stats() {
         </div>
 
         {/* Cross Cyan */}
-        <div className="absolute md:top-[calc(45%+21vw)] md:right-[10%] md:w-[8vw] md:max-w-48 md:rotate-0 sm:top-[81%] sm:right-[60%] sm:w-[28%] top-[75%] right-[55%] rotate-[45deg]">
+        <div
+          className="absolute md:top-[calc(45%+21vw)] md:right-[10%] md:w-[8vw] md:max-w-48 md:rotate-0 sm:top-[81%] sm:right-[60%] sm:w-[28%] top-[75%] right-[55%] rotate-[45deg]"
+          style={{
+            transform: `translateX(${
+              mousePosition.x / littleShape
+            }px) translateY(${mousePosition.y / littleShape}px)`,
+          }}
+        >
           <Image
             src={cross_cyan}
             alt="Cross"
             className="w-full h-auto"
-            style={{
-              transform: `translateX(${
-                mousePosition.x / littleShape
-              }px) translateY(${mousePosition.y / littleShape}px)`,
-            }}
+            style={{ animation: 'spin 30s linear infinite reverse' }}
           />
         </div>
 
         {/* Squiggly Circle Yellow */}
-        <div className="absolute md:top-[calc(20%+20vw)] md:left-[5vw] md:w-[10vw] md:max-w-20 sm:top-[68%] sm:max-w-24 sm:w-[20%] sm:left-[5%] left-[5vw] top-[65%]">
+        <div
+          className="absolute md:top-[calc(20%+20vw)] md:left-[5vw] md:w-[10vw] md:max-w-20 sm:top-[68%] sm:max-w-24 sm:w-[20%] sm:left-[5%] left-[5vw] top-[65%]"
+          style={{
+            transform: `translateX(${
+              mousePosition.x / extraTiniTiny
+            }px) translateY(${mousePosition.y / extraTiniTiny}px)`,
+          }}
+        >
           <Image
             src={squiggly_circle_yellow}
             alt="Circle"
             className="w-full h-auto"
-            style={{
-              transform: `translateX(${
-                mousePosition.x / extraTiniTiny
-              }px) translateY(${mousePosition.y / extraTiniTiny}px)`,
-            }}
+            style={{ animation: 'spin 25s linear infinite reverse' }}
           />
         </div>
 

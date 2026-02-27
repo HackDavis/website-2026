@@ -2,13 +2,11 @@
 
 import Image from 'next/image';
 import HeartButton from '@app/(pages)/(index-page)/_components/HeartButton/heartButton';
-import { useParallax } from '@app/(pages)/_hooks/useParallax';
+import { useParallax, PARALLAX_SPEEDS } from '@app/(pages)/_hooks/useParallax';
 
 export default function Create() {
   const { mousePosition, containerRef } = useParallax();
-  const bigShape = 50;
-  const mediumShape = 35;
-  const extraTiniTiny = 20;
+  const { bigShape, mediumShape, extraTiniTiny } = PARALLAX_SPEEDS;
 
   return (
     <div
@@ -39,12 +37,12 @@ export default function Create() {
           alt="Big Yellow Star"
           width={111}
           height={111}
-          className="hidden md:block absolute w-auto h-[130px] ml-[20%] -mt-[8%] animate-spin-10"
           style={{
             transform: `translateX(${
               mousePosition.x / mediumShape
             }px) translateY(${mousePosition.y / mediumShape}px)`,
           }}
+          className="hidden md:block absolute ml-[20%] -mt-[8%] w-auto h-[130px]"
         />
 
         {/* Frog + Yellow bar wrapper - side by side on mobile */}
@@ -108,7 +106,7 @@ export default function Create() {
           alt="Green Flower"
           width={131}
           height={131}
-          className="hidden xl:block ml-[2%] mt-auto mb-[4%] h-[131px] animate-spin-10"
+          className="hidden xl:block ml-[2%] mt-auto mb-[4%] h-[131px]"
           style={{
             transform: `translateX(${
               mousePosition.x / mediumShape
@@ -170,7 +168,7 @@ export default function Create() {
             alt="Pink Flower"
             width={111}
             height={111}
-            className="hidden md:block absolute w-auto h-[78px] -bottom-[5%] ml-[3%] animate-spin-10"
+            className="hidden md:block absolute w-auto h-[78px] -bottom-[5%] ml-[3%]"
             style={{
               transform: `translateX(${
                 mousePosition.x / extraTiniTiny
@@ -188,19 +186,25 @@ export default function Create() {
             height={288}
             className="mb-auto w-full max-h-[288px] h-auto origin-bottom-right"
           />
-
-          <Image
-            src="/Images/Create/bluedonut.svg"
-            alt="Blue Flower"
-            width={111}
-            height={111}
-            className="absolute w-auto h-[200px] bottom-0 mb-[2%] ml-[20%] pt-[10%] animate-spin-10"
+          <div
+            className="absolute bottom-0 mb-[2%] ml-[20%] pt-[10%]"
             style={{
               transform: `translateX(${
                 mousePosition.x / bigShape
               }px) translateY(${mousePosition.y / bigShape}px)`,
             }}
-          />
+          >
+            <Image
+              src="/Images/Create/bluedonut.svg"
+              alt="Blue Flower"
+              width={111}
+              height={111}
+              className="w-auto h-[200px]"
+              style={{
+                animation: 'spin 30s linear infinite',
+              }}
+            />
+          </div>
         </div>
       </div>
     </div>

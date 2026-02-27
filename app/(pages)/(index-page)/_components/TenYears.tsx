@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { useState, useEffect } from 'react';
-import { useParallax } from '@app/(pages)/_hooks/useParallax';
+import { useParallax, PARALLAX_SPEEDS } from '@app/(pages)/_hooks/useParallax';
 
 // Helper to scale all numbers in the path
 function scalePath(path: string, scale: number) {
@@ -51,9 +51,9 @@ function FlyingMascot({
 export default function TenYears() {
   const waveWrapperRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(1);
-  const { mousePosition, containerRef } = useParallax();
 
-  const littleShape = 25;
+  const { mousePosition, containerRef } = useParallax();
+  const { littleShape } = PARALLAX_SPEEDS;
 
   // track scroll progress
   const { scrollYProgress } = useScroll({

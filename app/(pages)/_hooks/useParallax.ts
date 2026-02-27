@@ -1,5 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
 
+export const PARALLAX_SPEEDS = {
+  bigShape: 50,
+  mediumShape: 35,
+  littleShape: 25,
+  extraTiniTiny: 20,
+} as const;
+
 export function useParallax() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const containerRef = useRef<HTMLDivElement>(null);

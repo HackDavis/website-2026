@@ -5,15 +5,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import HeartButton from '../HeartButton/heartButton';
 import WordCycle from '../wordCycle/wordCycle';
-import { useParallax } from '@app/(pages)/_hooks/useParallax';
+import { useParallax, PARALLAX_SPEEDS } from '@app/(pages)/_hooks/useParallax';
 
 export default function HeroInfo() {
   const { mousePosition, containerRef } = useParallax();
-
-  const bigShape = 50;
-  const mediumShape = 35;
-  const littleShape = 25;
-  const extraTiniTiny = 20;
+  const { bigShape, mediumShape, littleShape, extraTiniTiny } = PARALLAX_SPEEDS;
 
   return (
     <>
@@ -22,18 +18,21 @@ export default function HeroInfo() {
         ref={containerRef}
         className="flex flex-col pl-[9%] items-center -pl-5 p-5 w-full gap-6 md:flex-row md:items-stretch md:pr-[13%]"
       >
-        <div className="absolute -top-24 left-[27%] md:left-[30%] -z-10">
+        <div
+          className="absolute -top-24 left-[27%] md:left-[30%] -z-10"
+          style={{
+            transform: `translateX(${
+              mousePosition.x / extraTiniTiny
+            }px) translateY(${mousePosition.y / extraTiniTiny}px)`,
+          }}
+        >
           <Image
             src="/Images/reghero/Green.svg"
-            alt="Animals on couch"
+            alt="green flower"
             width={300}
             height={300}
             className="flex flex-row justify-center object-contain w-[40%] md:h-full md:w-full"
-            style={{
-              transform: `translateX(${
-                mousePosition.x / extraTiniTiny
-              }px) translateY(${mousePosition.y / extraTiniTiny}px)`,
-            }}
+            style={{ animation: 'spin 30s linear infinite' }}
           />
         </div>
         <div>
@@ -49,24 +48,29 @@ export default function HeroInfo() {
               }px) translateY(${mousePosition.y / bigShape}px)`,
             }}
           />
-          <Image
-            src="/Images/reghero/YellowDonut.svg"
-            alt="Animals on couch"
-            width={100}
-            height={100}
-            className="absolute -z-10 top-[56%] md:top-[50%] left-[2%] justify-center object-contain animate-slow-spin"
+          <div
+            className="absolute -z-10 top-[56%] md:top-[50%] left-[2%]"
             style={{
               transform: `translateX(${
                 mousePosition.x / mediumShape
               }px) translateY(${mousePosition.y / mediumShape}px)`,
             }}
-          />
+          >
+            <Image
+              src="/Images/reghero/YellowDonut.svg"
+              alt="yellow donut"
+              width={100}
+              height={100}
+              className="justify-center object-contain"
+              style={{ animation: 'spin 25s linear infinite reverse' }}
+            />
+          </div>
           <Image
             src="/Images/reghero/BlueThing.svg"
-            alt="Animals on couch"
+            alt="blue shape"
             width={100}
             height={100}
-            className="absolute order-2 md:order-none top-[85%] -left-[5%] md:left-[35%] justify-center -z-10 object-contain animate-slow-spin"
+            className="absolute order-2 md:order-none top-[85%] -left-[5%] md:left-[35%] justify-center -z-10 object-contain"
             style={{
               transform: `translateX(${
                 mousePosition.x / littleShape
