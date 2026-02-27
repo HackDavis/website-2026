@@ -127,7 +127,9 @@ export default function Stats() {
         </Link>
 
         {/* Circle of Circles Pink */}
-        <div className="absolute md:top-[53%] right-[0%] md:w-[8vw] md:max-w-20 sm:top-[57%] sm:max-w-20 max-w-16 w-[20vw] top-[50%]">
+        {/* <div className="absolute md:top-[53%] right-[0%] md:w-[8vw] md:max-w-20 sm:top-[57%] sm:max-w-20 max-w-16 w-[20vw] top-[50%]"></div> */}
+
+        <div className="absolute top-[50%] md:top-[45%] sm:top-[57%] right-[-10%] md:right-[-5%] md:right-[-4%] md:max-w-36 sm:max-w-36 max-w-32 w-[28vw] md:w-[18vw]">
           <Image
             src={circle_of_circles_pink}
             alt="Circle of Circles"
