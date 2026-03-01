@@ -18,12 +18,23 @@ import time_count from '@public/home/stats/time_count.svg';
 import squiggly_circle_pink from '@public/home/stats/squiggly_circle_pink.svg';
 import squiggly_circle_yellow from '@public/home/stats/squiggly_circle_yellow.svg';
 import background_gradient from '@public/home/stats/background_gradient.svg';
+import {
+  useParallax,
+  PARALLAX_SPEEDS,
+  getParallaxStyle,
+} from '@app/(pages)/_hooks/useParallax';
 
 export default function Stats() {
   const [isHovered, setIsHovered] = useState(false);
 
+  const { mousePosition, containerRef } = useParallax();
+  const { bigShape, mediumShape, littleShape, extraTiniTiny } = PARALLAX_SPEEDS;
+
   return (
-    <div className="stats-section relative w-full h-[1200px] sm:h-[1400px] md:max-h-screen md:h-screen overflow-x-clip ">
+    <div
+      ref={containerRef}
+      className="stats-section relative w-full h-[1200px] sm:h-[1400px] md:max-h-screen md:h-screen overflow-x-clip "
+    >
       <div className="relative w-full h-full">
         {/* Top Left - Scissors */}
         <div className="absolute md:left-[-10%] md:top-[calc(25%-21vw)] w-[38%] max-w-92 hidden md:block">
@@ -31,8 +42,21 @@ export default function Stats() {
         </div>
 
         {/* Top area - Cross (lime green) */}
-        <div className="absolute md:top-[30%] md:left-[20%] md:w-[15%] md:max-w-64 sm:top-[35%] sm:left-[-15%] top-[30%] left-[-15%] w-[30%]">
-          <Image src={cross_lime} alt="Cross" className="w-full h-auto" />
+        <div
+          className="absolute md:top-[30%] md:left-[20%] md:w-[15%] md:max-w-64 sm:top-[35%] sm:left-[-15%] top-[30%] left-[-15%] w-[30%]"
+          // can't import getParallaxStyle here because it needs to spin at the same time
+          style={{
+            transform: `translateX(${
+              mousePosition.x / bigShape
+            }px) translateY(${mousePosition.y / bigShape}px)`,
+          }}
+        >
+          <Image
+            src={cross_lime}
+            alt="Cross"
+            className="w-full h-auto"
+            style={{ animation: 'spin 30s linear infinite' }}
+          />
         </div>
 
         {/* Circle of Circles (cyan) */}
@@ -41,12 +65,18 @@ export default function Stats() {
             src={circle_of_circles_cyan}
             alt="Circle of Circles"
             className="w-full h-auto"
+            style={getParallaxStyle(mousePosition, mediumShape)}
           />
         </div>
 
         {/* Green Flower Thing */}
         <div className="absolute md:top-[15%] md:left-[89%] md:w-[10%] md:max-w-32 sm:right-[-7%] sm:top-[13%] right-[-7%] top-[9%]">
-          <Image src={flower_thing} alt="Flower" className="w-full h-auto" />
+          <Image
+            src={flower_thing}
+            alt="Flower"
+            className="w-full h-auto"
+            style={getParallaxStyle(mousePosition, littleShape)}
+          />
         </div>
 
         {/* Projects w-[16%] md:w-[24%] lg: xs:max-w-24  md:max-w-48 lg:*/}
@@ -97,25 +127,50 @@ export default function Stats() {
         </Link>
 
         {/* Circle of Circles Pink */}
-        <div className="absolute md:top-[53%] right-[0%] md:w-[8vw] md:max-w-20 sm:top-[57%] sm:max-w-20 max-w-16 w-[20vw] top-[50%]">
+        {/* <div className="absolute md:top-[53%] right-[0%] md:w-[8vw] md:max-w-20 sm:top-[57%] sm:max-w-20 max-w-16 w-[20vw] top-[50%]"></div> */}
+
+        <div className="absolute top-[50%] md:top-[45%] sm:top-[57%] right-[-10%] md:right-[-5%] md:right-[-4%] md:max-w-36 sm:max-w-36 max-w-32 w-[28vw] md:w-[18vw]">
           <Image
             src={circle_of_circles_pink}
             alt="Circle of Circles"
             className="w-full h-auto"
+            style={getParallaxStyle(mousePosition, bigShape)}
           />
         </div>
 
         {/* Cross Cyan */}
-        <div className="absolute md:top-[calc(45%+21vw)] md:right-[10%] md:w-[8vw] md:max-w-48 md:rotate-0 sm:top-[81%] sm:right-[60%] sm:w-[28%] top-[75%] right-[55%] rotate-[45deg]">
-          <Image src={cross_cyan} alt="Cross" className="w-full h-auto" />
+        <div
+          className="absolute md:top-[calc(45%+21vw)] md:right-[10%] md:w-[8vw] md:max-w-48 md:rotate-0 sm:top-[81%] sm:right-[60%] sm:w-[28%] top-[75%] right-[55%] rotate-[45deg]"
+          // can't import getParallaxStyle here because it needs to spin at the same time
+          style={{
+            transform: `translateX(${
+              mousePosition.x / littleShape
+            }px) translateY(${mousePosition.y / littleShape}px)`,
+          }}
+        >
+          <Image
+            src={cross_cyan}
+            alt="Cross"
+            className="w-full h-auto"
+            style={{ animation: 'spin 30s linear infinite reverse' }}
+          />
         </div>
 
         {/* Squiggly Circle Yellow */}
-        <div className="absolute md:top-[calc(20%+20vw)] md:left-[5vw] md:w-[10vw] md:max-w-20 sm:top-[68%] sm:max-w-24 sm:w-[20%] sm:left-[5%] left-[5vw] top-[65%]">
+        <div
+          className="absolute md:top-[calc(20%+20vw)] md:left-[5vw] md:w-[10vw] md:max-w-20 sm:top-[68%] sm:max-w-24 sm:w-[20%] sm:left-[5%] left-[5vw] top-[65%]"
+          // can't import getParallaxStyle here because it needs to spin at the same time
+          style={{
+            transform: `translateX(${
+              mousePosition.x / extraTiniTiny
+            }px) translateY(${mousePosition.y / extraTiniTiny}px)`,
+          }}
+        >
           <Image
             src={squiggly_circle_yellow}
             alt="Circle"
             className="w-full h-auto"
+            style={{ animation: 'spin 25s linear infinite reverse' }}
           />
         </div>
 
@@ -125,6 +180,7 @@ export default function Stats() {
             src={squiggly_circle_pink}
             alt="Circle"
             className="w-full h-auto"
+            style={getParallaxStyle(mousePosition, littleShape)}
           />
         </div>
 
