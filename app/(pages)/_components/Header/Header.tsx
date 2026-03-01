@@ -6,25 +6,23 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 
 type SectionId = 'home' | 'faq' | 'sponsors' | 'about';
+type AboutTheme = 'light' | 'dark' | 'teal';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
 
-  const isAboutPage = pathname === '/about-us';
+  const isAboutPage = pathname.startsWith('/about-us');
   const isHomePage = pathname === '/';
 
-  const linkTextClass = isAboutPage
-    ? 'text-white'
-    : 'text-[var(--text-dark-blue)]';
+  const [aboutTheme, setAboutTheme] = useState<AboutTheme>('dark');
 
   const [activeSection, setActiveSection] = useState<SectionId>('home');
 
   const lastUrlRef = useRef<string>('');
   const lastSectionRef = useRef<SectionId>('home');
   const rafRef = useRef<number | null>(null);
-
   const isNavigatingRef = useRef(false);
 
   useEffect(() => {
@@ -50,12 +48,104 @@ export default function Header() {
     );
   }, [isMenuOpen]);
 
+  useEffect(() => {
+    if (!isAboutPage) return;
+
+    const headerOffset = 120;
+
+    const getThemeFromEl = (el: Element): AboutTheme | null => {
+      const t = el.getAttribute('data-header-theme');
+      if (t === 'light' || t === 'dark' || t === 'teal') return t;
+      return null;
+    };
+
+    const themedSections = Array.from(
+      document.querySelectorAll('[data-header-theme]')
+    ) as HTMLElement[];
+
+    if (themedSections.length === 0) {
+      setAboutTheme('dark');
+      return;
+    }
+
+    const computeThemeFromScroll = () => {
+      const scored = themedSections.map((el) => {
+        const top = el.getBoundingClientRect().top;
+        return { el, top, dist: Math.abs(top - headerOffset) };
+      });
+
+      const passed = scored
+        .filter((s) => s.top <= headerOffset + 1)
+        .sort((a, b) => b.top - a.top);
+
+      const bestEl = (passed[0] ?? scored.sort((a, b) => a.dist - b.dist)[0])
+        ?.el;
+
+      if (!bestEl) return;
+
+      const nextTheme = getThemeFromEl(bestEl);
+      if (nextTheme) setAboutTheme(nextTheme);
+    };
+
+    computeThemeFromScroll();
+
+    const onScroll = () => computeThemeFromScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    const observer = new IntersectionObserver(() => computeThemeFromScroll(), {
+      root: null,
+      threshold: [0, 0.01, 0.1],
+    });
+
+    themedSections.forEach((el) => observer.observe(el));
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, [isAboutPage]);
+
+  const linkTextClass = useMemo(() => {
+    if (isHomePage) return 'text-[var(--text-dark-blue)]';
+
+    if (isAboutPage) {
+      if (aboutTheme === 'light') return 'text-[var(--text-dark-blue)]';
+      if (aboutTheme === 'teal') return 'text-[#46D8E9]';
+      return 'text-white'; // dark
+    }
+
+    return 'text-white';
+  }, [isHomePage, isAboutPage, aboutTheme]);
+
   const desktopNavPillClass = useMemo(() => {
     if (isHomePage) return 'header-navbar';
-    if (isAboutPage)
-      return 'glass-pill bg-[#005271]/45 backdrop-blur-md backdrop-saturate-150 shadow-md';
+
+    if (isAboutPage) {
+      if (aboutTheme === 'light') {
+        return 'glass-pill bg-[#005271]/20 border border-[#005271]/30 backdrop-blur-md backdrop-saturate-150 shadow-md';
+      }
+      if (aboutTheme === 'teal') {
+        return 'glass-pill bg-[#005271]/70 backdrop-blur-md backdrop-saturate-150 shadow-md';
+      }
+      return 'glass-pill bg-black/30 backdrop-blur-md backdrop-saturate-150 shadow-md';
+    }
+
     return 'glass-pill';
-  }, [isHomePage, isAboutPage]);
+  }, [isHomePage, isAboutPage, aboutTheme]);
+
+  const mobileHamburgerColorClass = useMemo(() => {
+    if (isMenuOpen) return 'text-white';
+
+    if (isHomePage) return 'text-[#005271]';
+
+    if (isAboutPage) {
+      if (aboutTheme === 'light') return 'text-[var(--text-dark-blue)]';
+      if (aboutTheme === 'teal') return 'text-[#46D8E9]';
+      return 'text-white';
+    }
+
+    return 'text-white';
+  }, [isMenuOpen, isHomePage, isAboutPage, aboutTheme]);
 
   const goToSection = (id: 'home' | 'faq' | 'sponsors') => {
     if (pathname !== '/') {
@@ -77,7 +167,7 @@ export default function Header() {
   };
 
   useEffect(() => {
-    if (pathname === '/about-us') {
+    if (isAboutPage) {
       setActiveSection('about');
       lastSectionRef.current = 'about';
       return;
@@ -105,7 +195,6 @@ export default function Header() {
 
     const setFromScrollPosition = () => {
       if (isNavigatingRef.current) return;
-
       if (sections.length === 0) return;
 
       const scored = sections.map((s) => {
@@ -118,7 +207,6 @@ export default function Header() {
         .sort((a, b) => b.top - a.top);
 
       const best = (passed[0] ?? scored.sort((a, b) => a.dist - b.dist)[0])?.id;
-
       if (!best) return;
 
       if (lastSectionRef.current !== best) {
@@ -164,7 +252,7 @@ export default function Header() {
         rafRef.current = null;
       }
     };
-  }, [pathname]);
+  }, [pathname, isAboutPage]);
 
   const handleMobileNavClick =
     (href: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
@@ -217,13 +305,7 @@ export default function Header() {
         type="button"
         aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
         onClick={() => setIsMenuOpen((open) => !open)}
-        className={`absolute right-[5vw] top-[5vw] block md:hidden z-[60] mr-[7vw] mt-[1vw] h-8 w-8 pointer-events-auto transition-colors duration-300 ${
-          isMenuOpen
-            ? 'text-white'
-            : isHomePage
-            ? 'text-[#005271]'
-            : 'text-white'
-        }`}
+        className={`absolute right-[5vw] top-[5vw] block md:hidden z-[60] mr-[7vw] mt-[1vw] h-8 w-8 pointer-events-auto transition-colors duration-300 ${mobileHamburgerColorClass}`}
       >
         <span
           className={`absolute left-0 top-1/2 h-[3px] w-full bg-current transform transition-all duration-300 ease-in-out ${

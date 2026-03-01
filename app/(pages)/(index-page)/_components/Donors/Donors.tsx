@@ -27,13 +27,13 @@ function DonorRow({ rowNames, rowNum }: { rowNames: string[]; rowNum: 1 | 2 }) {
 export default function Donors() {
   const row1_names = [
     'Haylie Tan',
-    'Anonymous',
     'Michelle Yeoh',
     'Sandeep Reehal',
     'Afifah Hadi',
     'Kelly Tran',
     'Alex Marasigan',
     'Sidney Heng',
+    'Jack Zheng',
     'Ravi Surinder Singh Sandhu',
     'Roshan Pandey',
     'Sathiyaseelan Kandiah',
