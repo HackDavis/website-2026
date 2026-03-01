@@ -17,7 +17,6 @@ export default function HeroInfo() {
 
   return (
     <div
-      id="home"
       ref={containerRef}
       className="flex flex-col pl-[9%] items-center -pl-5 p-5 w-full gap-6 md:flex-row md:items-stretch md:pr-[5%]"
     >
@@ -35,6 +34,7 @@ export default function HeroInfo() {
           alt="green flower"
           width={300}
           height={300}
+          id="home" // scroll to this image when clicking "Home" in navbar (top-most item)
           className="flex flex-row justify-center object-contain w-[40%] md:h-full md:w-full"
           style={{ animation: 'spin 30s linear infinite' }}
         />
