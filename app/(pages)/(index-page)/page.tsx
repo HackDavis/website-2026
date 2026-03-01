@@ -8,7 +8,7 @@ import Sponsers from './_components/Sponsers/Sponsers';
 
 export default function Home() {
   return (
-    <div className="pt-40 flex flex-col w-full min-h-screen">
+    <div className="pt-40 flex flex-col w-full min-h-screen bg-[#FAFAFA]">
       <HeroInfo />
       <TenYears />
       <Stats />
