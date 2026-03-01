@@ -10,12 +10,30 @@ export default function AboutUs() {
   return (
     <div className="relative">
       <Header />
-      <Hero />
-      <AllAbout />
-      <Directors />
-      <OurTeam />
-      <CelebratePast />
-      <Archives />
+
+      <section id="about-hero" data-header-theme="dark">
+        <Hero />
+      </section>
+
+      <section id="about-allabout" data-header-theme="light">
+        <AllAbout />
+      </section>
+
+      <section id="about-directors" data-header-theme="light">
+        <Directors />
+      </section>
+
+      <section id="about-team" data-header-theme="light">
+        <OurTeam />
+      </section>
+
+      <section id="about-celebrate" data-header-theme="light">
+        <CelebratePast />
+      </section>
+
+      <section id="about-archives" data-header-theme="light">
+        <Archives />
+      </section>
     </div>
   );
 }
