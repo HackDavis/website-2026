@@ -23,7 +23,7 @@ export default function HeroInfo() {
         className="flex flex-col pl-[9%] items-center -pl-5 p-5 w-full gap-6 md:flex-row md:items-stretch md:pr-[5%]"
       >
         <div
-          className="absolute -top-24 left-[27%] md:left-[30%] -z-10"
+          className="absolute -top-24 left-[27%] md:left-[30%] z-0"
           // can't import getParallaxStyle here because it needs to spin at the same time
           style={{
             transform: `translateX(${
@@ -46,11 +46,11 @@ export default function HeroInfo() {
             alt="watertower"
             width={156.5}
             height={221.27}
-            className="absolute top-29 left-27 -z-10 hidden md:block"
+            className="absolute top-29 left-27 z-0 hidden md:block"
             style={getParallaxStyle(mousePosition, bigShape)}
           />
           <div
-            className="absolute -z-10 top-[56%] md:top-[50%] left-[2%]"
+            className="absolute z-0 top-[56%] md:top-[50%] left-[2%]"
             // can't import getParallaxStyle here because it needs to spin at the same time
             style={{
               transform: `translateX(${
@@ -72,7 +72,7 @@ export default function HeroInfo() {
             alt="blue shape"
             width={100}
             height={100}
-            className="absolute order-2 md:order-none top-[85%] -left-[5%] md:left-[35%] justify-center -z-10 object-contain"
+            className="absolute order-2 md:order-none top-[85%] -left-[5%] md:left-[35%] justify-center z-0 object-contain"
             style={getParallaxStyle(mousePosition, littleShape)}
           />
         </div>
