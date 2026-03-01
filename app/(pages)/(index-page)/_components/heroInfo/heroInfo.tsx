@@ -20,7 +20,7 @@ export default function HeroInfo() {
       <div
         id="home"
         ref={containerRef}
-        className="flex flex-col pl-[9%] items-center -pl-5 p-5 w-full gap-6 md:flex-row md:items-stretch md:pr-[13%]"
+        className="flex flex-col pl-[9%] items-center -pl-5 p-5 w-full gap-6 md:flex-row md:items-stretch md:pr-[13%] bg-[#FAFAFA] -z-10"
       >
         <div
           className="absolute -top-24 left-[27%] md:left-[30%] -z-10"
