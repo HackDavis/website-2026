@@ -21,7 +21,7 @@ export default function HeroInfo() {
       className="flex flex-col pl-[9%] items-center -pl-5 p-5 w-full gap-6 md:flex-row md:items-stretch md:pr-[5%]"
     >
       <div
-        className="absolute -top-7 md:-top-24 left-[27%] md:left-[30%] -z-[-40]"
+        className="absolute -top-7 md:-top-24 left-[27%] md:left-[30%]"
         // can't import getParallaxStyle here because it needs to spin at the same time
         style={{
           transform: `translateX(${
@@ -45,11 +45,11 @@ export default function HeroInfo() {
           alt="watertower"
           width={156.5}
           height={221.27}
-          className="absolute top-29 left-27 z-[-40] hidden md:block"
+          className="absolute top-29 left-27 hidden md:block"
           style={getParallaxStyle(mousePosition, bigShape)}
         />
         <div
-          className="absolute z-[-40] top-[56%] md:top-[50%] left-[2%]"
+          className="absolute top-[56%] md:top-[50%] left-[2%]"
           // can't import getParallaxStyle here because it needs to spin at the same time
           style={{
             transform: `translateX(${
@@ -71,12 +71,12 @@ export default function HeroInfo() {
           alt="blue shape"
           width={100}
           height={100}
-          className="absolute order-2 md:order-none top-[85%] -left-[5%] md:left-[35%] justify-center -z-10 object-contain"
+          className="absolute order-2 md:order-none top-[85%] -left-[5%] md:left-[35%] justify-center object-contain"
           style={getParallaxStyle(mousePosition, littleShape)}
         />
       </div>
       {/* animals on couch */}
-      <div className="order-2 md:order-none flex flex-row md:min-w-[360px] items-stretch gap-6">
+      <div className="order-2 md:order-none flex flex-row md:min-w-[360px] items-stretch gap-6 z-10">
         <Image
           src="/Images/reghero/Couch.svg"
           alt="Animals on couch"
@@ -87,7 +87,7 @@ export default function HeroInfo() {
       </div>
 
       {/* right side */}
-      <div className="order-1 md:order-none flex w-full min-w-0 flex-col justify-between md:w-full md:pr-0 pr-[5%]">
+      <div className="order-1 md:order-none flex w-full min-w-0 flex-col justify-between md:w-full md:pr-0 pr-[5%] z-10">
         {/* here text + buttons */}
         <div className="flex flex-row justify-start items-start md:justify-end md:items-end">
           <div className="flex flex-col items-start gap-[22px] text-left md:items-end md:gap-[31px] md:text-right">
