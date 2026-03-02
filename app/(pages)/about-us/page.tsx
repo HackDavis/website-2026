@@ -8,7 +8,7 @@ import CelebratePast from './_components/CelebratePast/celebratePast';
 
 export default function AboutUs() {
   return (
-    <div className="relative">
+    <div className="relative bg-[#F9FBFC]">
       <Header />
 
       <section id="about-hero" data-header-theme="dark">
