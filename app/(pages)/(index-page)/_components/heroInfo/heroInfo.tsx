@@ -133,7 +133,7 @@ export default function HeroInfo() {
                     hover:text-white
                   "
               >
-                Register Now
+                Director Application
               </Link>
 
               <div className="flex h-[40px] w-[138px] flex-shrink-0 items-center rounded-[100px] bg-black/15 text-center text-[18px] font-bold tracking-[0.4px] text-black break-625:h-[50px] break-625:w-[170px] break-625:py-0 break-625:text-[20px]">
@@ -146,19 +146,12 @@ export default function HeroInfo() {
             </div>
 
             <div className="flex flex-col items-start gap-2 text-left break-625:flex-row break-625:items-end break-625:text-right">
-              <span className="hidden text-[18px] font-normal tracking-[0.48px] text-black break-625:inline md:text-[20px]">
-                Check out the{' '}
-              </span>
               <div className="flex items-center gap-2 text-black text-[19px]">
-                Apply to be a{' '}
-                <FormLink
-                  href="https://forms.gle/rvMKjxw6GjiaKPjc7"
-                  includeComma={false}
-                >
-                  <span style={{ color: '#FFC53D' }}>Judge</span>
+                Check out the{' '}
+                <FormLink href="/#teams" includeComma={false}>
+                  <span style={{ color: '#FFC53D' }}>roles and teams</span>
                 </FormLink>
-                {/* <span style={{ color: '#FFC5AB' }}>Mentor</span>, or{' '}
-                    <span style={{ color: '#9EE7E5' }}>Volunteer</span> */}
+                we have!
               </div>
             </div>
           </div>
@@ -220,11 +213,26 @@ interface FormLinkProps {
 }
 
 function FormLink({ href, includeComma, children }: FormLinkProps) {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (href.startsWith('/#')) {
+      const id = href.split('#')[1];
+      const element = document.getElementById(id);
+
+      if (element) {
+        e.preventDefault();
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+        window.history.pushState(null, '', href);
+      }
+    }
+  };
   return (
     <Link
       href={href}
+      onClick={handleClick}
       className="group flex items-center text-[16px] md:text-[18px] font-bold tracking-[0.48px] text-black md:text-[20px]"
-      target="_blank"
     >
       <span className="font-bold">{children}</span>
 
