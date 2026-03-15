@@ -13,6 +13,8 @@ export default function Hero() {
           alt="Cloud and Book"
           width={2000}
           height={1200}
+          priority // add priority so that hero img loads asap
+          sizes="100vw" // prevent layout shift by reserving space for the image
           className="hidden w-full relative z-20 md:block"
         />
         <Image
@@ -20,6 +22,8 @@ export default function Hero() {
           alt="Cloud and Book"
           width={1200}
           height={900}
+          priority // add priority so that hero img loads asap
+          sizes="100vw" // prevent layout shift by reserving space for the image
           className="pt-[3vh] block w-full relative z-20 md:hidden"
         />
         <Image
@@ -27,6 +31,8 @@ export default function Hero() {
           alt="HD Cow"
           width={1000}
           height={1000}
+          priority // add priority so that hero img loads asap
+          sizes="(min-width: 1024px) 40vw, (min-width: 768px) 42vw, 55vw" // prevent layout shift by reserving space for the image
           className="absolute top-[53vw] left-[1%] z-30 w-[55vw] h-auto animate-float-bob will-change-transform md:top-[18vw] md:left-[6%] md:w-[42vw] lg:top-[14vw] lg:left-[8%] lg:w-[40vw]"
         />
       </div>
@@ -44,11 +50,17 @@ export default function Hero() {
       </div>
 
       <div className="absolute z-10 top-[125vw] left-[6%] w-[50vw] text-white sm:w-[42vw] sm:top-[60%] md:top-[70vw] md:left-[10%] md:w-[40vw] lg:top-[75vw] lg:left-[12%] lg:w-auto">
-        <div className="relative border border-white py-3 px-3 pr-4 md:py-[1.4vw] md:px-[1.2vw] md:pr-[2vw] lg:py-[2vw] lg:px-[1vw] lg:pr-[2vw]">
-          <span className="absolute -top-2 -left-2 h-5 w-5 rounded-full border border-white bg-[#11043F]" />
-          <span className="absolute -top-2 -right-2 h-5 w-5 rounded-full border border-white bg-[#11043F]" />
-          <span className="absolute -bottom-2 -left-2 h-5 w-5 rounded-full border border-white bg-[#11043F]" />
-          <span className="absolute -bottom-2 -right-2 h-5 w-5 rounded-full border border-white bg-[#11043F]" />
+        <div className="relative py-3 px-3 pr-4 md:py-[1.4vw] md:px-[1.2vw] md:pr-[2vw] lg:py-[2vw] lg:px-[1vw] lg:pr-[2vw]">
+          {/* quick fix for border corners - so it doesn't render as 4 purple dots before hero img loads */}
+          <span className="absolute left-3 right-3 top-0 h-px bg-white" />
+          <span className="absolute left-3 right-3 bottom-0 h-px bg-white" />
+          <span className="absolute top-3 bottom-3 left-0 w-px bg-white" />
+          <span className="absolute top-3 bottom-3 right-0 w-px bg-white" />
+          {/* end fix here */}
+          <span className="absolute -top-2 -left-2 h-5 w-5 rounded-full border border-white bg-transparent" />
+          <span className="absolute -top-2 -right-2 h-5 w-5 rounded-full border border-white bg-transparent" />
+          <span className="absolute -bottom-2 -left-2 h-5 w-5 rounded-full border border-white bg-transparent" />
+          <span className="absolute -bottom-2 -right-2 h-5 w-5 rounded-full border border-white bg-transparent" />
           <h1 className="font-[var(--font-metropolis)] font-black mx-3 mb-2 tracking-[0.02em] text-[clamp(1.2rem,4vw,1.6rem)] md:mx-[1.6vw] md:mb-[1vw] md:text-[clamp(1.6rem,2.6vw,2.4rem)] lg:mx-[2vw] lg:mb-[1vw] lg:text-[clamp(2rem,3vw,3rem)]">
             About Us
           </h1>
