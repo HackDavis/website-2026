@@ -1,0 +1,404 @@
+[{
+  "_id": {
+    "$oid": "67f7a4153eaf1040a69ac6a7"
+  },
+  "name": "Lunch Starts",
+  "type": "MEALS",
+  "start_time": {
+    "$date": "2026-05-09T20:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67f7a60f3eaf1040a69ac6ae"
+  },
+  "name": "Therapy Dogs",
+  "type": "ACTIVITIES",
+  "start_time": {
+    "$date": "2026-05-09T22:30:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-10T00:00:00.000Z"
+  },
+  "location": "South Wing"
+},
+{
+  "_id": {
+    "$oid": "680027589d521a51759d7e86"
+  },
+  "name": "Tech Together Meetup",
+  "type": "WORKSHOPS",
+  "start_time": {
+    "$date": "2026-05-09T23:00:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-10T00:00:00.000Z"
+  },
+  "host": "Major League Hacking",
+  "tags": [
+    "beginner",
+    "developer",
+    "pm",
+    "designer",
+    "other"
+  ],
+  "location": "ARC Ballroom A"
+},
+{
+  "_id": {
+    "$oid": "680076779d521a51759d7e8c"
+  },
+  "name": "Break",
+  "type": "GENERAL",
+  "start_time": {
+    "$date": "2026-05-10T18:00:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-10T19:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "680026b09d521a51759d7e83"
+  },
+  "name": "GitHub Copilot Workshop",
+  "type": "WORKSHOPS",
+  "start_time": {
+    "$date": "2026-05-09T22:00:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-09T23:00:00.000Z"
+  },
+  "host": "Major League Hacking",
+  "tags": [
+    "beginner",
+    "developer",
+    "pm"
+  ],
+  "location": "ARC Ballroom A"
+},
+{
+  "_id": {
+    "$oid": "67e62cf95f285b9f3db580f1"
+  },
+  "name": "Check-in Starts",
+  "type": "GENERAL",
+  "start_time": {
+    "$date": "2026-05-09T14:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67f7a5de3eaf1040a69ac6ad"
+  },
+  "name": "Bracelet Making",
+  "type": "ACTIVITIES",
+  "start_time": {
+    "$date": "2026-05-09T22:30:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-10T00:30:00.000Z"
+  },
+  "location": "North Wing"
+},
+{
+  "_id": {
+    "$oid": "67f7ab113eaf1040a69ac6b2"
+  },
+  "name": "Getting Started with Git & GitHub",
+  "type": "WORKSHOPS",
+  "start_time": {
+    "$date": "2026-05-09T20:00:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-09T22:00:00.000Z"
+  },
+  "host": "UC Davis DataLab",
+  "tags": [
+    "beginner",
+    "developer"
+  ],
+  "location": "ARC Ballroom A"
+},
+{
+  "_id": {
+    "$oid": "680027f49d521a51759d7e89"
+  },
+  "name": "Intro to Freepik AI Suite",
+  "type": "WORKSHOPS",
+  "start_time": {
+    "$date": "2026-05-10T00:00:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-10T01:00:00.000Z"
+  },
+  "host": "Freepik",
+  "tags": [
+    "developer",
+    "pm",
+    "designer",
+    "other"
+  ],
+  "location": "ARC Ballroom B"
+},
+{
+  "_id": {
+    "$oid": "67eb840248055efb36b62324"
+  },
+  "name": "Closing Ceremony",
+  "type": "GENERAL",
+  "start_time": {
+    "$date": "2026-05-10T22:00:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-10T23:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67f7ad173eaf1040a69ac6b3"
+  },
+  "name": "Software Development",
+  "type": "WORKSHOPS",
+  "start_time": {
+    "$date": "2026-05-09T20:00:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-09T21:00:00.000Z"
+  },
+  "host": "CodeLab",
+  "tags": [
+    "beginner",
+    "developer",
+    "pm"
+  ],
+  "location": "ARC Ballroom B"
+},
+{
+  "_id": {
+    "$oid": "67f7a43f3eaf1040a69ac6a8"
+  },
+  "name": "Dinner Starts",
+  "type": "MEALS",
+  "start_time": {
+    "$date": "2026-05-10T02:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67f7a5a93eaf1040a69ac6ac"
+  },
+  "name": "Spaghetti & Marshmallow",
+  "type": "ACTIVITIES",
+  "start_time": {
+    "$date": "2026-05-09T21:00:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-09T22:00:00.000Z"
+  },
+  "location": "North Wing"
+},
+{
+  "_id": {
+    "$oid": "67f7aa013eaf1040a69ac6b0"
+  },
+  "name": "Hackathons 101",
+  "type": "WORKSHOPS",
+  "start_time": {
+    "$date": "2026-05-09T18:30:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-09T20:00:00.000Z"
+  },
+  "host": "HackDavis",
+  "tags": [
+    "beginner"
+  ],
+  "location": "ARC Ballroom A"
+},
+{
+  "_id": {
+    "$oid": "6800265c9d521a51759d7e82"
+  },
+  "name": "Hacking with LLMs",
+  "type": "WORKSHOPS",
+  "start_time": {
+    "$date": "2026-05-09T21:00:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-09T22:00:00.000Z"
+  },
+  "host": "Miguel Avecedo, Founder @ Marble",
+  "tags": [
+    "beginner",
+    "developer",
+    "pm"
+  ],
+  "location": "ARC Ballroom B"
+},
+{
+  "_id": {
+    "$oid": "67eb83a648055efb36b62323"
+  },
+  "name": "Check-in closes",
+  "type": "GENERAL",
+  "start_time": {
+    "$date": "2026-05-09T23:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67f7a4ef3eaf1040a69ac6ab"
+  },
+  "name": "Panel Judging",
+  "type": "GENERAL",
+  "start_time": {
+    "$date": "2026-05-10T21:00:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-10T22:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67f7a9773eaf1040a69ac6af"
+  },
+  "name": "Jeopardy/Kahoot",
+  "type": "ACTIVITIES",
+  "start_time": {
+    "$date": "2026-05-10T04:30:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-10T05:30:00.000Z"
+  },
+  "location": "ARC Ballroom B"
+},
+{
+  "_id": {
+    "$oid": "680027d19d521a51759d7e88"
+  },
+  "name": "Intro to Letta AI Agents Framework",
+  "type": "WORKSHOPS",
+  "start_time": {
+    "$date": "2026-05-10T00:00:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-10T01:00:00.000Z"
+  },
+  "host": "Letta",
+  "tags": [
+    "developer"
+  ],
+  "location": "ARC Ballroom A"
+},
+{
+  "_id": {
+    "$oid": "67eb834a48055efb36b62320"
+  },
+  "name": "Team Mixer",
+  "type": "ACTIVITIES",
+  "start_time": {
+    "$date": "2026-05-09T15:30:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-09T17:00:00.000Z"
+  },
+  "location": "ARC Ballroom A"
+},
+{
+  "_id": {
+    "$oid": "67eb837948055efb36b62321"
+  },
+  "name": "Opening Ceremony",
+  "type": "GENERAL",
+  "start_time": {
+    "$date": "2026-05-09T17:00:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-09T18:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67f21f0a3c0ba318b4930cfc"
+  },
+  "name": "Hacking Ends",
+  "type": "GENERAL",
+  "start_time": {
+    "$date": "2026-05-10T18:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6800279a9d521a51759d7e87"
+  },
+  "name": "Surprise Mini-Event!",
+  "type": "WORKSHOPS",
+  "start_time": {
+    "$date": "2026-05-10T03:00:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-10T04:00:00.000Z"
+  },
+  "host": "Major League Hacking",
+  "tags": [
+    "beginner",
+    "developer",
+    "pm",
+    "designer",
+    "other"
+  ],
+  "location": "ARC Ballroom A"
+},
+{
+  "_id": {
+    "$oid": "67eb839548055efb36b62322"
+  },
+  "name": "Hacking Begins",
+  "type": "GENERAL",
+  "start_time": {
+    "$date": "2026-05-09T18:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67f7a46d3eaf1040a69ac6a9"
+  },
+  "name": "Brunch Starts",
+  "type": "MEALS",
+  "start_time": {
+    "$date": "2026-05-10T16:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67f7a4db3eaf1040a69ac6aa"
+  },
+  "name": "Demos",
+  "type": "GENERAL",
+  "start_time": {
+    "$date": "2026-05-10T19:00:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-10T21:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "680028219d521a51759d7e8a"
+  },
+  "name": "Intro to UI/UX",
+  "type": "WORKSHOPS",
+  "start_time": {
+    "$date": "2026-05-09T23:00:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-10T00:00:00.000Z"
+  },
+  "host": "Design Interactive",
+  "tags": [
+    "beginner",
+    "designer"
+  ],
+  "location": "ARC Ballroom B"
+}]
