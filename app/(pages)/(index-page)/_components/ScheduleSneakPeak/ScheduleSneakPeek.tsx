@@ -176,59 +176,63 @@ export default function ScheduleSneakPeek({
       id="schedule-sneak-peek"
       className={`w-full bg-[#FAFAFA] py-14 md:py-16 ${className ?? ''}`}
     >
-      <div className="mx-auto w-[min(1228px,calc(100vw-2rem))]">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-8">
-          <article>
-            <p className="font-jakarta text-[#9B9BA1] uppercase tracking-[0.08em] text-[18px]">
-              {liveLabel}
-            </p>
-            <h2 className="mt-4 font-[var(--font-metropolis)] text-[#3F3F46] font-semibold text-[30px] leading-tight tracking-[-0.02em]">
-              Happening now
-            </h2>
-            <div className="mt-4 mb-7 h-px w-full bg-[#DDDDDF]" />
-            <div className="space-y-4">
-              {liveEvents.length > 0 ? (
-                liveEvents.map((event) => (
-                  <CalendarItem key={event._id} event={event} />
-                ))
-              ) : (
-                <EmptyState
-                  title="Nothing live right now"
-                  description="Live events will appear here as soon as the next activity begins."
-                  imageSrc={duckBunny}
-                  imageAlt="Duck and bunny mascot"
-                />
-              )}
-            </div>
-          </article>
-
-          <article>
-            <p className="font-jakarta text-[#9B9BA1] uppercase tracking-[0.08em] text-[18px]">
-              {upcomingLabel}
-            </p>
-            <h2 className="mt-4 font-[var(--font-metropolis)] text-[#3F3F46] font-semibold text-[30px] leading-tight tracking-[-0.02em]">
-              Upcoming Events
-            </h2>
-            <div className="mt-4 mb-7 h-px w-full bg-[#DDDDDF]" />
-            <div className="space-y-4">
-              {upcomingEvents.length > 0 ? (
-                upcomingEvents.map((event) => (
-                  <CalendarItem
-                    key={`${event._id}-upcoming`}
-                    event={event}
-                    attendeeCount={estimateAttendeeCount(event)}
+      <div className="mx-auto w-full">
+        <div className="grid grid-cols-1 gap-[4rem] md:grid-cols-2">
+          <div className="flex w-full pl-4 pr-4 md:pl-[103px] md:pr-0">
+            <article className="w-full">
+              <p className="font-jakarta text-[#9B9BA1] uppercase tracking-[0.08em] text-[18px]">
+                {liveLabel}
+              </p>
+              <h2 className="mt-4 font-[var(--font-metropolis)] text-[#3F3F46] font-semibold text-[30px] leading-tight tracking-[-0.02em]">
+                Happening now
+              </h2>
+              <div className="mt-4 mb-7 h-px w-full bg-[#DDDDDF]" />
+              <div className="space-y-4">
+                {liveEvents.length > 0 ? (
+                  liveEvents.map((event) => (
+                    <CalendarItem key={event._id} event={event} />
+                  ))
+                ) : (
+                  <EmptyState
+                    title="Nothing live right now"
+                    description="Live events will appear here as soon as the next activity begins."
+                    imageSrc={duckBunny}
+                    imageAlt="Duck and bunny mascot"
                   />
-                ))
-              ) : (
-                <EmptyState
-                  title="No upcoming events"
-                  description="Check back soon for workshops, activities, and meals as they are scheduled."
-                  imageSrc={duckFrog}
-                  imageAlt="Mascot illustration"
-                />
-              )}
-            </div>
-          </article>
+                )}
+              </div>
+            </article>
+          </div>
+
+          <div className="flex w-full pl-4 pr-4 md:pr-[103px] md:pl-0">
+            <article className="w-full">
+              <p className="font-jakarta text-[#9B9BA1] uppercase tracking-[0.08em] text-[18px]">
+                {upcomingLabel}
+              </p>
+              <h2 className="mt-4 font-[var(--font-metropolis)] text-[#3F3F46] font-semibold text-[30px] leading-tight tracking-[-0.02em]">
+                Upcoming Events
+              </h2>
+              <div className="mt-4 mb-7 h-px w-full bg-[#DDDDDF]" />
+              <div className="space-y-4">
+                {upcomingEvents.length > 0 ? (
+                  upcomingEvents.map((event) => (
+                    <CalendarItem
+                      key={`${event._id}-upcoming`}
+                      event={event}
+                      attendeeCount={estimateAttendeeCount(event)}
+                    />
+                  ))
+                ) : (
+                  <EmptyState
+                    title="No upcoming events"
+                    description="Check back soon for workshops, activities, and meals as they are scheduled."
+                    imageSrc={duckFrog}
+                    imageAlt="Mascot illustration"
+                  />
+                )}
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>

@@ -53,7 +53,7 @@ export function CalendarItem({ event, attendeeCount }: CalendarItemProps) {
       }}
     >
       <div className="flex flex-col gap-5">
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-5">
+        <div className="flex flex-col lg:flex-row md:items-start md:justify-between gap-5">
           <div>
             <h3 className="font-[var(--font-metropolis)] text-[28px] font-semibold leading-tight tracking-[-0.02em]">
               {name}
