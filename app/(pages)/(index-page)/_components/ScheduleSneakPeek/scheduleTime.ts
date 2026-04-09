@@ -19,7 +19,10 @@ export const formatScheduleTimeRange = (start: Date, end?: Date): string => {
   const endAMPM = endTimeStr.slice(-2);
 
   if (startAMPM === endAMPM) {
-    return `${startTimeStr.slice(0, -2)} - ${endTimeStr}`;
+    const startWithoutDayPeriod = startTimeStr
+      .replace(/\s?(AM|PM)$/i, '')
+      .trimEnd();
+    return `${startWithoutDayPeriod} - ${endTimeStr}`;
   }
 
   return `${startTimeStr} - ${endTimeStr}`;

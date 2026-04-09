@@ -6,7 +6,7 @@ import Create from './_components/Create/create';
 import DonorScroll from './_components/DonorScroll/DonorScroll';
 import Sponsers from './_components/Sponsers/Sponsers';
 import UpcomingTimeline from './_components/UpcomingTimeline/UpcomingTimeline';
-import ScheduleSneakPeek from './_components/ScheduleSneakPeak/ScheduleSneakPeek';
+import ScheduleSneakPeek from './_components/ScheduleSneakPeek/ScheduleSneakPeek';
 
 export default function Home() {
   return (
