@@ -6,11 +6,15 @@ import AccordionFAQ from './_components/FAQ/faq';
 import DonorScroll from './_components/DonorScroll/DonorScroll';
 import Sponsers from './_components/Sponsers/Sponsers';
 import PrizeTracks from './_components/PrizeTracks/PrizeTracks';
+import UpcomingTimeline from './_components/UpcomingTimeline/UpcomingTimeline';
+import ScheduleSneakPeek from './_components/ScheduleSneakPeek/ScheduleSneakPeek';
 
 export default function Home() {
   return (
     <div className="pt-40 flex flex-col w-full min-h-screen bg-[#FAFAFA]">
       <HeroInfo />
+      <ScheduleSneakPeek />
+      <UpcomingTimeline />
       {/* <TenYears /> */}
       {/* <Stats /> */}
       {/* <Create /> */}
