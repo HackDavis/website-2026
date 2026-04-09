@@ -5,7 +5,7 @@ import AccordionFAQ from './_components/FAQ/faq';
 import Create from './_components/Create/create';
 import DonorScroll from './_components/DonorScroll/DonorScroll';
 import Sponsers from './_components/Sponsers/Sponsers';
-import UpcomingEvents from './_components/UpcomingEvents/UpcomingEvents';
+import UpcomingTimeline from './_components/UpcomingTimeline/UpcomingTimeline';
 import ScheduleSneakPeek from './_components/ScheduleSneakPeak/ScheduleSneakPeek';
 
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
     <div className="pt-40 flex flex-col w-full min-h-screen bg-[#FAFAFA]">
       <HeroInfo />
       <ScheduleSneakPeek />
-      <UpcomingEvents />
+      <UpcomingTimeline />
       <TenYears />
       <Stats />
       <Create />

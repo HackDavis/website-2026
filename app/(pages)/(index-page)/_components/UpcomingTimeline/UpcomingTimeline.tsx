@@ -13,7 +13,7 @@ import mochinut from '@public/Images/upcoming/mochinut.svg';
 import ditto from '@public/Images/upcoming/ditto.svg';
 import greenFlower from '@public/Images/upcoming/green_flower.svg';
 
-interface UpcomingEventsProps {
+interface UpcomingTimelineProps {
   className?: string;
 }
 
@@ -45,7 +45,7 @@ const allEvents = (rawEvents as RawUpcomingEvent[]).map((event, index) => ({
   startTime: new Date(event.start_time.$date),
 }));
 
-export default function UpcomingEvents({ className }: UpcomingEventsProps) {
+export default function UpcomingTimeline({ className }: UpcomingTimelineProps) {
   const [nowMs, setNowMs] = useState<number>(() => Date.now());
 
   useEffect(() => {
@@ -78,7 +78,7 @@ export default function UpcomingEvents({ className }: UpcomingEventsProps) {
       <Image
         src={scissors}
         alt=""
-        className="pointer-events-none absolute -left-2 -top-52 -z-10 hidden w-[320px] opacity-60 md:block lg:w-[420px]"
+        className="pointer-events-none absolute -left-2 -top-52 -z-10 hidden w-[320px] opacity-60 md:block md:w-[420px]"
       />
       <Image
         src={greenFlower}
@@ -96,9 +96,9 @@ export default function UpcomingEvents({ className }: UpcomingEventsProps) {
         className="pointer-events-none absolute -right-5 -bottom-40 -z-10 w-27 md:-bottom-60 md:w-35"
       />
 
-      <div className="relative z-10 grid w-full grid-cols-1 gap-10 lg:grid-cols-[1fr_1fr] lg:items-start lg:gap-20">
-        <div className="flex pl-[103px] pr-4 md:pr-6 lg:pr-0">
-          <div className="w-full max-w-[620px]">
+      <div className="relative z-10 grid w-full grid-cols-1 gap-[4rem] md:grid-cols-2 md:items-start">
+        <div className="flex w-full pl-4 pr-4 md:pl-[103px] md:pr-0">
+          <div className="w-full">
             <h2 className="font-[var(--font-metropolis)] text-[30px] font-semibold leading-normal tracking-[0.6px] text-[#005271]">
               Upcoming Timeline
             </h2>
@@ -108,7 +108,7 @@ export default function UpcomingEvents({ className }: UpcomingEventsProps) {
                 upcomingGeneralEvents.map((event) => (
                   <article
                     key={event.id}
-                    className="w-[576px] max-w-full rounded-[20px] border border-[#D3D4DA] bg-[#FAFAFF] px-6 py-5 md:px-7 md:py-6"
+                    className="w-full rounded-[20px] border border-[#D3D4DA] bg-[#FAFAFF] px-6 py-5 md:px-7 md:py-6"
                   >
                     <p className="font-[var(--font-metropolis)] text-[18px] font-normal uppercase leading-[145%] tracking-[0.36px] text-[#A5A5A5]">
                       {formatEventTime(event.startTime)}
@@ -119,7 +119,7 @@ export default function UpcomingEvents({ className }: UpcomingEventsProps) {
                   </article>
                 ))
               ) : (
-                <article className="w-[576px] max-w-full rounded-[20px] border border-[#D3D4DA] bg-[#FAFAFF] px-6 py-7 md:px-7">
+                <article className="w-full rounded-[20px] border border-[#D3D4DA] bg-[#FAFAFF] px-6 py-7 md:px-7">
                   <p className="font-[var(--font-metropolis)] text-[1.7rem] font-semibold text-[#4D4E59]">
                     No upcoming general events yet
                   </p>
@@ -143,7 +143,7 @@ export default function UpcomingEvents({ className }: UpcomingEventsProps) {
             />
           </div>
 
-          <div className="flex items-start justify-start gap-6 md:gap-0">
+          <div className="flex items-start justify-start gap-6 md:gap-8">
             <Image
               src={cow}
               alt="Cow tile artwork"

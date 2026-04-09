@@ -177,7 +177,7 @@ export default function ScheduleSneakPeek({
       className={`w-full bg-[#FAFAFA] py-14 md:py-16 ${className ?? ''}`}
     >
       <div className="mx-auto w-[min(1228px,calc(100vw-2rem))]">
-        <div className="grid grid-cols-1 gap-8 xl:grid-cols-[580px_580px] xl:justify-center xl:gap-[68px]">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-8">
           <article>
             <p className="font-jakarta text-[#9B9BA1] uppercase tracking-[0.08em] text-[18px]">
               {liveLabel}
