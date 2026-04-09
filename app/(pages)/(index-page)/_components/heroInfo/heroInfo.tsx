@@ -157,8 +157,17 @@ export default function HeroInfo() {
                 >
                   <span style={{ color: '#FFC53D' }}>Judge</span>
                 </FormLink>
-                {/* <span style={{ color: '#FFC5AB' }}>Mentor</span>, or{' '}
-                    <span style={{ color: '#9EE7E5' }}>Volunteer</span> */}
+                <span>or</span>
+                <FormLink
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSeB01uEqAb9SvTZur3wGT1Dl8goArxdnV_lvIFak6yxfD_FkQ/viewform?usp=publish-editor"
+                  includeComma={false}
+                >
+                  <span style={{ color: '#9EE7E5' }}>Volunteer</span>
+                </FormLink>
+                {/* <span>or</span>
+                <FormLink href="" includeComma={false}>
+                  <span style={{ color: '#FFC5AB' }}>Mentor</span>
+                </FormLink> */}
               </div>
             </div>
           </div>
