@@ -143,18 +143,18 @@ export default function UpcomingTimeline({ className }: UpcomingTimelineProps) {
             />
           </div>
 
-          <div className="flex items-start justify-start gap-6 md:gap-8">
-            <Image
-              src={cow}
-              alt="Cow tile artwork"
-              className="h-auto w-[100%] min-w-[202px] max-w-[250px] -translate-x-1"
-            />
-            <Image
-              src={froggie}
-              alt="Frog tile artwork"
-              className="ml-auto -mr-2 h-auto w-[70%] shrink-0 max-h-[250px] object-contain md:-mr-12 md:w-[75%] md:max-h-[311px]"
-            />
-          </div>
+          <div className="flex items-start justify-end gap-6 md:gap-8">
+  <Image
+    src={cow}
+    alt="Cow tile artwork"
+    className="h-auto w-auto max-w-[160px] shrink-0 lg:max-w-[250px]"
+  />
+  <Image
+    src={froggie}
+    alt="Frog tile artwork"
+    className="h-auto w-auto shrink-0 max-h-[175px] object-contain lg:max-h-[311px]"
+  />
+</div>
         </div>
       </div>
     </section>
