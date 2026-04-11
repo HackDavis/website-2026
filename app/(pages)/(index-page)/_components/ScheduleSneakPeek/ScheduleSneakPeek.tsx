@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import Image from 'next/image';
 import type { ComponentProps } from 'react';
-import rawScheduleEvents from '@data/hub-2026-staging.events.json';
+import rawScheduleEvents from '@data/hub-2026.events.json';
 import Event, { EventTag, EventType } from '@data/event';
 import CalendarItem from './CalendarItem';
 import {

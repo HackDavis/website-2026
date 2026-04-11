@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import Image from 'next/image';
-import rawEvents from '@data/hub-2026-staging.events.json';
+import rawEvents from '@data/hub-2026.events.json';
 
 import bunny from '@public/Images/upcoming/bunny.svg';
 import cow from '@public/Images/upcoming/cow.svg';

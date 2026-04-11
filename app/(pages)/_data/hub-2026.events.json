@@ -1,0 +1,135 @@
+[{
+  "_id": {
+    "$oid": "67e62cf95f285b9f3db580f1"
+  },
+  "name": "Check-in Starts",
+  "type": "GENERAL",
+  "start_time": {
+    "$date": "2026-05-09T14:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67eb83a648055efb36b62323"
+  },
+  "name": "Check-in closes",
+  "type": "GENERAL",
+  "start_time": {
+    "$date": "2026-05-09T23:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67f7a4ef3eaf1040a69ac6ab"
+  },
+  "name": "Panel Judging",
+  "type": "GENERAL",
+  "start_time": {
+    "$date": "2026-05-10T21:00:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-10T22:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67f7a4db3eaf1040a69ac6aa"
+  },
+  "name": "Demos",
+  "type": "GENERAL",
+  "start_time": {
+    "$date": "2026-05-10T19:00:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-10T21:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67eb840248055efb36b62324"
+  },
+  "name": "Closing Ceremony",
+  "type": "GENERAL",
+  "start_time": {
+    "$date": "2026-05-10T22:00:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-10T23:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67eb837948055efb36b62321"
+  },
+  "name": "Opening Ceremony",
+  "type": "GENERAL",
+  "start_time": {
+    "$date": "2026-05-09T17:00:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-09T18:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67f21f0a3c0ba318b4930cfc"
+  },
+  "name": "Hacking Ends",
+  "type": "GENERAL",
+  "start_time": {
+    "$date": "2026-05-10T18:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67eb839548055efb36b62322"
+  },
+  "name": "Hacking Begins",
+  "type": "GENERAL",
+  "start_time": {
+    "$date": "2026-05-09T18:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "680076779d521a51759d7e8c"
+  },
+  "name": "Break",
+  "type": "GENERAL",
+  "start_time": {
+    "$date": "2026-05-10T18:00:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-10T19:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68008c069d521a51759d7e93"
+  },
+  "name": "Lunch Starts",
+  "type": "MEALS",
+  "start_time": {
+    "$date": "2026-05-09T20:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68008c069d521a51759d7e94"
+  },
+  "name": "Dinner Starts",
+  "type": "MEALS",
+  "start_time": {
+    "$date": "2026-05-10T02:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68008c069d521a51759d7e95"
+  },
+  "name": "Brunch Starts",
+  "type": "MEALS",
+  "start_time": {
+    "$date": "2026-05-10T16:30:00.000Z"
+  }
+}]
