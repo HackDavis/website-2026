@@ -462,14 +462,16 @@ const nonHDTracks: Tracks = {
     filter: 'Non-Profit',
     prizes: ['Aroma Diffuser'],
     images: [aromaDiffuser],
-    eligibility_criteria: '',
+    eligibility_criteria:
+      'Projects must create a digital system to track donations as they come in and go out. Wellspring is looking for a straightforward, easy-to-use digital tool that helps staff and volunteers quickly log donated items, track how they are distributed, and generate basic reports when needed.',
   },
   'Best Hack for ASUCD Pantry': {
     name: 'Best Hack for ASUCD Pantry',
     filter: 'Non-Profit',
     prizes: ['Pokemon Packs'],
     images: [pokemonPacks],
-    eligibility_criteria: '',
+    eligibility_criteria:
+      'Projects must design a digital recipe book or platform that generates simple, affordable, and culturally inclusive recipes based on selected pantry items, accounts for common student constraints (minimal equipment, short cook times, dietary needs), and helps reduce food waste while making the pantry more accessible and empowering.',
   },
 };
 
