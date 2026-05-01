@@ -96,16 +96,22 @@ export default function Sponsers() {
       alt: 'UC Davis Department of Computer Science Logo',
     },
     {
-      id: 'ucdavis-again',
-      src: '/Images/sponsers/ucd.png',
-      url: 'https://www.ucdavis.edu/',
-      alt: 'University of California Davis Logo',
+      id: 'davisautonomyclub',
+      src: '/Images/sponsers/Davis_Autonomy_Club.png',
+      url: 'https://www.davisautonomy.com/',
+      alt: 'Davis Autonomy Club Logo',
     },
     {
-      id: 'ucdcs-again',
-      src: '/Images/sponsers/ucdcs.png',
-      url: 'https://cs.ucdavis.edu/',
-      alt: 'UC Davis Department of Computer Science Logo',
+      id: 'exa',
+      src: '/Images/sponsers/exa.png',
+      url: 'https://exa.ai/',
+      alt: 'Exa AI Logo',
+    },
+    {
+      id: 'reconstruct',
+      src: '/Images/sponsers/reconstruct.png',
+      url: 'https://reconstruct.app/',
+      alt: 'Reconstruct Logo',
     },
   ];
 
@@ -123,16 +129,22 @@ export default function Sponsers() {
       alt: 'UC Davis Department of Computer Science Logo',
     },
     {
-      id: 'ucdavis-again-2',
-      src: '/Images/sponsers/ucd.png',
-      url: 'https://www.ucdavis.edu/',
-      alt: 'University of California Davis Logo',
+      id: 'davisautonomyclub',
+      src: '/Images/sponsers/Davis_Autonomy_Club.png',
+      url: 'https://www.davisautonomy.com/',
+      alt: 'Davis Autonomy Club Logo',
     },
     {
-      id: 'ucdcs-again-2',
-      src: '/Images/sponsers/ucdcs.png',
-      url: 'https://cs.ucdavis.edu/',
-      alt: 'UC Davis Department of Computer Science Logo',
+      id: 'exa',
+      src: '/Images/sponsers/exa.png',
+      url: 'https://exa.ai/',
+      alt: 'Exa AI Logo',
+    },
+    {
+      id: 'reconstruct',
+      src: '/Images/sponsers/reconstruct.png',
+      url: 'https://reconstruct.app/',
+      alt: 'Reconstruct Logo',
     },
   ];
 
@@ -150,16 +162,22 @@ export default function Sponsers() {
       alt: 'UC Davis Department of Computer Science Logo',
     },
     {
-      id: 'ucdavis-again-3',
-      src: '/Images/sponsers/ucd.png',
-      url: 'https://www.ucdavis.edu/',
-      alt: 'University of California Davis Logo',
+      id: 'davisautonomyclub',
+      src: '/Images/sponsers/Davis_Autonomy_Club.png',
+      url: 'https://www.davisautonomy.com/',
+      alt: 'Davis Autonomy Club Logo',
     },
     {
-      id: 'ucdcs-again-3',
-      src: '/Images/sponsers/ucdcs.png',
-      url: 'https://cs.ucdavis.edu/',
-      alt: 'UC Davis Department of Computer Science Logo',
+      id: 'exa',
+      src: '/Images/sponsers/exa.png',
+      url: 'https://exa.ai/',
+      alt: 'Exa AI Logo',
+    },
+    {
+      id: 'reconstruct',
+      src: '/Images/sponsers/reconstruct.png',
+      url: 'https://reconstruct.app/',
+      alt: 'Reconstruct Logo',
     },
   ];
 
