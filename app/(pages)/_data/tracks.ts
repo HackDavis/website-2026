@@ -1,24 +1,30 @@
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
-import vrHeadset from '@public/prizes/vr_headset.png';
+// import vrHeadset from '@public/prizes/vr_headset.png';
+import macbookNeo from '@public/prizes/macbook_neo.png';
 import electricScooter from '@public/prizes/electric_scooter.png';
 import monitor from '@public/prizes/monitor.png';
-import steamGiftcard from '@public/prizes/steam_giftcard.png';
+// import steamGiftcard from '@public/prizes/steam_giftcard.png';
+import googleTv from '@public/prizes/google_tv.png';
 import hdSwag from '@public/prizes/hd_swag.png';
-import kindle from '@public/prizes/kindle.png';
+// import kindle from '@public/prizes/kindle.png';
 import projector from '@public/prizes/projector.png';
-import raspberryPi from '@public/prizes/raspberry_pi.png';
+// import raspberryPi from '@public/prizes/raspberry_pi.png';
+import mouse from '@public/prizes/mouse.png';
 import keyboard from '@public/prizes/keyboard.png';
 import figmaLogo from '@public/prizes/figma_logo.png';
 import chatgptLogo from '@public/prizes/chatgpt_logo.png';
 import backpack from '@public/prizes/backpack.png';
 import bluetoothSpeaker from '@public/prizes/bluetooth_speaker.png';
-import aromaDiffuser from '@public/prizes/aroma_diffuser.png';
-import pokemonPacks from '@public/prizes/pokemon_packs.png';
+// import aromaDiffuser from '@public/prizes/aroma_diffuser.png';
+// import pokemonPacks from '@public/prizes/pokemon_packs.png';
+import amazonGiftcard from '@public/prizes/amazon_giftcard.png';
 import claudeLogo from '@public/prizes/claude_logo.png';
+import ankerCharger from '@public/prizes/anker_charger.png';
+import daytona from '@public/prizes/daytona.png';
 
 interface TrackData {
   name: string;
-  filter: string;
+  filter: string[];
   prizes: string[];
   images: StaticImport[];
   eligibility_criteria: string;
@@ -41,16 +47,16 @@ interface Tracks {
 const automaticTracks: Tracks = {
   'Best Hack for Social Good': {
     name: 'Best Hack for Social Good',
-    filter: 'General',
-    prizes: ['VR Headset', 'Electric Scooter'],
-    images: [vrHeadset, electricScooter],
+    filter: ['General'],
+    prizes: ['2026 Macbook Neo', 'Electric Scooter'],
+    images: [macbookNeo, electricScooter],
     eligibility_criteria:
       'Encapsulate your authentic idea of what "social good" can look like. All entries are automatically considered for this prize category.',
   },
   "Hacker's Choice Award": {
     name: "Hacker's Choice Award",
-    filter: 'General',
-    prizes: ['HackDavis Swag Bag'],
+    filter: ['General'],
+    prizes: ['HackDavis Swag Bag (Tote, Stickers, Keychains)'],
     images: [hdSwag],
     eligibility_criteria:
       'Awarded to the project with the most votes from our 2026 hackers. All entries are automatically considered for this prize category. Vote for any project but your own!',
@@ -60,8 +66,8 @@ const automaticTracks: Tracks = {
 const optedHDTracks: Tracks = {
   'Most Technically Challenging Hack': {
     name: 'Most Technically Challenging Hack',
-    filter: 'Technical',
-    prizes: ['Backlit Keyboard'],
+    filter: ['Technical'],
+    prizes: ['AULA F75 75% Wireless Mechanical Keyboard'],
     images: [keyboard],
     eligibility_criteria:
       'Projects must showcase breadth and application of technical knowledge. Focuses on use of advanced technical tools + algorithms/data structures, integration of multiple technologies, quality of implementation, displays technical depth, graded on performance/scalability.',
@@ -96,7 +102,7 @@ const optedHDTracks: Tracks = {
   },
   'Best Beginner Hack': {
     name: 'Best Beginner Hack',
-    filter: 'General',
+    filter: ['General'],
     prizes: ['24 Inch Monitor'],
     images: [monitor],
     eligibility_criteria:
@@ -132,9 +138,9 @@ const optedHDTracks: Tracks = {
   },
   'Best Interdisciplinary Hack': {
     name: 'Best Interdisciplinary Hack',
-    filter: 'General',
-    prizes: ['$75 STEAM Giftcard'],
-    images: [steamGiftcard],
+    filter: ['General'],
+    prizes: ['$50 Amazon Giftcard'],
+    images: [amazonGiftcard],
     eligibility_criteria:
       'Leverage multiple perspectives across different disciplines to create a more well-rounded project. At least one member of the team needs to be a non-CS/CSE/otherwise CS-related major in order to qualify.',
     domain: 'swe',
@@ -168,7 +174,7 @@ const optedHDTracks: Tracks = {
   },
   'Most Creative Hack': {
     name: 'Most Creative Hack',
-    filter: 'General',
+    filter: ['General'],
     prizes: ['Mini Projector'],
     images: [projector],
     eligibility_criteria:
@@ -204,9 +210,9 @@ const optedHDTracks: Tracks = {
   },
   'Best Hardware Hack': {
     name: 'Best Hardware Hack',
-    filter: 'Technical',
-    prizes: ['Raspberry Pi Kit'],
-    images: [raspberryPi],
+    filter: ['Technical'],
+    prizes: ['Logitech G305 Lightspeed Wireless Gaming Mouse'],
+    images: [mouse],
     eligibility_criteria:
       'Effectively integrate a hardware component to your final project. The final project should be functional, user-friendly, and interactive.',
     domain: 'hardware',
@@ -240,9 +246,9 @@ const optedHDTracks: Tracks = {
   },
   'Best Hack for Social Justice': {
     name: 'Best Hack for Social Justice',
-    filter: 'General',
-    prizes: ['Kindle'],
-    images: [kindle],
+    filter: ['General'],
+    prizes: ['Google TV Streamer 4K'],
+    images: [googleTv],
     eligibility_criteria:
       'Hack must address a social justice issue such as racial inequality, economic injustice, environmental justice, etc. This project should develop tangible solutions and/or raise awareness on these topics.',
     domain: 'business',
@@ -274,47 +280,11 @@ const optedHDTracks: Tracks = {
       },
     ],
   },
-  'Best UI/UX Design': {
-    name: 'Best UI/UX Design',
-    filter: 'Design',
-    prizes: ['Figma Full Seat (4 month subscription)'],
-    images: [figmaLogo],
-    eligibility_criteria:
-      'Project includes beautiful design and intuitive web experiences that bring joy to users. Shows that the project is not only functional but also delightful, demonstrates wireframing in Figma, responsive design and promotes intuitive user experiences.',
-    domain: 'design',
-    domainDisplayName: 'UI/UX Design',
-    scoring_criteria: [
-      {
-        attribute: 'Visual Design',
-        guidelines: {
-          1: 'Inconsistent style; cluttered or dull; poor accessibility.',
-          3: 'Mostly clean design with some inconsistencies; some inclusive features.',
-          5: 'Beautiful, cohesive, polished; thoughtful inclusivity.',
-        },
-      },
-      {
-        attribute: 'Navigation Flow',
-        guidelines: {
-          1: 'Confusing user journey; hard to find key actions.',
-          3: 'Clear pathways through the interface with minor issues.',
-          5: 'Effortless, intuitive navigation throughout.',
-        },
-      },
-      {
-        attribute: 'Design Process',
-        guidelines: {
-          1: 'Limited evidence of design planning.',
-          3: 'Some wireframes or design iterations shown.',
-          5: 'Comprehensive design process with wireframes to final product.',
-        },
-      },
-    ],
-  },
   'Best User Research': {
     name: 'Best User Research',
-    filter: 'Design',
-    prizes: ['ChatGPT+ (4 month subscription)'],
-    images: [chatgptLogo],
+    filter: ['Sponsor', 'Design'],
+    prizes: ['North Face Backpack'],
+    images: [backpack],
     eligibility_criteria:
       'Awarded to a well-researched project that keeps its userbase in mind with an inclusive design aimed to maximize accessibility.',
     domain: 'design',
@@ -348,9 +318,9 @@ const optedHDTracks: Tracks = {
   },
   'Best Entrepreneurship Hack': {
     name: 'Best Entrepreneurship Hack',
-    filter: 'Business',
-    prizes: ['North Face Backpack'],
-    images: [backpack],
+    filter: ['Business'],
+    prizes: ['ChatGPT+ (4 month subscription)'],
+    images: [chatgptLogo],
     eligibility_criteria:
       "No Code Required. A project that focuses on viability and persuasive power through presentation on the product/service you're trying to sell, relevant customer segments, distribution channels, and associated revenue/profit models.",
     domain: 'business',
@@ -384,7 +354,7 @@ const optedHDTracks: Tracks = {
   },
   'Best Statistical Model': {
     name: 'Best Statistical Model',
-    filter: 'Business',
+    filter: ['Business'],
     prizes: ['Bluetooth Speaker'],
     images: [bluetoothSpeaker],
     eligibility_criteria:
@@ -422,8 +392,8 @@ const optedHDTracks: Tracks = {
 
 const nonHDTracks: Tracks = {
   'Best AI/ML Hack': {
-    name: 'Best AI/ML Hack',
-    filter: 'Sponsor',
+    name: 'Best AI/ML Hack (Sponsored by Anthropic)',
+    filter: ['Sponsor'],
     prizes: ['$750 in Claude API credits'],
     images: [claudeLogo],
     eligibility_criteria:
@@ -457,22 +427,66 @@ const nonHDTracks: Tracks = {
       },
     ],
   },
+  'Best UI/UX Design': {
+    name: 'Best UI/UX Design (Sponsored by Figma)',
+    filter: ['Sponsor'],
+    prizes: ['Figma Full Seat (4 month subscription)'],
+    images: [figmaLogo],
+    eligibility_criteria:
+      'Project includes beautiful design and intuitive web experiences that bring joy to users. Shows that the project is not only functional but also delightful, demonstrates wireframing in Figma, responsive design and promotes intuitive user experiences.',
+    domain: 'design',
+    domainDisplayName: 'UI/UX Design',
+    scoring_criteria: [
+      {
+        attribute: 'Visual Design',
+        guidelines: {
+          1: 'Inconsistent style; cluttered or dull; poor accessibility.',
+          3: 'Mostly clean design with some inconsistencies; some inclusive features.',
+          5: 'Beautiful, cohesive, polished; thoughtful inclusivity.',
+        },
+      },
+      {
+        attribute: 'Navigation Flow',
+        guidelines: {
+          1: 'Confusing user journey; hard to find key actions.',
+          3: 'Clear pathways through the interface with minor issues.',
+          5: 'Effortless, intuitive navigation throughout.',
+        },
+      },
+      {
+        attribute: 'Design Process',
+        guidelines: {
+          1: 'Limited evidence of design planning.',
+          3: 'Some wireframes or design iterations shown.',
+          5: 'Comprehensive design process with wireframes to final product.',
+        },
+      },
+    ],
+  },
+  'Best Use of DAC Materials': {
+    name: 'Best Use of DAC Materials (Sponsored by Davis Autonomy Club)',
+    filter: ['Sponsor'],
+    prizes: ['$10,000 Daytona infrastructure credits'],
+    images: [daytona],
+    eligibility_criteria:
+      "Project must incorporate one or more of DAC's materials with a vision-based AI pipeline, implementing and/or configuring concepts such as Vision-Language Models (VLMs) or Vision-Language-Action Models (VLAs) to connect real-world visual perception to physical robotic behavior.",
+  },
   "Best Hack for Women's Center": {
     name: "Best Hack for Women's Center",
-    filter: 'Non-Profit',
-    prizes: ['Aroma Diffuser'],
-    images: [aromaDiffuser],
+    filter: ['Non-Profit'],
+    prizes: ['Anker Nano 3-in-1 Portable iPhone Charger'],
+    images: [ankerCharger],
     eligibility_criteria:
       'Projects must create a digital system to track donations as they come in and go out. Wellspring is looking for a straightforward, easy-to-use digital tool that helps staff and volunteers quickly log donated items, track how they are distributed, and generate basic reports when needed.',
   },
-  'Best Hack for ASUCD Pantry': {
-    name: 'Best Hack for ASUCD Pantry',
-    filter: 'Non-Profit',
-    prizes: ['Pokemon Packs'],
-    images: [pokemonPacks],
-    eligibility_criteria:
-      'Projects must design a digital recipe book or platform that generates simple, affordable, and culturally inclusive recipes based on selected pantry items, accounts for common student constraints (minimal equipment, short cook times, dietary needs), and helps reduce food waste while making the pantry more accessible and empowering.',
-  },
+  // 'Best Hack for ASUCD Pantry': {
+  //   name: 'Best Hack for ASUCD Pantry',
+  //   filter: 'Non-Profit',
+  //   prizes: ['Pokemon Packs'],
+  //   images: [pokemonPacks],
+  //   eligibility_criteria:
+  //     'Projects must design a digital recipe book or platform that generates simple, affordable, and culturally inclusive recipes based on selected pantry items, accounts for common student constraints (minimal equipment, short cook times, dietary needs), and helps reduce food waste while making the pantry more accessible and empowering.',
+  // },
 };
 
 const allTracks: Tracks = {

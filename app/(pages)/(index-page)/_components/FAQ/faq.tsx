@@ -116,7 +116,7 @@ const AccordionFAQ = () => {
         className="absolute z-40 mt-0 -top-[18vw] pointer-events-none w-full"
       />
       <div
-        className="relative z-10 flex flex-col text-white m-[10vw] pt-[40vw] pb-[20vw] "
+        className="relative z-10 flex flex-col text-white m-[10vw] pt-[40vw] pb-[20vw]"
         style={{ height: 'auto' }}
       >
         {/* <br id="faq" />

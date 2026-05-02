@@ -27,14 +27,16 @@ export default function PrizeTracks() {
       if (selectedFilter.toLowerCase() === 'all') {
         return prizes;
       }
-      return prizes.filter(
-        (prize) => prize.filter.toLowerCase() === selectedFilter.toLowerCase()
+      return prizes.filter((prize) =>
+        prize.filter.some(
+          (f) => f.toLowerCase() === selectedFilter.toLowerCase()
+        )
       );
     });
   };
 
   return (
-    <main className="flex flex-col gap-4 px-[5%] py-[15%] md:py-[8%] bg-[#FAFAFF]">
+    <main className="flex flex-col gap-4 px-[5%] py-[15%] md:py-[8%] bg-[#FAFAFF] mb-[150px]">
       <Header />
       <DesktopFilterRow
         currentFilter={filter}

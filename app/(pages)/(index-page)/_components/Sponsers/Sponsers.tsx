@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 type Sponsor = { id: string; src?: string; url?: string; alt?: string };
 
-function SponsorElement({ src, url, alt }: Sponsor) {
+function SponsorElement({ src, alt }: Sponsor) {
   return (
     <div
       className="
@@ -20,9 +20,9 @@ function SponsorElement({ src, url, alt }: Sponsor) {
     >
       <div className="absolute inset-[10%]">
         <a
-          href={url ?? '#'}
-          target="_blank"
-          rel="noopener noreferrer"
+          // href={url ?? '#'}
+          // target="_blank"
+          // rel="noopener noreferrer"
           className="block w-full h-full"
         >
           <Image
