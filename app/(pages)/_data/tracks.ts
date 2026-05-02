@@ -429,7 +429,7 @@ const nonHDTracks: Tracks = {
   },
   'Best UI/UX Design': {
     name: 'Best UI/UX Design (Sponsored by Figma)',
-    filter: ['Sponsor'],
+    filter: ['Sponsor', 'Design'],
     prizes: ['Figma Full Seat (4 month subscription)'],
     images: [figmaLogo],
     eligibility_criteria:
