@@ -282,7 +282,7 @@ const optedHDTracks: Tracks = {
   },
   'Best User Research': {
     name: 'Best User Research',
-    filter: ['Sponsor', 'Design'],
+    filter: ['Design'],
     prizes: ['North Face Backpack'],
     images: [backpack],
     eligibility_criteria:
@@ -393,7 +393,7 @@ const optedHDTracks: Tracks = {
 const nonHDTracks: Tracks = {
   'Best AI/ML Hack': {
     name: 'Best AI/ML Hack (Sponsored by Anthropic)',
-    filter: ['Sponsor'],
+    filter: ['Sponsor', 'Technical'],
     prizes: ['$750 in Claude API credits'],
     images: [claudeLogo],
     eligibility_criteria:
@@ -465,7 +465,7 @@ const nonHDTracks: Tracks = {
   },
   'Best Use of DAC Materials': {
     name: 'Best Use of DAC Materials (Sponsored by Davis Autonomy Club)',
-    filter: ['Sponsor'],
+    filter: ['Sponsor', 'Technical'],
     prizes: ['$10,000 Daytona infrastructure credits'],
     images: [daytona],
     eligibility_criteria:
