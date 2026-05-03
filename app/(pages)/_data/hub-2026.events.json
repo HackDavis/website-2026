@@ -1,11 +1,37 @@
 [{
   "_id": {
+    "$oid": "680076779d521a51759d7e8c"
+  },
+  "name": "Break",
+  "type": "GENERAL",
+  "start_time": {
+    "$date": "2026-05-10T18:00:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-10T19:00:00.000Z"
+  }
+},
+{
+  "_id": {
     "$oid": "67e62cf95f285b9f3db580f1"
   },
   "name": "Check-in Starts",
   "type": "GENERAL",
   "start_time": {
     "$date": "2026-05-09T14:30:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67eb840248055efb36b62324"
+  },
+  "name": "Closing Ceremony",
+  "type": "GENERAL",
+  "start_time": {
+    "$date": "2026-05-10T22:00:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-10T23:00:00.000Z"
   }
 },
 {
@@ -29,32 +55,6 @@
   },
   "end_time": {
     "$date": "2026-05-10T22:00:00.000Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67f7a4db3eaf1040a69ac6aa"
-  },
-  "name": "Demos",
-  "type": "GENERAL",
-  "start_time": {
-    "$date": "2026-05-10T19:00:00.000Z"
-  },
-  "end_time": {
-    "$date": "2026-05-10T21:00:00.000Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67eb840248055efb36b62324"
-  },
-  "name": "Closing Ceremony",
-  "type": "GENERAL",
-  "start_time": {
-    "$date": "2026-05-10T22:00:00.000Z"
-  },
-  "end_time": {
-    "$date": "2026-05-10T23:00:00.000Z"
   }
 },
 {
@@ -92,15 +92,15 @@
 },
 {
   "_id": {
-    "$oid": "680076779d521a51759d7e8c"
+    "$oid": "67f7a4db3eaf1040a69ac6aa"
   },
-  "name": "Break",
+  "name": "Demos",
   "type": "GENERAL",
   "start_time": {
-    "$date": "2026-05-10T18:00:00.000Z"
+    "$date": "2026-05-10T19:00:00.000Z"
   },
   "end_time": {
-    "$date": "2026-05-10T19:00:00.000Z"
+    "$date": "2026-05-10T21:00:00.000Z"
   }
 },
 {
@@ -132,4 +132,199 @@
   "start_time": {
     "$date": "2026-05-10T16:30:00.000Z"
   }
+},
+{
+  "_id": {
+    "$oid": "67f7a60f3eaf1040a69ac6ae"
+  },
+  "name": "Therapy Dogs",
+  "type": "ACTIVITIES",
+  "start_time": {
+    "$date": "2026-05-09T22:30:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-10T00:10:00.000Z"
+  },
+  "location": "Food Area"
+},
+{
+  "_id": {
+    "$oid": "67f7a5de3eaf1040a69ac6ad"
+  },
+  "name": "Bracelet Making",
+  "type": "ACTIVITIES",
+  "start_time": {
+    "$date": "2026-05-09T20:45:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-10T00:30:00.000Z"
+  },
+  "location": "Upper Level"
+},
+{
+  "_id": {
+    "$oid": "67eb834a48055efb36b62320"
+  },
+  "name": "Team Mixer",
+  "type": "ACTIVITIES",
+  "start_time": {
+    "$date": "2026-05-09T15:00:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-09T16:45:00.000Z"
+  },
+  "location": "ARC Ballroom A"
+},
+{
+  "_id": {
+    "$oid": "680027589d521a51759d7e86"
+  },
+  "name": "Tech Together Meetup",
+  "type": "WORKSHOPS",
+  "start_time": {
+    "$date": "2026-05-09T20:30:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-09T21:30:00.000Z"
+  },
+  "host": "Major League Hacking",
+  "tags": [
+    "beginner",
+    "developer",
+    "pm",
+    "designer",
+    "other"
+  ],
+  "location": "ARC Ballroom B"
+},
+{
+  "_id": {
+    "$oid": "680026b09d521a51759d7e83"
+  },
+  "name": "MLH GitHub Copilot Workshop and MCP",
+  "type": "WORKSHOPS",
+  "start_time": {
+    "$date": "2026-05-09T22:30:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-09T23:30:00.000Z"
+  },
+  "host": "Major League Hacking",
+  "tags": [
+    "beginner",
+    "developer",
+    "pm"
+  ],
+  "location": "ARC Ballroom B"
+},
+{
+  "_id": {
+    "$oid": "67f7ad173eaf1040a69ac6b3"
+  },
+  "name": "CodeLab Workshop",
+  "type": "WORKSHOPS",
+  "start_time": {
+    "$date": "2026-05-09T18:00:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-09T19:00:00.000Z"
+  },
+  "host": "CodeLab",
+  "tags": [
+    "beginner"
+  ],
+  "location": "ARC Ballroom A"
+},
+{
+  "_id": {
+    "$oid": "6800279a9d521a51759d7e87"
+  },
+  "name": "MLH Intro to Google AI Studio",
+  "type": "WORKSHOPS",
+  "start_time": {
+    "$date": "2026-05-09T21:30:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-09T22:30:00.000Z"
+  },
+  "host": "Major League Hacking",
+  "tags": [
+    "beginner",
+    "developer",
+    "pm"
+  ],
+  "location": "ARC Ballroom A"
+},
+{
+  "_id": {
+    "$oid": "67f7ab113eaf1040a69ac6b2"
+  },
+  "name": "#include Workshop",
+  "type": "WORKSHOPS",
+  "start_time": {
+    "$date": "2026-05-09T20:00:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-09T21:00:00.000Z"
+  },
+  "host": "#include ",
+  "tags": [
+    "beginner"
+  ],
+  "location": "ARC Ballroom A"
+},
+{
+  "_id": {
+    "$oid": "67f7aa013eaf1040a69ac6b0"
+  },
+  "name": "AIC Workshop",
+  "type": "WORKSHOPS",
+  "start_time": {
+    "$date": "2026-05-09T21:00:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-09T22:00:00.000Z"
+  },
+  "host": "AIC (previously AISC)",
+  "tags": [
+    "beginner"
+  ],
+  "location": "ARC Ballroom A"
+},
+{
+  "_id": {
+    "$oid": "680028219d521a51759d7e8a"
+  },
+  "name": "Davis Autonomy Club Workshop",
+  "type": "WORKSHOPS",
+  "start_time": {
+    "$date": "2026-05-09T23:00:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-10T00:00:00.000Z"
+  },
+  "host": "Davis Autonomy Club",
+  "tags": [
+    "beginner",
+    "developer"
+  ],
+  "location": "ARC Ballroom A"
+},
+{
+  "_id": {
+    "$oid": "69f7a3bef7afd28e1325deab"
+  },
+  "name": "STUDENT STARTUP CENTER Workshop",
+  "type": "WORKSHOPS",
+  "start_time": {
+    "$date": "2026-05-10T00:00:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-10T01:00:00.000Z"
+  },
+  "host": "STUDENT STARTUP CENTER",
+  "tags": [
+    "beginner"
+  ],
+  "location": "ARC Ballroom A"
 }]
