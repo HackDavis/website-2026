@@ -103,10 +103,12 @@ export default function HeroInfo() {
                 <h1 className="whitespace-nowrap text-[45px] font-bold leading-[115%] tracking-[0.9px] text-[var(--text-hero)] break-900:text-[50px] break-625:text-[66px] break-625:leading-[100%] break-625:tracking-[3.52px] md:text-[88px]">
                   social good
                 </h1>
+                <h4 className="font-semibold text-[var(--text-hero)] text-[18px] md:text-[24px]">Registration for HackDavis 2026 is now closed!</h4>
 
                 <p className="mt-[10px] text-[16px] w-full tracking-[0.48px] text-black break-625:text-[20px]">
                   May 9-10, 2026 @ UCenter
                 </p>
+                
               </div>
             </div>
 
