@@ -130,7 +130,7 @@ export default function Sponsers() {
     },
     {
       id: 'figma',
-      src: '/Images/sponsers/figma.svg.png',
+      src: '/Images/sponsers/figma.png',
       url: 'https://figma.com/',
       alt: 'figma Logo',
     },
