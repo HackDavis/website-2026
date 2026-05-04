@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 
-type SectionId = 'home' | 'faq' | 'sponsors' | 'about';
+type SectionId = 'home' | 'prizes' | 'faq' | 'sponsors' | 'about';
 type AboutTheme = 'light' | 'dark' | 'teal';
 
 export default function Header() {
@@ -147,7 +147,7 @@ export default function Header() {
     return 'text-white';
   }, [isMenuOpen, isHomePage, isAboutPage, aboutTheme]);
 
-  const goToSection = (id: 'home' | 'faq' | 'sponsors') => {
+  const goToSection = (id: 'home' | 'prizes' | 'faq' | 'sponsors') => {
     if (pathname !== '/') {
       isNavigatingRef.current = true;
       router.push(id === 'home' ? '/' : `/#${id}`);
@@ -180,15 +180,20 @@ export default function Header() {
     }
 
     const homeEl = document.getElementById('home');
+    const prizesEl = document.getElementById('prizes');
     const faqEl = document.getElementById('faq');
     const sponsorsEl = document.getElementById('sponsors');
 
     const sections = [
       { id: 'home' as const, el: homeEl },
+      { id: 'prizes' as const, el: prizesEl },
       { id: 'faq' as const, el: faqEl },
       { id: 'sponsors' as const, el: sponsorsEl },
     ].filter(
-      (s): s is { id: 'home' | 'faq' | 'sponsors'; el: HTMLElement } => !!s.el
+      (
+        s
+      ): s is { id: 'home' | 'prizes' | 'faq' | 'sponsors'; el: HTMLElement } =>
+        !!s.el
     );
 
     const headerOffset = 120;
@@ -327,7 +332,7 @@ export default function Header() {
       <div className="w-full flex items-center justify-start md:ml-auto md:w-auto md:items-start md:justify-end md:gap-2 pointer-events-auto">
         <div className="hidden md:flex">
           <div
-            className={`w-[27vw] h-[5.6vh] m-[3vw] items-center justify-evenly ${desktopNavPillClass}`}
+            className={`w-[35vw] h-[5.6vh] m-[3vw] items-center justify-evenly ${desktopNavPillClass}`}
             style={
               isHomePage ? { backgroundColor: 'var(--navbar-bg)' } : undefined
             }
@@ -340,6 +345,16 @@ export default function Header() {
               }`}
             >
               Home
+            </button>
+
+            <button
+              type="button"
+              onClick={() => goToSection('prizes')}
+              className={`text-[1vw] uppercase font-[var(--font-metropolis)] mx-[1vw] ${linkTextClass} ${
+                activeSection === 'prizes' ? 'font-black underline' : ''
+              }`}
+            >
+              Prizes
             </button>
 
             <button
@@ -418,6 +433,14 @@ export default function Header() {
                 onClick={handleMobileNavClick('/about-us')}
               >
                 About
+              </Link>
+
+              <Link
+                href="/#prizes"
+                className=""
+                onClick={handleMobileNavClick('/#prizes')}
+              >
+                Prizes
               </Link>
 
               <Link

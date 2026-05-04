@@ -36,7 +36,10 @@ export default function PrizeTracks() {
   };
 
   return (
-    <main className="flex flex-col gap-4 px-[5%] py-[15%] md:py-[8%] bg-[#FAFAFF] mb-[150px]">
+    <main
+      id="prizes"
+      className="flex flex-col gap-4 px-[5%] py-[15%] md:py-[8%] bg-[#FAFAFF] mb-[150px]"
+    >
       <Header />
       <DesktopFilterRow
         currentFilter={filter}
