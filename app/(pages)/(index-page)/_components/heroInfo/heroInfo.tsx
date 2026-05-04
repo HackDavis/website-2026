@@ -112,7 +112,7 @@ export default function HeroInfo() {
 
             <div className="flex flex-row items-start gap-[12px] break-625:flex-col break-625:items-end break-625:gap-[28px] sm:flex-row sm:items-center">
               <Link
-                href="https://apply.hackdavis.io/"
+                href="https://linktr.ee/hackdavis"
                 target="_blank"
                 className="
                     rounded-full
@@ -133,7 +133,7 @@ export default function HeroInfo() {
                     hover:text-white
                   "
               >
-                Register Now
+                Director Applications
               </Link>
 
               <div className="flex h-[40px] w-[138px] flex-shrink-0 items-center rounded-[100px] bg-black/15 text-center text-[18px] font-bold tracking-[0.4px] text-black break-625:h-[50px] break-625:w-[170px] break-625:py-0 break-625:text-[20px]">
@@ -146,25 +146,13 @@ export default function HeroInfo() {
             </div>
 
             <div className="flex flex-col items-start gap-2 text-left break-625:flex-row break-625:items-end break-625:text-right">
-              <span className="hidden text-[18px] font-normal tracking-[0.48px] text-black break-625:inline md:text-[20px]">
+              <div className="flex items-center gap-2 text-black text-[19px]">
                 Check out the{' '}
-              </span>
-              {/* <div className="flex items-center gap-2 text-black text-[19px]">
-                Apply to be a{' '}
-                <FormLink
-                  href="https://forms.gle/rvMKjxw6GjiaKPjc7"
-                  includeComma={false}
-                >
-                  <span style={{ color: '#FFC53D' }}>Judge</span>
+                <FormLink href="/#teams" includeComma={false}>
+                  <span style={{ color: '#FFC53D' }}>roles and teams</span>
                 </FormLink>
-                <span>or</span>
-                <FormLink
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSeB01uEqAb9SvTZur3wGT1Dl8goArxdnV_lvIFak6yxfD_FkQ/viewform?usp=publish-editor"
-                  includeComma={false}
-                >
-                  <span style={{ color: '#9EE7E5' }}>Volunteer</span>
-                </FormLink>
-              </div> */}
+                we have!
+              </div>
             </div>
           </div>
         </div>
@@ -218,30 +206,45 @@ export default function HeroInfo() {
   );
 }
 
-// interface FormLinkProps {
-//   href: string;
-//   includeComma: boolean;
-//   children: React.ReactNode;
-// }
+interface FormLinkProps {
+  href: string;
+  includeComma: boolean;
+  children: React.ReactNode;
+}
 
-// function FormLink({ href, includeComma, children }: FormLinkProps) {
-//   return (
-//     <Link
-//       href={href}
-//       className="group flex items-center text-[16px] md:text-[18px] font-bold tracking-[0.48px] text-black md:text-[20px]"
-//       target="_blank"
-//     >
-//       <span className="font-bold">{children}</span>
+function FormLink({ href, includeComma, children }: FormLinkProps) {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (href.startsWith('/#')) {
+      const id = href.split('#')[1];
+      const element = document.getElementById(id);
 
-//       <Image
-//         src="/Images/reghero/icon_arrow.svg"
-//         alt="Arrow icon"
-//         width={10}
-//         height={10}
-//         className="m-1 object-contain transition-transform group-hover:translate-x-1"
-//       />
+      if (element) {
+        e.preventDefault();
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+        window.history.pushState(null, '', href);
+      }
+    }
+  };
+  return (
+    <Link
+      href={href}
+      onClick={handleClick}
+      className="group flex items-center text-[16px] md:text-[18px] font-bold tracking-[0.48px] text-black md:text-[20px]"
+    >
+      <span className="font-bold">{children}</span>
 
-//       {includeComma && <span>,</span>}
-//     </Link>
-//   );
-// }
+      <Image
+        src="/Images/reghero/icon_arrow.svg"
+        alt="Arrow icon"
+        width={10}
+        height={10}
+        className="m-1 object-contain transition-transform group-hover:translate-x-1"
+      />
+
+      {includeComma && <span>,</span>}
+    </Link>
+  );
+}
