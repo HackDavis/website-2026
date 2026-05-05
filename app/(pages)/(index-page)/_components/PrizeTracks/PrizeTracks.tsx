@@ -14,6 +14,7 @@ const PRIZE_TRACK_FILTERS = [
   'BUSINESS',
   'SPONSOR',
   'NON-PROFIT',
+  'MLH',
 ] as const;
 
 export default function PrizeTracks() {
@@ -63,7 +64,7 @@ function Header() {
   return (
     <div className="flex flex-col">
       <h3 className="font-medium text-4xl font-metropolis mt-4">Prizes</h3>
-      <p>Prizes are subject to change *</p>
+      <p>Prizes are subject to change</p>
     </div>
   );
 }

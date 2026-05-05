@@ -11,7 +11,7 @@ import projector from '@public/prizes/projector.png';
 // import raspberryPi from '@public/prizes/raspberry_pi.png';
 import mouse from '@public/prizes/mouse.png';
 import keyboard from '@public/prizes/keyboard.png';
-import figmaLogo from '@public/prizes/figma_logo.png';
+// import figmaLogo from '@public/prizes/figma_logo.png';
 import chatgptLogo from '@public/prizes/chatgpt_logo.png';
 import backpack from '@public/prizes/backpack.png';
 import bluetoothSpeaker from '@public/prizes/bluetooth_speaker.png';
@@ -21,6 +21,15 @@ import amazonGiftcard from '@public/prizes/amazon_giftcard.png';
 import claudeLogo from '@public/prizes/claude_logo.png';
 import ankerCharger from '@public/prizes/anker_charger.png';
 import daytona from '@public/prizes/daytona.png';
+import googleSwagKit from '@public/prizes/googleSwagKit.png';
+import wirelessEarbuds from '@public/prizes/wirelessEarbuds.png';
+import ledgerNanoSPlus from '@public/prizes/ledgerNanoSPlus.png';
+import tileEssentialsPack from '@public/prizes/tileEssentialsPack.png';
+import portableScreens from '@public/prizes/portableScreens.png';
+import m5StackIotKit from '@public/prizes/m5StackIotKit.png';
+import digitalGiftCard from '@public/prizes/digitalGiftCard.png';
+import sonyHeadphones from '@public/prizes/sony_headphones.webp';
+import datalab from '@public/prizes/datalab.png';
 
 interface TrackData {
   name: string;
@@ -283,8 +292,8 @@ const optedHDTracks: Tracks = {
   'Best User Research': {
     name: 'Best User Research',
     filter: ['Design'],
-    prizes: ['North Face Backpack'],
-    images: [backpack],
+    prizes: ['ChatGPT+ (4 month subscription)'],
+    images: [chatgptLogo],
     eligibility_criteria:
       'Awarded to a well-researched project that keeps its userbase in mind with an inclusive design aimed to maximize accessibility.',
     domain: 'design',
@@ -319,8 +328,8 @@ const optedHDTracks: Tracks = {
   'Best Entrepreneurship Hack': {
     name: 'Best Entrepreneurship Hack',
     filter: ['Business'],
-    prizes: ['ChatGPT+ (4 month subscription)'],
-    images: [chatgptLogo],
+    prizes: ['North Face Backpack'],
+    images: [backpack],
     eligibility_criteria:
       "No Code Required. A project that focuses on viability and persuasive power through presentation on the product/service you're trying to sell, relevant customer segments, distribution channels, and associated revenue/profit models.",
     domain: 'business',
@@ -392,12 +401,12 @@ const optedHDTracks: Tracks = {
 
 const nonHDTracks: Tracks = {
   'Best AI/ML Hack': {
-    name: 'Best AI/ML Hack (Sponsored by Anthropic)',
+    name: 'Best AI/ML Hack',
     filter: ['Sponsor', 'Technical'],
     prizes: ['$750 in Claude API credits'],
     images: [claudeLogo],
     eligibility_criteria:
-      'Project must have unique/creative AI functionality, clean data, accuracy in metrics, presence of high-quality data, utilizing relevant algorithms + ML libraries and/or cloud platforms for development. Participants should show how they collected their data and explain how their AI imitates the human mind. We encourage that models work accurately on unseen circumstances (displays versatility).',
+      'Project must have unique/creative AI functionality, clean data, accuracy in metrics, presence of high-quality data, utilizing relevant algorithms + ML libraries and/or cloud platforms for development. Participants should show how they collected their data and explain how their AI imitates the human mind. We encourage that models work accurately on unseen circumstances (displays versatility).\n\nSponsored by Anthropic.',
     domain: 'aiml',
     domainDisplayName: 'Data Science or AI/ML',
     scoring_criteria: [
@@ -428,12 +437,12 @@ const nonHDTracks: Tracks = {
     ],
   },
   'Best UI/UX Design': {
-    name: 'Best UI/UX Design (Sponsored by Figma)',
+    name: 'Best UI/UX Design',
     filter: ['Sponsor', 'Design'],
-    prizes: ['Figma Full Seat (4 month subscription)'],
-    images: [figmaLogo],
+    prizes: ['Sony WH-1000XM5 Wireless Noise-Canceling Headphones'],
+    images: [sonyHeadphones],
     eligibility_criteria:
-      'Project includes beautiful design and intuitive web experiences that bring joy to users. Shows that the project is not only functional but also delightful, demonstrates wireframing in Figma, responsive design and promotes intuitive user experiences.',
+      'Project includes beautiful design and intuitive web experiences that bring joy to users. Shows that the project is not only functional but also delightful, demonstrates wireframing in Figma, responsive design and promotes intuitive user experiences.\n\nSponsored by Figma.',
     domain: 'design',
     domainDisplayName: 'UI/UX Design',
     scoring_criteria: [
@@ -464,12 +473,12 @@ const nonHDTracks: Tracks = {
     ],
   },
   'Best Use of DAC Materials': {
-    name: 'Best Use of DAC Materials (Sponsored by Davis Autonomy Club)',
+    name: 'Best Use of DAC Materials',
     filter: ['Sponsor', 'Technical'],
     prizes: ['$10,000 Daytona infrastructure credits'],
     images: [daytona],
     eligibility_criteria:
-      "Project must incorporate one or more of DAC's materials with a vision-based AI pipeline, implementing and/or configuring concepts such as Vision-Language Models (VLMs) or Vision-Language-Action Models (VLAs) to connect real-world visual perception to physical robotic behavior.",
+      "Project must incorporate one or more of DAC's materials with a vision-based AI pipeline, implementing and/or configuring concepts such as Vision-Language Models (VLMs) or Vision-Language-Action Models (VLAs) to connect real-world visual perception to physical robotic behavior.\n\nSponsored by the Davis Autonomy Club.",
   },
   "Best Hack for Women's Center": {
     name: "Best Hack for Women's Center",
@@ -479,6 +488,14 @@ const nonHDTracks: Tracks = {
     eligibility_criteria:
       'Projects must create a digital system to track donations as they come in and go out. Wellspring is looking for a straightforward, easy-to-use digital tool that helps staff and volunteers quickly log donated items, track how they are distributed, and generate basic reports when needed.',
   },
+  'Best Open Data Hack': {
+    name: 'Best Open Data Hack',
+    filter: ['Sponsor', 'Technical'],
+    prizes: ['DataLab Internship'],
+    images: [datalab],
+    eligibility_criteria:
+      "Teams must identify a question or topic that, when addressed, produces an insight or product that promotes social good for the UC Davis community. To qualify for this challenge, you must find and use one or more Open and Publicly Accessible Datasets to complete your hack. Finding and appropriately using the right data to address your question or topic is one of the biggest hurdles in data science.\n\nThe Spotlight:\n• Your visualization will be professionally printed and permanently displayed in the DataLab at Shields Library.\n• An invitation to present your work at DataLab's talk series.\n• A spot in DataLab's summer mentored Internship Program (non-paid) to jumpstart your career, where you'll work alongside expert data scientists to level up your portfolio.\n\nSponsored by DataLab.",
+  },
   // 'Best Hack for ASUCD Pantry': {
   //   name: 'Best Hack for ASUCD Pantry',
   //   filter: 'Non-Profit',
@@ -487,6 +504,72 @@ const nonHDTracks: Tracks = {
   //   eligibility_criteria:
   //     'Projects must design a digital recipe book or platform that generates simple, affordable, and culturally inclusive recipes based on selected pantry items, accounts for common student constraints (minimal equipment, short cook times, dietary needs), and helps reduce food waste while making the pantry more accessible and empowering.',
   // },
+  'Best Use of Gemini API': {
+    name: 'Best Use of Gemini API',
+    filter: ['MLH', 'Technical'],
+    prizes: ['Google Swag Kits'],
+    images: [googleSwagKit],
+    eligibility_criteria:
+      "It's time to push the boundaries of what's possible with AI using Google Gemini. Check out the Gemini API to build AI-powered apps that make your friends say WHOA. So, what can Gemini do for your hackathon project?\n• Understand language like a human and build a chatbot that gives personalized advice\n• Analyze info like a supercomputer and create an app that summarizes complex research papers\n• Generate creative content like code, scripts, music, and more\nThink of the possibilities… what will you build with the Google Gemini API this weekend?\n\nJudged by MLH.",
+  },
+  'Best Use of ElevenLabs': {
+    name: 'Best Use of ElevenLabs',
+    filter: ['MLH', 'Technical'],
+    prizes: ['Wireless Earbuds'],
+    images: [wirelessEarbuds],
+    eligibility_criteria:
+      'Deploy natural, human-sounding audio with ElevenLabs. Create realistic, dynamic, and emotionally expressive voices for any project, from interactive AI companions to narrated stories and voice-enabled apps. ElevenLabs will empower you to build rich, immersive experiences without the need for actors or complex audio production, using simply the power of AI.\n\nIntegrate fully autonomous audio experiences into your hack with ElevenLabs and give your project a voice, along with giving your team the chance to win some wireless earbuds!\n\nJudged by MLH.',
+  },
+  'Best Use of Solana': {
+    name: 'Best Use of Solana',
+    filter: ['MLH', 'Technical'],
+    prizes: ['Ledger Nano S Plus'],
+    images: [ledgerNanoSPlus],
+    eligibility_criteria:
+      "The world of development is evolving fast and Solana is leading the charge with a network built to handle all of your infrastructure needs. Forget high fees and slow confirmations, it's time to build applications that are fast, efficient, and scalable.\n\nHarness Solana's core advantages like blazing fast execution and near-zero transaction costs to make your hackathon ideas become real world projects. With Solana, the possibilities are endless.\n• Create a game, social app, or consumer product that relies on instant, high-frequency transactions.\n• Design a sophisticated trading, lending, or decentralized exchange (DEX).\n• Build a prototype for supply chain, identity, or payments that can handle massive, real-world volume.\nShow us how you can innovate with Solana for a chance to win some cool prizes for you and each member of your team!\n\nJudged by MLH.",
+  },
+  'Best Use of Backboard': {
+    name: 'Best Use of Backboard',
+    filter: ['MLH', 'Technical'],
+    prizes: ['Tile Essentials Pack'],
+    images: [tileEssentialsPack],
+    eligibility_criteria:
+      "Every AI model API is stateless by default. That means your app forgets everything the second a session ends. State management should be the first step of any AI build, regardless of what LLM you are using, and Backboard gives you that for free. But Backboard is not just state management. It is a single, unified API built on the world's #1 AI memory that gives you everything you need in one place: long-term memory, RAG, embeddings, tool calls, model routing across 17,000+ LLMs, and persistent context that stays alive across every page refresh, session, and user. No stitching together five different services. One API. One integration. Built on the best memory in AI.\n\nHere's just a small list of things Backboard can make possible for your AI app!\n\n• AI-powered Travel Guide: Remembers allergies and preferences from past trips.\n• Personalized Fitness Coach: Adjusts workouts based on progress and injury history.\n• Smart Home Controller: Learns routines over time to anticipate lighting and climate preferences!\n\nUse Backboard to build a seamless, persistent user experience without the usual infrastructure headache! Each winning team member will receive a Tiles Essentials Pack because, just like AI,  we all need an occasional reminder of where things are!\n\nJudged by MLH.",
+  },
+  'Best Use of Vultr': {
+    name: 'Best Use of Vultr',
+    filter: ['MLH', 'Technical'],
+    prizes: ['Portable Screens'],
+    images: [portableScreens],
+    eligibility_criteria:
+      'Vultr empowers hackers to bring their high-performance projects to life instantly; providing everything from the speed of one-click deployment and scalable cloud compute, to specialized Vultr Cloud GPUs that can power AI-driven applications. We want you to push the limits of what can be built when infrastructure is no longer the bottleneck!\n\nSign up for a Vultr account today and claim your free cloud credits! Take your next hack to the cloud with Vultr for a chance to win some awesome portable screens for you and your team!\n\nJudged by MLH.',
+  },
+  'Best Use of MongoDB Atlas': {
+    name: 'Best Use of MongoDB Atlas',
+    filter: ['MLH', 'Technical'],
+    prizes: ['M5Stack IoT Kit'],
+    images: [m5StackIotKit],
+    eligibility_criteria:
+      "MongoDB Atlas takes the leading modern database and makes it accessible in the cloud! Get started with a $50 credit for students or sign up for the Atlas free forever tier (no credit card required). Along with a suite of services and functionalities, you'll have everything you need to manage all of your data, and you can get a headstart with free resources from MongoDB University! Build a hack using MongoDB Atlas for a chance to win a M5Stack IoT Kit for you and each member of your group.\n\nJudged by MLH.",
+  },
+  'Best Domain Name from GoDaddy Registry': {
+    name: 'Best Domain Name from GoDaddy Registry',
+    filter: ['MLH'],
+    prizes: ['Digital Gift Card'],
+    images: [digitalGiftCard],
+    eligibility_criteria:
+      'GoDaddy Registry is giving you everything you need to be the best hacker no matter where you are. Register your domain name with GoDaddy Registry for a chance to win some amazing prizes! \n\nJudged by MLH.',
+  },
+};
+
+const sponsoredNotSendingJudges: Tracks = {
+  'Best AI/ML Hack': nonHDTracks['Best AI/ML Hack'],
+  'Best UI/UX Design': nonHDTracks['Best UI/UX Design'],
+};
+
+const judgeVisibleTracks: Tracks = {
+  ...optedHDTracks,
+  ...sponsoredNotSendingJudges,
 };
 
 const allTracks: Tracks = {
@@ -496,7 +579,7 @@ const allTracks: Tracks = {
 };
 
 const displayNameToDomainMap: Map<string, string> = new Map(
-  Object.entries(optedHDTracks).map(([_, value]) => [
+  Object.entries(judgeVisibleTracks).map(([_, value]) => [
     value.domainDisplayName ?? '',
     value.domain ?? '',
   ])
@@ -507,6 +590,8 @@ export {
   optedHDTracks,
   automaticTracks,
   nonHDTracks,
+  sponsoredNotSendingJudges,
+  judgeVisibleTracks,
   displayNameToDomainMap,
 };
 
