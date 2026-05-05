@@ -113,7 +113,7 @@
     "$date": "2026-05-09T22:30:00.000Z"
   },
   "end_time": {
-    "$date": "2026-05-10T00:10:00.000Z"
+    "$date": "2026-05-10T00:30:00.000Z"
   },
   "location": "Food Area"
 },
@@ -124,7 +124,7 @@
   "name": "Bracelet Making",
   "type": "ACTIVITIES",
   "start_time": {
-    "$date": "2026-05-09T20:45:00.000Z"
+    "$date": "2026-05-09T20:30:00.000Z"
   },
   "end_time": {
     "$date": "2026-05-10T00:30:00.000Z"
@@ -152,10 +152,10 @@
   "name": "Tech Together Meetup",
   "type": "WORKSHOPS",
   "start_time": {
-    "$date": "2026-05-09T20:30:00.000Z"
+    "$date": "2026-05-09T20:10:00.000Z"
   },
   "end_time": {
-    "$date": "2026-05-09T21:30:00.000Z"
+    "$date": "2026-05-09T21:00:00.000Z"
   },
   "host": "Major League Hacking",
   "tags": [
@@ -174,10 +174,10 @@
   "name": "MLH GitHub Copilot Workshop and MCP",
   "type": "WORKSHOPS",
   "start_time": {
-    "$date": "2026-05-09T22:30:00.000Z"
+    "$date": "2026-05-09T22:10:00.000Z"
   },
   "end_time": {
-    "$date": "2026-05-09T23:30:00.000Z"
+    "$date": "2026-05-09T23:00:00.000Z"
   },
   "host": "Major League Hacking",
   "tags": [
@@ -194,7 +194,7 @@
   "name": "CodeLab Workshop",
   "type": "WORKSHOPS",
   "start_time": {
-    "$date": "2026-05-09T18:00:00.000Z"
+    "$date": "2026-05-09T18:10:00.000Z"
   },
   "end_time": {
     "$date": "2026-05-09T19:00:00.000Z"
@@ -212,10 +212,10 @@
   "name": "MLH Intro to Google AI Studio",
   "type": "WORKSHOPS",
   "start_time": {
-    "$date": "2026-05-09T21:30:00.000Z"
+    "$date": "2026-05-09T21:10:00.000Z"
   },
   "end_time": {
-    "$date": "2026-05-09T22:30:00.000Z"
+    "$date": "2026-05-09T22:00:00.000Z"
   },
   "host": "Major League Hacking",
   "tags": [
@@ -232,7 +232,7 @@
   "name": "#include Workshop",
   "type": "WORKSHOPS",
   "start_time": {
-    "$date": "2026-05-09T20:00:00.000Z"
+    "$date": "2026-05-09T20:10:00.000Z"
   },
   "end_time": {
     "$date": "2026-05-09T21:00:00.000Z"
@@ -250,7 +250,7 @@
   "name": "AIC Workshop",
   "type": "WORKSHOPS",
   "start_time": {
-    "$date": "2026-05-09T21:00:00.000Z"
+    "$date": "2026-05-09T21:10:00.000Z"
   },
   "end_time": {
     "$date": "2026-05-09T22:00:00.000Z"
@@ -268,10 +268,10 @@
   "name": "Davis Autonomy Club Workshop",
   "type": "WORKSHOPS",
   "start_time": {
-    "$date": "2026-05-09T23:00:00.000Z"
+    "$date": "2026-05-09T22:10:00.000Z"
   },
   "end_time": {
-    "$date": "2026-05-10T00:00:00.000Z"
+    "$date": "2026-05-09T23:00:00.000Z"
   },
   "host": "Davis Autonomy Club",
   "tags": [
@@ -287,14 +287,33 @@
   "name": "STUDENT STARTUP CENTER Workshop",
   "type": "WORKSHOPS",
   "start_time": {
-    "$date": "2026-05-10T00:00:00.000Z"
+    "$date": "2026-05-09T23:10:00.000Z"
   },
   "end_time": {
-    "$date": "2026-05-10T01:00:00.000Z"
+    "$date": "2026-05-10T00:00:00.000Z"
   },
   "host": "STUDENT STARTUP CENTER",
   "tags": [
     "beginner"
+  ],
+  "location": "ARC Ballroom A"
+},
+{
+  "_id": {
+    "$oid": "69f95de3513e20d613adce74"
+  },
+  "name": "Figma Workshop",
+  "type": "WORKSHOPS",
+  "start_time": {
+    "$date": "2026-05-10T00:10:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-10T00:50:00.000Z"
+  },
+  "host": "Figma",
+  "tags": [
+    "beginner",
+    "designer"
   ],
   "location": "ARC Ballroom A"
 }]
