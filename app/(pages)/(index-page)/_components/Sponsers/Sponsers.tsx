@@ -155,6 +155,12 @@ export default function Sponsers() {
       url: 'https://srrc.ucdavis.edu/',
       alt: 'srrc Logo',
     },
+    {
+      id: 'hippeas',
+      src: '/Images/sponsers/hippeas.png',
+      url: 'https://hippeas.com/',
+      alt: 'hippeas Logo',
+    },
   ];
 
   return (
