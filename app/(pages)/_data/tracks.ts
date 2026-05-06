@@ -29,14 +29,16 @@ import portableScreens from '@public/prizes/portableScreens.png';
 import m5StackIotKit from '@public/prizes/m5StackIotKit.png';
 import digitalGiftCard from '@public/prizes/digitalGiftCard.png';
 import sonyHeadphones from '@public/prizes/sony_headphones.webp';
-import datalab from '@public/prizes/datalab.png';
+// import datalab from '@public/prizes/datalab.png';
 
 interface TrackData {
   name: string;
+  displayName?: string;
   filter: string[];
   prizes: string[];
   images: StaticImport[];
   eligibility_criteria: string;
+  eligibility_link?: string;
   domain?: string;
   domainDisplayName?: string;
   scoring_criteria?: {
@@ -402,6 +404,7 @@ const optedHDTracks: Tracks = {
 const nonHDTracks: Tracks = {
   'Best AI/ML Hack': {
     name: 'Best AI/ML Hack',
+    displayName: 'Best AI/ML Hack (Sponsored by Anthropic)',
     filter: ['Sponsor', 'Technical'],
     prizes: ['$750 in Claude API credits'],
     images: [claudeLogo],
@@ -438,11 +441,12 @@ const nonHDTracks: Tracks = {
   },
   'Best UI/UX Design': {
     name: 'Best UI/UX Design',
+    displayName: 'Best UI/UX Design (Sponsored by Figma)',
     filter: ['Sponsor', 'Design'],
     prizes: ['Sony WH-1000XM5 Wireless Noise-Canceling Headphones'],
     images: [sonyHeadphones],
     eligibility_criteria:
-      'Project includes beautiful design and intuitive web experiences that bring joy to users. Shows that the project is not only functional but also delightful, demonstrates wireframing in Figma, responsive design and promotes intuitive user experiences.\n\nSponsored by Figma.',
+      'Project uses Figma to create beautiful design and intuitive web experiences that bring joy to users. Shows that the project is not only functional but also delightful, demonstrates wireframing in Figma, responsive design and promotes intuitive user experiences.\n\nSponsored by Figma.',
     domain: 'design',
     domainDisplayName: 'UI/UX Design',
     scoring_criteria: [
@@ -474,11 +478,32 @@ const nonHDTracks: Tracks = {
   },
   'Best Use of DAC Materials': {
     name: 'Best Use of DAC Materials',
+    displayName: 'Best Use of DAC Materials (Sponsored by Davis Autonomy Club)',
     filter: ['Sponsor', 'Technical'],
     prizes: ['$10,000 Daytona infrastructure credits'],
     images: [daytona],
     eligibility_criteria:
       "Project must incorporate one or more of DAC's materials with a vision-based AI pipeline, implementing and/or configuring concepts such as Vision-Language Models (VLMs) or Vision-Language-Action Models (VLAs) to connect real-world visual perception to physical robotic behavior.\n\nSponsored by the Davis Autonomy Club.",
+  },
+  // 'Best Open Data Hack': {
+  //   name: 'Best Open Data Hack',
+  //   displayName: 'Best Open Data Hack (Sponsored by DataLab)',
+  //   filter: ['Sponsor', 'Technical'],
+  //   prizes: ['DataLab Internship'],
+  //   images: [datalab],
+  //   eligibility_criteria:
+  //     "Teams must identify a question or topic that, when addressed, produces an insight or product that promotes social good for the UC Davis community. To qualify for this challenge, you must find and use one or more Open and Publicly Accessible Datasets to complete your hack. Finding and appropriately using the right data to address your question or topic is one of the biggest hurdles in data science.\n\nYou must follow the guidelines provided at the link below to be eligible for this track.\n\nWinners receive:\n• The Spotlight: Your visualization will be professionally printed and permanently displayed in the DataLab at Shields Library.\n• An invitation to present your work at DataLab's talk series.\n• A spot in DataLab's summer mentored Internship Program (non-paid) to jumpstart your career, where you'll work alongside expert data scientists to level up your portfolio.\n\nSponsored by DataLab.",
+  //   eligibility_link:
+  //     'https://docs.google.com/document/d/143apy8JsrJ4VYwxiI-bu2kNPAyL-1f2FweM9gpgXZFM/edit?tab=t.0',
+  // },
+  'Best use of Reconstruct': {
+    name: 'Best use of Reconstruct',
+    displayName: 'Best use of Reconstruct (Sponsored by Reconstruct)',
+    filter: ['Sponsor', 'Technical'],
+    prizes: ['$125 Visa Gift Card per team member'],
+    images: [digitalGiftCard],
+    eligibility_criteria:
+      'Most creative use of Rescontruct in their project. Project must use Reconstruct in a prominant and efficient way to qualify for this prize track.\n\nSponsored by Reconstruct.',
   },
   "Best Hack for Women's Center": {
     name: "Best Hack for Women's Center",
@@ -487,14 +512,6 @@ const nonHDTracks: Tracks = {
     images: [ankerCharger],
     eligibility_criteria:
       'Projects must create a digital system to track donations as they come in and go out. Wellspring is looking for a straightforward, easy-to-use digital tool that helps staff and volunteers quickly log donated items, track how they are distributed, and generate basic reports when needed.',
-  },
-  'Best Open Data Hack': {
-    name: 'Best Open Data Hack',
-    filter: ['Sponsor', 'Technical'],
-    prizes: ['DataLab Internship'],
-    images: [datalab],
-    eligibility_criteria:
-      "Teams must identify a question or topic that, when addressed, produces an insight or product that promotes social good for the UC Davis community. To qualify for this challenge, you must find and use one or more Open and Publicly Accessible Datasets to complete your hack. Finding and appropriately using the right data to address your question or topic is one of the biggest hurdles in data science.\n\nThe Spotlight:\n• Your visualization will be professionally printed and permanently displayed in the DataLab at Shields Library.\n• An invitation to present your work at DataLab's talk series.\n• A spot in DataLab's summer mentored Internship Program (non-paid) to jumpstart your career, where you'll work alongside expert data scientists to level up your portfolio.\n\nSponsored by DataLab.",
   },
   // 'Best Hack for ASUCD Pantry': {
   //   name: 'Best Hack for ASUCD Pantry',
@@ -534,7 +551,7 @@ const nonHDTracks: Tracks = {
     prizes: ['Tile Essentials Pack'],
     images: [tileEssentialsPack],
     eligibility_criteria:
-      "Every AI model API is stateless by default. That means your app forgets everything the second a session ends. State management should be the first step of any AI build, regardless of what LLM you are using, and Backboard gives you that for free. But Backboard is not just state management. It is a single, unified API built on the world's #1 AI memory that gives you everything you need in one place: long-term memory, RAG, embeddings, tool calls, model routing across 17,000+ LLMs, and persistent context that stays alive across every page refresh, session, and user. No stitching together five different services. One API. One integration. Built on the best memory in AI.\n\nHere's just a small list of things Backboard can make possible for your AI app!\n\n• AI-powered Travel Guide: Remembers allergies and preferences from past trips.\n• Personalized Fitness Coach: Adjusts workouts based on progress and injury history.\n• Smart Home Controller: Learns routines over time to anticipate lighting and climate preferences!\n\nUse Backboard to build a seamless, persistent user experience without the usual infrastructure headache! Each winning team member will receive a Tiles Essentials Pack because, just like AI,  we all need an occasional reminder of where things are!\n\nJudged by MLH.",
+      "Every AI model API is stateless by default. That means your app forgets everything the second a session ends. State management should be the first step of any AI build, regardless of what LLM you are using, and Backboard gives you that for free. But Backboard is not just state management. It is a single, unified API built on the world's #1 AI memory that gives you everything you need in one place: long-term memory, RAG, embeddings, tool calls, model routing across 17,000+ LLMs, and persistent context that stays alive across every page refresh, session, and user. No stitching together five different services. One API. One integration. Built on the best memory in AI.\n\nHere's just a small list of things Backboard can make possible for your AI app!\n• AI-powered Travel Guide: Remembers allergies and preferences from past trips.\n• Personalized Fitness Coach: Adjusts workouts based on progress and injury history.\n• Smart Home Controller: Learns routines over time to anticipate lighting and climate preferences!\n\nUse Backboard to build a seamless, persistent user experience without the usual infrastructure headache! Each winning team member will receive a Tiles Essentials Pack because, just like AI, we all need an occasional reminder of where things are!\n\nJudged by MLH.",
   },
   'Best Use of Vultr': {
     name: 'Best Use of Vultr',
@@ -558,7 +575,7 @@ const nonHDTracks: Tracks = {
     prizes: ['Digital Gift Card'],
     images: [digitalGiftCard],
     eligibility_criteria:
-      'GoDaddy Registry is giving you everything you need to be the best hacker no matter where you are. Register your domain name with GoDaddy Registry for a chance to win some amazing prizes! \n\nJudged by MLH.',
+      'GoDaddy Registry is giving you everything you need to be the best hacker no matter where you are. Register your domain name with GoDaddy Registry for a chance to win some amazing prizes!\n\nJudged by MLH.',
   },
 };
 

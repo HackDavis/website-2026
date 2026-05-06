@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ExternalLink } from 'lucide-react';
 
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -13,6 +13,7 @@ interface PrizeCardProps {
   prizeImages: StaticImport[];
   prizeNames: string[];
   criteria: string;
+  criteriaLink?: string;
 }
 
 export default function PrizeCard({
@@ -20,6 +21,7 @@ export default function PrizeCard({
   prizeImages,
   prizeNames,
   criteria,
+  criteriaLink,
 }: PrizeCardProps) {
   const [expanded, setExpanded] = useState<boolean>(false);
 
@@ -120,10 +122,21 @@ export default function PrizeCard({
         </div>
       </AccordionSummary>
       <AccordionDetails sx={{ padding: '0px' }}>
-        <div className="flex items-center px-[5%] md:px-[2.5%] pb-[5%] md:pb-[3%]">
+        <div className="flex flex-col gap-3 px-[5%] md:px-[2.5%] pb-[5%] md:pb-[3%]">
           <p className="text-sm md:text-base xl:text-xl font-normal leading-[125%] whitespace-pre-line">
             {criteria || 'Check back in May!'}
           </p>
+          {criteriaLink && (
+            <a
+              href={criteriaLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm md:text-base xl:text-xl font-medium text-[#005271] underline cursor-pointer"
+            >
+              View full track details{' '}
+              <ExternalLink className="inline h-5 w-5 mb-0.5" />
+            </a>
+          )}
         </div>
       </AccordionDetails>
     </Accordion>

@@ -8,10 +8,11 @@ export default function PrizeGrid({ items }: { items: TrackData[] }) {
         return (
           <PrizeCard
             key={item.name}
-            name={item.name}
+            name={item.displayName ?? item.name}
             prizeNames={item.prizes}
             prizeImages={item.images}
             criteria={item.eligibility_criteria}
+            criteriaLink={item.eligibility_link}
           />
         );
       })}
