@@ -121,7 +121,7 @@ export default function PrizeCard({
       </AccordionSummary>
       <AccordionDetails sx={{ padding: '0px' }}>
         <div className="flex items-center px-[5%] md:px-[2.5%] pb-[5%] md:pb-[3%]">
-          <p className="text-sm md:text-base xl:text-xl font-normal leading-[125%]">
+          <p className="text-sm md:text-base xl:text-xl font-normal leading-[125%] whitespace-pre-line">
             {criteria || 'Check back in May!'}
           </p>
         </div>
