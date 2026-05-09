@@ -1,37 +1,11 @@
 [{
   "_id": {
-    "$oid": "680076779d521a51759d7e8c"
-  },
-  "name": "Break",
-  "type": "GENERAL",
-  "start_time": {
-    "$date": "2026-05-10T18:00:00.000Z"
-  },
-  "end_time": {
-    "$date": "2026-05-10T19:00:00.000Z"
-  }
-},
-{
-  "_id": {
     "$oid": "67e62cf95f285b9f3db580f1"
   },
   "name": "Check-in Starts",
   "type": "GENERAL",
   "start_time": {
     "$date": "2026-05-09T14:30:00.000Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67eb840248055efb36b62324"
-  },
-  "name": "Closing Ceremony",
-  "type": "GENERAL",
-  "start_time": {
-    "$date": "2026-05-10T22:00:00.000Z"
-  },
-  "end_time": {
-    "$date": "2026-05-10T23:00:00.000Z"
   }
 },
 {
@@ -55,6 +29,32 @@
   },
   "end_time": {
     "$date": "2026-05-10T22:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67f7a4db3eaf1040a69ac6aa"
+  },
+  "name": "Demos",
+  "type": "GENERAL",
+  "start_time": {
+    "$date": "2026-05-10T19:00:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-10T21:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67eb840248055efb36b62324"
+  },
+  "name": "Closing Ceremony",
+  "type": "GENERAL",
+  "start_time": {
+    "$date": "2026-05-10T22:00:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-10T23:00:00.000Z"
   }
 },
 {
@@ -92,15 +92,15 @@
 },
 {
   "_id": {
-    "$oid": "67f7a4db3eaf1040a69ac6aa"
+    "$oid": "680076779d521a51759d7e8c"
   },
-  "name": "Demos",
+  "name": "Break",
   "type": "GENERAL",
   "start_time": {
-    "$date": "2026-05-10T19:00:00.000Z"
+    "$date": "2026-05-10T18:00:00.000Z"
   },
   "end_time": {
-    "$date": "2026-05-10T21:00:00.000Z"
+    "$date": "2026-05-10T19:00:00.000Z"
   }
 },
 {
@@ -115,7 +115,7 @@
   "end_time": {
     "$date": "2026-05-10T00:30:00.000Z"
   },
-  "location": "Food Area"
+  "location": "Upper Level"
 },
 {
   "_id": {
@@ -129,7 +129,7 @@
   "end_time": {
     "$date": "2026-05-10T00:30:00.000Z"
   },
-  "location": "Upper Level"
+  "location": "Food Area"
 },
 {
   "_id": {
@@ -143,7 +143,36 @@
   "end_time": {
     "$date": "2026-05-09T16:45:00.000Z"
   },
-  "location": "ARC Ballroom A"
+  "location": "ARC Ballroom A",
+  "host": "HackDavis",
+  "tags": [
+    "beginner",
+    "developer",
+    "pm",
+    "designer",
+    "other"
+  ]
+},
+{
+  "_id": {
+    "$oid": "6800279a9d521a51759d7e87"
+  },
+  "name": "MLH Intro to Google AI Studio",
+  "type": "WORKSHOPS",
+  "start_time": {
+    "$date": "2026-05-09T21:10:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-09T22:00:00.000Z"
+  },
+  "host": "Major League Hacking",
+  "tags": [
+    "beginner",
+    "developer",
+    "pm",
+    "other"
+  ],
+  "location": "ARC Ballroom B"
 },
 {
   "_id": {
@@ -183,71 +212,36 @@
   "tags": [
     "beginner",
     "developer",
-    "pm"
+    "pm",
+    "other"
   ],
   "location": "ARC Ballroom B"
 },
 {
   "_id": {
-    "$oid": "67f7ad173eaf1040a69ac6b3"
-  },
-  "name": "CodeLab Workshop",
-  "type": "WORKSHOPS",
-  "start_time": {
-    "$date": "2026-05-09T18:10:00.000Z"
-  },
-  "end_time": {
-    "$date": "2026-05-09T19:00:00.000Z"
-  },
-  "host": "CodeLab",
-  "tags": [
-    "beginner"
-  ],
-  "location": "ARC Ballroom A"
-},
-{
-  "_id": {
-    "$oid": "6800279a9d521a51759d7e87"
-  },
-  "name": "MLH Intro to Google AI Studio",
-  "type": "WORKSHOPS",
-  "start_time": {
-    "$date": "2026-05-09T21:10:00.000Z"
-  },
-  "end_time": {
-    "$date": "2026-05-09T22:00:00.000Z"
-  },
-  "host": "Major League Hacking",
-  "tags": [
-    "beginner",
-    "developer",
-    "pm"
-  ],
-  "location": "ARC Ballroom A"
-},
-{
-  "_id": {
     "$oid": "67f7ab113eaf1040a69ac6b2"
   },
-  "name": "#include Workshop",
+  "name": "Designer & Developer Collaboration",
   "type": "WORKSHOPS",
   "start_time": {
-    "$date": "2026-05-09T20:10:00.000Z"
+    "$date": "2026-05-09T23:10:00.000Z"
   },
   "end_time": {
-    "$date": "2026-05-09T21:00:00.000Z"
+    "$date": "2026-05-10T00:00:00.000Z"
   },
   "host": "#include ",
   "tags": [
-    "beginner"
+    "beginner",
+    "developer",
+    "designer"
   ],
-  "location": "ARC Ballroom A"
+  "location": "ARC Ballroom B"
 },
 {
   "_id": {
     "$oid": "67f7aa013eaf1040a69ac6b0"
   },
-  "name": "AIC Workshop",
+  "name": "Demo With Computer Vision with the Artificial Intelligence Collective",
   "type": "WORKSHOPS",
   "start_time": {
     "$date": "2026-05-09T21:10:00.000Z"
@@ -257,7 +251,50 @@
   },
   "host": "AIC (previously AISC)",
   "tags": [
-    "beginner"
+    "beginner",
+    "developer"
+  ],
+  "location": "ARC Ballroom A"
+},
+{
+  "_id": {
+    "$oid": "69f7a3bef7afd28e1325deab"
+  },
+  "name": "Pitch Workshop: How To Ace Your Judge Pitch",
+  "type": "WORKSHOPS",
+  "start_time": {
+    "$date": "2026-05-09T23:10:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-10T00:00:00.000Z"
+  },
+  "host": "STUDENT STARTUP CENTER",
+  "tags": [
+    "beginner",
+    "developer",
+    "pm",
+    "designer",
+    "other"
+  ],
+  "location": "ARC Ballroom A"
+},
+{
+  "_id": {
+    "$oid": "67f7ad173eaf1040a69ac6b3"
+  },
+  "name": "From Prompt to Product: Building With Agentic AI",
+  "type": "WORKSHOPS",
+  "start_time": {
+    "$date": "2026-05-09T18:10:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-09T19:00:00.000Z"
+  },
+  "host": "CodeLab",
+  "tags": [
+    "beginner",
+    "developer",
+    "pm"
   ],
   "location": "ARC Ballroom A"
 },
@@ -265,7 +302,7 @@
   "_id": {
     "$oid": "680028219d521a51759d7e8a"
   },
-  "name": "Davis Autonomy Club Workshop",
+  "name": "From Rules to Reasoning: Building Intelligent Robotic Systems",
   "type": "WORKSHOPS",
   "start_time": {
     "$date": "2026-05-09T22:10:00.000Z"
@@ -282,27 +319,9 @@
 },
 {
   "_id": {
-    "$oid": "69f7a3bef7afd28e1325deab"
-  },
-  "name": "STUDENT STARTUP CENTER Workshop",
-  "type": "WORKSHOPS",
-  "start_time": {
-    "$date": "2026-05-09T23:10:00.000Z"
-  },
-  "end_time": {
-    "$date": "2026-05-10T00:00:00.000Z"
-  },
-  "host": "STUDENT STARTUP CENTER",
-  "tags": [
-    "beginner"
-  ],
-  "location": "ARC Ballroom A"
-},
-{
-  "_id": {
     "$oid": "69f95de3513e20d613adce74"
   },
-  "name": "Figma Workshop",
+  "name": "Design, Make, Iterate: UX Prototyping with Figma",
   "type": "WORKSHOPS",
   "start_time": {
     "$date": "2026-05-10T00:10:00.000Z"
@@ -314,6 +333,64 @@
   "tags": [
     "beginner",
     "designer"
+  ],
+  "location": "ARC Ballroom A"
+},
+{
+  "_id": {
+    "$oid": "69fec222d52c21f656d723e8"
+  },
+  "name": "UI/UX Crash Course for Hackathons",
+  "type": "WORKSHOPS",
+  "start_time": {
+    "$date": "2026-05-09T19:10:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-09T20:00:00.000Z"
+  },
+  "host": "Design Interactive",
+  "tags": [
+    "beginner",
+    "designer"
+  ],
+  "location": "ARC Ballroom A"
+},
+{
+  "_id": {
+    "$oid": "69fec258d52c21f656d723e9"
+  },
+  "name": "Introduction to Version Control with Git and GitHub",
+  "type": "WORKSHOPS",
+  "start_time": {
+    "$date": "2026-05-09T19:10:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-09T20:00:00.000Z"
+  },
+  "host": "DataLab",
+  "tags": [
+    "beginner",
+    "developer"
+  ],
+  "location": "ARC Ballroom B"
+},
+{
+  "_id": {
+    "$oid": "69fec2efd52c21f656d723ea"
+  },
+  "name": "Reconstructing Coding Agents",
+  "type": "WORKSHOPS",
+  "start_time": {
+    "$date": "2026-05-09T20:10:00.000Z"
+  },
+  "end_time": {
+    "$date": "2026-05-09T21:00:00.000Z"
+  },
+  "host": "Reconstruct",
+  "tags": [
+    "beginner",
+    "developer",
+    "pm"
   ],
   "location": "ARC Ballroom A"
 }]
