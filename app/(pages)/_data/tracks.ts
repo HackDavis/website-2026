@@ -62,7 +62,7 @@ const automaticTracks: Tracks = {
     prizes: ['2026 Macbook Neo', 'Electric Scooter'],
     images: [macbookNeo, electricScooter],
     eligibility_criteria:
-      'Encapsulate your authentic idea of what "social good" can look like. All entries are automatically considered for this prize category.',
+      'Encapsulate your authentic idea of what "social good" can look like. All entries are automatically considered for this prize category.\n\nThe Student Startup Center believes that a great idea can go a long way with the right support. They are offering an automatic interview for their Entrepreneur in Residence (EIR) program to the winning team of the Best Hack for Social Good. This opportunity is designed to help students continue building their project into a viable business throughout the school year.\n• The Prize: A guaranteed interview for the EIR program, which includes milestone-based funding to support your startup\'s growth.\n• Eligibility: To be eligible for this specific prize, the entire team must consist of current UC Davis students.',
   },
   "Hacker's Choice Award": {
     name: "Hacker's Choice Award",
@@ -114,7 +114,7 @@ const optedHDTracks: Tracks = {
   'Best Beginner Hack': {
     name: 'Best Beginner Hack',
     filter: ['General'],
-    prizes: ['24 Inch Monitor'],
+    prizes: ['KOORUI 24 Inch Curved Monitor'],
     images: [monitor],
     eligibility_criteria:
       'Every team member must be a first-time hacker in order to qualify. Demonstrate a high level of growth through this project. Foster creativity and collaboration within the team and display a commitment to building skills.',
@@ -330,7 +330,7 @@ const optedHDTracks: Tracks = {
   'Best Entrepreneurship Hack': {
     name: 'Best Entrepreneurship Hack',
     filter: ['Business'],
-    prizes: ['North Face Backpack'],
+    prizes: ['The North Face Borealis Backpack'],
     images: [backpack],
     eligibility_criteria:
       "No Code Required. A project that focuses on viability and persuasive power through presentation on the product/service you're trying to sell, relevant customer segments, distribution channels, and associated revenue/profit models.",
@@ -503,7 +503,7 @@ const nonHDTracks: Tracks = {
     prizes: ['$125 Visa Gift Card per team member'],
     images: [digitalGiftCard],
     eligibility_criteria:
-      'Most creative use of Rescontruct in their project. Project must use Reconstruct in a prominant and efficient way to qualify for this prize track.\n\nSponsored by Reconstruct.',
+      'Most creative use of Reconstruct in their project. Project must use Reconstruct in a prominent and efficient way to qualify for this prize track.\n\nSponsored by Reconstruct.',
   },
   "Best Hack for Women's Center": {
     name: "Best Hack for Women's Center",
@@ -589,6 +589,11 @@ const judgeVisibleTracks: Tracks = {
   ...sponsoredNotSendingJudges,
 };
 
+const panelTracks: Tracks = {
+  ...judgeVisibleTracks,
+  'Best Hack for Social Good': automaticTracks['Best Hack for Social Good'],
+};
+
 const allTracks: Tracks = {
   ...automaticTracks,
   ...optedHDTracks,
@@ -609,6 +614,7 @@ export {
   nonHDTracks,
   sponsoredNotSendingJudges,
   judgeVisibleTracks,
+  panelTracks,
   displayNameToDomainMap,
 };
 
