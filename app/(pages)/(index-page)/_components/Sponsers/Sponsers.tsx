@@ -130,7 +130,7 @@ export default function Sponsers() {
     },
     {
       id: 'figma',
-      src: '/Images/sponsers/figma.svg.png',
+      src: '/Images/sponsers/figma.png',
       url: 'https://figma.com/',
       alt: 'figma Logo',
     },
@@ -154,6 +154,12 @@ export default function Sponsers() {
       src: '/Images/sponsers/srrc.png',
       url: 'https://srrc.ucdavis.edu/',
       alt: 'srrc Logo',
+    },
+    {
+      id: 'hippeas',
+      src: '/Images/sponsers/hippeas.png',
+      url: 'https://hippeas.com/',
+      alt: 'hippeas Logo',
     },
   ];
 
