@@ -107,6 +107,12 @@ export default function Sponsers() {
       url: 'https://www.davisautonomy.com/',
       alt: 'Davis Autonomy Club Logo',
     },
+    {
+      id: 'iet',
+      src: '/Images/sponsers/iet.png',
+      url: 'https://iet.ucdavis.edu/',
+      alt: 'UC Davis IET Logo',
+    },
   ];
 
   const row2_images: Sponsor[] = [
