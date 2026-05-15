@@ -443,13 +443,13 @@ export default function Header() {
                 Prizes
               </Link>
 
-              <Link
+              {/* <Link
                 href="/#donate"
                 className=""
                 onClick={handleMobileNavClick('/#donate')}
               >
                 Donate
-              </Link>
+              </Link> */}
 
               <Link
                 href="/#faq"
