@@ -150,7 +150,7 @@ export default function HeroInfo() {
                 Check out the{' '}
               </span>
               <div className="flex items-center gap-2 text-black text-[19px]">
-                Apply to be a{' '}
+                {/* Apply to be a{' '}
                 <FormLink
                   href="https://forms.gle/rvMKjxw6GjiaKPjc7"
                   includeComma={false}
@@ -163,7 +163,7 @@ export default function HeroInfo() {
                   includeComma={false}
                 >
                   <span style={{ color: '#9EE7E5' }}>Volunteer</span>
-                </FormLink>
+                </FormLink> */}
                 {/* <span>or</span>
                 <FormLink href="" includeComma={false}>
                   <span style={{ color: '#FFC5AB' }}>Mentor</span>
@@ -222,30 +222,30 @@ export default function HeroInfo() {
   );
 }
 
-interface FormLinkProps {
-  href: string;
-  includeComma: boolean;
-  children: React.ReactNode;
-}
+// interface FormLinkProps {
+//   href: string;
+//   includeComma: boolean;
+//   children: React.ReactNode;
+// }
 
-function FormLink({ href, includeComma, children }: FormLinkProps) {
-  return (
-    <Link
-      href={href}
-      className="group flex items-center text-[16px] md:text-[18px] font-bold tracking-[0.48px] text-black md:text-[20px]"
-      target="_blank"
-    >
-      <span className="font-bold">{children}</span>
+// function FormLink({ href, includeComma, children }: FormLinkProps) {
+//   return (
+//     <Link
+//       href={href}
+//       className="group flex items-center text-[16px] md:text-[18px] font-bold tracking-[0.48px] text-black md:text-[20px]"
+//       target="_blank"
+//     >
+//       <span className="font-bold">{children}</span>
 
-      <Image
-        src="/Images/reghero/icon_arrow.svg"
-        alt="Arrow icon"
-        width={10}
-        height={10}
-        className="m-1 object-contain transition-transform group-hover:translate-x-1"
-      />
+//       <Image
+//         src="/Images/reghero/icon_arrow.svg"
+//         alt="Arrow icon"
+//         width={10}
+//         height={10}
+//         className="m-1 object-contain transition-transform group-hover:translate-x-1"
+//       />
 
-      {includeComma && <span>,</span>}
-    </Link>
-  );
-}
+//       {includeComma && <span>,</span>}
+//     </Link>
+//   );
+// }

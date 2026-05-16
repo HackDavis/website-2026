@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 type Sponsor = { id: string; src?: string; url?: string; alt?: string };
 
-function SponsorElement({ src, url, alt }: Sponsor) {
+function SponsorElement({ src, alt }: Sponsor) {
   return (
     <div
       className="
@@ -20,9 +20,9 @@ function SponsorElement({ src, url, alt }: Sponsor) {
     >
       <div className="absolute inset-[10%]">
         <a
-          href={url ?? '#'}
-          target="_blank"
-          rel="noopener noreferrer"
+          // href={url ?? '#'}
+          // target="_blank"
+          // rel="noopener noreferrer"
           className="block w-full h-full"
         >
           <Image
@@ -84,6 +84,12 @@ function SponserRow({
 export default function Sponsers() {
   const row1_images: Sponsor[] = [
     {
+      id: 'asucd',
+      src: '/Images/sponsers/asucd.png',
+      url: 'https://asucd.ucdavis.edu/',
+      alt: 'ASUCD Logo',
+    },
+    {
       id: 'ucdavis',
       src: '/Images/sponsers/ucd.png',
       url: 'https://www.ucdavis.edu/',
@@ -96,70 +102,70 @@ export default function Sponsers() {
       alt: 'UC Davis Department of Computer Science Logo',
     },
     {
-      id: 'ucdavis-again',
-      src: '/Images/sponsers/ucd.png',
-      url: 'https://www.ucdavis.edu/',
-      alt: 'University of California Davis Logo',
+      id: 'davisautonomyclub',
+      src: '/Images/sponsers/Davis_Autonomy_Club.png',
+      url: 'https://www.davisautonomy.com/',
+      alt: 'Davis Autonomy Club Logo',
     },
     {
-      id: 'ucdcs-again',
-      src: '/Images/sponsers/ucdcs.png',
-      url: 'https://cs.ucdavis.edu/',
-      alt: 'UC Davis Department of Computer Science Logo',
+      id: 'iet',
+      src: '/Images/sponsers/iet.png',
+      url: 'https://iet.ucdavis.edu/',
+      alt: 'UC Davis IET Logo',
     },
   ];
 
   const row2_images: Sponsor[] = [
     {
-      id: 'ucdavis-2',
-      src: '/Images/sponsers/ucd.png',
-      url: 'https://www.ucdavis.edu/',
-      alt: 'University of California Davis Logo',
+      id: 'exa',
+      src: '/Images/sponsers/exa.png',
+      url: 'https://exa.ai/',
+      alt: 'Exa AI Logo',
     },
     {
-      id: 'ucdcs-2',
-      src: '/Images/sponsers/ucdcs.png',
-      url: 'https://cs.ucdavis.edu/',
-      alt: 'UC Davis Department of Computer Science Logo',
+      id: 'reconstruct',
+      src: '/Images/sponsers/reconstruct.png',
+      url: 'https://reconstruct.app/',
+      alt: 'Reconstruct Logo',
     },
     {
-      id: 'ucdavis-again-2',
-      src: '/Images/sponsers/ucd.png',
-      url: 'https://www.ucdavis.edu/',
-      alt: 'University of California Davis Logo',
+      id: 'anthropic',
+      src: '/Images/sponsers/Anthropic.png',
+      url: 'https://www.anthropic.com/',
+      alt: 'Anthropic Logo',
     },
     {
-      id: 'ucdcs-again-2',
-      src: '/Images/sponsers/ucdcs.png',
-      url: 'https://cs.ucdavis.edu/',
-      alt: 'UC Davis Department of Computer Science Logo',
+      id: 'figma',
+      src: '/Images/sponsers/figma.png',
+      url: 'https://figma.com/',
+      alt: 'figma Logo',
     },
   ];
 
   const row3_images: Sponsor[] = [
     {
-      id: 'ucdavis-3',
-      src: '/Images/sponsers/ucd.png',
-      url: 'https://www.ucdavis.edu/',
-      alt: 'University of California Davis Logo',
+      id: 'datalab',
+      src: '/Images/sponsers/datalab.webp',
+      url: 'https://commons.ucdavis.edu/datalab',
+      alt: 'datalab Logo',
     },
     {
-      id: 'ucdcs-3',
-      src: '/Images/sponsers/ucdcs.png',
-      url: 'https://cs.ucdavis.edu/',
-      alt: 'UC Davis Department of Computer Science Logo',
+      id: 'msba',
+      src: '/Images/sponsers/MSBA.webp',
+      url: 'https://gsm.ucdavis.edu/master-science-business-analytics',
+      alt: 'MSBA Logo',
     },
     {
-      id: 'ucdavis-again-3',
-      src: '/Images/sponsers/ucd.png',
-      url: 'https://www.ucdavis.edu/',
-      alt: 'University of California Davis Logo',
+      id: 'srrc',
+      src: '/Images/sponsers/srrc.png',
+      url: 'https://srrc.ucdavis.edu/',
+      alt: 'srrc Logo',
     },
     {
-      id: 'ucdcs-again-3',
-      src: '/Images/sponsers/ucdcs.png',
-      url: 'https://cs.ucdavis.edu/',
-      alt: 'UC Davis Department of Computer Science Logo',
+      id: 'hippeas',
+      src: '/Images/sponsers/hippeas.png',
+      url: 'https://hippeas.com/',
+      alt: 'hippeas Logo',
     },
   ];
 
